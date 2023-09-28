@@ -54,5 +54,21 @@
     // Initialize WOW.js Scrolling Animations
     new WOW().init();
 
+    $('#footer-year').html(new Date().getFullYear())
+
 })(jQuery); // End of use strict
 
+function openApp(){
+    const isMobile = navigator && navigator.userAgentData && navigator.userAgentData.mobile
+    if(isMobile) {
+        return window.open('https://app.sporten.app', '_SELF')
+    }
+
+    return window.open('https://portal.sporten.app','_SELF')
+}
+
+function submitContactForm(event){
+    window.open(`mailto:info@sporten.app?SUBJECT=${encodeURIComponent(document.getElementById('c_name').value)}&body=${encodeURIComponent(document.getElementById('c_message').value)}`,'_SELF')
+
+    return false;
+}
