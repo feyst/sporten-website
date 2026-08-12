@@ -1,0 +1,114 @@
+name: 📋 Ticketstatus op het board
+
+# Zet het ticket op het Sporten-board mee met de PR:
+#   PR geopend            -> In review
+#   PR gemerged           -> Testing
+# Het ticketnummer komt uit de regel "Ticket: #NUMMER" in de PR-omschrijving.
+# Alle issues staan in feyst/sporten-api, ook voor werk in de andere repo's.
+#
+# Vereist het secret BOARD_TOKEN: een fine-grained PAT met de account-permissie
+# "Projects: read and write". De GITHUB_TOKEN van Actions kan niet schrijven in
+# een user-owned project. Ontbreekt het secret, dan slaat deze workflow over
+# zonder de PR te laten falen.
+
+on:
+  pull_request:
+    types: [opened, reopened, ready_for_review, closed]
+
+permissions: {}
+
+jobs:
+  board-status:
+    name: Status bijwerken
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ticketstatus zetten
+        env:
+          GH_TOKEN: ${{ secrets.BOARD_TOKEN }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+          PR_DRAFT: ${{ github.event.pull_request.draft }}
+          PR_MERGED: ${{ github.event.pull_request.merged }}
+          PR_ACTION: ${{ github.event.action }}
+          TICKET_OWNER: feyst
+          TICKET_REPO: sporten-api
+          # Board "Sporten" (project #2 van feyst) en het Status-veld.
+          PROJECT_ID: PVT_kwHOABmhwM4BF8Q8
+          STATUS_FIELD_ID: PVTSSF_lAHOABmhwM4BF8Q8zg3IbGg
+          OPTION_IN_REVIEW: df73e18b
+          OPTION_TESTING: 6e0e1e91
+        run: |
+          set -euo pipefail
+
+          if [ -z "${GH_TOKEN}" ]; then
+            echo "::warning::Secret BOARD_TOKEN ontbreekt in deze repo — status niet bijgewerkt."
+            exit 0
+          fi
+
+          NUMBER=$(printf '%s' "${PR_BODY}" | grep -oiE 'ticket:[[:space:]]*#[0-9]+' | head -1 | grep -oE '[0-9]+' || true)
+          if [ -z "${NUMBER}" ]; then
+            echo "::notice::Geen regel \"Ticket: #NUMMER\" in de PR-omschrijving — niets te doen."
+            exit 0
+          fi
+
+          if [ "${PR_ACTION}" = "closed" ]; then
+            if [ "${PR_MERGED}" != "true" ]; then
+              echo "::notice::PR gesloten zonder merge — status met rust gelaten."
+              exit 0
+            fi
+            OPTION="${OPTION_TESTING}"
+            LABEL="Testing"
+          else
+            if [ "${PR_DRAFT}" = "true" ]; then
+              echo "::notice::PR staat nog op draft — status met rust gelaten."
+              exit 0
+            fi
+            OPTION="${OPTION_IN_REVIEW}"
+            LABEL="In review"
+          fi
+
+          ITEM_ID=$(gh api graphql -f query='
+            query($owner: String!, $repo: String!, $number: Int!) {
+              repository(owner: $owner, name: $repo) {
+                issue(number: $number) {
+                  projectItems(first: 20) { nodes { id project { id } } }
+                }
+              }
+            }' -f owner="${TICKET_OWNER}" -f repo="${TICKET_REPO}" -F number="${NUMBER}" \
+            --jq ".data.repository.issue.projectItems.nodes[]? | select(.project.id == \"${PROJECT_ID}\") | .id" 2>/dev/null | head -1 || true)
+
+          if [ -z "${ITEM_ID}" ]; then
+            echo "::warning::Issue #${NUMBER} staat niet op het Sporten-board — status niet bijgewerkt."
+            exit 0
+          fi
+
+          gh api graphql -f query='
+            mutation($project: ID!, $item: ID!, $field: ID!, $option: String!) {
+              updateProjectV2ItemFieldValue(input: {
+                projectId: $project, itemId: $item, fieldId: $field,
+                value: {singleSelectOptionId: $option}
+              }) { projectV2Item { id } }
+            }' -f project="${PROJECT_ID}" -f item="${ITEM_ID}" -f field="${STATUS_FIELD_ID}" -f option="${OPTION}"
+
+          # Niet op de mutatie vertrouwen: teruglezen wat er nu echt staat.
+          HUIDIG=$(gh api graphql -f query='
+            query($item: ID!) {
+              node(id: $item) {
+                ... on ProjectV2Item {
+                  fieldValues(first: 20) {
+                    nodes {
+                      ... on ProjectV2ItemFieldSingleSelectValue {
+                        name field { ... on ProjectV2FieldCommon { name } }
+                      }
+                    }
+                  }
+                }
+              }
+            }' -f item="${ITEM_ID}" \
+            --jq '.data.node.fieldValues.nodes[] | select(.name != null) | select(.field.name == "Status") | .name')
+
+          if [ "${HUIDIG}" != "${LABEL}" ]; then
+            echo "::error::Status van #${NUMBER} staat op \"${HUIDIG}\" in plaats van \"${LABEL}\"."
+            exit 1
+          fi
+
+          echo "Ticket #${NUMBER} staat op ${LABEL}."
