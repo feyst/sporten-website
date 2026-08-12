@@ -253,6 +253,16 @@ nav.affix-top {
       -moz-border-radius: 10px;
     color: #fff;
 }
+.navbar-default .navbar-nav > li > a.nav-login {
+    background-color: var(--primary-color);
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+    color: #fff;
+}
+.navbar-default .navbar-nav > li > a.nav-login .fa-sign-in {
+    margin-left: 4px;
+}
 
 /*-------- header css --------------*/
 
