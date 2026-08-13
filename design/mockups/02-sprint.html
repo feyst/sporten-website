@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup 02 — Sprint · donker &amp; sportief | Sporten.app</title>
+<style>
+:root{--rood:#f4511e;--turkoois:#40e0d0;--bg:#14181f;--bg2:#1b212b;--tekst:#eef1f5;--dim:#98a2b3;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--tekst);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+header.site{position:sticky;top:0;background:rgba(20,24,31,.92);backdrop-filter:blur(8px);border-bottom:1px solid #232a35;z-index:10}
+.nav{display:flex;align-items:center;height:66px;gap:26px}
+.logo{font-weight:900;font-size:20px;text-transform:uppercase;letter-spacing:.04em}
+.logo em{color:var(--rood);font-style:normal}
+.nav ul{display:flex;gap:22px;list-style:none;margin-left:auto;align-items:center;flex-wrap:wrap}
+.nav a{font-size:14px;color:var(--dim);text-transform:uppercase;letter-spacing:.06em}
+.nav a:hover{color:var(--tekst)}
+.knop{background:var(--rood);color:#fff!important;padding:10px 22px;border-radius:4px;font-weight:700;letter-spacing:.06em}
+.knop:hover{background:#ff6a35}
+.knop.cyaan{background:transparent;color:var(--turkoois)!important;border:1.5px solid var(--turkoois)}
+.knop.cyaan:hover{background:rgba(64,224,208,.1)}
+/* hero */
+.hero{padding:88px 0 72px;background:
+ radial-gradient(700px 340px at 82% 10%,rgba(244,81,30,.22),transparent 65%),
+ radial-gradient(500px 300px at 8% 90%,rgba(64,224,208,.12),transparent 60%)}
+.hero .container{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.overlijn{color:var(--turkoois);font-weight:700;text-transform:uppercase;letter-spacing:.18em;font-size:13px}
+h1{font-size:clamp(38px,5.5vw,60px);line-height:1.02;font-weight:900;text-transform:uppercase;letter-spacing:-.01em;margin:14px 0 0}
+h1 span{color:var(--rood)}
+.hero p{margin:22px 0 30px;font-size:18px;color:var(--dim);max-width:32em}
+.cta-rij{display:flex;gap:14px;flex-wrap:wrap}
+.hero-beeld{display:flex;justify-content:center;filter:drop-shadow(0 24px 40px rgba(0,0,0,.5))}
+/* secties */
+section{padding:72px 0}
+h2{font-size:clamp(26px,3.4vw,36px);font-weight:900;text-transform:uppercase}
+h2::after{content:"";display:block;width:64px;height:4px;background:var(--rood);margin-top:12px}
+.sectie-intro{color:var(--dim);max-width:44em;margin:18px 0 40px}
+.kaarten{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#232a35;border:1px solid #232a35}
+.kaart{background:var(--bg2);padding:30px 26px}
+.kaart:hover{background:#20293a}
+.kaart .nr{font-size:13px;color:var(--turkoois);font-weight:700;letter-spacing:.14em}
+.kaart h3{font-size:17px;margin:10px 0 8px;text-transform:uppercase;letter-spacing:.03em}
+.kaart p{font-size:15px;color:var(--dim)}
+/* stappen als tijdlijn */
+.stappen{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:8px}
+.stap{border-top:3px solid var(--rood);padding-top:18px}
+.stap b{color:var(--rood);font-size:34px;font-weight:900;line-height:1}
+.stap h3{margin:10px 0 6px;font-size:17px;text-transform:uppercase}
+.stap p{color:var(--dim);font-size:15px}
+.tri{display:flex;gap:70px;justify-content:center;margin-top:56px;flex-wrap:wrap}
+.tri figure{text-align:center;color:var(--dim)}
+.tri svg{color:var(--turkoois)}
+.tri figcaption{font-size:12px;margin-top:8px;text-transform:uppercase;letter-spacing:.16em}
+/* leden-band */
+.leden{background:linear-gradient(120deg,var(--rood),#ff7a3d);color:#fff}
+.leden .container{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.leden h2::after{background:#fff}
+.leden p{margin:16px 0 0;max-width:40em;color:#ffe4d8}
+.leden .knop{background:#14181f;font-size:16px;padding:14px 30px}
+.leden .knop:hover{background:#000}
+/* contact */
+.contact-rij{display:flex;gap:44px;flex-wrap:wrap;margin-top:6px}
+.contact-rij div{min-width:200px}
+.contact-rij h3{font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:var(--dim);margin-bottom:6px}
+.contact-rij a{color:var(--turkoois);font-weight:600}
+footer{border-top:1px solid #232a35;padding:26px 0;color:var(--dim);font-size:14px}
+footer .container{display:flex;gap:22px;flex-wrap:wrap}
+@media(max-width:840px){
+ .hero .container,.leden .container{grid-template-columns:1fr}
+ .kaarten,.stappen{grid-template-columns:1fr}
+ .nav ul li.verberg-mobiel{display:none}
+ .hero-beeld{order:-1}
+}
+</style>
+</head>
+<body>
+<header class="site"><div class="container nav">
+  <a class="logo" href="#">sporten<em>.app</em></a>
+  <ul>
+    <li class="verberg-mobiel"><a href="#functies">Functies</a></li>
+    <li class="verberg-mobiel"><a href="#hoe">Hoe het werkt</a></li>
+    <li class="verberg-mobiel"><a href="#contact">Contact</a></li>
+    <li class="verberg-mobiel"><a href="/privacy">Privacy</a></li>
+    <li><a href="https://portal.sporten.app">Portaal</a></li>
+    <li><a class="knop" href="https://app.sporten.app">Inloggen</a></li>
+  </ul>
+</div></header>
+
+<main>
+<div class="hero"><div class="container">
+  <div>
+    <div class="overlijn">Voor sportverenigingen</div>
+    <h1>Ledenadministratie voor <span>uw sportclub</span></h1>
+    <p>Sporten.app regelt activiteiten, inschrijvingen en communicatie voor sportverenigingen. Uw leden zien in één app wat er te doen is en melden zich met één tik aan — u houdt als bestuur moeiteloos overzicht.</p>
+    <div class="cta-rij">
+      <a class="knop" href="#contact">Neem contact op</a>
+      <a class="knop cyaan" href="#functies">Bekijk de functies</a>
+    </div>
+  </div>
+  <div class="hero-beeld">
+    <svg width="260" height="520" viewBox="0 0 300 600" role="img" aria-label="Schermweergave van de Sporten.app-agenda met drie activiteiten en aanmeldknoppen">
+      <rect x="4" y="4" width="292" height="592" rx="42" fill="#0b0e13"/>
+      <rect x="16" y="16" width="268" height="568" rx="32" fill="#1b212b"/>
+      <rect x="16" y="16" width="268" height="86" rx="32" fill="#f4511e"/><rect x="16" y="70" width="268" height="32" fill="#f4511e"/>
+      <text x="36" y="82" fill="#fff" font-family="system-ui,sans-serif" font-size="19" font-weight="700">Agenda</text>
+      <g font-family="system-ui,sans-serif">
+        <g transform="translate(32,122)"><rect width="236" height="108" rx="12" fill="#232a35"/><text x="16" y="30" font-size="14" font-weight="700" fill="#eef1f5">Baantraining</text><text x="16" y="52" font-size="12" fill="#98a2b3">di 19:30 · Sportpark De Sniep</text><rect x="16" y="66" width="100" height="26" rx="4" fill="#f4511e"/><text x="33" y="83" font-size="12" fill="#fff" font-weight="600">Aanmelden</text><text x="176" y="83" font-size="11" fill="#98a2b3">8/20 plek</text></g>
+        <g transform="translate(32,246)"><rect width="236" height="108" rx="12" fill="#232a35"/><text x="16" y="30" font-size="14" font-weight="700" fill="#eef1f5">Zwemtraining</text><text x="16" y="52" font-size="12" fill="#98a2b3">wo 06:45 · De Sniep</text><rect x="16" y="66" width="100" height="26" rx="4" fill="#40e0d0"/><text x="28" y="83" font-size="12" fill="#0c4f48" font-weight="600">Aangemeld ✓</text><text x="176" y="83" font-size="11" fill="#98a2b3">14/16 plek</text></g>
+        <g transform="translate(32,370)"><rect width="236" height="108" rx="12" fill="#232a35"/><text x="16" y="30" font-size="14" font-weight="700" fill="#eef1f5">Duurloop lang</text><text x="16" y="52" font-size="12" fill="#98a2b3">za 09:00 · Gouwebos</text><rect x="16" y="66" width="100" height="26" rx="4" fill="#f4511e"/><text x="33" y="83" font-size="12" fill="#fff" font-weight="600">Aanmelden</text><text x="176" y="83" font-size="11" fill="#98a2b3">12/∞ mee</text></g>
+      </g>
+      <rect x="118" y="560" width="64" height="6" rx="3" fill="#39424f"/>
+    </svg>
+  </div>
+</div></div>
+
+<section id="functies"><div class="container">
+  <h2>Alles voor uw club in één app</h2>
+  <p class="sectie-intro">Geen losse mailtjes, appgroepen en spreadsheets meer — alles wat uw vereniging dagelijks nodig heeft zit in één app, voor bestuur, trainers en leden.</p>
+  <div class="kaarten">
+    <div class="kaart"><div class="nr">01</div><h3>Activiteitenagenda</h3><p>Trainingen, wedstrijden en clubactiviteiten in één overzicht, met locatie, tijd en beschikbare plekken.</p></div>
+    <div class="kaart"><div class="nr">02</div><h3>Inschrijvingen</h3><p>Leden melden zich met één tik aan of af. U ziet direct wie er komt en hoeveel plek er nog is.</p></div>
+    <div class="kaart"><div class="nr">03</div><h3>Clubchat</h3><p>Per activiteit of groep een eigen kanaal. Vragen, afmeldingen en updates blijven bij de activiteit — niet in tien appgroepen.</p></div>
+    <div class="kaart"><div class="nr">04</div><h3>Meldingen</h3><p>Training afgelast door het weer? Eén bericht van de trainer en iedereen weet het meteen.</p></div>
+    <div class="kaart"><div class="nr">05</div><h3>Ledenbeheer</h3><p>Het bestuur beheert leden, rollen en gegevens in een eigen beheerportaal — veilig en AVG-proof.</p></div>
+    <div class="kaart"><div class="nr">06</div><h3>Voor het hele gezin</h3><p>Ouders melden hun kinderen aan vanaf hun eigen account. Eén login voor het hele gezin.</p></div>
+  </div>
+</div></section>
+
+<section id="hoe"><div class="container">
+  <h2>Hoe het werkt</h2>
+  <p class="sectie-intro">Binnen een week draait uw vereniging op Sporten.app.</p>
+  <div class="stappen">
+    <div class="stap"><b>1</b><h3>Uw club aangemeld</h3><p>Wij richten de omgeving voor uw vereniging in en zetten het beheerportaal klaar voor het bestuur.</p></div>
+    <div class="stap"><b>2</b><h3>Leden nodigen zichzelf uit</h3><p>Leden maken een account met hun e-mailadres en staan direct in de ledenlijst van uw club.</p></div>
+    <div class="stap"><b>3</b><h3>Activiteiten lopen vanzelf</h3><p>Trainers zetten activiteiten klaar, leden schrijven zich in, en iedereen ziet hetzelfde overzicht.</p></div>
+  </div>
+  <div class="tri" role="img" aria-label="Illustratie van een zwemmer, wielrenner en hardloper">
+    <figure><svg width="72" height="48" viewBox="0 0 72 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><circle cx="30" cy="12" r="5"/><path d="M8 28c6 4 10-4 16 0s10-4 16 0 10-4 16 0M8 38c6 4 10-4 16 0s10-4 16 0 10-4 16 0M22 22c4-5 10-7 16-4"/></svg><figcaption>Zwemmen</figcaption></figure>
+    <figure><svg width="72" height="48" viewBox="0 0 72 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><circle cx="18" cy="36" r="9"/><circle cx="54" cy="36" r="9"/><path d="M18 36l12-16h14l10 16M30 20l-6-8h10M44 20l4 16"/><circle cx="41" cy="8" r="4"/></svg><figcaption>Fietsen</figcaption></figure>
+    <figure><svg width="72" height="48" viewBox="0 0 72 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><circle cx="40" cy="8" r="5"/><path d="M38 14l-8 12 8 8-4 12M30 26l-10 2M38 14l10 6 8-2M36 34l10 4 4 8"/></svg><figcaption>Lopen</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="leden" id="leden"><div class="container">
+  <div>
+    <h2>Voor uw leden</h2>
+    <p>Al lid van een club die Sporten.app gebruikt? Log in en u staat direct in de agenda van uw vereniging. De app werkt in de browser op elk toestel; de apps voor Android en iPhone komen binnenkort naar de stores.</p>
+  </div>
+  <a class="knop" href="https://app.sporten.app">Inloggen in de app</a>
+</div></section>
+
+<section id="contact"><div class="container">
+  <h2>Neem contact op</h2>
+  <p class="sectie-intro">Benieuwd wat Sporten.app voor uw vereniging kan betekenen, of heeft u een vraag over de app? Stuur een bericht of bel — u krijgt altijd persoonlijk antwoord.</p>
+  <div class="contact-rij">
+    <div><h3>E-mail</h3><a href="mailto:info@sporten.app">info@sporten.app</a></div>
+    <div><h3>WhatsApp / telefoon</h3><a href="https://wa.me/31625002228">+31 6 25 00 22 28</a></div>
+    <div><h3>Adres</h3><span>Veenkade 28, 2742 BM Waddinxveen</span></div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="container">
+  <span>© 2026 Sporten.app</span>
+  <a href="/privacy">Privacy</a>
+  <a href="https://github.com/feyst/sporten-website">GitHub</a>
+</div></footer>
+</body>
+</html>
