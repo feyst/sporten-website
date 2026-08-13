@@ -104,7 +104,11 @@ h2{font-size:clamp(24px,3vw,32px);letter-spacing:-.02em;margin-bottom:10px}
 .contact-rij a{color:var(--rood);font-weight:600}
 
 /* ===== proza (privacyverklaring) ===== */
-.proza{max-width:760px;padding:56px 0 64px}
+/* Alleen boven/onder: de padding-shorthand zou de zijpadding van .container
+   (zelfde element) op 0 zetten, waardoor de tekst op mobiel tegen de rand plakt. */
+.proza{max-width:760px;padding-top:56px;padding-bottom:64px}
+/* Lange woorden als "Verwerkingsverantwoordelijke" afbreken op smalle schermen. */
+.proza h2{overflow-wrap:break-word;hyphens:auto}
 .proza h1{font-size:clamp(28px,4vw,40px);margin-bottom:24px}
 .proza h2{font-size:22px;margin:32px 0 8px}
 .proza p,.proza li{color:var(--dim);font-size:16px}
