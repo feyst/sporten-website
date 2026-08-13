@@ -5,22 +5,55 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mockup 03 — Estafette · speels met diagonalen | Sporten.app</title>
 <style>
-:root{--rood:#f4511e;--rood-diep:#c93a0c;--turkoois:#40e0d0;--room:#fff8f3;--inkt:#2b2118;--dim:#7a6a5c;}
+:root{
+ color-scheme:light dark;
+ --rood:#f4511e;--rood-diep:#c93a0c;--turkoois:#40e0d0;--turkoois-diep:#0c7d72;
+ --bg:#fff8f3;--kaart:#ffffff;--tekst:#2b2118;--dim:#7a6a5c;
+ --schaduw:#efe3d8;--tint:#ffe6db;--tint2:#d9f7f3;--rand:#f0e2d6;
+ --hoe-bg:#ffffff;--frame:#2b2118;--scherm:#fff8f3;--schermvlak:#f4efe9;
+ --contact-bg:#2b2118;--contact-tekst:#ffffff;--contact-dim:#c9beb4;
+}
+@media (prefers-color-scheme: dark){:root{
+ --bg:#1f1912;--kaart:#2a2219;--tekst:#f4ede4;--dim:#b5a695;
+ --schaduw:#151009;--tint:#432619;--tint2:#123d38;--rand:#3a3126;
+ --hoe-bg:#261f16;--frame:#000000;--scherm:#2a2219;--schermvlak:#352c20;
+ --contact-bg:#141009;--contact-tekst:#f4ede4;--contact-dim:#a39482;
+}}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--room);color:var(--inkt);line-height:1.65}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--tekst);line-height:1.65}
 a{color:inherit;text-decoration:none}
 .container{max-width:1060px;margin:0 auto;padding:0 24px}
-header.site{background:var(--room);z-index:10;position:relative}
-.nav{display:flex;align-items:center;height:72px;gap:26px}
+/* ===== nav ===== */
+header.site{background:var(--bg);z-index:10;position:relative}
+.nav{display:flex;align-items:center;min-height:72px;gap:24px;flex-wrap:wrap}
 .logo{font-weight:800;font-size:22px}
 .logo em{color:var(--rood);font-style:normal}
-.nav ul{display:flex;gap:22px;list-style:none;margin-left:auto;align-items:center;flex-wrap:wrap}
-.nav a{font-size:15px;font-weight:600;color:var(--dim)}
-.nav a:hover{color:var(--rood)}
-.knop{background:var(--rood);color:#fff!important;padding:11px 24px;border-radius:999px;font-weight:700;box-shadow:0 4px 0 var(--rood-diep)}
+.menu-check{display:none}
+.hamburger{display:none;margin-left:auto;cursor:pointer;padding:10px}
+.hamburger span{display:block;width:22px;height:2.5px;background:var(--tekst);margin:4.5px 0;border-radius:2px}
+.links{display:flex;align-items:center;gap:22px;margin-left:auto}
+.links ul{display:flex;gap:22px;list-style:none;align-items:center}
+.links ul a{font-size:15px;font-weight:600;color:var(--dim)}
+.links ul a:hover{color:var(--rood)}
+.login{position:relative}
+.login summary{list-style:none;cursor:pointer;display:inline-block;background:var(--rood);color:#fff;padding:11px 24px;border-radius:999px;font-weight:700;box-shadow:0 4px 0 var(--rood-diep)}
+.login summary::-webkit-details-marker{display:none}
+.login summary::after{content:" ▾";font-size:12px}
+.login .keuze{position:absolute;right:0;top:calc(100% + 10px);background:var(--kaart);border-radius:18px;box-shadow:0 8px 0 var(--schaduw),0 18px 40px rgba(0,0,0,.18);min-width:270px;padding:10px;z-index:20}
+.login .keuze a{display:block;padding:12px 14px;border-radius:12px}
+.login .keuze a:hover{background:var(--tint)}
+.login .keuze b{display:block;font-size:15px}
+.login .keuze small{color:var(--dim);font-size:13px}
+/* knoppen */
+.knop{display:inline-block;background:var(--rood);color:#fff!important;padding:11px 24px;border-radius:999px;font-weight:700;box-shadow:0 4px 0 var(--rood-diep)}
 .knop:active{transform:translateY(2px);box-shadow:0 2px 0 var(--rood-diep)}
-.knop.tweede{background:#fff;color:var(--rood)!important;box-shadow:0 4px 0 #e8d9cd;border:2px solid var(--rood)}
-/* hero met diagonaal */
+/* store-badges */
+.stores{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.badge{display:flex;align-items:center;gap:10px;background:var(--tekst);color:var(--bg)!important;border-radius:999px;padding:9px 20px;min-width:176px;box-shadow:0 4px 0 var(--schaduw)}
+.badge:hover{opacity:.85}
+.badge small{display:block;font-size:10.5px;opacity:.75;line-height:1.2}
+.badge b{display:block;font-size:15px;line-height:1.25}
+/* ===== hero ===== */
 .hero{position:relative;background:linear-gradient(160deg,var(--rood) 0%,#ff7440 100%);color:#fff;
  clip-path:polygon(0 0,100% 0,100% 88%,0 100%);padding:64px 0 120px}
 .hero .container{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
@@ -28,68 +61,96 @@ h1{font-size:clamp(34px,5vw,52px);line-height:1.08;font-weight:800}
 .hero p{margin:18px 0 28px;font-size:18px;color:#ffe1d4;max-width:32em}
 .cta-rij{display:flex;gap:16px;flex-wrap:wrap}
 .hero .knop{background:#fff;color:var(--rood)!important;box-shadow:0 4px 0 rgba(0,0,0,.18)}
-.hero .knop.tweede{background:transparent;color:#fff!important;border-color:#fff;box-shadow:none}
+.hero .knop.tweede{background:transparent;color:#fff!important;border:2px solid #fff;box-shadow:none}
 .hero-beeld{display:flex;justify-content:center;transform:rotate(3deg)}
-/* golvende sectie-overgangen via skew-blokken */
+/* ===== secties ===== */
 section{padding:70px 0}
 h2{font-size:clamp(26px,3.2vw,34px);font-weight:800}
 h2 mark{background:linear-gradient(transparent 62%,rgba(64,224,208,.55) 62%);color:inherit;padding:0 2px}
 .sectie-intro{color:var(--dim);max-width:44em;margin:14px 0 36px}
 .kaarten{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.kaart{background:#fff;border-radius:20px;padding:28px 24px;box-shadow:0 6px 0 #efe3d8;transform:rotate(-.4deg)}
+.kaart{background:var(--kaart);border-radius:20px;padding:28px 24px;box-shadow:0 6px 0 var(--schaduw);transform:rotate(-.4deg)}
 .kaart:nth-child(even){transform:rotate(.4deg)}
-.kaart .ikoon{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:14px;background:#ffe6db;color:var(--rood)}
-.kaart:nth-child(3n) .ikoon{background:#d9f7f3;color:#0c7d72}
+.kaart .ikoon{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:14px;background:var(--tint);color:var(--rood)}
+.kaart:nth-child(3n) .ikoon{background:var(--tint2);color:var(--turkoois-diep)}
 .kaart h3{font-size:18px;margin-bottom:6px}
 .kaart p{font-size:15px;color:var(--dim)}
-/* stappen als estafette-lijn */
-.hoe{background:#fff;clip-path:polygon(0 4%,100% 0,100% 100%,0 96%);padding:96px 0}
+/* stappen */
+.hoe{background:var(--hoe-bg);clip-path:polygon(0 4%,100% 0,100% 100%,0 96%);padding:96px 0}
 .stappen{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;position:relative}
 .stappen::before{content:"";position:absolute;top:26px;left:8%;right:8%;border-top:3px dashed var(--turkoois)}
-.stap{text-align:center;position:relative;padding-top:0}
+.stap{text-align:center;position:relative}
 .stap b{position:relative;display:inline-flex;width:54px;height:54px;border-radius:50%;background:var(--rood);color:#fff;align-items:center;justify-content:center;font-size:22px;font-weight:800;box-shadow:0 4px 0 var(--rood-diep);margin-bottom:14px}
 .stap h3{font-size:17px;margin-bottom:6px}
 .stap p{font-size:15px;color:var(--dim)}
 .tri{display:flex;gap:64px;justify-content:center;margin-top:52px;flex-wrap:wrap}
 .tri figure{text-align:center;color:var(--dim)}
 .tri svg{color:var(--rood)}
-.tri figure:nth-child(2) svg{color:#0c7d72}
+.tri figure:nth-child(2) svg{color:var(--turkoois-diep)}
 .tri figcaption{font-size:13px;margin-top:6px;font-weight:700}
 /* leden */
 .leden .container{display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:center}
 .leden-beeld{transform:rotate(-3deg)}
-.leden p{color:var(--dim);margin:14px 0 26px;max-width:36em}
+.leden p{color:var(--dim);margin:14px 0 4px;max-width:36em}
+/* faq */
+.faq{max-width:740px}
+.faq details{background:var(--kaart);border-radius:18px;box-shadow:0 4px 0 var(--schaduw);margin-bottom:14px}
+.faq summary{list-style:none;cursor:pointer;padding:16px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary h3{font-size:16px;font-weight:700}
+.faq summary::after{content:"+";color:var(--rood);font-size:24px;font-weight:700}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:0 22px 18px;color:var(--dim);font-size:15px;max-width:42em}
+.faq a{color:var(--rood)}
 /* contact */
-.contact{background:var(--inkt);color:#fff;clip-path:polygon(0 10%,100% 0,100% 100%,0 100%);padding:96px 0 64px}
-.contact h2 mark{background:linear-gradient(transparent 62%,rgba(244,81,30,.6) 62%);color:#fff}
-.contact .sectie-intro{color:#c9beb4}
+.contact{background:var(--contact-bg);color:var(--contact-tekst);clip-path:polygon(0 10%,100% 0,100% 100%,0 100%);padding:96px 0 64px}
+.contact h2 mark{background:linear-gradient(transparent 62%,rgba(244,81,30,.6) 62%);color:var(--contact-tekst)}
+.contact .sectie-intro{color:var(--contact-dim)}
 .contact-rij{display:flex;gap:44px;flex-wrap:wrap}
 .contact-rij h3{font-size:14px;color:var(--turkoois);margin-bottom:4px}
-.contact-rij a{color:#fff;font-weight:700;border-bottom:2px solid var(--rood)}
-footer{background:var(--inkt);color:#8d8175;padding:20px 0;font-size:14px}
+.contact-rij a{color:var(--contact-tekst);font-weight:700;border-bottom:2px solid var(--rood)}
+footer{background:var(--contact-bg);color:var(--contact-dim);padding:20px 0;font-size:14px}
 footer .container{display:flex;gap:22px;flex-wrap:wrap}
-footer a:hover{color:#fff}
+footer a:hover{color:var(--contact-tekst)}
+/* ===== mobiel ===== */
 @media(max-width:840px){
  .hero .container,.leden .container{grid-template-columns:1fr}
  .kaarten,.stappen{grid-template-columns:1fr}
  .stappen::before{display:none}
- .nav ul li.verberg-mobiel{display:none}
  .hero-beeld{order:-1;transform:none}
  .leden-beeld{transform:none}
+ .hamburger{display:block}
+ .links{display:none;flex-basis:100%;flex-direction:column;align-items:stretch;gap:0;padding:8px 0 16px}
+ .menu-check:checked ~ .links{display:flex}
+ .links ul{flex-direction:column;align-items:stretch;gap:0}
+ .links ul a{display:block;padding:12px 4px;font-size:16px;border-bottom:1px solid var(--rand)}
+ .login{margin-top:12px}
+ .login summary{display:block;text-align:center}
+ .login .keuze{position:static;box-shadow:0 4px 0 var(--schaduw);margin-top:10px;min-width:0}
 }
 </style>
 </head>
 <body>
 <header class="site"><div class="container nav">
   <a class="logo" href="#">sporten<em>.app</em></a>
-  <ul>
-    <li class="verberg-mobiel"><a href="#functies">Functies</a></li>
-    <li class="verberg-mobiel"><a href="#hoe">Hoe het werkt</a></li>
-    <li class="verberg-mobiel"><a href="#contact">Contact</a></li>
-    <li class="verberg-mobiel"><a href="/privacy">Privacy</a></li>
-    <li><a href="https://portal.sporten.app">Portaal</a></li>
-    <li><a class="knop" href="https://app.sporten.app">Inloggen</a></li>
-  </ul>
+  <input type="checkbox" id="menu" class="menu-check" aria-label="Menu openen">
+  <label for="menu" class="hamburger" aria-hidden="true"><span></span><span></span><span></span></label>
+  <div class="links">
+    <ul>
+      <li><a href="#functies">Functies</a></li>
+      <li><a href="#hoe">Hoe het werkt</a></li>
+      <li><a href="#vragen">Vragen</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="/privacy">Privacy</a></li>
+    </ul>
+    <details class="login">
+      <summary>Inloggen</summary>
+      <div class="keuze">
+        <a href="https://app.sporten.app"><b>Voor leden</b><small>Open de app — agenda en aanmelden</small></a>
+        <a href="https://portal.sporten.app"><b>Voor bestuur</b><small>Beheerportaal — leden en activiteiten</small></a>
+      </div>
+    </details>
+  </div>
 </div></header>
 
 <main>
@@ -104,14 +165,14 @@ footer a:hover{color:#fff}
   </div>
   <div class="hero-beeld">
     <svg width="250" height="500" viewBox="0 0 300 600" role="img" aria-label="Schermweergave van de Sporten.app-agenda met drie activiteiten en aanmeldknoppen">
-      <rect x="4" y="4" width="292" height="592" rx="46" fill="#2b2118"/>
-      <rect x="16" y="16" width="268" height="568" rx="36" fill="#fff8f3"/>
+      <rect x="4" y="4" width="292" height="592" rx="46" fill="var(--frame)"/>
+      <rect x="16" y="16" width="268" height="568" rx="36" fill="var(--scherm)"/>
       <rect x="16" y="16" width="268" height="86" rx="36" fill="#2b2118"/><rect x="16" y="70" width="268" height="32" fill="#2b2118"/>
       <text x="36" y="82" fill="#fff" font-family="system-ui,sans-serif" font-size="19" font-weight="700">Agenda</text>
       <g font-family="system-ui,sans-serif">
-        <g transform="translate(32,122)"><rect width="236" height="108" rx="18" fill="#fff" stroke="#f0e2d6"/><text x="16" y="30" font-size="14" font-weight="700" fill="#2b2118">Baantraining</text><text x="16" y="52" font-size="12" fill="#7a6a5c">di 19:30 · Sportpark De Sniep</text><rect x="16" y="66" width="104" height="28" rx="14" fill="#f4511e"/><text x="35" y="84" font-size="12" fill="#fff" font-weight="700">Aanmelden</text><text x="176" y="84" font-size="11" fill="#7a6a5c">8/20 plek</text></g>
-        <g transform="translate(32,246)"><rect width="236" height="108" rx="18" fill="#fff" stroke="#f0e2d6"/><text x="16" y="30" font-size="14" font-weight="700" fill="#2b2118">Zwemtraining</text><text x="16" y="52" font-size="12" fill="#7a6a5c">wo 06:45 · De Sniep</text><rect x="16" y="66" width="104" height="28" rx="14" fill="#40e0d0"/><text x="30" y="84" font-size="12" fill="#0c4f48" font-weight="700">Aangemeld ✓</text><text x="176" y="84" font-size="11" fill="#7a6a5c">14/16 plek</text></g>
-        <g transform="translate(32,370)"><rect width="236" height="108" rx="18" fill="#fff" stroke="#f0e2d6"/><text x="16" y="30" font-size="14" font-weight="700" fill="#2b2118">Duurloop lang</text><text x="16" y="52" font-size="12" fill="#7a6a5c">za 09:00 · Gouwebos</text><rect x="16" y="66" width="104" height="28" rx="14" fill="#f4511e"/><text x="35" y="84" font-size="12" fill="#fff" font-weight="700">Aanmelden</text><text x="176" y="84" font-size="11" fill="#7a6a5c">12/∞ mee</text></g>
+        <g transform="translate(32,122)"><rect width="236" height="108" rx="18" fill="var(--kaart)" stroke="var(--rand)"/><text x="16" y="30" font-size="14" font-weight="700" fill="var(--tekst)">Baantraining</text><text x="16" y="52" font-size="12" fill="var(--dim)">di 19:30 · Sportpark De Sniep</text><rect x="16" y="66" width="104" height="28" rx="14" fill="#f4511e"/><text x="35" y="84" font-size="12" fill="#fff" font-weight="700">Aanmelden</text><text x="176" y="84" font-size="11" fill="var(--dim)">8/20 plek</text></g>
+        <g transform="translate(32,246)"><rect width="236" height="108" rx="18" fill="var(--kaart)" stroke="var(--rand)"/><text x="16" y="30" font-size="14" font-weight="700" fill="var(--tekst)">Zwemtraining</text><text x="16" y="52" font-size="12" fill="var(--dim)">wo 06:45 · De Sniep</text><rect x="16" y="66" width="104" height="28" rx="14" fill="#40e0d0"/><text x="30" y="84" font-size="12" fill="#0c4f48" font-weight="700">Aangemeld ✓</text><text x="176" y="84" font-size="11" fill="var(--dim)">14/16 plek</text></g>
+        <g transform="translate(32,370)"><rect width="236" height="108" rx="18" fill="var(--kaart)" stroke="var(--rand)"/><text x="16" y="30" font-size="14" font-weight="700" fill="var(--tekst)">Duurloop lang</text><text x="16" y="52" font-size="12" fill="var(--dim)">za 09:00 · Gouwebos</text><rect x="16" y="66" width="104" height="28" rx="14" fill="#f4511e"/><text x="35" y="84" font-size="12" fill="#fff" font-weight="700">Aanmelden</text><text x="176" y="84" font-size="11" fill="var(--dim)">12/∞ mee</text></g>
       </g>
     </svg>
   </div>
@@ -148,32 +209,52 @@ footer a:hover{color:#fff}
 <section class="leden" id="leden"><div class="container">
   <div class="leden-beeld">
     <svg width="220" height="286" viewBox="0 0 300 390" role="img" aria-label="Schermweergave van de clubchat in Sporten.app">
-      <rect x="4" y="4" width="292" height="382" rx="34" fill="#2b2118"/>
-      <rect x="14" y="14" width="272" height="362" rx="26" fill="#fff"/>
+      <rect x="4" y="4" width="292" height="382" rx="34" fill="var(--frame)"/>
+      <rect x="14" y="14" width="272" height="362" rx="26" fill="var(--scherm)"/>
       <rect x="14" y="14" width="272" height="58" rx="26" fill="#f4511e"/><rect x="14" y="46" width="272" height="26" fill="#f4511e"/>
       <text x="32" y="50" fill="#fff" font-family="system-ui,sans-serif" font-size="15" font-weight="700">Baantraining · chat</text>
       <g font-family="system-ui,sans-serif" font-size="12">
-        <rect x="30" y="92" width="170" height="40" rx="16" fill="#f4efe9"/><text x="44" y="116" fill="#2b2118">Wie neemt de pionnen mee?</text>
-        <rect x="100" y="144" width="170" height="40" rx="16" fill="#ffe6db"/><text x="114" y="168" fill="#2b2118">Ik! Liggen al in de auto 🙂</text>
-        <rect x="30" y="196" width="190" height="40" rx="16" fill="#f4efe9"/><text x="44" y="220" fill="#2b2118">Top. Tot vanavond allemaal!</text>
-        <rect x="30" y="316" width="240" height="36" rx="18" fill="#f4efe9"/><text x="46" y="338" fill="#7a6a5c">Typ een bericht…</text>
+        <rect x="30" y="92" width="170" height="40" rx="16" fill="var(--schermvlak)"/><text x="44" y="116" fill="var(--tekst)">Wie neemt de pionnen mee?</text>
+        <rect x="100" y="144" width="170" height="40" rx="16" fill="var(--tint)"/><text x="114" y="168" fill="var(--tekst)">Ik! Liggen al in de auto 🙂</text>
+        <rect x="30" y="196" width="190" height="40" rx="16" fill="var(--schermvlak)"/><text x="44" y="220" fill="var(--tekst)">Top. Tot vanavond allemaal!</text>
+        <rect x="30" y="316" width="240" height="36" rx="18" fill="var(--schermvlak)"/><text x="46" y="338" fill="var(--dim)">Typ een bericht…</text>
       </g>
     </svg>
   </div>
   <div>
     <h2>Voor uw <mark>leden</mark></h2>
     <p>Al lid van een club die Sporten.app gebruikt? Log in en u staat direct in de agenda van uw vereniging. De app werkt in de browser op elk toestel; de apps voor Android en iPhone komen binnenkort naar de stores.</p>
-    <a class="knop" href="https://app.sporten.app">Inloggen in de app</a>
+    <div class="stores">
+      <a class="badge" href="https://app.sporten.app" aria-label="Binnenkort in Google Play — tot die tijd opent deze knop de web-app">
+        <svg width="24" height="26" viewBox="0 0 24 26" aria-hidden="true"><path fill="#4ec3f7" d="M2 1.6v22.8c0 .5.5.8.9.5l.3-.2L16 13 3.2.4 2.9.2c-.4-.3-.9 0-.9.6z"/><path fill="#61d75f" d="M16 13 3.2.4l12.9 7.3 3.2 1.8z"/><path fill="#f4511e" d="M16 13 3.2 25.6l12.9-7.3 3.2-1.8z"/><path fill="#ffd54f" d="m19.3 9.5 3.6 2c.9.5.9 1.6 0 2.1l-3.6 2L16 13z"/></svg>
+        <span><small>Binnenkort in</small><b>Google Play</b></span>
+      </a>
+      <a class="badge" href="https://app.sporten.app" aria-label="Binnenkort in de App Store — tot die tijd opent deze knop de web-app">
+        <svg width="22" height="26" viewBox="0 0 22 26" aria-hidden="true"><path fill="currentColor" d="M15.5 13.8c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.8-2-1.6-.2-3.1 1-3.9 1s-2-1-3.4-1c-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.3 2.6 1.3-.1 1.8-.9 3.4-.9s2 .9 3.4.8c1.4 0 2.3-1.2 3.2-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.9-4zM12.9 5.9c.7-.9 1.2-2.1 1.1-3.3-1 0-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.2 1.1.1 2.3-.6 3-1.5z"/></svg>
+        <span><small>Binnenkort in de</small><b>App Store</b></span>
+      </a>
+    </div>
+  </div>
+</div></section>
+
+<section id="vragen"><div class="container">
+  <h2>Veelgestelde <mark>vragen</mark></h2>
+  <p class="sectie-intro">De antwoorden op wat clubs ons het vaakst vragen.</p>
+  <div class="faq">
+    <details><summary><h3>Wat kost Sporten.app?</h3></summary><p>Dat hangt af van de grootte van uw vereniging. Neem contact op, dan kijken we samen wat past.</p></details>
+    <details><summary><h3>Werkt de app op iPhone en Android?</h3></summary><p>Ja. De app werkt in de browser op elk toestel; de apps voor Android en iPhone komen binnenkort naar de stores.</p></details>
+    <details><summary><h3>Hoe komen onze leden in de app?</h3></summary><p>Leden maken zelf een account met hun e-mailadres en staan daarna direct in de ledenlijst van uw club.</p></details>
+    <details><summary><h3>Kunnen ouders hun kinderen aanmelden?</h3></summary><p>Ja. Ouders melden hun kinderen aan vanaf hun eigen account — één login voor het hele gezin.</p></details>
+    <details><summary><h3>Hoe zit het met privacy?</h3></summary><p>Uw ledengegevens zijn alleen zichtbaar binnen uw club en worden nooit gedeeld of verkocht. Zie de <a href="/privacy">privacyverklaring</a>.</p></details>
   </div>
 </div></section>
 
 <section class="contact" id="contact"><div class="container">
   <h2>Neem <mark>contact</mark> op</h2>
-  <p class="sectie-intro">Benieuwd wat Sporten.app voor uw vereniging kan betekenen, of heeft u een vraag over de app? Stuur een bericht of bel — u krijgt altijd persoonlijk antwoord.</p>
+  <p class="sectie-intro">Benieuwd wat Sporten.app voor uw vereniging kan betekenen, of heeft u een vraag over de app? Stuur een bericht of app — u krijgt altijd persoonlijk antwoord.</p>
   <div class="contact-rij">
     <div><h3>E-mail</h3><a href="mailto:info@sporten.app">info@sporten.app</a></div>
     <div><h3>WhatsApp / telefoon</h3><a href="https://wa.me/31625002228">+31 6 25 00 22 28</a></div>
-    <div><h3>Adres</h3><span>Veenkade 28, 2742 BM Waddinxveen</span></div>
   </div>
 </div></section>
 </main>

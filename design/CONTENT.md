@@ -22,8 +22,23 @@ Juridische pagina's komen later (#92).
 
 ## Navigatie (beide pagina's)
 
-Functies · Hoe het werkt · Contact · Privacy · **Portaal** (→ portal.sporten.app) ·
-**Inloggen** (→ app.sporten.app, uitgelicht)
+Functies · Hoe het werkt · Vragen · Contact · Privacy · **Inloggen ▾**
+
+"Inloggen" is één uitklapknop met twee duidelijk benoemde bestemmingen, zodat de bezoeker
+op rol kiest in plaats van op systeemnaam ("Portaal" naast "Inloggen" bleek verwarrend —
+beide zijn logins):
+
+- **Voor leden — open de app** → `https://app.sporten.app`
+- **Voor bestuur — beheerportaal** → `https://portal.sporten.app`
+
+Op mobiel klapt de volledige navigatie uit achter een hamburgerknop (CSS-only, geen
+JavaScript); er verdwijnen geen menu-opties meer.
+
+## Dark mode
+
+De site volgt automatisch de systeemvoorkeur via `prefers-color-scheme` (`color-scheme:
+light dark`). Elke variant heeft een licht én donker palet; de huisstijlkleuren
+`#f4511e`/`#40e0d0` blijven in beide gelijk.
 
 ## Koppenhiërarchie home
 
@@ -74,6 +89,13 @@ dagelijks nodig heeft zit in één app, voor bestuur, trainers en leden.
 | Ledenbeheer | Het bestuur beheert leden, rollen en gegevens in een eigen beheerportaal — veilig en AVG-proof. |
 | Voor het hele gezin | Ouders melden hun kinderen aan vanaf hun eigen account. Eén login voor het hele gezin. |
 
+### Storeknoppen
+
+In de sectie "Voor uw leden" staan twee badge-knoppen: **Google Play** en **App Store**.
+Zolang de apps nog niet gepubliceerd zijn (#77) tonen ze "Binnenkort in de …" en linken ze
+naar `https://app.sporten.app`; bij publicatie worden tekst en URL vervangen door de echte
+store-vermeldingen. Zo staat de plek in het ontwerp vast zonder dode storelinks.
+
 ### Hoe het werkt (h2)
 
 | h3 | Tekst |
@@ -90,15 +112,25 @@ dagelijks nodig heeft zit in één app, voor bestuur, trainers en leden.
 >
 > **CTA:** Inloggen in de app → `https://app.sporten.app`
 
+### Veelgestelde vragen (h2: Vragen, `<details>`-accordeon zonder JavaScript)
+
+| Vraag (h3 in `<summary>`) | Antwoord |
+|---|---|
+| Wat kost Sporten.app? | Dat hangt af van de grootte van uw vereniging. Neem contact op, dan kijken we samen wat past. |
+| Werkt de app op iPhone en Android? | Ja. De app werkt in de browser op elk toestel; de apps voor Android en iPhone komen binnenkort naar de stores. |
+| Hoe komen onze leden in de app? | Leden maken zelf een account met hun e-mailadres en staan daarna direct in de ledenlijst van uw club. |
+| Kunnen ouders hun kinderen aanmelden? | Ja. Ouders melden hun kinderen aan vanaf hun eigen account — één login voor het hele gezin. |
+| Hoe zit het met privacy? | Uw ledengegevens zijn alleen zichtbaar binnen uw club en worden nooit gedeeld of verkocht. Zie de privacyverklaring. |
+
 ### Contact (h2: Neem contact op)
 
 > Benieuwd wat Sporten.app voor uw vereniging kan betekenen, of heeft u een vraag over
-> de app? Stuur een bericht of bel — u krijgt altijd persoonlijk antwoord.
+> de app? Stuur een bericht of app — u krijgt altijd persoonlijk antwoord.
 >
 > - E-mail: info@sporten.app
 > - WhatsApp / telefoon: +31 6 25 00 22 28
-> - Veenkade 28, 2742 BM Waddinxveen
 
+Het postadres staat niet op de site — irrelevant voor een app en onnodig persoonlijk.
 Het contactformulier van de huidige site (mailto-constructie) vervalt; directe
 contactlinks werken op elk toestel en er is geen backend nodig.
 
@@ -124,7 +156,9 @@ vervangen die de gestileerde frames; de alt-teksten beschrijven dan het echte sc
 ## Wat bewust ontbreekt
 
 - **Prijssectie** — besluit bij dit ticket: geen prijzen op de site; contact is de CTA.
-- **Google Fonts, Maps-embed** — systeemfonts en een adresregel met link; geen externe
-  requests die IP-adressen doorgeven (AVG, V6 van het epic; raakt #92).
+- **Google Fonts, Maps-embed** — systeemfonts, geen kaart; geen externe requests die
+  IP-adressen doorgeven (AVG, V6 van het epic; raakt #92).
+- **Postadres** — irrelevant voor een app en onnodig persoonlijk; contact loopt via
+  e-mail en WhatsApp/telefoon.
 - **Referenties/klantlogo's** — er is nog geen klant die dat toestaat; toevoegen zodra
   dat kan.
