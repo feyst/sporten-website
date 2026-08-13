@@ -108,8 +108,13 @@ geheimhouding daarvan.
    informatie ter beschikking die redelijkerwijs nodig is om aan te tonen dat de
    verplichtingen uit deze overeenkomst worden nageleefd, en beantwoordt schriftelijke
    vragen daarover binnen 30 dagen.
-2. Partijen kiezen daarmee uitdrukkelijk voor schriftelijke verantwoording; een audit of
-   inspectie op locatie maakt geen deel uit van deze overeenkomst.
+2. Partijen kiezen schriftelijke verantwoording als uitgangspunt. Alleen wanneer die
+   verantwoording de Vereniging aantoonbaar onvoldoende zekerheid biedt, mag de
+   Vereniging een audit (laten) uitvoeren zoals bedoeld in artikel 28 lid 3 onder h AVG:
+   ten hoogste eenmaal per jaar, aangekondigd met een termijn van 30 dagen, tijdens
+   kantooruren, zonder onnodige verstoring van de dienstverlening en op kosten van de
+   Vereniging. De auditor is niet een directe concurrent van LightMedia en tekent voor
+   geheimhouding.
 
 ## Artikel 10 — Einde van de overeenkomst
 
@@ -148,7 +153,7 @@ inschrijvingen, clubchat, meldingen en beheer — in opdracht van de Vereniging.
 **Categorieën betrokkenen:** leden van de Vereniging, ouders/verzorgers van jeugdleden,
 trainers, vrijwilligers en bestuurders.
 
-**Soorten persoonsgegevens** (conform de privacyverklaring op sporten.app/privacy):
+**Soorten persoonsgegevens** (conform de privacyverklaring op [sporten.app/privacy](https://sporten.app/privacy)):
 
 | Gegeven | Doel |
 |---|---|
@@ -186,7 +191,7 @@ Wijzigingen in deze lijst verlopen via artikel 6.
 - Al het verkeer is versleuteld met TLS (HTTPS).
 - Wachtwoorden worden uitsluitend gehasht opgeslagen (bcrypt).
 - De database is versleuteld in rust (encryptie-at-rest).
-- Periodieke versleutelde back-ups met een beperkte retentietermijn.
+- Periodieke versleutelde back-ups; retentietermijn: **[RETENTIETERMIJN, bijv. 90 dagen]**.
 - Toegang tot het beheerportaal vereist tweestapsverificatie (TOTP).
 - Toegang tot productiesystemen is beperkt tot de beheerder en verloopt via versleutelde
   verbindingen.
