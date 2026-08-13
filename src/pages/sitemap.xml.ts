@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 
 // Door de build gegenereerde sitemap. Twee pagina's; komt er ooit een derde bij,
 // dan hoort die hier in het lijstje.
-const paginas = ['/', '/privacy/'];
+const paginas = ['/', '/privacy/', '/voorwaarden/'];
 
 export const GET: APIRoute = ({ site }) => {
   const vandaag = new Date().toISOString().slice(0, 10);
