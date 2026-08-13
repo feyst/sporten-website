@@ -1,7 +1,6 @@
 import type { APIRoute } from 'astro';
 
-// Door de build gegenereerde sitemap. Twee pagina's; komt er ooit een derde bij,
-// dan hoort die hier in het lijstje.
+// Door de build gegenereerde sitemap. Elke publieke pagina hoort in dit lijstje.
 const paginas = ['/', '/privacy/', '/voorwaarden/'];
 
 export const GET: APIRoute = ({ site }) => {
