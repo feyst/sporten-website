@@ -6,6 +6,9 @@ name: 📋 Ticketstatus op het board
 # Het ticketnummer komt uit de regel "Ticket: #NUMMER" in de PR-omschrijving.
 # Alle issues staan in feyst/sporten-api, ook voor werk in de andere repo's.
 #
+# Daarnaast wordt een PR zonder assignee aan de auteur toegewezen, zodat alle
+# openstaande PR's over de repo's heen op github.com/pulls/assigned staan.
+#
 # Vereist het secret BOARD_TOKEN: een fine-grained PAT met de account-permissie
 # "Projects: read and write". De GITHUB_TOKEN van Actions kan niet schrijven in
 # een user-owned project. Ontbreekt het secret, dan slaat deze workflow over
@@ -15,13 +18,35 @@ on:
   pull_request:
     types: [opened, reopened, ready_for_review, closed]
 
-permissions: {}
+permissions:
+  pull-requests: write
 
 jobs:
   board-status:
     name: Status bijwerken
     runs-on: ubuntu-latest
     steps:
+      - name: PR aan de auteur toewijzen
+        if: ${{ github.event.action != 'closed' && join(github.event.pull_request.assignees.*.login) == '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+        run: |
+          set -euo pipefail
+
+          TOEGEWEZEN=$(printf '{"assignees":["%s"]}' "${PR_AUTHOR}" \
+            | gh api "repos/${REPO}/issues/${PR_NUMBER}/assignees" --input - \
+              --jq '[.assignees[].login] | join(",")')
+
+          if [ -z "${TOEGEWEZEN}" ]; then
+            echo "::warning::PR #${PR_NUMBER} kon niet aan ${PR_AUTHOR} worden toegewezen."
+            exit 0
+          fi
+
+          echo "PR #${PR_NUMBER} toegewezen aan ${TOEGEWEZEN}."
+
       - name: Ticketstatus zetten
         env:
           GH_TOKEN: ${{ secrets.BOARD_TOKEN }}
