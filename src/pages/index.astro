@@ -6,12 +6,45 @@ import TriIllustratie from '../components/TriIllustratie.astro';
 import StoreBadges from '../components/StoreBadges.astro';
 
 const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+// Structured data voor Google: wie we zijn en wat de app is.
+const structuredData = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://sporten.app/#organisatie',
+      name: 'Sporten.app',
+      url: 'https://sporten.app/',
+      logo: 'https://sporten.app/img/icon.png',
+      email: 'info@sporten.app',
+      sameAs: [
+        'https://github.com/feyst/sporten-website',
+        'https://play.google.com/store/apps/details?id=app.sporten.app',
+        'https://apps.apple.com/nl/app/sporten/id6472296878',
+      ],
+    },
+    {
+      '@type': 'SoftwareApplication',
+      name: 'Sporten.app',
+      description:
+        'Ledenadministratie voor sportverenigingen: activiteitenagenda, inschrijvingen, clubchat, meldingen en ledenbeheer in één app.',
+      applicationCategory: 'SportsApplication',
+      operatingSystem: 'Web, Android, iOS',
+      url: 'https://app.sporten.app/',
+      inLanguage: 'nl',
+      installUrl: 'https://play.google.com/store/apps/details?id=app.sporten.app',
+      author: { '@id': 'https://sporten.app/#organisatie' },
+    },
+  ],
+});
 ---
 
 <Basis
   titel="Ledenadministratie voor uw sportclub | Sporten.app"
   beschrijving="Sporten.app regelt de ledenadministratie van uw sportclub: activiteiten, inschrijvingen en communicatie in één app voor bestuur, trainers en leden."
 >
+  <script type="application/ld+json" slot="kop" set:html={structuredData} />
   <div class="hero">
     <div class="container">
       <div>
