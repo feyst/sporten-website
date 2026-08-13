@@ -91,10 +91,10 @@ dagelijks nodig heeft zit in één app, voor bestuur, trainers en leden.
 
 ### Storeknoppen
 
-In de sectie "Voor uw leden" staan twee badge-knoppen: **Google Play** en **App Store**.
-Zolang de apps nog niet gepubliceerd zijn (#77) tonen ze "Binnenkort in de …" en linken ze
-naar `https://app.sporten.app`; bij publicatie worden tekst en URL vervangen door de echte
-store-vermeldingen. Zo staat de plek in het ontwerp vast zonder dode storelinks.
+In de sectie "Voor uw leden" staan twee badge-knoppen met de echte store-vermeldingen:
+
+- **Google Play** — "Ontdek het op Google Play" → https://play.google.com/store/apps/details?id=app.sporten.app
+- **App Store** — "Download in de App Store" → https://apps.apple.com/nl/app/sporten/id6472296878
 
 ### Hoe het werkt (h2)
 
@@ -107,8 +107,8 @@ store-vermeldingen. Zo staat de plek in het ontwerp vast zonder dode storelinks.
 ### Voor uw leden (h2)
 
 > Al lid van een club die Sporten.app gebruikt? Log in en u staat direct in de agenda
-> van uw vereniging. De app werkt in de browser op elk toestel; de apps voor Android en
-> iPhone komen binnenkort naar de stores.
+> van uw vereniging. De app werkt in de browser op elk toestel en staat als app in
+> Google Play en de App Store.
 >
 > **CTA:** Inloggen in de app → `https://app.sporten.app`
 
@@ -117,7 +117,7 @@ store-vermeldingen. Zo staat de plek in het ontwerp vast zonder dode storelinks.
 | Vraag (h3 in `<summary>`) | Antwoord |
 |---|---|
 | Wat kost Sporten.app? | Dat hangt af van de grootte van uw vereniging. Neem contact op, dan kijken we samen wat past. |
-| Werkt de app op iPhone en Android? | Ja. De app werkt in de browser op elk toestel; de apps voor Android en iPhone komen binnenkort naar de stores. |
+| Werkt de app op iPhone en Android? | Ja. De app werkt in de browser op elk toestel en staat als app in Google Play en de App Store. |
 | Hoe komen onze leden in de app? | Leden maken zelf een account met hun e-mailadres en staan daarna direct in de ledenlijst van uw club. |
 | Kunnen ouders hun kinderen aanmelden? | Ja. Ouders melden hun kinderen aan vanaf hun eigen account — één login voor het hele gezin. |
 | Hoe zit het met privacy? | Uw ledengegevens zijn alleen zichtbaar binnen uw club en worden nooit gedeeld of verkocht. Zie de privacyverklaring. |
