@@ -1,0 +1,59 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  titel: string;
+  beschrijving: string;
+}
+const { titel, beschrijving } = Astro.props;
+const jaar = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content={beschrijving} />
+  <meta name="author" content="Sporten.app" />
+  <title>{titel}</title>
+  <link rel="icon" type="image/png" href="/img/icon.png" />
+</head>
+<body>
+  <header class="site">
+    <div class="container nav">
+      <a class="logo" href="/">sporten<em>.app</em></a>
+      <input type="checkbox" id="menu" class="menu-check" aria-label="Menu openen" />
+      <label for="menu" class="hamburger" aria-hidden="true"><span></span><span></span><span></span></label>
+      <div class="links">
+        <ul>
+          <li><a href="/#functies">Functies</a></li>
+          <li><a href="/#hoe">Hoe het werkt</a></li>
+          <li><a href="/#vragen">Vragen</a></li>
+          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/privacy">Privacy</a></li>
+        </ul>
+        <details class="login">
+          <summary>Inloggen</summary>
+          <div class="keuze">
+            <a href="https://app.sporten.app"><b>Voor leden</b><small>Open de app — agenda en aanmelden</small></a>
+            <a href="https://portal.sporten.app"><b>Voor bestuur</b><small>Beheerportaal — leden en activiteiten</small></a>
+          </div>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© {jaar} Sporten.app</span>
+      <a href="/privacy">Privacy</a>
+      <a href="https://github.com/feyst/sporten-website">GitHub</a>
+    </div>
+  </footer>
+</body>
+</html>
