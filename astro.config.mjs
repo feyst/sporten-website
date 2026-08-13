@@ -6,4 +6,9 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: 'https://sporten.app',
   base: process.env.PREVIEW_BASE ?? '/',
+  build: {
+    // De volledige CSS is ~10 KB: inline scheelt een render-blokkerende request
+    // en de site heeft geen tweede pagina-bezoek dat van caching zou profiteren.
+    inlineStylesheets: 'always',
+  },
 });
