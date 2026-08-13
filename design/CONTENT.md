@@ -159,6 +159,8 @@ vervangen die de gestileerde frames; de alt-teksten beschrijven dan het echte sc
 - **Google Fonts, Maps-embed** — systeemfonts, geen kaart; geen externe requests die
   IP-adressen doorgeven (AVG, V6 van het epic; raakt #92).
 - **Postadres** — irrelevant voor een app en onnodig persoonlijk; contact loopt via
-  e-mail en WhatsApp/telefoon.
+  e-mail en WhatsApp/telefoon. Alleen de privacyverklaring noemt het vestigingsadres
+  van de verwerkingsverantwoordelijke: Overtoom 19, 2141 MS Waddinxveen (sinds
+  augustus 2026; voorheen Veenkade 28).
 - **Referenties/klantlogo's** — er is nog geen klant die dat toestaat; toevoegen zodra
   dat kan.
