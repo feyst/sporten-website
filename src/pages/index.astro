@@ -4,6 +4,8 @@ import AgendaTelefoon from '../components/AgendaTelefoon.astro';
 import ChatTelefoon from '../components/ChatTelefoon.astro';
 import TriIllustratie from '../components/TriIllustratie.astro';
 import StoreBadges from '../components/StoreBadges.astro';
+
+const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 
 <Basis
@@ -100,7 +102,7 @@ import StoreBadges from '../components/StoreBadges.astro';
         <details><summary><h3>Werkt de app op iPhone en Android?</h3></summary><p>Ja. De app werkt in de browser op elk toestel en staat als app in Google Play en de App Store.</p></details>
         <details><summary><h3>Hoe komen onze leden in de app?</h3></summary><p>Leden maken zelf een account met hun e-mailadres en staan daarna direct in de ledenlijst van uw club.</p></details>
         <details><summary><h3>Kunnen ouders hun kinderen aanmelden?</h3></summary><p>Ja. Ouders melden hun kinderen aan vanaf hun eigen account — één login voor het hele gezin.</p></details>
-        <details><summary><h3>Hoe zit het met privacy?</h3></summary><p>Uw ledengegevens zijn alleen zichtbaar binnen uw club en worden nooit gedeeld of verkocht. Zie de <a href="/privacy">privacyverklaring</a>.</p></details>
+        <details><summary><h3>Hoe zit het met privacy?</h3></summary><p>Uw ledengegevens zijn alleen zichtbaar binnen uw club en worden nooit gedeeld of verkocht. Zie de <a href={`${basis}privacy`}>privacyverklaring</a>.</p></details>
       </div>
     </div>
   </section>

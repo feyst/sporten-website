@@ -7,6 +7,8 @@ interface Props {
 }
 const { titel, beschrijving } = Astro.props;
 const jaar = new Date().getFullYear();
+// Op productie '/'; bij PR-previews het subpad op GitHub Pages (zie astro.config.mjs).
+const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 
 <!doctype html>
@@ -17,21 +19,21 @@ const jaar = new Date().getFullYear();
   <meta name="description" content={beschrijving} />
   <meta name="author" content="Sporten.app" />
   <title>{titel}</title>
-  <link rel="icon" type="image/png" href="/img/icon.png" />
+  <link rel="icon" type="image/png" href={`${basis}img/icon.png`} />
 </head>
 <body>
   <header class="site">
     <div class="container nav">
-      <a class="logo" href="/">sporten<em>.app</em></a>
+      <a class="logo" href={basis}>sporten<em>.app</em></a>
       <input type="checkbox" id="menu" class="menu-check" aria-label="Menu openen" />
       <label for="menu" class="hamburger" aria-hidden="true"><span></span><span></span><span></span></label>
       <div class="links">
         <ul>
-          <li><a href="/#functies">Functies</a></li>
-          <li><a href="/#hoe">Hoe het werkt</a></li>
-          <li><a href="/#vragen">Vragen</a></li>
-          <li><a href="/#contact">Contact</a></li>
-          <li><a href="/privacy">Privacy</a></li>
+          <li><a href={`${basis}#functies`}>Functies</a></li>
+          <li><a href={`${basis}#hoe`}>Hoe het werkt</a></li>
+          <li><a href={`${basis}#vragen`}>Vragen</a></li>
+          <li><a href={`${basis}#contact`}>Contact</a></li>
+          <li><a href={`${basis}privacy`}>Privacy</a></li>
         </ul>
         <details class="login">
           <summary>Inloggen</summary>
@@ -51,7 +53,7 @@ const jaar = new Date().getFullYear();
   <footer>
     <div class="container">
       <span>© {jaar} Sporten.app</span>
-      <a href="/privacy">Privacy</a>
+      <a href={`${basis}privacy`}>Privacy</a>
       <a href="https://github.com/feyst/sporten-website">GitHub</a>
     </div>
   </footer>
