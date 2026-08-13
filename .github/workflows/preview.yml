@@ -1,0 +1,44 @@
+name: 🔍 PR-preview
+# Bouwt de site bij elke PR en zet hem op GitHub Pages onder
+# /pr-preview/pr-<nummer>/; de action plaatst zelf een comment met de link
+# in de PR en ruimt de preview op zodra de PR sluit.
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+
+concurrency: preview-${{ github.ref }}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  preview:
+    name: Preview bijwerken
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node
+        if: github.event.action != 'closed'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: 📦 Install dependencies
+        if: github.event.action != 'closed'
+        run: npm ci
+
+      - name: 🔨 Build met preview-basispad
+        if: github.event.action != 'closed'
+        run: npm run build
+        env:
+          PREVIEW_BASE: /sporten-website/pr-preview/pr-${{ github.event.number }}/
+
+      - name: 🔍 Preview plaatsen of opruimen
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./dist/
