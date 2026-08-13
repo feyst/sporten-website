@@ -21,6 +21,9 @@ header.site{position:sticky;top:0;background:var(--nav-bg);backdrop-filter:blur(
 .nav{display:flex;align-items:center;gap:24px;min-height:64px;flex-wrap:wrap}
 .logo{font-weight:800;font-size:20px;letter-spacing:-.02em}
 .logo em{color:var(--rood);font-style:normal}
+/* Desktop: menu altijd zichtbaar, checkbox volledig weg (ook uit de tabvolgorde).
+   Mobiel (zie media query onderaan): alleen visueel verborgen, zodat het menu met
+   toetsenbord en screenreader bedienbaar blijft. */
 .menu-check{display:none}
 .hamburger{display:none;margin-left:auto;cursor:pointer;padding:10px;border-radius:8px}
 .hamburger span{display:block;width:22px;height:2.5px;background:var(--tekst);margin:4.5px 0;border-radius:2px}
@@ -118,6 +121,9 @@ footer a:hover{color:var(--tekst)}
  .kaarten,.stappen,.contact-rij{grid-template-columns:1fr}
  .hero-beeld{order:-1}
  .hamburger{display:block}
+ /* Checkbox alleen visueel verbergen: focusbaar met toetsenbord, spatie schakelt het menu. */
+ .menu-check{display:block;position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+ .menu-check:focus-visible ~ .hamburger{outline:2px solid var(--rood);outline-offset:2px}
  .links{display:none;flex-basis:100%;flex-direction:column;align-items:stretch;gap:0;padding:8px 0 16px}
  .menu-check:checked ~ .links{display:flex}
  .links ul{flex-direction:column;align-items:stretch;gap:0}
