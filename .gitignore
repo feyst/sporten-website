@@ -1,2 +1,7 @@
 .idea
 *:Zone.Identifier
+
+# Astro
+node_modules/
+dist/
+.astro/
