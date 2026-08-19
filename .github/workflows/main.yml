@@ -6,8 +6,15 @@ name: 🚀 Deploy website on push
 jobs:
   web-deploy:
     name: 🎉 Deploy
-    # Eigen runner in plaats van GitHubs machines; zie de andere sporten-repo's.
-    runs-on: [self-hosted, Linux, X64]
+    # Bewust GitHubs machine, in tegenstelling tot de andere sporten-repo's.
+    # Deze stap synct per FTPS naar de hosting, en vanaf de eigen runner komt
+    # die verbinding er niet: poort 21 naar de webserver wordt geweigerd
+    # (ECONNREFUSED, nagemeten vanaf de host én vanuit de runner, terwijl 443
+    # naar diezelfde server gewoon open is). Dat zit dus in het netwerk tussen
+    # thuis en de hosting, niet in de workflow. Verhuizen naar de eigen runner
+    # kan pas als die verbinding open is; tot die tijd zou het de publicatie
+    # van de live site stilleggen.
+    runs-on: ubuntu-latest
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
