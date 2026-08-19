@@ -7,7 +7,7 @@ jobs:
   web-deploy:
     name: 🎉 Deploy
     # Eigen runner in plaats van GitHubs machines; zie de andere sporten-repo's.
-    runs-on: self-hosted
+    runs-on: [self-hosted, Linux, X64]
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v4

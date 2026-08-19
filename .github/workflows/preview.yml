@@ -16,8 +16,15 @@ permissions:
 jobs:
   preview:
     name: Preview bijwerken
-    # Eigen runner in plaats van GitHubs machines; zie de andere sporten-repo's.
-    runs-on: self-hosted
+    # Bewust GitHubs machine en niet de eigen runner, in tegenstelling tot
+    # main.yml hiernaast. Deze repo is openbaar en forken staat aan, en dit is
+    # een `pull_request`-workflow: hij bouwt dus de code uit de PR. Op de eigen
+    # runner zou een wildvreemde PR daarmee code draaien op de machine thuis —
+    # en die runner deelt de docker-socket van de host, dus dat is geen
+    # sandbox maar de sleutel van het huis. De deploy in main.yml loopt wél
+    # over de eigen runner: die gaat alleen af op een push naar main, en daar
+    # komt geen forkcode in.
+    runs-on: ubuntu-latest
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
