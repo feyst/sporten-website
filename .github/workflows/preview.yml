@@ -16,7 +16,8 @@ permissions:
 jobs:
   preview:
     name: Preview bijwerken
-    runs-on: ubuntu-latest
+    # Eigen runner in plaats van GitHubs machines; zie de andere sporten-repo's.
+    runs-on: self-hosted
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
