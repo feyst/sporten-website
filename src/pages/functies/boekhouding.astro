@@ -1,0 +1,235 @@
+---
+import Basis from '../../layouts/Basis.astro';
+
+const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const titel = 'Boekhouding voor verenigingen | Sporten.app';
+const beschrijving =
+  'Boekhoudprogramma voor je sportvereniging: dubbel boekhouden, onwijzigbare boekstukken, doorlopende nummering, jaarafsluiting en een kascommissiedossier.';
+
+const vragen = [
+  {
+    v: 'Moeten we overstappen midden in het boekjaar?',
+    a: 'Nee. Er is een importcommando voor een lopend boekjaar: de mapping van je rekeningen, de beginbalans en de mutaties tot de overstapdatum worden geboekt langs dezelfde controles als een handmatige boeking. Je begint dus middenin het jaar, niet pas na de jaarwisseling.',
+  },
+  {
+    v: 'Kan onze kascommissie meekijken zonder dat ze iets kunnen wijzigen?',
+    a: 'Ja. De kascommissie krijgt een eigen rol met alleen de rechten die daarbij horen, benoemd per boekjaar — ze zien het jaar waarvoor ze zijn aangesteld en niet vanzelf de jaren erna. En omdat een geboekt stuk sowieso niet meer te wijzigen is, valt er ook niets te wijzigen als iemand dat zou willen.',
+  },
+  {
+    v: 'Krijgen we onze gegevens mee als we stoppen?',
+    a: 'Je staat nooit vast aan schermen die je zelf zou moeten overtypen. Balans en winst- en verliesrekening zijn op elk moment te exporteren, ook als je besluit te stoppen.',
+  },
+  {
+    v: 'Moet ik verstand hebben van boekhouden?',
+    a: 'Een beetje helpt, maar het hoeft niet je vak te zijn. Een declaratie of factuur wordt een voorstelboeking die je alleen nog hoeft goed te keuren, en het systeem accepteert geen boeking die niet in balans is. Wat een boekhoudpakket aan discipline van je vraagt, wordt hier voor een groot deel afgedwongen in plaats van dat jij het moet onthouden.',
+  },
+];
+
+const structuredData = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      name: titel,
+      description: beschrijving,
+      url: 'https://sporten.app/functies/boekhouding',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sporten.app/' },
+        { '@type': 'ListItem', position: 2, name: 'Functies', item: 'https://sporten.app/#functies' },
+        { '@type': 'ListItem', position: 3, name: 'Boekhouding', item: 'https://sporten.app/functies/boekhouding' },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: vragen.map(({ v, a }) => ({
+        '@type': 'Question',
+        name: v,
+        acceptedAnswer: { '@type': 'Answer', text: a },
+      })),
+    },
+  ],
+});
+---
+
+<Basis titel={titel} beschrijving={beschrijving}>
+  <script type="application/ld+json" slot="kop" set:html={structuredData} />
+
+  <div class="container kopblok"><div class="lees">
+    <p class="kruimels">
+      <a href={basis}>Home</a><span>/</span><a href={`${basis}#functies`}>Functies</a><span>/</span>Boekhouding
+    </p>
+
+    <h1>Boekhouding voor verenigingen</h1>
+    <p>
+      Bonnen komen per WhatsApp binnen, contributie wordt met de hand gefactureerd en met de hand
+      afgeletterd tegen het bankafschrift, en in december zet je de jaarrekening in elkaar uit een
+      spreadsheet die verder niemand begrijpt. Een kasboek in Excel is bovendien achteraf te
+      wijzigen — en dus niet te controleren. Precies op dat moment, als de kascommissie vraagt waar
+      een getal vandaan komt, ontdekt een bestuur dat het geen administratie heeft maar een
+      verzameling getallen.
+    </p>
+    <p>
+      Sporten.app vervangt dat kasboek door een echte boekhouding, met dezelfde regels als een
+      boekhoudpakket — maar aangesloten op de leden en activiteiten die je toch al bijhoudt.
+    </p>
+  </div></div>
+
+  <section>
+    <div class="container">
+      <p class="lint">Boekhouding</p>
+      <h2>Wat je krijgt</h2>
+      <p class="sectie-intro">De kern is dubbel boekhouden met een grootboek — niet een kasboek met een optelsom eronder.</p>
+      <div class="kaarten">
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6c-2-2-5-2-9-1v14c4-1 7-1 9 1 2-2 5-2 9-1V5c-4-1-7-1-9 1z"/><path d="M12 6v14"/></svg></div>
+          <h3>Dubbel boekhouden</h3>
+          <p>Een volwaardig grootboek, geen kasboek met een optelsom. Elke boeking raakt twee rekeningen en moet in balans zijn.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
+          <h3>Boekjaren</h3>
+          <p>Elk boekjaar is een eigen periode met een eigen beginbalans. Je opent en sluit ze zelf, wanneer het bestuur daar klaar voor is.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6h12M9 12h12M9 18h12"/><circle cx="4" cy="6" r="1.5"/><circle cx="4" cy="12" r="1.5"/><circle cx="4" cy="18" r="1.5"/></svg></div>
+          <h3>Doorlopende nummering</h3>
+          <p>Boekstukken, facturen en declaraties krijgen een nummer uit een reeks zonder gaten — een voorwaarde voor elke kascommissie.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+          <h3>Onwijzigbare boekstukken</h3>
+          <p>Een geboekt stuk pas je niet meer aan. Zie je een fout, dan draai je hem terug met een tegenboeking — net als in een echte boekhouding.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M10 20V4M16 20V14"/><path d="M2 20h20"/></svg></div>
+          <h3>Balans en winst-en-verliesrekening</h3>
+          <p>Altijd actueel, met export, zodat je niet pas in december weet hoe het jaar ervoor staat.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg></div>
+          <h3>Jaarafsluiting</h3>
+          <p>Sluit het boekjaar af als de cijfers kloppen. Daarna zit er een slot op — ook op de kostenplaatsen.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41 12 22l-9-9V4a1 1 0 0 1 1-1h9z"/><path d="M7 8h.01"/></svg></div>
+          <h3>Kostenplaatsen met rapport</h3>
+          <p>Splits kosten en baten per evenement of activiteit, en zie in één rapport wat elk ervan werkelijk heeft gekost.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".6" fill="currentColor"/></svg></div>
+          <h3>Begroting met budgetbewaking</h3>
+          <p>Zet een begroting neer per rekening of kostenplaats en zie gedurende het jaar hoe je ervoor staat.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/><path d="m9.5 13 1.5 1.5 3.5-3.5"/></svg></div>
+          <h3>Kascommissiedossier</h3>
+          <p>Alles wat een kascommissie nodig heeft voor de controle, gebundeld — niet losse exports die je zelf aan elkaar moet leggen.</p>
+        </div>
+      </div>
+      <!-- TODO: schermafbeelding rapporten (balans + W&V naast elkaar), zie opnamelijst ticket -->
+    </div>
+  </section>
+
+  <section class="vlak">
+    <div class="container"><div class="lees">
+      <h2>Een administratie die een controle doorstaat</h2>
+      <p>
+        Een spreadsheet is net zo betrouwbaar als de discipline van wie hem bijhoudt. Niets houdt je
+        tegen om een cel van vorige maand nog even aan te passen, en niemand ziet dat er iets is
+        veranderd. Een echte boekhouding werkt andersom: niet omdat mensen zich aan de regels
+        houden, maar omdat het systeem ze afdwingt.
+      </p>
+      <div class="aandacht">
+        <p>
+          <b>Een geboekt stuk is niet meer te wijzigen</b> — dat wordt afgedwongen in de database,
+          niet in een schermpje.
+        </p>
+      </div>
+      <p>
+        Facturen, declaraties en boekstukken krijgen een nummer uit een doorlopende reeks. Geen
+        factuur die is overgeslagen omdat iemand hem introk: een nummer dat wordt uitgegeven,
+        bestaat en telt mee.
+      </p>
+      <p>
+        Elke boeking moet in balans zijn voordat hij wordt geaccepteerd — debet en credit gelijk,
+        tot op de cent. Er bestaat geen registratie die er scheef in blijft staan.
+      </p>
+      <p>
+        En de kascommissie wordt benoemd per boekjaar, niet voor onbepaalde tijd. Ze zien het jaar
+        waarvoor ze zijn aangesteld en niet vanzelf ook de jaren erna — precies zoals een controle
+        hoort te werken.
+      </p>
+    </div></div>
+  </section>
+
+  <section>
+    <div class="container"><div class="lees">
+      <h2>Hoe het geld binnenkomt en weggaat</h2>
+      <p>De boekhouding staat niet los van de rest van de administratie. Zo komt het geld binnen en gaat het weer weg:</p>
+      <ul class="opsom">
+        <li>Contributie wordt gefactureerd en afgeletterd tegen het bankafschrift (CAMT.053, CAMT.052, MT940).</li>
+        <li>Een lid dient een declaratie in met een bonfoto; bedrag en datum worden eruit gelezen en er staat meteen een voorstelboeking klaar.</li>
+        <li>Een leverancier mailt naar de factuurpostbus van je vereniging, en zijn factuur wordt een concept-inkoopfactuur.</li>
+        <li>Trainersvergoedingen worden per periode vastgesteld en uitbetaald of verrekend met de contributiefactuur.</li>
+        <li>Uitbetalingen gaan in een SEPA-betaalbestand (pain.001) naar de bank.</li>
+      </ul>
+    </div></div>
+  </section>
+
+  <section class="vlak">
+    <div class="container"><div class="lees">
+      <h2>Overstappen kost je geen jaar</h2>
+      <p>
+        Een nieuw boekhoudpakket ophalen op 1 januari — dat is de gangbare aanname. Dat hoeft hier
+        niet. Er is een importcommando voor een lopend boekjaar: de mapping van je rekeningen, de
+        beginbalans en de mutaties tot de overstapdatum worden geboekt langs dezelfde controles als
+        een handmatige boeking, met dezelfde nummering en dezelfde balanscontrole. Overzetten zit
+        bij de <a href={`${basis}prijzen`}>prijs</a> in.
+      </p>
+    </div></div>
+  </section>
+
+  <section>
+    <div class="container"><div class="lees">
+      <h2>Wat het niet is</h2>
+      <p>Zodat er geen misverstand ontstaat in een demo:</p>
+      <ul class="opsom kruis">
+        <li>Geen koppeling met een sportbond.</li>
+        <li>Geen kantinekassa.</li>
+        <li>Geen webshop.</li>
+        <li>Geen salarisadministratie.</li>
+        <li>Geen aangifte omzetbelasting.</li>
+      </ul>
+    </div></div>
+  </section>
+
+  <section class="vlak">
+    <div class="container">
+      <h2>Vragen</h2>
+      <p class="sectie-intro">Wat penningmeesters ons over de boekhouding het vaakst vragen.</p>
+      <div class="faq">
+        {vragen.map(({ v, a }) => (
+          <details>
+            <summary><h3>{v}</h3></summary>
+            <p>{a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Aan de slag</h2>
+      <p class="sectie-intro">Benieuwd wat dit voor jouw vereniging kost, of wil je een concreet voorbeeld zien?</p>
+      <div class="cta-rij">
+        <a class="knop" href={`${basis}prijzen`}>Bekijk de prijzen</a>
+        <a class="knop rand" href="mailto:info@sporten.app">Stuur een e-mail</a>
+      </div>
+    </div>
+  </section>
+</Basis>
