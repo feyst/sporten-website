@@ -28,6 +28,11 @@ jobs:
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
+        with:
+          # Volledige historie: de sitemap leest per pagina de laatste
+          # git-wijzigingsdatum. Bij een ondiepe checkout dragen alle pagina's
+          # de datum van de laatste commit en is lastmod waardeloos.
+          fetch-depth: 0
 
       - name: 🟢 Setup Node
         if: github.event.action != 'closed'
