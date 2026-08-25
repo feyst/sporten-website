@@ -1,13 +1,51 @@
 ---
 import Basis from '../layouts/Basis.astro';
-import AgendaTelefoon from '../components/AgendaTelefoon.astro';
+import FinancienScherm from '../components/FinancienScherm.astro';
 import ChatTelefoon from '../components/ChatTelefoon.astro';
 import TriIllustratie from '../components/TriIllustratie.astro';
 import StoreBadges from '../components/StoreBadges.astro';
 
 const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
-// Structured data voor Google: wie we zijn en wat de app is.
+// Eén bron voor de vragen: hieruit komt zowel de zichtbare FAQ als de FAQPage-markup.
+// Google eist dat die twee gelijk zijn, en dat blijven ze alleen als ze niet twee keer
+// zijn overgetypt. De antwoorden mogen HTML bevatten; die gaat naar beide kanten.
+const vragen = [
+  {
+    vraag: 'Wat kost Sporten.app?',
+    antwoord: `Je betaalt naar het aantal leden, niet naar het aantal functies: € 149 per jaar tot 100 leden, € 299 tot 300 leden en € 549 tot 750 leden, allemaal exclusief btw. Alle functies zitten in elk abonnement. Zie <a href="${basis}prijzen">de prijzen</a>.`,
+  },
+  {
+    vraag: 'Moeten we alles gebruiken?',
+    antwoord:
+      'Nee. Veel clubs beginnen met de ledenlijst en de agenda en zetten de boekhouding pas aan als de penningmeester eraan toe is — of nooit. Je betaalt hetzelfde, en het staat klaar op de dag dat je het nodig hebt.',
+  },
+  {
+    vraag: 'Kunnen we midden in het boekjaar overstappen?',
+    antwoord:
+      'Ja. We zetten je lopende boekjaar over: beginbalans en mutaties worden ingelezen en langs dezelfde controles geboekt als handwerk, dus je administratie sluit aan op wat je al had. Overzetten zit bij de prijs in.',
+  },
+  {
+    vraag: 'Werkt de app op iPhone en Android?',
+    antwoord:
+      'Ja. De app werkt in de browser op elk toestel en staat als app in Google Play en de App Store.',
+  },
+  {
+    vraag: 'Hoe komen onze leden in de app?',
+    antwoord:
+      'Leden maken zelf een account met hun e-mailadres en staan daarna direct in de ledenlijst van je club. Ouders melden hun kinderen aan vanaf hun eigen account — één login voor het hele gezin.',
+  },
+  {
+    vraag: 'Wie mag wat zien?',
+    antwoord:
+      'Dat bepaal je zelf met rollen. Een penningmeester ziet de boekhouding, een trainer zijn deelnemers, en de kascommissie het boekjaar waarvoor ze benoemd is. Elke wijziging aan een rol komt in een logboek.',
+  },
+  {
+    vraag: 'Hoe zit het met privacy en de AVG?',
+    antwoord: `Je vereniging is verwerkingsverantwoordelijke, wij zijn verwerker; daar hoort een verwerkersovereenkomst bij en die ligt klaar. De gegevens staan op eigen servers in Nederland en de site zelf plaatst geen trackers. Zie <a href="${basis}avg">wat we voor de AVG geregeld hebben</a>.`,
+  },
+];
+
 const structuredData = JSON.stringify({
   '@context': 'https://schema.org',
   '@graph': [
@@ -28,86 +66,295 @@ const structuredData = JSON.stringify({
       '@type': 'SoftwareApplication',
       name: 'Sporten.app',
       description:
-        'Ledenadministratie voor sportverenigingen: activiteitenagenda, inschrijvingen, clubchat, meldingen en ledenbeheer in één app.',
-      applicationCategory: 'SportsApplication',
+        'Software voor de administratie van sportverenigingen: leden, contributie, boekhouding, declaraties en trainersvergoedingen, met een app waarin leden zich inschrijven voor activiteiten.',
+      applicationCategory: 'BusinessApplication',
       operatingSystem: 'Web, Android, iOS',
       url: 'https://app.sporten.app/',
       inLanguage: 'nl',
       installUrl: 'https://play.google.com/store/apps/details?id=app.sporten.app',
       author: { '@id': 'https://sporten.app/#organisatie' },
+      offers: {
+        '@type': 'AggregateOffer',
+        priceCurrency: 'EUR',
+        lowPrice: '149',
+        highPrice: '799',
+        offerCount: 4,
+        url: 'https://sporten.app/prijzen/',
+      },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: vragen.map((v) => ({
+        '@type': 'Question',
+        name: v.vraag,
+        acceptedAnswer: { '@type': 'Answer', text: v.antwoord },
+      })),
     },
   ],
 });
 ---
 
 <Basis
-  titel="Ledenadministratie voor uw sportclub | Sporten.app"
-  beschrijving="Sporten.app regelt de ledenadministratie van uw sportclub: activiteiten, inschrijvingen en communicatie in één app voor bestuur, trainers en leden."
+  titel="Verenigingssoftware: de hele administratie van je club | Sporten.app"
+  beschrijving="Leden, contributie, boekhouding, declaraties en trainersvergoedingen in één systeem, met een app waarin je leden zich inschrijven. Vanaf € 149 per jaar."
 >
   <script type="application/ld+json" slot="kop" set:html={structuredData} />
+
   <div class="hero">
     <div class="container">
       <div>
-        <h1>Ledenadministratie voor <span>uw sportclub</span></h1>
-        <p>Sporten.app regelt activiteiten, inschrijvingen en communicatie voor sportverenigingen. Uw leden zien in één app wat er te doen is en melden zich met één tik aan — u houdt als bestuur moeiteloos overzicht.</p>
+        <h1>De hele administratie van je vereniging.<br /><span>Van aanmelding tot jaarrekening.</span></h1>
+        <p>
+          Leden, contributie, boekhouding, declaraties en vergoedingen in één systeem — met een app waarin je
+          leden zich met één tik inschrijven. Alle functies zitten in elk abonnement. Je betaalt alleen naar
+          het aantal leden.
+        </p>
         <div class="cta-rij">
-          <a class="knop" href="#contact">Neem contact op</a>
-          <a class="knop rand" href="#functies">Bekijk de functies</a>
+          <a class="knop" href={`${basis}prijzen`}>Bekijk de prijzen</a>
+          <a class="knop rand" href="#functies">Wat zit erin?</a>
         </div>
       </div>
       <div class="hero-beeld">
-        <AgendaTelefoon />
+        <FinancienScherm />
       </div>
     </div>
   </div>
 
-  <section class="vlak" id="functies">
+  <section class="vlak" id="probleem">
     <div class="container">
-      <h2>Alles voor uw club in één app</h2>
-      <p class="sectie-intro">Geen losse mailtjes, appgroepen en spreadsheets meer — alles wat uw vereniging dagelijks nodig heeft zit in één app, voor bestuur, trainers en leden.</p>
+      <span class="lint">Het probleem</span>
+      <h2>Vier plekken, één vrijwilliger, geen overdracht</h2>
+      <p class="sectie-intro">
+        Het ledenbestand in Excel, de contributie in de bank, de bonnen in WhatsApp en de agenda in een
+        appgroep. Zolang dezelfde persoon het doet, gaat het goed. Daarna niet meer.
+      </p>
       <div class="kaarten">
         <div class="kaart">
-          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
-          <h3>Activiteitenagenda</h3>
-          <p>Trainingen, wedstrijden en clubactiviteiten in één overzicht, met locatie, tijd en beschikbare plekken.</p>
+          <h3>Excel, een schoenendoos en een avond per maand</h3>
+          <p>
+            Bonnen komen per WhatsApp binnen, contributie wordt met de hand gefactureerd en met de hand
+            afgeletterd tegen het bankafschrift.
+          </p>
         </div>
         <div class="kaart">
-          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div>
-          <h3>Inschrijvingen</h3>
-          <p>Leden melden zich met één tik aan of af. U ziet direct wie er komt en hoeveel plek er nog is.</p>
+          <h3>De vorige penningmeester is verhuisd</h3>
+          <p>
+            Het bestand stond op zijn laptop. Bij studentenverenigingen gebeurt dit elk jaar: de opvolger
+            begint met archeologie in plaats van met besturen.
+          </p>
         </div>
         <div class="kaart">
-          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8 8 0 0 1-8 8H4l2-3a8 8 0 1 1 15-5z"/></svg></div>
-          <h3>Clubchat</h3>
-          <p>Per activiteit of groep een eigen kanaal. Vragen, afmeldingen en updates blijven bij de activiteit — niet in tien appgroepen.</p>
+          <h3>&ldquo;Kun je laten zien waar dit vandaan komt?&rdquo;</h3>
+          <p>
+            Een kasboek in Excel is achteraf te wijzigen en dus niet te controleren. De kascommissie kan
+            alleen optellen wat haar wordt voorgelegd.
+          </p>
         </div>
         <div class="kaart">
-          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M10 21a2 2 0 0 0 4 0"/></svg></div>
-          <h3>Meldingen</h3>
-          <p>Training afgelast door het weer? Eén bericht van de trainer en iedereen weet het meteen.</p>
+          <h3>Het ledenbestand staat in vier appgroepen</h3>
+          <p>
+            Namen, geboortedata en adressen van minderjarigen in een spreadsheet die rondgemaild wordt. Het
+            bestuur is daar persoonlijk op aanspreekbaar.
+          </p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="functies">
+    <div class="container">
+      <span class="lint">Wat erin zit</span>
+      <h2>Eén systeem voor de hele vereniging</h2>
+      <p class="sectie-intro">
+        De ledenpakketten hebben geen boekhouding en de boekhoudpakketten hebben geen app. Hier zit alles in
+        hetzelfde ledenbestand.
+      </p>
+      <div class="kaarten">
         <div class="kaart">
           <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <h3>Ledenbeheer</h3>
-          <p>Het bestuur beheert leden, rollen en gegevens in een eigen beheerportaal — veilig en AVG-proof.</p>
+          <h3>Ledenadministratie</h3>
+          <p>Ledenlijst met filters, in- en uitschrijving, gezinsrelaties, oud-leden die je in één handeling terughaalt.</p>
         </div>
         <div class="kaart">
-          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.4-9.5-8.5C.6 9 2.5 5 6.5 5c2 0 3.5 1 4.5 2.5h2C14 6 15.5 5 17.5 5c4 0 5.9 4 4 7.5C19 16.6 12 21 12 21z"/></svg></div>
-          <h3>Voor het hele gezin</h3>
-          <p>Ouders melden hun kinderen aan vanaf hun eigen account. Eén login voor het hele gezin.</p>
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></div>
+          <h3>Contributie en facturen</h3>
+          <p>Tarieven met prijshistorie, facturen versturen, herinneringen, debiteurenouderdom en betalingen registreren.</p>
         </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></div>
+          <h3>Boekhouding</h3>
+          <p>Dubbel boekhouden met grootboek en boekjaren, nummering zonder gaten, balans en winst-en-verliesrekening, jaarafsluiting.</p>
+          <p class="verder"><a href={`${basis}functies/boekhouding`}>Lees hoe dat werkt →</a></p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 2v20l3-2 3 2 3-2 3 2 3-2V2l-3 2-3-2-3 2-3-2z"/><path d="M9 9h6M9 13h4"/></svg></div>
+          <h3>Declaraties</h3>
+          <p>Een lid dient in met een foto van de bon; bedrag, datum en IBAN worden eruit gelezen. Jij keurt goed op een voorstelboeking.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5.5 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.5-6.5A2 2 0 0 0 16.7 4H7.3a2 2 0 0 0-1.8 1.5z"/></svg></div>
+          <h3>Inkoopfacturen</h3>
+          <p>Je leverancier mailt naar een eigen adres van de club; dat wordt vanzelf een concept-inkoopfactuur in je administratie.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3>Trainersvergoedingen</h3>
+          <p>Uren uit de agenda, een tarief per trainer, een controleronde met de trainer zelf, en daarna vaststellen en uitbetalen.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-9-9v9z"/><path d="M15.5 3.5A9 9 0 0 1 20.5 8.5L12 12z"/></svg></div>
+          <h3>Kostenplaatsen en begroting</h3>
+          <p>Wat heeft het toernooi nu echt gekost? Kosten en baten per kostenplaats, met budgetbewaking en een rapport in pdf.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Rollen en rechten</h3>
+          <p>Achttien rechten en kant-en-klare rollen voor penningmeester, secretaris, bestuur en kascommissie. Met tweestapsverificatie en een logboek.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
+          <h3>De app voor je leden</h3>
+          <p>Agenda, inschrijven met één tik, chat per activiteit en pushmeldingen als er iets verandert. Op iPhone, Android en in de browser.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vlak" id="voor-wie">
+    <div class="container">
+      <span class="lint">Voor wie</span>
+      <h2>Drie mensen merken het verschil</h2>
+      <p class="sectie-intro">
+        Verenigingen van ongeveer 50 tot 750 leden die niet aan een bondspakket vastzitten — hardloop-,
+        triatlon-, wandel-, zwem-, fitness-, klim-, roei-, schaats- en studentensportverenigingen.
+      </p>
+      <div class="kaarten">
+        <div class="kaart">
+          <h3>De penningmeester</h3>
+          <p>
+            Bonnen komen binnen als declaratie in plaats van als appje. Het bankafschrift wordt ingelezen en
+            de mutaties worden aan facturen gekoppeld. De jaarrekening staat er al; die hoeft niet in december
+            in elkaar gezet te worden.
+          </p>
+        </div>
+        <div class="kaart">
+          <h3>De secretaris</h3>
+          <p>
+            Eén ledenbestand in plaats van vier appgroepen en een spreadsheet. Wie wat mag zien staat vast, en
+            de verwerkersovereenkomst ligt klaar in plaats van dat hij nog geschreven moet worden.
+          </p>
+        </div>
+        <div class="kaart">
+          <h3>De trainer</h3>
+          <p>
+            Zijn deelnemerslijst op zijn telefoon, één bericht naar de hele groep als het regent, en zijn
+            urenstaat die hij nakijkt en goedkeurt zonder dat iemand hoeft te tellen.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="vertrouwen">
+    <div class="container">
+      <span class="lint">Vertrouwen</span>
+      <h2>De AVG, met bewijs erbij</h2>
+      <p class="sectie-intro">
+        Er bestaat geen officieel AVG-keurmerk, dus we plakken er ook geen op. Wat er wél is, kun je nalezen.
+      </p>
+      <div class="zegels">
+        <a class="zegel" href={`${basis}avg`}>
+          <span class="merk" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <span>
+            <b>AVG geregeld</b>
+            <small>Verwerkersovereenkomst klaar, servers in eigen beheer in Nederland</small>
+            <span class="verder">Wat dat betekent →</span>
+          </span>
+        </a>
+        <a class="zegel" href={`${basis}avg`}>
+          <span class="merk" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M4.5 4.5l15 15"/></svg></span>
+          <span>
+            <b>Geen trackers</b>
+            <small>Geen analytics, geen cookies van derden, geen externe scripts of lettertypen</small>
+            <span class="verder">Meet het zelf na →</span>
+          </span>
+        </a>
+      </div>
+      <p class="voetnoot">
+        Zelfverklaard en na te lezen — geen keurmerk. De <a href={`${basis}verwerkersovereenkomst`}>verwerkersovereenkomst</a>,
+        de <a href={`${basis}privacy`}>privacyverklaring</a> en de subverwerkers met naam en land staan gewoon op deze site.
+      </p>
+    </div>
+  </section>
+
+  <section class="vlak" id="prijs">
+    <div class="container">
+      <span class="lint">Prijs</span>
+      <h2>Eén staffel, alles erin</h2>
+      <p class="sectie-intro">
+        Geen modules, geen kosten per factuur of per betaalbestand. Alle functies zitten in elk abonnement; de prijs
+        volgt het aantal leden dat in je eigen ledenadministratie meetelt.
+      </p>
+      <div class="staffels">
+        <div class="staffel">
+          <span class="naam">Klein</span>
+          <span class="omvang">t/m 100 leden</span>
+          <span class="bedrag">€ 149</span>
+          <span class="per">per jaar · excl. btw</span>
+          <span class="incl">€ 180,29 incl. btw</span>
+        </div>
+        <div class="staffel uitgelicht">
+          <span class="vlag">Aanbevolen</span>
+          <span class="naam">Vereniging</span>
+          <span class="omvang">101 – 300 leden</span>
+          <span class="bedrag">€ 299</span>
+          <span class="per">per jaar · excl. btw</span>
+          <span class="incl">€ 361,79 incl. btw · € 1,00 per lid</span>
+        </div>
+        <div class="staffel">
+          <span class="naam">Groot</span>
+          <span class="omvang">301 – 750 leden</span>
+          <span class="bedrag">€ 549</span>
+          <span class="per">per jaar · excl. btw</span>
+          <span class="incl">€ 664,29 incl. btw · € 0,73 per lid</span>
+        </div>
+        <div class="staffel">
+          <span class="naam">XL</span>
+          <span class="omvang">vanaf 751 leden</span>
+          <span class="bedrag">€ 0,70</span>
+          <span class="per">per lid per jaar · min. € 799</span>
+          <span class="incl">Zelfde functies, zelfde afspraken</span>
+        </div>
+      </div>
+      <div class="cta-rij prijs-cta">
+        <a class="knop" href={`${basis}prijzen`}>Alle prijzen en voorwaarden</a>
       </div>
     </div>
   </section>
 
   <section id="hoe">
     <div class="container">
-      <h2>Hoe het werkt</h2>
-      <p class="sectie-intro">Binnen een week draait uw vereniging op Sporten.app.</p>
+      <span class="lint">Hoe het werkt</span>
+      <h2>Binnen een week draait je vereniging erop</h2>
       <div class="stappen">
-        <div class="stap"><b>1</b><h3>Uw club aangemeld</h3><p>Wij richten de omgeving voor uw vereniging in en zetten het beheerportaal klaar voor het bestuur.</p></div>
-        <div class="stap"><b>2</b><h3>Leden nodigen zichzelf uit</h3><p>Leden maken een account met hun e-mailadres en staan direct in de ledenlijst van uw club.</p></div>
-        <div class="stap"><b>3</b><h3>Activiteiten lopen vanzelf</h3><p>Trainers zetten activiteiten klaar, leden schrijven zich in, en iedereen ziet hetzelfde overzicht.</p></div>
+        <div class="stap">
+          <b>1</b>
+          <h3>Je club aangemeld</h3>
+          <p>Wij richten de omgeving in en zetten het beheerportaal klaar voor het bestuur.</p>
+        </div>
+        <div class="stap">
+          <b>2</b>
+          <h3>Leden nodigen zichzelf uit</h3>
+          <p>Leden maken een account met hun e-mailadres en staan direct in de ledenlijst van je club.</p>
+        </div>
+        <div class="stap">
+          <b>3</b>
+          <h3>Wij zetten je boekhouding over</h3>
+          <p>
+            Je lopende boekjaar gaat mee: beginbalans en mutaties worden ingelezen en langs dezelfde controles
+            geboekt als handwerk. Zonder meerprijs.
+          </p>
+        </div>
       </div>
       <TriIllustratie />
     </div>
@@ -119,8 +366,16 @@ const structuredData = JSON.stringify({
         <ChatTelefoon />
       </div>
       <div>
-        <h2>Voor uw leden</h2>
-        <p>Al lid van een club die Sporten.app gebruikt? Log in en u staat direct in de agenda van uw vereniging. De app werkt in de browser op elk toestel en staat als app in Google Play en de App Store.</p>
+        <h2>Voor je leden</h2>
+        <p>
+          Je leden zien in één app wat er te doen is en melden zich met één tik aan. Per activiteit een eigen
+          chatkanaal, en een pushmelding als de training niet doorgaat. Ouders regelen het voor hun kinderen
+          vanaf hun eigen account.
+        </p>
+        <p>
+          Al lid van een club die Sporten.app gebruikt? Log in en je staat direct in de agenda van je
+          vereniging. De app werkt in de browser op elk toestel en staat in Google Play en de App Store.
+        </p>
         <StoreBadges />
       </div>
     </div>
@@ -131,11 +386,14 @@ const structuredData = JSON.stringify({
       <h2>Vragen</h2>
       <p class="sectie-intro">De antwoorden op wat clubs ons het vaakst vragen.</p>
       <div class="faq">
-        <details><summary><h3>Wat kost Sporten.app?</h3></summary><p>Dat hangt af van de grootte van uw vereniging. Neem contact op, dan kijken we samen wat past.</p></details>
-        <details><summary><h3>Werkt de app op iPhone en Android?</h3></summary><p>Ja. De app werkt in de browser op elk toestel en staat als app in Google Play en de App Store.</p></details>
-        <details><summary><h3>Hoe komen onze leden in de app?</h3></summary><p>Leden maken zelf een account met hun e-mailadres en staan daarna direct in de ledenlijst van uw club.</p></details>
-        <details><summary><h3>Kunnen ouders hun kinderen aanmelden?</h3></summary><p>Ja. Ouders melden hun kinderen aan vanaf hun eigen account — één login voor het hele gezin.</p></details>
-        <details><summary><h3>Hoe zit het met privacy?</h3></summary><p>Uw ledengegevens zijn alleen zichtbaar binnen uw club en worden nooit gedeeld of verkocht. Zie de <a href={`${basis}privacy`}>privacyverklaring</a>.</p></details>
+        {
+          vragen.map((v) => (
+            <details>
+              <summary><h3>{v.vraag}</h3></summary>
+              <p set:html={v.antwoord} />
+            </details>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -143,11 +401,53 @@ const structuredData = JSON.stringify({
   <section class="vlak" id="contact">
     <div class="container">
       <h2>Neem contact op</h2>
-      <p class="sectie-intro">Benieuwd wat Sporten.app voor uw vereniging kan betekenen, of heeft u een vraag over de app? Stuur een bericht of app — u krijgt altijd persoonlijk antwoord.</p>
+      <p class="sectie-intro">
+        Benieuwd wat Sporten.app voor je vereniging kan betekenen, of heb je een vraag over de app? Je krijgt
+        altijd persoonlijk antwoord.
+      </p>
       <div class="contact-rij">
-        <div class="kaart"><h3>E-mail</h3><p><a href="mailto:info@sporten.app">info@sporten.app</a></p></div>
-        <div class="kaart"><h3>WhatsApp / telefoon</h3><p><a href="https://wa.me/31625002228">+31 6 25 00 22 28</a></p></div>
+        <div class="kaart">
+          <h3>E-mail</h3>
+          <p><a href="mailto:info@sporten.app">info@sporten.app</a></p>
+        </div>
+        <div class="kaart">
+          <h3>WhatsApp / telefoon</h3>
+          <p><a href="https://wa.me/31625002228">+31 6 25 00 22 28</a></p>
+        </div>
+        <div class="kaart">
+          <h3>Een half uur videobellen</h3>
+          <p><a href="mailto:info@sporten.app?subject=Videobellen%20over%20Sporten.app">Plan een gesprek</a></p>
+        </div>
       </div>
     </div>
   </section>
 </Basis>
+
+<style>
+  /* De hero draagt nu een scherm in plaats van een telefoon: dat mag breder staan. */
+  .hero .container { align-items: center; }
+  .hero-beeld { justify-content: flex-end; }
+
+  /* Negen functiekaarten in plaats van zes: op ruime schermen drie kolommen, en de
+     kaart mag lager worden zonder dat de rij scheef gaat staan. */
+  .kaart .verder { margin-top: 10px; font-size: 14px; }
+  .kaart .verder a { color: var(--rood); font-weight: 600; }
+
+  .voetnoot { font-size: 14px; color: var(--dim); margin-top: 18px; max-width: 44em; }
+  .voetnoot a { color: var(--rood); }
+
+  .prijs-cta { margin-top: 24px; }
+
+  /* De probleemkaarten dragen geen ikoon, dus de kop mag direct bovenaan staan. */
+  #probleem .kaart h3 { font-size: 16px; margin-bottom: 8px; }
+
+
+  @media (max-width: 840px) {
+    .hero-beeld { justify-content: center; }
+    /* De oude hero zette de telefoon bovenaan; bij een dicht financieel scherm werkt
+       dat averechts, want dan opent de pagina met een plaatje dat je nog niet kunt
+       plaatsen. De belofte gaat voor, het bewijs komt eronder. */
+    .hero-beeld { order: 0; }
+    .hero { padding-top: 40px; }
+  }
+</style>

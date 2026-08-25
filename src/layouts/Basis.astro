@@ -34,7 +34,7 @@ const ogAfbeelding = new URL('/img/og.png', Astro.site).href;
   <meta property="og:image" content={ogAfbeelding} />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Sporten.app — ledenadministratie voor uw sportclub, met een telefoon die de activiteitenagenda toont" />
+  <meta property="og:image:alt" content="Sporten.app — de hele administratie van je vereniging, van aanmelding tot jaarrekening" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={titel} />
   <meta name="twitter:description" content={beschrijving} />
@@ -50,10 +50,10 @@ const ogAfbeelding = new URL('/img/og.png', Astro.site).href;
       <div class="links">
         <ul>
           <li><a href={`${basis}#functies`}>Functies</a></li>
-          <li><a href={`${basis}#hoe`}>Hoe het werkt</a></li>
+          <li><a href={`${basis}prijzen`}>Prijzen</a></li>
+          <li><a href={`${basis}avg`}>AVG</a></li>
           <li><a href={`${basis}#vragen`}>Vragen</a></li>
           <li><a href={`${basis}#contact`}>Contact</a></li>
-          <li><a href={`${basis}privacy`}>Privacy</a></li>
         </ul>
         <details class="login">
           <summary>Inloggen</summary>
@@ -75,6 +75,8 @@ const ogAfbeelding = new URL('/img/og.png', Astro.site).href;
       <span>© {jaar} Sporten.app</span>
       <a href={`${basis}privacy`}>Privacy</a>
       <a href={`${basis}voorwaarden`}>Voorwaarden</a>
+      <a href={`${basis}avg`}>AVG</a>
+      <a href={`${basis}verwerkersovereenkomst`}>Verwerkersovereenkomst</a>
       <a href="https://github.com/feyst/sporten-website">GitHub</a>
     </div>
   </footer>

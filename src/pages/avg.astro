@@ -1,0 +1,213 @@
+---
+import Basis from '../layouts/Basis.astro';
+
+const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const structuredData = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      name: 'AVG geregeld voor je vereniging | Sporten.app',
+      description:
+        'Hoe Sporten.app omgaat met de AVG voor de ledenadministratie van je sportvereniging: verwerkersovereenkomst, servers in Nederland, subverwerkers en beveiliging.',
+      url: 'https://sporten.app/avg',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sporten.app/' },
+        { '@type': 'ListItem', position: 2, name: 'AVG', item: 'https://sporten.app/avg' },
+      ],
+    },
+  ],
+});
+---
+
+<Basis
+  titel="AVG geregeld voor je vereniging | Sporten.app"
+  beschrijving="AVG voor de ledenadministratie van je sportvereniging: verwerkersovereenkomst, servers in Nederland, subverwerkers met naam en land, en beveiliging."
+>
+  <script type="application/ld+json" slot="kop" set:html={structuredData} />
+  <div class="container proza">
+    <p class="kruimels"><a href={basis}>Home</a><span>/</span>AVG</p>
+
+    <h1>AVG geregeld voor je vereniging</h1>
+    <p>
+      Bij de meeste verenigingen is het bestuur zich niet bewust dat het formeel
+      <b>verwerkingsverantwoordelijke</b> is voor de gegevens van de leden — en daar persoonlijk op
+      aanspreekbaar. Ondertussen staat het ledenbestand vaak verspreid over appgroepen, een
+      rondgemailde spreadsheet en het geheugen van de penningmeester. Dat is geen boze opzet, maar
+      het is wel precies waar het misgaat: niemand weet meer wie waar toegang toe heeft, en een
+      verzoek om gegevens te verwijderen verdwijnt in een mailbox. Deze pagina laat zien wat wij
+      daarvoor geregeld hebben, en wat er bij jouw vereniging zelf blijft liggen.
+    </p>
+
+    <div class="zegels">
+      <a class="zegel" href={`${basis}verwerkersovereenkomst`}>
+        <span class="merk" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        </span>
+        <span>
+          <b>AVG geregeld</b>
+          <small>verwerkersovereenkomst · servers in NL</small>
+          <span class="verder">wat dat betekent →</span>
+        </span>
+      </a>
+      <a class="zegel" href="#geen-trackers">
+        <span class="merk" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        </span>
+        <span>
+          <b>Geen trackers</b>
+          <small>geen cookies van derden, geen externe scripts</small>
+          <span class="verder">meet het zelf →</span>
+        </span>
+      </a>
+    </div>
+    <div class="aandacht">
+      <p>
+        Deze twee zegels zijn <b>zelfverklaard</b>, geen keurmerk. Er bestaat geen officieel AVG- of
+        GDPR-keurmerk, en de Autoriteit Persoonsgegevens waarschuwt expliciet voor misleidende
+        AVG-keurmerken. Wat er wél is: een verwerkersovereenkomst die je kunt lezen, servers die je
+        kunt benoemen, en een pagina die je kunt controleren. Het schild hierboven is geen
+        keurmerkvorm, maar verwijst naar hetzelfde vinkje-icoon als in de app.
+      </p>
+    </div>
+
+    <h2>Wat het bestuur zelf moet regelen</h2>
+    <p>
+      De AVG maakt onderscheid tussen twee rollen. Jouw vereniging is
+      <b>verwerkingsverantwoordelijke</b>: zij bepaalt waarom en met welk doel gegevens van leden
+      verwerkt worden, en is daar tegenover leden en toezichthouder verantwoordelijk voor. Wij zijn
+      <b>verwerker</b>: wij verwerken die gegevens uitsluitend in opdracht van de vereniging, via de
+      Dienst. Die twee rollen kun je niet bij ons wegleggen — een aantal dingen hoort bij het
+      bestuur te blijven:
+    </p>
+    <ul class="opsom">
+      <li>Een verwerkersovereenkomst met ons afsluiten en ondertekenen — dat is wat verderop op deze pagina staat.</li>
+      <li>Zelf bepalen welke gegevens nodig zijn en die niet breder uitvragen dan nodig.</li>
+      <li>Leden informeren over hoe hun gegevens gebruikt worden, bijvoorbeeld via een eigen privacyverklaring van de vereniging.</li>
+      <li>Verzoeken van leden over hun gegevens afhandelen — inzage, correctie, verwijderen. Wij helpen daarbij, maar de vereniging blijft het aanspreekpunt.</li>
+      <li>Een datalek dat de vereniging raakt, zo nodig zelf melden bij de Autoriteit Persoonsgegevens.</li>
+    </ul>
+    <p>
+      Dit is geen kleine lijst, en we verzachten hem niet: wie AVG-verantwoordelijkheid volledig bij
+      een leverancier wil neerleggen, komt bedrogen uit — bij ons en bij iedere andere partij.
+    </p>
+
+    <h2>De verwerkersovereenkomst</h2>
+    <p>
+      Artikel 28 van de AVG verplicht een schriftelijke afspraak tussen verwerkingsverantwoordelijke
+      en verwerker. Die overeenkomst staat op de website, zodat je hem kunt lezen vóórdat je iets
+      ondertekent, en is in te vullen op naam van je eigen vereniging. Je vindt hem op de pagina
+      <a href={`${basis}verwerkersovereenkomst`}>verwerkersovereenkomst</a>.
+    </p>
+
+    <h2>Waar de gegevens staan</h2>
+    <p>
+      De applicatie en de database draaien op <b>eigen servers in Nederland</b> — geen
+      hostingpartij ertussen. Dat is ongebruikelijk in deze markt: de meeste software voor
+      verenigingen draait bij een clouddienst buiten de Europese Unie, of bij een hostingpartij die
+      op zijn beurt weer bij zo'n clouddienst zit. Bij ons is er één partij die de servers beheert,
+      en dat zijn wij.
+    </p>
+
+    <h2>Subverwerkers, met naam en land</h2>
+    <p>
+      Voor drie onderdelen schakelen wij een subverwerker in. De onderstaande tabel toont wie dat
+      is, waarvoor, in welk land de verwerking plaatsvindt en welke waarborg daarbij hoort.
+    </p>
+    <div class="tabelwikkel">
+      <table class="data">
+        <caption class="sr-only">Subverwerkers van Sporten.app, met doel, locatie en waarborg</caption>
+        <thead>
+          <tr>
+            <th scope="col">Subverwerker</th>
+            <th scope="col">Doel</th>
+            <th scope="col">Locatie</th>
+            <th scope="col">Waarborg</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cloudflare, Inc.</td>
+            <td>Netwerkverkeer en beveiligingsproxy voor app, API en portaal (ziet IP-adressen)</td>
+            <td>EU/VS</td>
+            <td>EU-VS Data Privacy Framework / standaardcontractbepalingen</td>
+          </tr>
+          <tr>
+            <td>Google Ireland Ltd. (Firebase Cloud Messaging)</td>
+            <td>Pushmeldingen in de webbrowser (pushtoken, meldingsinhoud)</td>
+            <td>EU/VS</td>
+            <td>EU-VS Data Privacy Framework / standaardcontractbepalingen</td>
+          </tr>
+          <tr>
+            <td>Expo (650 Industries, Inc.)</td>
+            <td>Pushmeldingen in de apps op Android en iPhone (pushtoken, meldingsinhoud)</td>
+            <td>VS</td>
+            <td>Standaardcontractbepalingen</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      E-mail versturen wij via een eigen mailserver, niet via een externe maildienst — dat is dus
+      geen subverwerker. Deze lijst is voor het laatst gecontroleerd op <b>25 augustus 2026</b>.
+    </p>
+
+    <h2>Beveiliging</h2>
+    <ul class="opsom">
+      <li>Al het verkeer is versleuteld met TLS (HTTPS).</li>
+      <li>Wachtwoorden worden uitsluitend gehasht opgeslagen (bcrypt).</li>
+      <li>De database is versleuteld in rust (encryptie-at-rest).</li>
+      <li>Periodieke versleutelde back-ups, met een bewaartermijn van 90 dagen.</li>
+      <li>Toegang tot het beheerportaal vereist tweestapsverificatie (TOTP).</li>
+      <li>Toegang tot productiesystemen is beperkt tot de beheerder en verloopt via versleutelde verbindingen.</li>
+      <li>Autorisatie in de Dienst is per vereniging gescheiden: gegevens van de ene club zijn niet zichtbaar voor een andere.</li>
+      <li>Systemen en afhankelijkheden worden actueel gehouden.</li>
+    </ul>
+
+    <h2>Rechten van leden</h2>
+    <p>
+      Elk lid heeft recht op inzage, correctie, verwijdering en een export van zijn eigen gegevens.
+      Een deel daarvan regelt een lid zelf, direct in de app; voor de rest is de vereniging het
+      aanspreekpunt.
+    </p>
+    <div class="aandacht">
+      <p>
+        <b>Eerlijk gezegd:</b> een verzoek van een lid handelt de vereniging af, niet wij. Wij
+        helpen daarbij — bijvoorbeeld door gegevens aan te leveren of te verwijderen op verzoek van
+        het bestuur — maar het aanspreekpunt voor een lid is en blijft zijn eigen vereniging. Veel
+        verzoeken kan het bestuur overigens gewoon zelf afhandelen in het beheerportaal, zonder ons
+        erbij nodig te hebben.
+      </p>
+    </div>
+
+    <h2 id="geen-trackers">Wat wij niet doen</h2>
+    <ul class="opsom kruis">
+      <li>Geen advertenties.</li>
+      <li>Geen doorverkoop van gegevens aan derden.</li>
+      <li>Geen analytics-trackers.</li>
+      <li>Geen Google Fonts.</li>
+      <li>Geen kaart-embeds.</li>
+    </ul>
+    <p>
+      Dat is geen slogan die je op ons woord hoeft te geloven: deze website laadt geen enkel extern
+      lettertype, script of ingesloten venster. Open de netwerktab van je browser op een willekeurige
+      pagina van sporten.app en je ziet geen verzoek naar een andere partij dan sporten.app zelf.
+    </p>
+
+    <p>
+      Meer lezen: <a href={`${basis}privacy`}>privacyverklaring</a>,
+      <a href={`${basis}voorwaarden`}>gebruiksvoorwaarden</a> en de
+      <a href={`${basis}verwerkersovereenkomst`}>verwerkersovereenkomst</a>.
+    </p>
+
+    <p><i>Laatst herzien: 25 augustus 2026.</i></p>
+  </div>
+</Basis>
+
+<style>
+  .sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+</style>
