@@ -441,12 +441,6 @@ const structuredData = JSON.stringify({
   /* De probleemkaarten dragen geen ikoon, dus de kop mag direct bovenaan staan. */
   #probleem .kaart h3 { font-size: 16px; margin-bottom: 8px; }
 
-  /* Vier kaarten in het standaardraster van drie laat er één alleen achter op de
-     tweede rij. De ondergrens staat er bewust bij: zonder die grens wint deze regel
-     het ook van de mobiele terugval naar één kolom in global.css. */
-  @media (min-width: 841px) {
-    #probleem .kaarten { grid-template-columns: repeat(2, 1fr); }
-  }
 
   @media (max-width: 840px) {
     .hero-beeld { justify-content: center; }
