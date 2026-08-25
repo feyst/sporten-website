@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Sjabloon deelafbeelding sporten.app</title>
+<!--
+  Sjabloon voor public/img/og.png (1200x630), de afbeelding die verschijnt als iemand
+  een link naar sporten.app deelt. Opnieuw maken:
+
+      node design/og/maak-og.cjs
+
+  Waarom een sjabloon en geen los bestand: de vorige deelafbeelding beloofde nog
+  "Ledenadministratie voor uw sportclub" terwijl de site inmiddels de hele
+  administratie verkoopt. Een plaatje dat je niet kunt herzien, veroudert stilletjes.
+-->
+<style>
+  @font-face { font-family: none; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: linear-gradient(135deg, #f4511e 0%, #d63c0e 55%, #b8330b 100%);
+    color: #fff; display: flex; align-items: center;
+  }
+  .bol {
+    position: absolute; left: -180px; top: -120px; width: 820px; height: 820px;
+    border-radius: 50%; background: rgba(255, 255, 255, .07);
+  }
+  .in { position: relative; display: flex; align-items: center; gap: 56px; padding: 0 72px; width: 100%; }
+  .tekst { flex: 1 1 auto; min-width: 0; }
+  .logo { font-size: 44px; font-weight: 800; letter-spacing: -.02em; margin-bottom: 26px; }
+  .logo span { background: #fff; color: #f4511e; border-radius: 10px; padding: 2px 12px; }
+  h1 { font-size: 52px; line-height: 1.08; letter-spacing: -.025em; font-weight: 800; }
+  h1 em { font-style: normal; display: block; color: #ffd9cc; }
+  p { margin-top: 22px; font-size: 24px; line-height: 1.42; color: rgba(255, 255, 255, .92); max-width: 20em; }
+
+  /* Het scherm rechts: dezelfde kentallen als de voorbeeldweergave op de site, zodat
+     de gedeelde link hetzelfde belooft als de pagina erachter. */
+  .scherm { flex: none; width: 400px; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 28px 60px rgba(0, 0, 0, .28); color: #1e2430; }
+  .balk { background: #f6f7f9; border-bottom: 1px solid #eceef1; padding: 12px 16px; font-size: 13px; font-weight: 700; }
+  .body { padding: 16px; }
+  .kop { font-size: 15px; font-weight: 800; margin-bottom: 12px; }
+  .kaartjes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+  .kaartjes div { background: #f6f7f9; border: 1px solid #eceef1; border-radius: 10px; padding: 10px 12px; }
+  .kaartjes small { display: block; font-size: 10px; color: #5b6472; text-transform: uppercase; letter-spacing: .06em; }
+  .kaartjes b { font-size: 19px; }
+  .groen { color: #1c7247; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  td { padding: 6px 0; border-bottom: 1px solid #eceef1; }
+  tr:last-child td { border-bottom: 0; }
+  .bedrag { text-align: right; font-variant-numeric: tabular-nums; }
+  .dim { color: #5b6472; }
+</style>
+</head>
+<body>
+  <div class="bol"></div>
+  <div class="in">
+    <div class="tekst">
+      <div class="logo">sporten<span>.app</span></div>
+      <h1>De hele administratie<br>van je vereniging.<em>Van aanmelding tot jaarrekening.</em></h1>
+      <p>Leden, contributie, boekhouding, declaraties en vergoedingen in één systeem — plus de app voor je leden.</p>
+    </div>
+    <div class="scherm">
+      <div class="balk">Financiën — boekjaar 2026</div>
+      <div class="body">
+        <div class="kaartjes">
+          <div><small>Banksaldo</small><b>€ 24.318</b></div>
+          <div><small>Nog te ontvangen</small><b>€ 3.905</b></div>
+          <div><small>Resultaat</small><b class="groen">€ 6.142</b></div>
+          <div><small>Openstaand werk</small><b>5</b></div>
+        </div>
+        <div class="kop">Laatste boekingen</div>
+        <table>
+          <tr><td>Contributie kwartaal 3</td><td class="bedrag">€ 8.240,00</td></tr>
+          <tr><td>Declaratie · zaalhuur</td><td class="bedrag">€ 312,50</td></tr>
+          <tr><td>Inkoopfactuur · Sportshop</td><td class="bedrag">€ 1.084,60</td></tr>
+          <tr><td>Trainersvergoeding</td><td class="bedrag">€ 640,00</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

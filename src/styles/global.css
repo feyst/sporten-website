@@ -162,58 +162,81 @@ footer a:hover{color:var(--tekst)}
  .login .keuze{position:static;box-shadow:none;margin-top:8px;min-width:0}
 }
 
-/* Papier. Marges en paginanummers komen uit bin/maak-pdf.mjs, niet hieruit:
-   Chromium kent geen CSS-paginanummers. Hier staat alleen de typografie. */
-@media print{
- header.site,footer,.download{display:none}
- body{background:#fff;color:#000;font-size:10.5pt;line-height:1.5}
- .proza{max-width:none;padding:0}
+/* ===== gedeelde bouwstenen voor de pagina's uit het positioneringsvoorstel =====
+   Alleen wat op meerdere pagina's terugkomt staat hier; wat één pagina nodig heeft
+   staat in een scoped <style> in die pagina zelf (Astro schermt dat af). */
 
- /* Kop van de eerste pagina: merkregel met een streep eronder. Op het scherm
-    verbergt .merk zichzelf, want daar staat de nav er al. */
- .merk{display:block;font-weight:800;font-size:14pt;letter-spacing:-.02em;color:#000;
-       margin:0 0 4pt;padding-bottom:6pt;border-bottom:1pt solid #ddd}
- .merk em{color:#f4511e;font-style:normal}
+/* kruimelpad — nodig zodra de URL's nesten (/functies/…) */
+.kruimels{font-size:13px;color:var(--dim);padding-top:24px}
+.kruimels a{color:var(--dim);text-decoration:underline;text-underline-offset:2px}
+.kruimels a:hover{color:var(--rood)}
+.kruimels span{margin:0 6px;opacity:.6}
 
- .proza p,.proza li,.proza th,.proza td{color:#000;font-size:10.5pt}
- .proza p,.proza li{orphans:3;widows:3}
- .proza li{break-inside:avoid;margin:3pt 0}
- .proza ol,.proza ul{margin:7pt 0;padding-left:16pt}
- .proza h1{font-size:19pt;margin:10pt 0 12pt;break-after:avoid}
- .proza h2{font-size:12.5pt;margin:15pt 0 5pt;break-after:avoid}
- .proza h3{font-size:11pt;margin:12pt 0 4pt;break-after:avoid}
+/* bovenkopje boven een sectiekop */
+.lint{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rood);margin-bottom:10px}
 
- .proza table{display:table;width:100%;margin:8pt 0;font-size:9pt}
- /* Loopt een tabel over een paginagrens, dan hoort de kop mee te lopen —
-    zonder dat staat de tweede helft van de subverwerkerslijst zonder koppen. */
- .proza thead{display:table-header-group}
- .proza tr{break-inside:avoid}
- .proza th,.proza td{padding:5pt 7pt}
- /* Op het scherm houdt nowrap de koppen op één regel; op papier moeten ze juist
-    kunnen afbreken, anders bepaalt de langste kop de kolombreedte. */
- .proza th{white-space:normal}
- /* Alleen de subverwerkerslijst heeft vier kolommen; de wijzigingstabellen er
-    drie en bijlage 1 twee. Zonder vaste breedtes deelt Chromium de ruimte naar
-    tekstlengte, en dan wordt "Waar, en met welke waarborg" twee keer zo breed
-    als "Waarvoor". */
- .proza table:has(th:nth-child(4)){table-layout:fixed}
- .proza table:has(th:nth-child(4)) th:nth-child(1){width:19%}
- .proza table:has(th:nth-child(4)) th:nth-child(2){width:21%}
- .proza table:has(th:nth-child(4)) th:nth-child(3){width:27%}
- .proza table:has(th:nth-child(4)) th:nth-child(4){width:33%}
- /* Met een vaste kolombreedte loopt "standaardcontractbepalingen" de cel uit.
-    Afbreken met een koppelteken (de pagina staat op lang="nl"), niet met
-    overflow-wrap: dat knipt midden in het woord zonder streepje. */
- .proza td{hyphens:auto}
- .proza th{hyphens:manual}
+/* opsomming met vinkjes — "wat er altijd in zit", "wat we niet zijn" */
+.opsom{list-style:none;display:grid;gap:10px;margin:18px 0}
+.opsom li{position:relative;padding-left:28px;color:var(--dim)}
+.opsom li::before{content:"";position:absolute;left:0;top:.55em;width:14px;height:8px;border-left:2.5px solid var(--rood);border-bottom:2.5px solid var(--rood);transform:rotate(-45deg)}
+.opsom.kruis li::before{content:"";width:12px;height:12px;top:.45em;border:0;background:
+  linear-gradient(45deg,transparent 44%,var(--dim) 44%,var(--dim) 56%,transparent 56%),
+  linear-gradient(-45deg,transparent 44%,var(--dim) 44%,var(--dim) 56%,transparent 56%);transform:none}
 
- .proza a{color:#000;text-decoration:none}
- .proza hr{break-before:page;border:0;margin:0}
- /* De laatste scheiding staat overal vlak vóór "Overzicht van wijzigingen". Die
-    tabel is één regel lang; een eigen pagina ervoor levert een vrijwel lege
-    bladzijde op. De breuk vóór bijlage 1 blijft wél staan. */
- .proza hr:last-of-type{break-before:auto;border-top:1pt solid #ddd;margin:16pt 0}
- /* De versieregel blijft juist wél staan: samen met de voettekst is dat het
-    enige wat zegt welke versie iemand in handen heeft. */
- .versie{margin-top:18pt;padding-top:6pt;border-top:1pt solid #ddd;font-size:9.5pt;color:#555}
-}
+/* uitgelicht kader — nuance, waarschuwing, kanttekening */
+.aandacht{border:1px solid var(--rand);border-left:3px solid var(--rood);background:var(--kaart);border-radius:10px;padding:18px 20px;margin:24px 0}
+.aandacht p{color:var(--dim);font-size:15px}
+.aandacht b{color:var(--tekst)}
+
+/* tabel die op mobiel horizontaal scrollt in plaats van de pagina te verbreden */
+.tabelwikkel{overflow-x:auto;margin:24px 0;border:1px solid var(--rand);border-radius:12px}
+table.data{border-collapse:collapse;width:100%;min-width:520px;font-size:15px;background:var(--kaart)}
+table.data th,table.data td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--rand);vertical-align:top}
+table.data th{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--dim);font-weight:700;white-space:nowrap}
+table.data tr:last-child td{border-bottom:0}
+table.data td.nadruk,table.data tr.nadruk td{background:var(--tint);font-weight:600;color:var(--tekst)}
+table.data .getal{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* vertrouwenszegels — zelfverklaard, klikbaar naar bewijs; nadrukkelijk geen keurmerkvorm */
+.zegels{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px}
+.zegel{display:flex;gap:14px;align-items:flex-start;background:var(--kaart);border:1px solid var(--rand);border-radius:12px;padding:16px 20px;min-width:250px;flex:1 1 250px}
+.zegel .merk{flex:none;width:38px;height:38px;border-radius:10px;background:var(--tint);color:var(--rood);display:flex;align-items:center;justify-content:center}
+.zegel b{display:block;font-size:15px;color:var(--tekst)}
+.zegel small{display:block;font-size:13px;color:var(--dim);line-height:1.45}
+.zegel .verder{font-size:13px;color:var(--rood);font-weight:600;margin-top:4px;display:inline-block}
+.zegel:hover{border-color:var(--rood)}
+
+/* prijsstaffels */
+.staffels{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:stretch}
+.staffel{background:var(--kaart);border:1px solid var(--rand);border-radius:14px;padding:24px 22px;display:flex;flex-direction:column}
+.staffel.uitgelicht{border-color:var(--rood);box-shadow:0 8px 24px rgba(244,81,30,.14)}
+.staffel .naam{font-size:17px;font-weight:700}
+.staffel .omvang{font-size:13px;color:var(--dim);margin-bottom:14px}
+.staffel .bedrag{font-size:34px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.staffel .per{font-size:13px;color:var(--dim);margin-bottom:12px}
+.staffel .incl{font-size:13px;color:var(--dim);border-top:1px solid var(--rand);padding-top:12px;margin-top:auto}
+.staffel .vlag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--rood);border-radius:999px;padding:3px 10px;margin-bottom:8px}
+
+@media(max-width:980px){.staffels{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.staffels{grid-template-columns:1fr}}
+
+/* Leeskolom die links uitlijnt met de rest van de pagina.
+   `.proza` centreert zichzelf (het ís een smallere `.container`) en dat klopt op een
+   pagina die alleen tekst draagt. Op een pagina die tekstblokken afwisselt met
+   kaarten of tabellen op volle breedte springt de linkerkantlijn daardoor heen en
+   weer; `.lees` houdt dezelfde leesbreedte maar begint waar de container begint. */
+.lees{max-width:760px}
+.lees h2{overflow-wrap:break-word}
+.lees p,.lees li{color:var(--dim)}
+.lees h2{font-size:22px;margin:32px 0 8px}
+.lees h2:first-child{margin-top:0}
+.lees h3{font-size:17px;margin:22px 0 6px}
+.lees ul:not(.opsom){padding-left:22px;margin:10px 0}
+.lees a{color:var(--rood)}
+
+/* Het openingsblok van een pagina staat direct onder de vaste navigatie en heeft daar
+   eigen ruimte nodig. `.proza` droeg die padding zelf; `.lees` niet, want die kan ook
+   middenin een pagina staan waar de sectie de ruimte al levert. */
+.kopblok{padding-top:56px;padding-bottom:4px}
+.lees h1{font-size:clamp(28px,4vw,40px);margin-bottom:16px}
+.lees .kruimels{padding-top:0;margin-bottom:12px}
