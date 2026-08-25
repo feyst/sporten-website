@@ -1,0 +1,156 @@
+---
+// Voorbeeldweergave van het beheerportaal (mockup 1 uit het positioneringsvoorstel).
+// TIJDELIJK: dit hoort vervangen te worden door een echte schermafbeelding uit de
+// Playwright-pijplijn met de demovereniging als basis. Zolang die er niet is, is een
+// nagebouwd scherm eerlijker dan een lege plek — maar het is nadrukkelijk geen opname.
+// Alle namen, bedragen en nummers zijn verzonnen; er staat geen echt lid op.
+---
+
+<figure class="scherm">
+  <div class="chroom" aria-hidden="true">
+    <span class="stip"></span><span class="stip"></span><span class="stip"></span>
+    <span class="adres">app.sporten.app/#/finance</span>
+  </div>
+
+  <div class="venster">
+    <nav class="zij" aria-hidden="true">
+      <div class="club"><span class="merk">AZ</span>AV De Zandloper</div>
+      <p class="groep">Vereniging</p>
+      <ul>
+        <li>Leden</li>
+        <li>Activiteiten</li>
+        <li>Chatkanalen</li>
+      </ul>
+      <p class="groep">Financiën</p>
+      <ul>
+        <li class="aan">Overzicht</li>
+        <li>Declaraties <b>3</b></li>
+        <li>Facturen</li>
+        <li>Inkomende facturen <b>2</b></li>
+        <li>Bankmutaties</li>
+        <li>Betaallijst</li>
+        <li>Rapporten</li>
+        <li>Begroting</li>
+      </ul>
+    </nav>
+
+    <div class="hoofd">
+      <div class="titelrij" aria-hidden="true">
+        <b>Financiën — boekjaar 2026</b><span class="knopje">Boeking maken</span>
+      </div>
+
+      <div class="cijfers" aria-hidden="true">
+        <div><small>Banksaldo</small><b>€ 24.318</b></div>
+        <div><small>Nog te ontvangen</small><b>€ 3.905</b></div>
+        <div><small>Resultaat</small><b class="groen">€ 6.142</b></div>
+        <div><small>Openstaand werk</small><b>5</b></div>
+      </div>
+
+      <div class="onder" aria-hidden="true">
+        <div class="boekingen">
+          <p class="kopje">Laatste boekingen</p>
+          <table>
+            <tr><td>2026-0412</td><td>Contributie kwartaal 3</td><td class="dim">—</td><td class="bedrag">€ 8.240,00</td></tr>
+            <tr><td>2026-0411</td><td>Declaratie · zaalhuur voorjaar</td><td class="dim">Trainingen</td><td class="bedrag">€ 312,50</td></tr>
+            <tr><td>2026-0410</td><td>Inkoopfactuur · Sportshop</td><td class="dim">Materiaal</td><td class="bedrag">€ 1.084,60</td></tr>
+            <tr><td>2026-0409</td><td>Trainersvergoeding T26-0007</td><td class="dim">Trainingen</td><td class="bedrag">€ 640,00</td></tr>
+            <tr><td>2026-0408</td><td>Inschrijfgeld Zandloopwedstrijd</td><td class="dim">Zandloop</td><td class="bedrag">€ 2.150,00</td></tr>
+          </table>
+        </div>
+        <div class="begroting">
+          <p class="kopje">Begroting 2026</p>
+          <div class="balk"><span>Trainingen</span><i style="--vul:72%"></i><em>72%</em></div>
+          <div class="balk"><span>Materiaal</span><i style="--vul:54%"></i><em>54%</em></div>
+          <div class="balk"><span>Zandloop</span><i class="vol" style="--vul:96%"></i><em>96%</em></div>
+          <div class="balk"><span>Bestuur</span><i style="--vul:31%"></i><em>31%</em></div>
+          <div class="balk"><span>Kantine</span><i style="--vul:18%"></i><em>18%</em></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <figcaption>
+    Voorbeeldweergave van het beheerportaal. Verzonnen vereniging, verzonnen bedragen.
+  </figcaption>
+</figure>
+
+<style>
+  /* Het beeld staat in de hero naast de tekst en beslaat daar zo'n 440px, terwijl
+     het op een functiepagina de volle breedte kan krijgen. Een media query kijkt naar
+     het venster en zou in beide gevallen hetzelfde doen — vandaar een container query:
+     die kijkt naar de breedte die dit beeld zelf krijgt. */
+  .scherm { margin: 0; width: 100%; max-width: 620px; container-type: inline-size; }
+  .chroom {
+    display: flex; align-items: center; gap: 6px;
+    background: var(--vlak); border: 1px solid var(--rand); border-bottom: 0;
+    border-radius: 12px 12px 0 0; padding: 9px 14px;
+  }
+  .stip { width: 9px; height: 9px; border-radius: 50%; background: var(--rand); }
+  .adres {
+    margin-left: 10px; font-size: 11px; color: var(--dim);
+    background: var(--kaart); border: 1px solid var(--rand); border-radius: 6px;
+    padding: 2px 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .venster {
+    display: grid; grid-template-columns: 148px 1fr;
+    background: var(--kaart); border: 1px solid var(--rand);
+    border-radius: 0 0 12px 12px; overflow: hidden;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .12);
+  }
+
+  .zij { background: var(--vlak); border-right: 1px solid var(--rand); padding: 12px 10px; font-size: 11px; }
+  .club { display: flex; align-items: center; gap: 7px; font-weight: 700; font-size: 12px; margin-bottom: 12px; }
+  .merk {
+    flex: none; width: 20px; height: 20px; border-radius: 5px;
+    background: var(--rood); color: #fff; font-size: 9px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .groep { color: var(--dim); text-transform: uppercase; letter-spacing: .08em; font-size: 9px; margin: 10px 0 4px; }
+  .zij ul { list-style: none; display: grid; gap: 1px; }
+  .zij li { padding: 4px 7px; border-radius: 5px; color: var(--dim); display: flex; justify-content: space-between; align-items: center; }
+  .zij li.aan { background: var(--tint); color: var(--rood); font-weight: 700; }
+  .zij li b { background: var(--rood); color: #fff; border-radius: 999px; font-size: 9px; padding: 0 5px; font-weight: 700; }
+
+  .hoofd { padding: 14px 16px; min-width: 0; }
+  .titelrij { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .titelrij b { font-size: 13px; }
+  .knopje { background: var(--rood); color: #fff; font-size: 10px; font-weight: 600; border-radius: 6px; padding: 4px 10px; white-space: nowrap; }
+
+  .cijfers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 14px; }
+  .cijfers div { background: var(--vlak); border: 1px solid var(--rand); border-radius: 8px; padding: 8px 9px; }
+  .cijfers small { display: block; font-size: 9px; color: var(--dim); text-transform: uppercase; letter-spacing: .05em; }
+  .cijfers b { font-size: 14px; letter-spacing: -.01em; }
+  .cijfers .groen { color: #1c7247; }
+
+  .onder { display: grid; grid-template-columns: 1.35fr 1fr; gap: 14px; }
+  .kopje { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--dim); margin-bottom: 6px; }
+  .boekingen table { width: 100%; border-collapse: collapse; font-size: 10px; }
+  .boekingen td { padding: 4px 4px; border-bottom: 1px solid var(--rand); }
+  .boekingen tr:last-child td { border-bottom: 0; }
+  .boekingen .dim { color: var(--dim); }
+  .boekingen .bedrag { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+  .balk { display: grid; grid-template-columns: 58px 1fr 30px; align-items: center; gap: 6px; font-size: 10px; margin-bottom: 6px; }
+  .balk span { color: var(--dim); }
+  .balk i { display: block; height: 6px; border-radius: 3px; background: var(--rand); position: relative; }
+  .balk i::after { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--vul); border-radius: 3px; background: var(--turkoois); }
+  .balk i.vol::after { background: var(--rood); }
+  .balk em { font-style: normal; color: var(--dim); text-align: right; font-variant-numeric: tabular-nums; }
+
+  figcaption { font-size: 12px; color: var(--dim); margin-top: 10px; }
+
+  /* Krijgt het beeld minder dan ~560px, dan gaan de kentallen in twee rijen en komt
+     de begroting onder de boekingen te staan. De zijbalk blijft: de telbadges daarin
+     laten juist zien dat het systeem meedenkt. */
+  @container (max-width: 560px) {
+    .cijfers { grid-template-columns: repeat(2, 1fr); }
+    .onder { grid-template-columns: 1fr; }
+  }
+
+  /* Nog smaller valt de zijbalk alsnog weg: die is dan decoratie, de cijfers zijn
+     het verhaal. */
+  @container (max-width: 430px) {
+    .venster { grid-template-columns: 1fr; }
+    .zij { display: none; }
+  }
+</style>
