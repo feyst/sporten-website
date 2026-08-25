@@ -1,0 +1,475 @@
+---
+import Basis from '../layouts/Basis.astro';
+
+const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const structuredData = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://sporten.app/verwerkersovereenkomst#pagina',
+      name: 'Verwerkersovereenkomst',
+      description:
+        'Voorbeeld verwerkersovereenkomst voor je sportvereniging: het complete model volgens artikel 28 AVG, met subverwerkers en beveiligingsmaatregelen.',
+      url: 'https://sporten.app/verwerkersovereenkomst',
+      inLanguage: 'nl',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sporten.app/' },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Verwerkersovereenkomst',
+          item: 'https://sporten.app/verwerkersovereenkomst',
+        },
+      ],
+    },
+  ],
+});
+---
+
+<Basis
+  titel="Verwerkersovereenkomst voor je vereniging | Sporten.app"
+  beschrijving="Voorbeeld verwerkersovereenkomst voor je sportvereniging: het complete model volgens artikel 28 AVG, met subverwerkers en beveiligingsmaatregelen."
+>
+  <script type="application/ld+json" slot="kop" set:html={structuredData} />
+  <div class="container proza">
+    <p class="kruimels">
+      <a href={basis}>Home</a><span>/</span>Verwerkersovereenkomst
+    </p>
+
+    <h1><span>Verwerkers</span>overeenkomst</h1>
+
+    <p>
+      Zodra Sporten.app voor je vereniging persoonsgegevens van leden verwerkt — namen, adressen,
+      contributiegegevens en meer — is jouw vereniging verwerkingsverantwoordelijke en is Sporten.app
+      de verwerker. Artikel 28 AVG verplicht die twee rollen schriftelijk vast te leggen. Deze pagina is
+      dat model: hetzelfde document dat je als klant ondertekent, hier compleet en woordelijk om vooraf
+      te lezen.
+    </p>
+    <div class="aandacht">
+      <p>
+        Word je klant van Sporten.app, dan vul je dit document niet zelf in: je krijgt het ingevuld op
+        naam van je vereniging, met jullie gegevens bij de partijen en de ondertekening. Mail daarvoor
+        naar <a href="mailto:info@sporten.app?SUBJECT=Verwerkersovereenkomst">info@sporten.app</a>. Er is
+        geen los te downloaden pdf; de tekst hieronder is het volledige model.
+      </p>
+    </div>
+
+    <p>
+      <i
+        >Model, versie 13 augustus 2026. Vul de gemarkeerde velden in en onderteken in tweevoud. Dit
+        model is opgesteld langs artikel 28 lid 3 AVG en de gangbare opzet van de modellen uit de
+        sportwereld (Stichting AVG voor Verenigingen / NOC*NSF); het is geen juridisch advies.</i
+      >
+    </p>
+
+    <h2>Partijen</h2>
+    <ol>
+      <li>
+        <span class="invul">[NAAM VERENIGING]</span>, gevestigd te
+        <span class="invul">[PLAATS]</span>, ingeschreven bij de Kamer van Koophandel onder nummer
+        <span class="invul">[KVK-NUMMER VERENIGING]</span>, hierna: <strong>de Vereniging</strong>
+        (verwerkingsverantwoordelijke in de zin van de AVG);
+      </li>
+      <li>
+        <strong>LightMedia</strong>, gevestigd aan Overtoom 19, 2141 MS Waddinxveen, ingeschreven bij de
+        Kamer van Koophandel onder nummer 59466618, hierna: <strong>LightMedia</strong> (verwerker in de
+        zin van de AVG).
+      </li>
+    </ol>
+
+    <h2>Overwegingen</h2>
+    <ul>
+      <li>
+        De Vereniging gebruikt Sporten.app: een dienst voor ledenadministratie, activiteiten,
+        inschrijvingen en communicatie, bestaande uit een app voor leden en een beheerportaal voor het
+        bestuur.
+      </li>
+      <li>
+        Daarbij verwerkt LightMedia persoonsgegevens van leden en vrijwilligers van de Vereniging, in
+        opdracht van de Vereniging.
+      </li>
+      <li>
+        Artikel 28 AVG verplicht partijen die verwerking schriftelijk te regelen; dat doen zij met deze
+        overeenkomst.
+      </li>
+    </ul>
+
+    <h2>Artikel 1 — Definities</h2>
+    <p>
+      Begrippen uit de Algemene Verordening Gegevensbescherming (AVG), zoals <em>persoonsgegevens</em>,
+      <em>verwerken</em>, <em>betrokkene</em>, <em>verwerkingsverantwoordelijke</em>,
+      <em>verwerker</em> en <em>inbreuk in verband met persoonsgegevens</em> (datalek), hebben in deze
+      overeenkomst de betekenis die de AVG eraan geeft. <strong>De Dienst</strong> is Sporten.app zoals
+      beschreven in de overwegingen.
+    </p>
+
+    <h2>Artikel 2 — Onderwerp en duur</h2>
+    <ol>
+      <li>
+        LightMedia verwerkt persoonsgegevens uitsluitend voor het leveren van de Dienst aan de
+        Vereniging. De aard en het doel van de verwerking, de soorten persoonsgegevens en de categorieën
+        betrokkenen staan in <strong>bijlage 1</strong>.
+      </li>
+      <li>
+        Deze overeenkomst geldt zolang de Vereniging de Dienst afneemt en eindigt van rechtswege zodra de
+        dienstverlening eindigt, met uitzondering van bepalingen die naar hun aard doorlopen (zoals
+        geheimhouding en artikel 10).
+      </li>
+    </ol>
+
+    <h2>Artikel 3 — Verwerken op instructie</h2>
+    <ol>
+      <li>
+        LightMedia verwerkt uitsluitend op schriftelijke instructie van de Vereniging. Het normale
+        gebruik van de Dienst door de Vereniging en haar leden geldt als zo'n instructie.
+      </li>
+      <li>
+        LightMedia gebruikt de persoonsgegevens niet voor eigen doeleinden en verstrekt ze niet aan
+        derden, behalve aan de subverwerkers in <strong>bijlage 2</strong> of wanneer een wettelijke
+        verplichting daartoe dwingt. In dat laatste geval informeert LightMedia de Vereniging vooraf,
+        tenzij de wet dat verbiedt.
+      </li>
+      <li>
+        Meent LightMedia dat een instructie in strijd is met de AVG, dan meldt zij dat direct aan de
+        Vereniging.
+      </li>
+      <li>
+        Doorgifte naar landen buiten de Europese Economische Ruimte vindt alleen plaats zoals beschreven
+        in <strong>bijlage 2</strong> (pushmeldingen), met passende waarborgen.
+      </li>
+    </ol>
+
+    <h2>Artikel 4 — Geheimhouding</h2>
+    <p>
+      Personen die onder gezag van LightMedia persoonsgegevens verwerken, zijn verplicht tot
+      geheimhouding daarvan.
+    </p>
+
+    <h2>Artikel 5 — Beveiliging</h2>
+    <ol>
+      <li>
+        LightMedia treft passende technische en organisatorische maatregelen zoals bedoeld in artikel 32
+        AVG. De actuele maatregelen staan in <strong>bijlage 3</strong>.
+      </li>
+      <li>
+        LightMedia mag deze maatregelen aanpassen zolang het beschermingsniveau gelijk blijft of
+        verbetert.
+      </li>
+    </ol>
+
+    <h2>Artikel 6 — Subverwerkers</h2>
+    <ol>
+      <li>
+        De Vereniging geeft algemene toestemming voor het inschakelen van de subverwerkers in
+        <strong>bijlage 2</strong>.
+      </li>
+      <li>
+        Wil LightMedia een subverwerker toevoegen of vervangen, dan meldt zij dat ten minste 30 dagen
+        vooraf aan de Vereniging. Maakt de Vereniging binnen die termijn schriftelijk en gemotiveerd
+        bezwaar, dan treden partijen in overleg; leidt dat niet tot een oplossing, dan mag de Vereniging
+        de dienstverlening beëindigen.
+      </li>
+      <li>
+        LightMedia legt aan iedere subverwerker verplichtingen op die gelijkwaardig zijn aan deze
+        overeenkomst.
+      </li>
+    </ol>
+
+    <h2>Artikel 7 — Bijstand</h2>
+    <ol>
+      <li>
+        Verzoeken van betrokkenen (inzage, rectificatie, wissing, beperking, overdraagbaarheid, bezwaar)
+        die bij LightMedia binnenkomen, stuurt zij zonder onredelijke vertraging door aan de Vereniging.
+        LightMedia verleent redelijke medewerking zodat de Vereniging binnen de wettelijke termijnen kan
+        reageren; veel verzoeken kan het bestuur zelf afhandelen via het beheerportaal.
+      </li>
+      <li>
+        LightMedia verleent redelijke medewerking aan verplichtingen van de Vereniging uit de artikelen
+        32 tot en met 36 AVG (beveiliging, datalekmeldingen en gegevensbeschermingseffectbeoordelingen).
+      </li>
+    </ol>
+
+    <h2>Artikel 8 — Datalekken</h2>
+    <ol>
+      <li>
+        LightMedia meldt een inbreuk in verband met persoonsgegevens zonder onredelijke vertraging, en
+        uiterlijk <strong>48 uur na ontdekking</strong>, aan de Vereniging via de contactgegevens in de
+        ondertekening.
+      </li>
+      <li>
+        De melding bevat ten minste de informatie uit artikel 33 lid 3 AVG, voor zover op dat moment
+        bekend: de aard van de inbreuk, de (categorieën) betrokkenen en gegevens, de waarschijnlijke
+        gevolgen en de genomen of voorgestelde maatregelen. Nog onbekende informatie levert LightMedia na
+        zodra die beschikbaar is.
+      </li>
+      <li>
+        De melding aan de Autoriteit Persoonsgegevens en aan betrokkenen is en blijft de
+        verantwoordelijkheid van de Vereniging. LightMedia verleent daarbij redelijke medewerking.
+      </li>
+    </ol>
+
+    <h2>Artikel 9 — Verantwoording</h2>
+    <ol>
+      <li>
+        LightMedia stelt op verzoek van de Vereniging, ten hoogste eenmaal per jaar, alle informatie ter
+        beschikking die redelijkerwijs nodig is om aan te tonen dat de verplichtingen uit deze
+        overeenkomst worden nageleefd, en beantwoordt schriftelijke vragen daarover binnen 30 dagen.
+      </li>
+      <li>
+        Partijen kiezen schriftelijke verantwoording als uitgangspunt. Alleen wanneer die verantwoording
+        de Vereniging aantoonbaar onvoldoende zekerheid biedt, mag de Vereniging een audit (laten)
+        uitvoeren zoals bedoeld in artikel 28 lid 3 onder h AVG: ten hoogste eenmaal per jaar, aangekondigd
+        met een termijn van 30 dagen, tijdens kantooruren, zonder onnodige verstoring van de
+        dienstverlening en op kosten van de Vereniging. De auditor is niet een directe concurrent van
+        LightMedia en tekent voor geheimhouding.
+      </li>
+    </ol>
+
+    <h2>Artikel 10 — Einde van de overeenkomst</h2>
+    <ol>
+      <li>
+        Na het einde van de dienstverlening wist LightMedia alle persoonsgegevens van de Vereniging, of
+        bezorgt zij die op verzoek eerst in een gangbaar formaat terug, binnen 30 dagen na het einde.
+      </li>
+      <li>
+        Gegevens in back-ups worden uiterlijk aan het einde van de back-upretentietermijn
+        (<strong>bijlage 3</strong>) gewist. Wettelijke bewaarplichten blijven onverlet.
+      </li>
+      <li>Op verzoek bevestigt LightMedia de wissing schriftelijk.</li>
+    </ol>
+
+    <h2>Artikel 11 — Slotbepalingen</h2>
+    <ol>
+      <li>Op deze overeenkomst is Nederlands recht van toepassing.</li>
+      <li>
+        Voor zover het de verwerking van persoonsgegevens betreft, gaat deze overeenkomst vóór op andere
+        afspraken tussen partijen.
+      </li>
+      <li>Wijzigingen van deze overeenkomst komen schriftelijk tot stand.</li>
+      <li>De aansprakelijkheidsverdeling van artikel 82 AVG blijft onverlet.</li>
+    </ol>
+
+    <h2>Ondertekening</h2>
+    <div class="tabelwikkel">
+      <table class="data">
+        <caption>Ondertekening door de Vereniging en LightMedia, in tweevoud.</caption>
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">De Vereniging</th>
+            <th scope="col">LightMedia</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Naam</th>
+            <td><span class="invul">[NAAM ONDERTEKENAAR]</span></td>
+            <td>Mark van der Feijst</td>
+          </tr>
+          <tr>
+            <th scope="row">Functie</th>
+            <td><span class="invul">[FUNCTIE, bijv. voorzitter]</span></td>
+            <td>Eigenaar</td>
+          </tr>
+          <tr>
+            <th scope="row">E-mail (voor meldingen)</th>
+            <td><span class="invul">[E-MAILADRES BESTUUR]</span></td>
+            <td>info@sporten.app</td>
+          </tr>
+          <tr>
+            <th scope="row">Datum</th>
+            <td><span class="invul">[DATUM]</span></td>
+            <td><span class="invul">[DATUM]</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Handtekening</th>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Bijlage 1 — Verwerkingen</h2>
+    <p>
+      <strong>Aard en doel:</strong> het leveren van de Dienst — ledenadministratie, contributie en
+      boekhouding, declaraties en vergoedingen, activiteitenagenda, inschrijvingen, clubchat, meldingen
+      en beheer — in opdracht van de Vereniging.
+    </p>
+    <p>
+      <strong>Categorieën betrokkenen:</strong> leden van de Vereniging, ouders/verzorgers van
+      jeugdleden, trainers, vrijwilligers en bestuurders.
+    </p>
+    <p>
+      <strong>Soorten persoonsgegevens</strong> (conform de privacyverklaring op
+      <a href={`${basis}privacy`}>sporten.app/privacy</a>):
+    </p>
+    <div class="tabelwikkel">
+      <table class="data">
+        <thead>
+          <tr>
+            <th scope="col">Gegeven</th>
+            <th scope="col">Doel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Naam</td>
+            <td>Registratie en deelname aan activiteiten</td>
+          </tr>
+          <tr>
+            <td>E-mailadres</td>
+            <td>Account, bevestigingen, communicatie</td>
+          </tr>
+          <tr>
+            <td>Telefoonnummer</td>
+            <td>Contact door de vereniging</td>
+          </tr>
+          <tr>
+            <td>Adresgegevens</td>
+            <td>Postale communicatie door de vereniging</td>
+          </tr>
+          <tr>
+            <td>Geslacht</td>
+            <td>Teamindeling en wedstrijduitslagen</td>
+          </tr>
+          <tr>
+            <td>Geboortedatum</td>
+            <td>Leeftijdsafhankelijke tarieven en indeling</td>
+          </tr>
+          <tr>
+            <td>Inschrijvingen en aanwezigheid</td>
+            <td>Activiteitenbeheer</td>
+          </tr>
+          <tr>
+            <td>Chatberichten</td>
+            <td>Communicatie binnen de club</td>
+          </tr>
+          <tr>
+            <td>IP-adres en apparaatinformatie</td>
+            <td>Beveiliging, foutdetectie, ondersteuning</td>
+          </tr>
+          <tr>
+            <td>Pushtokens</td>
+            <td>Meldingen versturen</td>
+          </tr>
+          <tr>
+            <td>IBAN en tenaamstelling</td>
+            <td>Uitbetaling van declaraties en vergoedingen, contributiefacturen</td>
+          </tr>
+          <tr>
+            <td>Bonnen en facturen (afbeelding of pdf)</td>
+            <td>Onderbouwing van declaraties en inkoopfacturen in de administratie</td>
+          </tr>
+          <tr>
+            <td>Bankmutaties van de vereniging</td>
+            <td>Afletteren van contributiefacturen en boekhouding</td>
+          </tr>
+          <tr>
+            <td>Financiële boekingen op naam</td>
+            <td>Ledenadministratie en verenigingsboekhouding</td>
+          </tr>
+          <tr>
+            <td>Uren en vergoedingen van trainers</td>
+            <td>Urenstaten en uitbetaling van trainersvergoedingen</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      <strong>Bewaartermijnen:</strong> gegevens worden bewaard zolang het lidmaatschap of de rol dat
+      vereist en ten hoogste 7 jaar (administratieve bewaarplicht); zie verder de privacyverklaring.
+    </p>
+
+    <h2>Bijlage 2 — Subverwerkers</h2>
+    <div class="tabelwikkel">
+      <table class="data">
+        <thead>
+          <tr>
+            <th scope="col">Subverwerker</th>
+            <th scope="col">Doel</th>
+            <th scope="col">Locatie verwerking</th>
+            <th scope="col">Waarborg</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cloudflare, Inc.</td>
+            <td>Netwerkverkeer/beveiligingsproxy voor app, API en portaal (ziet IP-adressen)</td>
+            <td>EU/VS</td>
+            <td>EU-VS Data Privacy Framework / standaardcontractbepalingen</td>
+          </tr>
+          <tr>
+            <td>Google Ireland Ltd. (Firebase Cloud Messaging)</td>
+            <td>Pushmeldingen in de webbrowser (pushtoken, meldingsinhoud)</td>
+            <td>EU/VS</td>
+            <td>EU-VS Data Privacy Framework / standaardcontractbepalingen</td>
+          </tr>
+          <tr>
+            <td>Expo (650 Industries, Inc.)</td>
+            <td>Pushmeldingen in de apps op Android en iPhone (pushtoken, meldingsinhoud)</td>
+            <td>VS</td>
+            <td>Standaardcontractbepalingen</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      <strong>Geen subverwerker, wel relevant:</strong> hosting, opslag en e-mailverzending gebeuren op
+      servers in eigen beheer van LightMedia in Nederland; daarvoor wordt geen derde partij ingeschakeld.
+    </p>
+    <p>Wijzigingen in deze lijst verlopen via artikel 6.</p>
+
+    <h2>Bijlage 3 — Beveiligingsmaatregelen</h2>
+    <ul>
+      <li>Al het verkeer is versleuteld met TLS (HTTPS).</li>
+      <li>Wachtwoorden worden uitsluitend gehasht opgeslagen (bcrypt).</li>
+      <li>De database is versleuteld in rust (encryptie-at-rest).</li>
+      <li>Periodieke versleutelde back-ups; retentietermijn: 90 dagen.</li>
+      <li>Toegang tot het beheerportaal vereist tweestapsverificatie (TOTP).</li>
+      <li>
+        Toegang tot productiesystemen is beperkt tot de beheerder en verloopt via versleutelde
+        verbindingen.
+      </li>
+      <li>
+        Autorisatie in de Dienst is per vereniging gescheiden: gegevens van de ene club zijn niet
+        zichtbaar voor een andere.
+      </li>
+      <li>Systemen en afhankelijkheden worden actueel gehouden.</li>
+    </ul>
+
+    <p>
+      <i
+        >Model, versie 13 augustus 2026 — geen juridisch advies. Vragen of een ingevuld exemplaar op naam
+        van je vereniging? Mail naar
+        <a href="mailto:info@sporten.app?SUBJECT=Verwerkersovereenkomst">info@sporten.app</a>.</i
+      >
+    </p>
+  </div>
+</Basis>
+
+<style>
+  h1 span {
+    color: var(--rood);
+  }
+
+  .invul {
+    color: var(--dim);
+    border-bottom: 1px dotted var(--dim);
+    padding-bottom: 1px;
+    white-space: nowrap;
+  }
+
+  .proza table.data caption {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: var(--dim);
+    caption-side: top;
+  }
+</style>
