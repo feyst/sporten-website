@@ -136,3 +136,82 @@ footer a:hover{color:var(--tekst)}
  .login summary{display:block;text-align:center}
  .login .keuze{position:static;box-shadow:none;margin-top:8px;min-width:0}
 }
+
+/* ===== gedeelde bouwstenen voor de pagina's uit het positioneringsvoorstel =====
+   Alleen wat op meerdere pagina's terugkomt staat hier; wat één pagina nodig heeft
+   staat in een scoped <style> in die pagina zelf (Astro schermt dat af). */
+
+/* kruimelpad — nodig zodra de URL's nesten (/functies/…) */
+.kruimels{font-size:13px;color:var(--dim);padding-top:24px}
+.kruimels a{color:var(--dim);text-decoration:underline;text-underline-offset:2px}
+.kruimels a:hover{color:var(--rood)}
+.kruimels span{margin:0 6px;opacity:.6}
+
+/* bovenkopje boven een sectiekop */
+.lint{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rood);margin-bottom:10px}
+
+/* opsomming met vinkjes — "wat er altijd in zit", "wat we niet zijn" */
+.opsom{list-style:none;display:grid;gap:10px;margin:18px 0}
+.opsom li{position:relative;padding-left:28px;color:var(--dim)}
+.opsom li::before{content:"";position:absolute;left:0;top:.55em;width:14px;height:8px;border-left:2.5px solid var(--rood);border-bottom:2.5px solid var(--rood);transform:rotate(-45deg)}
+.opsom.kruis li::before{content:"";width:12px;height:12px;top:.45em;border:0;background:
+  linear-gradient(45deg,transparent 44%,var(--dim) 44%,var(--dim) 56%,transparent 56%),
+  linear-gradient(-45deg,transparent 44%,var(--dim) 44%,var(--dim) 56%,transparent 56%);transform:none}
+
+/* uitgelicht kader — nuance, waarschuwing, kanttekening */
+.aandacht{border:1px solid var(--rand);border-left:3px solid var(--rood);background:var(--kaart);border-radius:10px;padding:18px 20px;margin:24px 0}
+.aandacht p{color:var(--dim);font-size:15px}
+.aandacht b{color:var(--tekst)}
+
+/* tabel die op mobiel horizontaal scrollt in plaats van de pagina te verbreden */
+.tabelwikkel{overflow-x:auto;margin:24px 0;border:1px solid var(--rand);border-radius:12px}
+table.data{border-collapse:collapse;width:100%;min-width:520px;font-size:15px;background:var(--kaart)}
+table.data th,table.data td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--rand);vertical-align:top}
+table.data th{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--dim);font-weight:700;white-space:nowrap}
+table.data tr:last-child td{border-bottom:0}
+table.data td.nadruk,table.data tr.nadruk td{background:var(--tint);font-weight:600;color:var(--tekst)}
+table.data .getal{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* vertrouwenszegels — zelfverklaard, klikbaar naar bewijs; nadrukkelijk geen keurmerkvorm */
+.zegels{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px}
+.zegel{display:flex;gap:14px;align-items:flex-start;background:var(--kaart);border:1px solid var(--rand);border-radius:12px;padding:16px 20px;min-width:250px;flex:1 1 250px}
+.zegel .merk{flex:none;width:38px;height:38px;border-radius:10px;background:var(--tint);color:var(--rood);display:flex;align-items:center;justify-content:center}
+.zegel b{display:block;font-size:15px;color:var(--tekst)}
+.zegel small{display:block;font-size:13px;color:var(--dim);line-height:1.45}
+.zegel .verder{font-size:13px;color:var(--rood);font-weight:600;margin-top:4px;display:inline-block}
+.zegel:hover{border-color:var(--rood)}
+
+/* prijsstaffels */
+.staffels{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:stretch}
+.staffel{background:var(--kaart);border:1px solid var(--rand);border-radius:14px;padding:24px 22px;display:flex;flex-direction:column}
+.staffel.uitgelicht{border-color:var(--rood);box-shadow:0 8px 24px rgba(244,81,30,.14)}
+.staffel .naam{font-size:17px;font-weight:700}
+.staffel .omvang{font-size:13px;color:var(--dim);margin-bottom:14px}
+.staffel .bedrag{font-size:34px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.staffel .per{font-size:13px;color:var(--dim);margin-bottom:12px}
+.staffel .incl{font-size:13px;color:var(--dim);border-top:1px solid var(--rand);padding-top:12px;margin-top:auto}
+.staffel .vlag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--rood);border-radius:999px;padding:3px 10px;margin-bottom:8px}
+
+@media(max-width:980px){.staffels{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.staffels{grid-template-columns:1fr}}
+
+/* Leeskolom die links uitlijnt met de rest van de pagina.
+   `.proza` centreert zichzelf (het ís een smallere `.container`) en dat klopt op een
+   pagina die alleen tekst draagt. Op een pagina die tekstblokken afwisselt met
+   kaarten of tabellen op volle breedte springt de linkerkantlijn daardoor heen en
+   weer; `.lees` houdt dezelfde leesbreedte maar begint waar de container begint. */
+.lees{max-width:760px}
+.lees h2{overflow-wrap:break-word}
+.lees p,.lees li{color:var(--dim)}
+.lees h2{font-size:22px;margin:32px 0 8px}
+.lees h2:first-child{margin-top:0}
+.lees h3{font-size:17px;margin:22px 0 6px}
+.lees ul:not(.opsom){padding-left:22px;margin:10px 0}
+.lees a{color:var(--rood)}
+
+/* Het openingsblok van een pagina staat direct onder de vaste navigatie en heeft daar
+   eigen ruimte nodig. `.proza` droeg die padding zelf; `.lees` niet, want die kan ook
+   middenin een pagina staan waar de sectie de ruimte al levert. */
+.kopblok{padding-top:56px;padding-bottom:4px}
+.lees h1{font-size:clamp(28px,4vw,40px);margin-bottom:16px}
+.lees .kruimels{padding-top:0;margin-bottom:12px}
