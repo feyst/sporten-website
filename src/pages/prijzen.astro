@@ -1,0 +1,291 @@
+---
+import Basis from '../layouts/Basis.astro';
+
+const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+// Structured data: het product als AggregateOffer (vier staffels) en de FAQ hieronder.
+// De FAQ-vragen en -antwoorden moeten letterlijk overeenkomen met de zichtbare tekst.
+const structuredData = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Product',
+      name: 'Sporten.app',
+      description: 'Ledenadministratie, boekhouding en ledenapp voor sportverenigingen in één staffel, zonder losse modules.',
+      offers: {
+        '@type': 'AggregateOffer',
+        priceCurrency: 'EUR',
+        lowPrice: '149',
+        highPrice: '799',
+        offerCount: 4,
+      },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Wat als we een deel van de functies niet gebruiken?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Dan betaal je hetzelfde. Je betaalt naar het aantal leden, niet naar het aantal functies — en de boekhouding staat klaar op de dag dat je penningmeester er wél aan toe is.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Zitten er kosten per incasso of per factuur bij?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Nee. Je maakt onbeperkt facturen en betaalbestanden aan. Wat je bank rekent, rekent je bank; wij rekenen niets per transactie.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Wat gebeurt er met onze gegevens als we stoppen?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Je krijgt je administratie mee in een leesbaar formaat, en daarna verwijderen we hem volgens de verwerkersovereenkomst. Geen gijzeling van je eigen boekhouding.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Zit er een opzegtermijn op?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Je zegt op per contractjaar. Er is geen stilzwijgende verlenging met een boete en geen minimum van drie jaar.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'We zijn een kleine club met 40 leden — is dit niet te zwaar?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'De ledenlijst en de agenda zijn in een uur ingericht. De boekhouding zet je aan wanneer je hem nodig hebt, of nooit. Je betaalt € 149 per jaar, ongeveer wat drie ledenkaarten kosten.',
+          },
+        },
+      ],
+    },
+  ],
+});
+---
+
+<Basis
+  titel="Wat kost Sporten.app? Prijzen voor je vereniging | Sporten.app"
+  beschrijving="Ledenadministratie kosten voor je sportvereniging: één staffel vanaf € 149 per jaar, alle functies inbegrepen. Bekijk de prijzen van Sporten.app."
+>
+  <script type="application/ld+json" slot="kop" set:html={structuredData} />
+
+  <div class="container kopblok"><div class="lees">
+    <h1>Wat kost Sporten.app?</h1>
+    <p>Eén staffel, alles erin. Geen modules, geen functies achter een duurder pakket: iedereen krijgt alles, en de prijs volgt het aantal leden. Dat is niet alleen overzichtelijk — het is ook het enige verhaal dat je in één zin uitlegt, en precies waar de concurrentie het moeilijk mee heeft.</p>
+  </div></div>
+
+  <section id="staffels">
+    <div class="container">
+      <div class="staffels">
+        <div class="staffel">
+          <p class="naam">Klein</p>
+          <p class="omvang">t/m 100 leden</p>
+          <p class="bedrag">€ 149</p>
+          <p class="per">per jaar · excl. btw</p>
+          <div class="incl">
+            <span>€ 12,42 per maand</span><br />
+            <span>€ 1,49 per lid bij 100 leden</span><br />
+            <span>€ 180,29 incl. btw</span>
+          </div>
+        </div>
+        <div class="staffel uitgelicht">
+          <span class="vlag">Aanbevolen</span>
+          <p class="naam">Vereniging</p>
+          <p class="omvang">101 – 300 leden</p>
+          <p class="bedrag">€ 299</p>
+          <p class="per">per jaar · excl. btw</p>
+          <div class="incl">
+            <span>€ 24,92 per maand</span><br />
+            <span>€ 1,00 per lid bij 300 leden</span><br />
+            <span>€ 361,79 incl. btw</span>
+          </div>
+        </div>
+        <div class="staffel">
+          <p class="naam">Groot</p>
+          <p class="omvang">301 – 750 leden</p>
+          <p class="bedrag">€ 549</p>
+          <p class="per">per jaar · excl. btw</p>
+          <div class="incl">
+            <span>€ 45,75 per maand</span><br />
+            <span>€ 0,73 per lid bij 750 leden</span><br />
+            <span>€ 664,29 incl. btw</span>
+          </div>
+        </div>
+        <div class="staffel">
+          <p class="naam">XL</p>
+          <p class="omvang">vanaf 751 leden</p>
+          <p class="bedrag">€ 0,70</p>
+          <p class="per">per lid per jaar · min. € 799</p>
+          <div class="incl">
+            <span>€ 966,79 incl. btw bij het minimum</span><br />
+            <span>inclusief een kennismaking</span><br />
+            <span>zelfde functies, zelfde afspraken</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="aandacht">
+        <p><b>Alle genoemde prijzen zijn excl. btw.</b> De meeste sportverenigingen kunnen btw niet terugvorderen. € 299 excl. btw is voor hen gewoon € 361,79. We zetten daarom bij elke prijs op deze pagina ook het bedrag inclusief 21% btw — liever nu een kleiner lettertje dan straks een teleurstelling bij de factuur.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="vlak" id="regels">
+    <div class="container"><div class="lees">
+      <h2>De regels eromheen</h2>
+
+      <h3>Wat telt als lid</h3>
+      <p>De leden die in je eigen ledenadministratie meetellen. Donateurs, ereleden zonder lidmaatschap, ouders met alleen een account voor hun kind en oud-leden tellen niet mee. Dat onderscheid is geen belofte maar een veld dat er al is — je stelt het zelf in, en kunt het dus nameten.</p>
+
+      <h3>Wanneer we tellen</h3>
+      <p>Eén keer per jaar, op de verlengdatum. Groei je er tussentijds doorheen, dan verandert er dat jaar niets. Geen naheffingen, geen verrassingen halverwege het seizoen.</p>
+
+      <h3>Betalen</h3>
+      <p>De genoemde bedragen gelden bij jaarbetaling. Maandbetaling kan, tegen 10% opslag. Studenten- en schoolsportverenigingen krijgen 40% korting: € 89 / € 179 / € 329 per jaar, excl. btw, voor Klein, Vereniging en Groot.</p>
+
+      <h3>Wat er altijd in zit</h3>
+      <ul class="opsom">
+        <li>Alle functies — geen modules die je erbij moet kopen</li>
+        <li>Onbeperkt beheerders</li>
+        <li>De app voor al je leden</li>
+        <li>Alle updates</li>
+        <li>SEPA-betaalbestanden zonder kosten per transactie</li>
+        <li>E-mail- en WhatsApp-support</li>
+        <li>Het overzetten van je bestaande administratie</li>
+      </ul>
+
+      <h3>Wat er niet in zit</h3>
+      <ul class="opsom kruis">
+        <li>Automatische documentherkenning boven de bundel (250 documenten per jaar, 100 in Klein) — het verbruik wordt per vereniging gemeten en daarboven reken je kostprijs</li>
+        <li>Maatwerk</li>
+        <li>Datamigratie die handwerk vraagt</li>
+      </ul>
+    </div></div>
+  </section>
+
+  <section id="lancering">
+    <div class="container">
+      <p class="lint">Tijdgebonden</p>
+      <h2>Lanceeraanbod</h2>
+      <p class="sectie-intro">Dit aanbod hoort bij de lancering van Sporten.app en verdwijnt naarmate de eerste verenigingen instappen.</p>
+      <div class="kaarten">
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
+          <h3>3 maanden gratis</h3>
+          <p>Met je eigen ledenbestand en je eigen boekhouding erin — niet een demo-omgeving. Wie na drie maanden zijn bonnen erin heeft staan, gaat niet meer terug.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M6 9l6 6 6-6"/><path d="M4 21h16"/></svg></div>
+          <h3>Gratis overzetten</h3>
+          <p>Er is al een importcommando voor een lopend boekjaar — mapping, beginbalans en mutaties, geboekt langs dezelfde controles als handwerk. Dat haalt de grootste drempel weg.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7" cy="7" r="3"/><circle cx="17" cy="17" r="3"/><path d="M4 20 20 4"/></svg></div>
+          <h3>Eerste tien verenigingen: 50% korting</h3>
+          <p>In het eerste jaar, in ruil voor een testimonial en toestemming om je logo te tonen. Die referenties zijn nu ons grootste tekort.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>Prijsgarantie, twee jaar</h3>
+          <p>Wat we bouwen komt erbij zonder meerprijs. Dat is de keerzijde van "geen modules" en een sterk argument tegen pakketten die per module bijverkopen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vlak" id="markt">
+    <div class="container"><div class="lees">
+      <p class="lint">Vergelijking</p>
+      <h2>Hoe we ons verhouden tot de markt</h2>
+      <p>Drie ankers uit de markt, hieronder naast elkaar gezet.</p>
+      <div class="aandacht">
+        <p>Deze bedragen zijn opgehaald in augustus 2026, en de vergelijkingstabel is gepubliceerd door één van de vergeleken partijen. Lees de bedragen daarom als orde van grootte en niet als offerte — vraag bij twijfel een actuele prijsopgave op bij de aanbieder zelf.</p>
+      </div>
+
+      <div class="tabelwikkel">
+        <table class="data">
+          <thead>
+            <tr>
+              <th>Pakket</th>
+              <th>Prijs</th>
+              <th>Per lid/jaar bij 300 leden</th>
+              <th>Wat er niet in zit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Conscribo</td>
+              <td>€ 12,95/mnd t/m 250 leden; € 21,95/mnd t/m 600</td>
+              <td class="getal">≈ € 0,88</td>
+              <td>geen ledenapp, geen inschrijvingen, geen chat</td>
+            </tr>
+            <tr>
+              <td>Sportlink</td>
+              <td>€ 200 – 800/jaar</td>
+              <td class="getal">≈ € 0,67 – 2,67</td>
+              <td>financiën en evenementen zijn losse modules</td>
+            </tr>
+            <tr>
+              <td>AllUnited</td>
+              <td>€ 250 – 1.000+/jaar</td>
+              <td class="getal">≈ € 0,83 – 3,33</td>
+              <td>modulair opgebouwd</td>
+            </tr>
+            <tr>
+              <td>e-Captain</td>
+              <td>€ 200 – 600/jaar (1.000 leden ≈ € 1.070)</td>
+              <td class="getal">≈ € 0,67 – 2,00</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>LedenCockpit</td>
+              <td>€ 5 – 15/mnd</td>
+              <td class="getal">≈ € 0,20 – 0,60</td>
+              <td>beperkte financiën, alleen ledenlijst</td>
+            </tr>
+            <tr class="nadruk">
+              <td>Sporten.app</td>
+              <td>€ 299/jaar bij 300 leden</td>
+              <td class="getal">€ 1,00</td>
+              <td>niets — alles zit erin</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>We zitten daarmee in het midden van de markt en dus niet op de goedkoopste plek. Dat is een bewuste keuze: de goedkoopste zijn trekt verenigingen aan die alleen een ledenlijst willen, kost het meeste support en levert het minste op. Ons verhaal is "alles voor de prijs van hun halve pakket", niet "wij zijn de goedkoopste".</p>
+    </div></div>
+  </section>
+
+  <section id="vragen">
+    <div class="container">
+      <h2>Vragen over de prijs</h2>
+      <p class="sectie-intro">Wat clubs ons over de kosten vragen voordat ze overstappen.</p>
+      <div class="faq">
+        <details><summary><h3>Wat als we een deel van de functies niet gebruiken?</h3></summary><p>Dan betaal je hetzelfde. Je betaalt naar het aantal leden, niet naar het aantal functies — en de boekhouding staat klaar op de dag dat je penningmeester er wél aan toe is.</p></details>
+        <details><summary><h3>Zitten er kosten per incasso of per factuur bij?</h3></summary><p>Nee. Je maakt onbeperkt facturen en betaalbestanden aan. Wat je bank rekent, rekent je bank; wij rekenen niets per transactie.</p></details>
+        <details><summary><h3>Wat gebeurt er met onze gegevens als we stoppen?</h3></summary><p>Je krijgt je administratie mee in een leesbaar formaat, en daarna verwijderen we hem volgens de verwerkersovereenkomst. Geen gijzeling van je eigen boekhouding.</p></details>
+        <details><summary><h3>Zit er een opzegtermijn op?</h3></summary><p>Je zegt op per contractjaar. Er is geen stilzwijgende verlenging met een boete en geen minimum van drie jaar.</p></details>
+        <details><summary><h3>We zijn een kleine club met 40 leden — is dit niet te zwaar?</h3></summary><p>De ledenlijst en de agenda zijn in een uur ingericht. De boekhouding zet je aan wanneer je hem nodig hebt, of nooit. Je betaalt € 149 per jaar, ongeveer wat drie ledenkaarten kosten.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="vlak" id="contact">
+    <div class="container">
+      <h2>Vraag een offerte op maat</h2>
+      <p class="sectie-intro">Benieuwd wat Sporten.app voor jouw vereniging kost, of heb je een vraag over een van de staffels? Stuur een bericht of app — je krijgt altijd persoonlijk antwoord.</p>
+      <div class="cta-rij">
+        <a class="knop" href="mailto:info@sporten.app">E-mail ons</a>
+        <a class="knop rand" href="https://wa.me/31625002228">WhatsApp ons</a>
+      </div>
+      <p><a href={basis}>Terug naar de homepage</a></p>
+    </div>
+  </section>
+</Basis>
