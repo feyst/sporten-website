@@ -147,8 +147,9 @@ geheimhouding daarvan.
 
 ## Bijlage 1 — Verwerkingen
 
-**Aard en doel:** het leveren van de Dienst — ledenadministratie, activiteitenagenda,
-inschrijvingen, clubchat, meldingen en beheer — in opdracht van de Vereniging.
+**Aard en doel:** het leveren van de Dienst — ledenadministratie, contributie en boekhouding,
+declaraties en vergoedingen, activiteitenagenda, inschrijvingen, clubchat, meldingen en beheer —
+in opdracht van de Vereniging.
 
 **Categorieën betrokkenen:** leden van de Vereniging, ouders/verzorgers van jeugdleden,
 trainers, vrijwilligers en bestuurders.
@@ -167,6 +168,11 @@ trainers, vrijwilligers en bestuurders.
 | Chatberichten | Communicatie binnen de club |
 | IP-adres en apparaatinformatie | Beveiliging, foutdetectie, ondersteuning |
 | Pushtokens | Meldingen versturen |
+| IBAN en tenaamstelling | Uitbetaling van declaraties en vergoedingen, contributiefacturen |
+| Bonnen en facturen (afbeelding of pdf) | Onderbouwing van declaraties en inkoopfacturen in de administratie |
+| Bankmutaties van de vereniging | Afletteren van contributiefacturen en boekhouding |
+| Financiële boekingen op naam | Ledenadministratie en verenigingsboekhouding |
+| Uren en vergoedingen van trainers | Urenstaten en uitbetaling van trainersvergoedingen |
 
 **Bewaartermijnen:** gegevens worden bewaard zolang het lidmaatschap of de rol dat
 vereist en ten hoogste 7 jaar (administratieve bewaarplicht); zie verder de
@@ -191,7 +197,7 @@ Wijzigingen in deze lijst verlopen via artikel 6.
 - Al het verkeer is versleuteld met TLS (HTTPS).
 - Wachtwoorden worden uitsluitend gehasht opgeslagen (bcrypt).
 - De database is versleuteld in rust (encryptie-at-rest).
-- Periodieke versleutelde back-ups; retentietermijn: **[RETENTIETERMIJN, bijv. 90 dagen]**.
+- Periodieke versleutelde back-ups; retentietermijn: **90 dagen**.
 - Toegang tot het beheerportaal vereist tweestapsverificatie (TOTP).
 - Toegang tot productiesystemen is beperkt tot de beheerder en verloopt via versleutelde
   verbindingen.

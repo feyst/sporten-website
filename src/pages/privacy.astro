@@ -1,10 +1,12 @@
 ---
 import Basis from '../layouts/Basis.astro';
+
+const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 
 <Basis
   titel="Privacyverklaring | Sporten.app"
-  beschrijving="Privacyverklaring van Sporten.app: welke gegevens wij van leden van sportverenigingen verwerken, waarvoor wij ze gebruiken en welke rechten u heeft."
+  beschrijving="Privacyverklaring van Sporten.app: welke gegevens wij van leden van sportverenigingen verwerken, waarvoor wij ze gebruiken en welke rechten je hebt."
 >
   <div class="container proza">
     <h1><span>Privacy</span> Beleid</h1>
@@ -17,24 +19,29 @@ import Basis from '../layouts/Basis.astro';
     <h2>Verwerkingsverantwoordelijke</h2>
     <p>
       Het Sporten.app onderdeel van LightMedia, gevestigd aan Overtoom 19, 2141 MS Waddinxveen, is verantwoordelijk voor de verwerking van persoonlijke gegevens in de Sporten app, hierna aangeduid als 'de app'.
-      Wij voeren dit uit in opdracht van uw sportclub of sportvereniging.
-      Indien u vragen heeft met betrekking tot het gebruik van de app en de bescherming van uw privacy, kunt u contact opnemen met <a href="mailto:info@sporten.app?SUBJECT=Privacybeleid">info@sporten.app</a>.
+      Wij voeren dit uit in opdracht van jouw sportclub of sportvereniging.
+      Heb je vragen over het gebruik van de app en de bescherming van jouw privacy, dan kun je contact opnemen met <a href="mailto:info@sporten.app?SUBJECT=Privacybeleid">info@sporten.app</a>.
       Wij zorgen voor je persoonlijke gegevens en we zullen de vertrouwelijkheid en veiligheid hiervan garanderen.
     </p>
     <h2>Verwerkte gegevens</h2>
     <p>
-      Wanneer je onze applicatie gebruikt verzamelen wij automatisch verschillende soorten informatie over u.
+      Wanneer je onze applicatie gebruikt verzamelen wij automatisch verschillende soorten informatie over jou.
     </p>
     <ul>
-      <li><u><b>IP-adres</b></u>: In onze logs wordt automatisch uw IP-adres gelogd. Wij gebruiken dit voor veiligheidscontroles, ondersteuningsvragen, foutdetectie en onregelmatigheidsdetectie.</li>
-      <li><u><b>Apparaat informatie</b></u>: Wij registreren het type van uw webbrowser, tijdzone, ingestelde taal en overige hard-, en software informatie. Wij gebruiken dit om uw ervaring te optimaliseren.</li>
-      <li><u><b>Cookies</b></u>: Wij maken gebruik van cookies voor authenticatie en verificatie van een ingelogde gebruiker.</li>
-      <li><u><b>E-mailadres</b></u>: Wij gebruiken uw email adres om contact met u op te nemen, bijvoorbeeld voor een registratie bevestiging als mede om uw identiteit te bevestigen. Dit kan ook door de sportvereniging gebruikt om contact met u op te nemen of u informatie toe te zenden.</li>
-      <li><u><b>Naam</b></u>: Wij gebruiken uw naam voor registratie voor activiteiten en dergelijke in de applicatie.</li>
-      <li><u><b>Telefoonnummer</b></u>: Wij registreren uw telefoonnummer zodat uw sportvereniging contact met u op kan nemen.</li>
-      <li><u><b>Adresgegevens</b></u>: UW adresgegevens worden opgenomen zodat uw sportvereniging u per post informatie kan toesturen. Denk bijvoorbeeld aan een clubblad.</li>
-      <li><u><b>Geslacht</b></u>: Wij gebruiken deze informatie om dat dit bij sommige sporten nodig is voor indeling van teams en omdat deze informatie nodig is om wedstrijduitslagen te interpreteren.</li>
-      <li><u><b>Geboortedatum</b></u>: Uw geboortedatum registreren wij omdat sommige tarieven binnen de sportvereniging afhankelijk zijn van leeftijd en kan op deze manier bepaald worden. Daarnaast kan dit door de sportvereniging gebruikt worden om bijvoorbeeld een verjaardagkalender op te stellen.</li>
+      <li><b>IP-adres</b>: in onze logs wordt automatisch jouw IP-adres gelogd. Wij gebruiken dit voor veiligheidscontroles, ondersteuningsvragen, foutdetectie en onregelmatigheidsdetectie.</li>
+      <li><b>Apparaat informatie</b>: wij registreren het type van jouw webbrowser, tijdzone, ingestelde taal en overige hard- en software informatie. Wij gebruiken dit om jouw ervaring te optimaliseren.</li>
+      <li><b>Cookies</b>: wij maken gebruik van cookies voor authenticatie en verificatie van een ingelogde gebruiker.</li>
+      <li><b>E-mailadres</b>: wij gebruiken jouw e-mailadres om contact met je op te nemen, bijvoorbeeld voor een registratiebevestiging en om je identiteit te bevestigen. Dit kan ook door de sportvereniging gebruikt worden om contact met je op te nemen of je informatie toe te sturen.</li>
+      <li><b>Naam</b>: wij gebruiken jouw naam voor registratie voor activiteiten en dergelijke in de applicatie.</li>
+      <li><b>Telefoonnummer</b>: wij registreren jouw telefoonnummer zodat jouw sportvereniging contact met je op kan nemen.</li>
+      <li><b>Adresgegevens</b>: jouw adresgegevens worden opgenomen zodat jouw sportvereniging je per post informatie kan toesturen. Denk bijvoorbeeld aan een clubblad.</li>
+      <li><b>Geslacht</b>: wij gebruiken deze informatie omdat dit bij sommige sporten nodig is voor indeling van teams en omdat deze informatie nodig is om wedstrijduitslagen te interpreteren.</li>
+      <li><b>Geboortedatum</b>: jouw geboortedatum registreren wij omdat sommige tarieven binnen de sportvereniging afhankelijk zijn van leeftijd en op deze manier bepaald kunnen worden. Daarnaast kan dit door de sportvereniging gebruikt worden om bijvoorbeeld een verjaardagkalender op te stellen.</li>
+      <li><b>IBAN en tenaamstelling</b>: dien je een declaratie of urenstaat als trainer in, dan registreren wij jouw IBAN en tenaamstelling om de uitbetaling te kunnen doen. Betaal je contributie via een bankoverschrijving, dan gebruiken wij deze gegevens ook om jouw betaling aan de juiste factuur te koppelen.</li>
+      <li><b>Bonnen en facturen</b>: dien je een declaratie in, dan upload je daarbij een foto of scan van een bon of factuur. Zo'n bonfoto bevat een beeld van jouw aankoop; wij lezen daar waar mogelijk automatisch bedrag, datum en IBAN uit om het invullen te versnellen.</li>
+      <li><b>Bankmutaties</b>: voor de boekhouding van de vereniging lezen wij bankafschriften van de vereniging in. Een mutatie kan een omschrijving bevatten waarin jouw naam of rekeningnummer voorkomt, bijvoorbeeld bij een contributiebetaling.</li>
+      <li><b>Financiële boekingen</b>: facturen, betalingen, declaraties en andere boekingen die op jouw naam staan, worden vastgelegd in de boekhouding van de vereniging.</li>
+      <li><b>Trainersuren en -vergoedingen</b>: geef je training, dan registreren wij de uren die daarbij horen en de vergoeding die je daarvoor krijgt, inclusief of die wordt uitbetaald of verrekend met jouw contributie.</li>
     </ul>
     <p>
       Indien je jonger dan 16 jaar bent dan moeten je ouders of wettelijke vertegenwoordiger hier mee akkoord gaan.
@@ -44,9 +51,16 @@ import Basis from '../layouts/Basis.astro';
       Wij raden ouders dan ook aan betrokken te zijn bij de online activiteiten van hun kinderen, om zo te voorkomen dat er gegevens over kinderen verzameld worden zonder ouderlijke toestemming.
       Als je er van overtuigd bent dat wij zonder die toestemming persoonlijke gegevens hebben verzameld over een minderjarige, neem dan contact met ons op via info@sporten.app, dan verwijderen wij deze informatie.
     </p>
+    <h2>Rol van de vereniging</h2>
+    <p>
+      Bij de financiële administratie bepaalt jouw vereniging wat er wordt vastgelegd: welke declaraties, welke facturen, welke boekingen.
+      Wij verwerken die gegevens in haar opdracht en niet voor eigen doeleinden.
+      Heb je een verzoek om inzage, correctie of verwijdering van je gegevens, dan is jouw vereniging het eerste aanspreekpunt; zij kent de context van de vastlegging en kan veel verzoeken zelf afhandelen via het beheerportaal.
+      Kom je er met de vereniging niet uit, dan kun je ook rechtstreeks contact met ons opnemen.
+    </p>
     <h2>App machtigingen</h2>
     <p>
-      Onze app kan u vragen om u pushmeldingen te sturen. Deze meldingen worden aangestuurd door uw sportclub en kunnen bijvoorbeeld gebruikt worden om u er op te attenderen dat een bepaalde activiteit niet door gaat.
+      Onze app kan je vragen om je pushmeldingen te sturen. Deze meldingen worden aangestuurd door jouw sportclub en kunnen bijvoorbeeld gebruikt worden om je erop te attenderen dat een bepaalde activiteit niet doorgaat.
     </p>
     <h2>Je rechten</h2>
     <p>
@@ -85,27 +99,32 @@ import Basis from '../layouts/Basis.astro';
     <h2>Bewaartermijn</h2>
     <p>
       Alle informatie bewaren wij uiterlijk 7 jaar zoals vereist door de administratieve bewaarplicht van de belastingdienst.
+      Versleutelde back-ups bewaren wij uiterlijk 90 dagen.
     </p>
     <h2>Delen van persoonsgegevens</h2>
     <p>
       Wij delen jouw persoonsgegevens met verschillende derden als dit noodzakelijk is voor het uitvoeren van de overeenkomst en om te voldoen aan een eventuele wettelijke verplichting.
       Met bedrijven die je gegevens verwerken in onze opdracht, sluiten wij een verwerkersovereenkomst om te zorgen voor eenzelfde niveau van beveiliging en vertrouwelijkheid van jouw gegevens.
       Wij blijven verantwoordelijk voor deze verwerkingen.
-      Wij delen uw gegevens met uw sportvereniging.
+      Wij delen jouw gegevens met jouw sportvereniging.
     </p>
     <p>Wij maken gebruik van de volgende diensten:</p>
     <ul>
-      <li><u><b>Hosting en opslag</b></u>: de applicatie en de database draaien op eigen beheerde servers in Nederland.</li>
-      <li><u><b>Cloudflare</b></u>: het netwerkverkeer naar de app en het beheerportaal loopt via Cloudflare. Cloudflare ziet daarbij het IP-adres van de bezoeker.</li>
-      <li><u><b>Google Firebase Cloud Messaging</b></u>: voor pushmeldingen in de webbrowser.</li>
-      <li><u><b>Expo</b></u>: voor pushmeldingen in de apps op Android en iPhone.</li>
-      <li><u><b>Eigen mailserver</b></u>: e-mail wordt verstuurd via onze eigen mailserver, niet via een externe maildienst.</li>
+      <li><b>Hosting en opslag</b>: de applicatie en de database draaien op eigen beheerde servers in Nederland.</li>
+      <li><b>Cloudflare</b>: het netwerkverkeer naar de app en het beheerportaal loopt via Cloudflare. Cloudflare ziet daarbij het IP-adres van de bezoeker.</li>
+      <li><b>Google Firebase Cloud Messaging</b>: voor pushmeldingen in de webbrowser.</li>
+      <li><b>Expo</b>: voor pushmeldingen in de apps op Android en iPhone.</li>
+      <li><b>Eigen mailserver</b>: e-mail wordt verstuurd via onze eigen mailserver, niet via een externe maildienst.</li>
     </ul>
     <p>
-      Uw gegevens worden binnen de EU opgeslagen.
+      Jouw gegevens worden binnen de EU opgeslagen.
       Alleen voor pushmeldingen kunnen meldingsgegevens (zoals een pushtoken en de inhoud van een melding) via de diensten van Google en Expo buiten de EU verwerkt worden.
     </p>
-    <p><i>Laatst herzien: 13 augustus 2026.</i></p>
+    <p>
+      Is jouw vereniging klant bij ons, dan sluiten wij met haar een <a href={`${basis}verwerkersovereenkomst`}>verwerkersovereenkomst</a>: daarin staat precies welke gegevens wij verwerken, welke subverwerkers wij daarbij inschakelen en welke beveiligingsmaatregelen wij treffen.
+      Hoe wij de AVG verder in de praktijk brengen, lees je op onze <a href={`${basis}avg`}>AVG-pagina</a>.
+    </p>
+    <p><i>Laatst herzien: 25 augustus 2026.</i></p>
   </div>
 </Basis>
 
