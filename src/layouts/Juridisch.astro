@@ -1,0 +1,39 @@
+---
+import Basis from './Basis.astro';
+
+// Schil om de juridische pagina's die als Markdown in src/pages staan
+// (verwerkersovereenkomst, subverwerkers). Diezelfde Markdown is de bron voor het
+// Word-document dat verenigingen ondertekenen — zie bin/maak-word.py. Eén bron, dus
+// de site en het getekende document kunnen niet uit elkaar lopen.
+interface Props {
+  frontmatter: {
+    titel: string;
+    beschrijving: string;
+    versie?: string;
+    datum?: string;
+  };
+}
+const { frontmatter } = Astro.props;
+---
+
+<Basis titel={frontmatter.titel} beschrijving={frontmatter.beschrijving}>
+  <div class="container proza juridisch">
+    <slot />
+    {
+      frontmatter.versie && frontmatter.datum && (
+        <p class="versie">
+          <i>Versie {frontmatter.versie} — {frontmatter.datum}.</i>
+        </p>
+      )
+    }
+  </div>
+</Basis>
+
+<style>
+  .juridisch :global(h1 span) {
+    color: var(--rood);
+  }
+  .versie {
+    margin-top: 40px;
+  }
+</style>

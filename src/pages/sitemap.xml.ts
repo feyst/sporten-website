@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 
 // Door de build gegenereerde sitemap. Elke publieke pagina hoort in dit lijstje.
-const paginas = ['/', '/privacy/', '/voorwaarden/'];
+const paginas = ['/', '/privacy/', '/voorwaarden/', '/verwerkersovereenkomst/', '/subverwerkers/'];
 
 export const GET: APIRoute = ({ site }) => {
   const vandaag = new Date().toISOString().slice(0, 10);
