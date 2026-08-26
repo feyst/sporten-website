@@ -1,28 +1,31 @@
 ---
 layout: ../layouts/Juridisch.astro
 titel: Verwerkersovereenkomst | Sporten.app
-beschrijving: De model-verwerkersovereenkomst van Sporten.app, opgesteld langs artikel 28 AVG — wat wij namens uw vereniging verwerken, hoe wij dat beveiligen en welke afspraken daarbij horen.
-versie: '2.0'
-datum: 26 augustus 2026
+beschrijving: De verwerkersovereenkomst van Sporten.app, opgesteld langs artikel 28 AVG — wat wij namens uw vereniging verwerken, hoe wij dat beveiligen en welke afspraken daarbij horen.
+versie: '2'
+datum: 27 augustus 2026
 ---
 
 # <span>Verwerkers</span>overeenkomst
 
-*Model, versie 2.0 van 26 augustus 2026. Dit is de overeenkomst die wij met elke
-aangesloten vereniging sluiten. Wij vullen de gemarkeerde velden voor uw vereniging in en
-sturen u het document ter ondertekening; u kunt het ook zelf opvragen via
-[info@sporten.app](mailto:info@sporten.app?SUBJECT=Verwerkersovereenkomst). Het model is
-opgesteld langs artikel 28 lid 3 AVG en de gangbare opzet van de modellen uit de
-sportwereld (Stichting AVG voor Verenigingen / NOC\*NSF); het is geen juridisch advies.*
+*Versie 2 van 27 augustus 2026. Dit is de overeenkomst die geldt tussen uw vereniging en
+ons zodra u Sporten.app afneemt. U hoeft hem niet in te vullen en niet te ondertekenen:
+een akkoord per e-mail is genoeg — zie artikel 2. De overeenkomst is opgesteld langs
+artikel 28 AVG en de gangbare opzet van de modellen uit de sportwereld (Stichting AVG voor
+Verenigingen / NOC\*NSF).*
+
+<p class="download"><a href="/documenten/verwerkersovereenkomst.pdf" download>Download als pdf</a></p>
 
 ## Partijen
 
-1. **[NAAM VERENIGING]**, gevestigd te **[PLAATS]**, ingeschreven bij de Kamer van
-   Koophandel onder nummer **[KVK-NUMMER VERENIGING]**, hierna: **de Vereniging**
-   (verwerkingsverantwoordelijke in de zin van de AVG);
+1. **De vereniging** die Sporten.app afneemt, hierna: **de Vereniging**
+   (verwerkingsverantwoordelijke in de zin van de AVG). Om welke vereniging het gaat en wie
+   namens haar akkoord gaf, blijkt uit de vastlegging bedoeld in artikel 2 lid 3; haar
+   naam, adres en KvK-nummer staan in het beheerportaal onder **Vereniging** en worden
+   daar door haar zelf actueel gehouden.
 2. **LightMedia**, gevestigd aan Overtoom 19, 2141 MS Waddinxveen, ingeschreven bij de
-   Kamer van Koophandel onder nummer 59466618, hierna: **LightMedia** (verwerker in de
-   zin van de AVG).
+   Kamer van Koophandel onder nummer 59466618, hierna: **LightMedia** (verwerker in de zin
+   van de AVG).
 
 ## Overwegingen
 
@@ -42,79 +45,99 @@ Begrippen uit de Algemene Verordening Gegevensbescherming (AVG), zoals
 overeenkomst de betekenis die de AVG eraan geeft. **De Dienst** is Sporten.app zoals
 beschreven in de overwegingen.
 
-## Artikel 2 — Onderwerp en duur
+## Artikel 2 — Totstandkoming, akkoord en duur
 
-1. LightMedia verwerkt persoonsgegevens uitsluitend voor het leveren van de Dienst aan
-   de Vereniging. De aard en het doel van de verwerking, de soorten persoonsgegevens en
-   de categorieën betrokkenen staan in **bijlage 1**.
-2. Deze overeenkomst geldt zolang de Vereniging de Dienst afneemt en eindigt van
-   rechtswege zodra de dienstverlening eindigt, met uitzondering van bepalingen die naar
-   hun aard doorlopen (zoals geheimhouding en artikel 10).
-3. Op het gebruik van de Dienst zijn daarnaast de gebruiksvoorwaarden van toepassing.
-   Voor zover het de verwerking van persoonsgegevens betreft, gaat deze overeenkomst
-   vóór op die voorwaarden.
+1. Deze overeenkomst komt tot stand doordat een bestuurder die de Vereniging mag
+   vertegenwoordigen namens haar akkoord geeft. Dat kan per e-mail vanaf het bestuursadres
+   van de Vereniging, of bij de aanmelding in het beheerportaal. Een handtekening is niet
+   nodig: artikel 28 lid 9 AVG staat de elektronische vorm uitdrukkelijk toe.
+2. Wilt u liever een ondertekend exemplaar voor uw eigen administratie, dan sturen wij dat
+   op verzoek toe.
+3. LightMedia legt vast wie namens de Vereniging akkoord gaf, wanneer dat gebeurde en op
+   welke versie van deze overeenkomst. Die vastlegging is voor beide partijen opvraagbaar.
+4. De overeenkomst geldt zolang de Vereniging de Dienst afneemt en eindigt van rechtswege
+   zodra de dienstverlening eindigt, met uitzondering van bepalingen die naar hun aard
+   doorlopen (zoals geheimhouding en artikel 11).
+5. Op het gebruik van de Dienst zijn daarnaast de gebruiksvoorwaarden van toepassing. Voor
+   zover het de verwerking van persoonsgegevens betreft, gaat deze overeenkomst vóór op
+   die voorwaarden.
 
-## Artikel 3 — Verwerken op instructie
+## Artikel 3 — Onderwerp van de verwerking
+
+LightMedia verwerkt persoonsgegevens uitsluitend voor het leveren van de Dienst aan de
+Vereniging. De aard en het doel van de verwerking, de soorten persoonsgegevens en de
+categorieën betrokkenen staan in **bijlage 1**.
+
+## Artikel 4 — Verwerken op instructie
 
 1. LightMedia verwerkt uitsluitend op schriftelijke instructie van de Vereniging. Het
    normale gebruik van de Dienst door de Vereniging en haar leden geldt als zo'n
    instructie.
-2. LightMedia gebruikt de persoonsgegevens niet voor eigen doeleinden en verstrekt ze
-   niet aan derden, behalve aan de subverwerkers bedoeld in artikel 6 of wanneer een
-   wettelijke verplichting daartoe dwingt. In dat laatste geval informeert LightMedia de
-   Vereniging vooraf, tenzij de wet dat verbiedt.
+2. LightMedia gebruikt de persoonsgegevens niet voor eigen doeleinden en verstrekt ze niet
+   aan derden, behalve aan de subverwerkers bedoeld in artikel 7 of wanneer een wettelijke
+   verplichting daartoe dwingt. In dat laatste geval informeert LightMedia de Vereniging
+   vooraf, tenzij de wet dat verbiedt.
 3. Meent LightMedia dat een instructie in strijd is met de AVG, dan meldt zij dat direct
    aan de Vereniging.
-4. Doorgifte naar landen buiten de Europese Economische Ruimte vindt alleen plaats zoals
-   beschreven in de subverwerkerslijst bedoeld in artikel 6, met passende waarborgen.
+4. Voor een instructie die buiten het normale gebruik van de Dienst valt en die
+   noemenswaardig werk kost, stellen partijen vooraf samen vast wat er gebeurt en wat het
+   kost.
+5. Doorgifte naar landen buiten de Europese Economische Ruimte vindt alleen plaats zoals
+   beschreven in de subverwerkerslijst bedoeld in artikel 7, met passende waarborgen.
 
-## Artikel 4 — Geheimhouding
+## Artikel 5 — Geheimhouding
 
 Personen die onder gezag van LightMedia persoonsgegevens verwerken, zijn verplicht tot
 geheimhouding daarvan.
 
-## Artikel 5 — Beveiliging
+## Artikel 6 — Beveiliging
 
 1. LightMedia treft passende technische en organisatorische maatregelen zoals bedoeld in
-   artikel 32 AVG. De actuele maatregelen staan in **bijlage 2**.
+   artikel 32 AVG. De maatregelen die op dit moment gelden, staan in **bijlage 2**.
 2. LightMedia mag deze maatregelen aanpassen zolang het beschermingsniveau gelijk blijft
    of verbetert.
 
-## Artikel 6 — Subverwerkers
+## Artikel 7 — Subverwerkers
 
 1. De Vereniging geeft algemene toestemming voor het inschakelen van subverwerkers. De
    actuele lijst staat op **[sporten.app/subverwerkers](https://sporten.app/subverwerkers)**
-   en maakt integraal deel uit van deze overeenkomst. De lijst draagt een versienummer en
-   een datum, en vermeldt per subverwerker het doel, de gegevens, de plaats van
-   verwerking en de waarborg bij doorgifte buiten de Europese Economische Ruimte.
+   en maakt deel uit van deze overeenkomst. De lijst draagt een versienummer en een datum,
+   en vermeldt per subverwerker het doel, de gegevens, de plaats van verwerking en de
+   waarborg bij doorgifte buiten de Europese Economische Ruimte.
 2. Wil LightMedia een subverwerker toevoegen of vervangen, dan meldt zij dat ten minste
-   30 dagen vooraf per e-mail aan het contactadres dat de Vereniging op grond van artikel
-   8 lid 4 heeft opgegeven, en werkt zij de lijst bij.
+   30 dagen voor de ingangsdatum per e-mail aan het contactadres bedoeld in artikel 9 lid
+   4, en werkt zij de lijst bij. Een subverwerker die op de lijst staat als *aangekondigd*
+   is op dezelfde manier gemeld; voor het in gebruik nemen daarvan is geen nieuwe melding
+   nodig.
 3. Maakt de Vereniging binnen die termijn schriftelijk en gemotiveerd bezwaar, dan treden
    partijen in overleg; leidt dat niet tot een oplossing, dan mag de Vereniging de
-   dienstverlening beëindigen tegen het moment waarop de wijziging ingaat, zonder kosten
-   voor de resterende looptijd.
+   dienstverlening beëindigen tegen de ingangsdatum. Vooruitbetaalde bedragen voor de
+   periode daarna worden naar rato terugbetaald.
 4. LightMedia legt aan iedere subverwerker verplichtingen op die gelijkwaardig zijn aan
    deze overeenkomst, en blijft jegens de Vereniging volledig aansprakelijk voor het
    nakomen daarvan door de subverwerker.
 5. Op verzoek van de Vereniging verstrekt LightMedia een overzicht van de eerdere versies
    van de lijst.
 
-## Artikel 7 — Bijstand
+## Artikel 8 — Bijstand
 
 1. Verzoeken van betrokkenen (inzage, rectificatie, wissing, beperking, overdraagbaarheid,
    bezwaar) die bij LightMedia binnenkomen, stuurt zij zonder onredelijke vertraging door
-   aan de Vereniging. LightMedia verleent redelijke medewerking zodat de Vereniging
-   binnen de wettelijke termijnen kan reageren; veel verzoeken kan het bestuur zelf
-   afhandelen via het beheerportaal.
+   aan de Vereniging. LightMedia verleent redelijke medewerking zodat de Vereniging binnen
+   de wettelijke termijnen kan reageren; veel verzoeken kan het bestuur zelf afhandelen via
+   het beheerportaal.
 2. LightMedia verleent redelijke medewerking aan verplichtingen van de Vereniging uit de
    artikelen 32 tot en met 36 AVG (beveiliging, datalekmeldingen en
    gegevensbeschermingseffectbeoordelingen).
+3. Bijstand die verder gaat dan wat de Vereniging zelf in het beheerportaal kan doen en die
+   noemenswaardig werk kost, mag LightMedia tegen haar gebruikelijke tarief in rekening
+   brengen. Zij meldt dat vooraf.
 
-## Artikel 8 — Datalekken
+## Artikel 9 — Datalekken
 
 1. LightMedia meldt een inbreuk in verband met persoonsgegevens zonder onredelijke
-   vertraging, en uiterlijk **48 uur na ontdekking**, aan de Vereniging.
+   vertraging, en uiterlijk **48 uur nadat zij de inbreuk heeft vastgesteld**, aan de
+   Vereniging.
 2. De melding bevat ten minste de informatie uit artikel 33 lid 3 AVG, voor zover op dat
    moment bekend: de aard van de inbreuk, de (categorieën) betrokkenen en gegevens, de
    waarschijnlijke gevolgen en de genomen of voorgestelde maatregelen. Nog onbekende
@@ -122,78 +145,66 @@ geheimhouding daarvan.
 3. De melding aan de Autoriteit Persoonsgegevens en aan betrokkenen is en blijft de
    verantwoordelijkheid van de Vereniging. LightMedia verleent daarbij redelijke
    medewerking.
-4. Meldingen op grond van deze overeenkomst gaan naar het e-mailadres dat de Vereniging
-   in het beheerportaal heeft vastgelegd, met het adres uit de ondertekening als
-   terugvaloptie. De Vereniging houdt dat adres actueel en zorgt dat berichten daar een
-   bestuurder bereiken.
+4. Meldingen op grond van deze overeenkomst gaan naar het e-mailadres dat de Vereniging in
+   het beheerportaal heeft vastgelegd. De Vereniging houdt dat adres actueel en zorgt dat
+   berichten daar een bestuurder bereiken.
 
-## Artikel 9 — Verantwoording
+## Artikel 10 — Verantwoording
 
 1. LightMedia stelt op verzoek van de Vereniging, ten hoogste eenmaal per jaar, alle
    informatie ter beschikking die redelijkerwijs nodig is om aan te tonen dat de
    verplichtingen uit deze overeenkomst worden nageleefd, en beantwoordt schriftelijke
    vragen daarover binnen 30 dagen.
 2. Partijen kiezen schriftelijke verantwoording als uitgangspunt. Alleen wanneer die
-   verantwoording de Vereniging aantoonbaar onvoldoende zekerheid biedt, mag de
-   Vereniging een audit (laten) uitvoeren zoals bedoeld in artikel 28 lid 3 onder h AVG:
-   ten hoogste eenmaal per jaar, aangekondigd met een termijn van 30 dagen, tijdens
-   kantooruren, zonder onnodige verstoring van de dienstverlening en op kosten van de
-   Vereniging. De auditor is niet een directe concurrent van LightMedia en tekent voor
-   geheimhouding.
+   verantwoording de Vereniging aantoonbaar onvoldoende zekerheid biedt, mag de Vereniging
+   een audit (laten) uitvoeren zoals bedoeld in artikel 28 lid 3 onder h AVG: ten hoogste
+   eenmaal per jaar, aangekondigd met een termijn van 30 dagen, tijdens kantooruren, zonder
+   onnodige verstoring van de dienstverlening en op kosten van de Vereniging, met inbegrip
+   van de redelijke kosten van de medewerking van LightMedia. De auditor is niet een
+   directe concurrent van LightMedia en tekent voor geheimhouding.
 
-## Artikel 10 — Einde van de overeenkomst
+## Artikel 11 — Einde van de overeenkomst
 
 1. Na het einde van de dienstverlening wist LightMedia alle persoonsgegevens van de
    Vereniging, of bezorgt zij die op verzoek eerst in een gangbaar formaat terug, binnen
-   30 dagen na het einde.
-2. Gegevens in back-ups worden uiterlijk aan het einde van de back-upretentietermijn
+   30 dagen na het einde. Die teruggave is eenmalig en kosteloos.
+2. Vraagt de Vereniging binnen 30 dagen na het einde niet om teruggave, dan gaat
+   LightMedia over tot wissen.
+3. Gegevens in back-ups worden uiterlijk aan het einde van de back-upretentietermijn
    (bijlage 2) gewist. Wettelijke bewaarplichten blijven onverlet.
-3. Op verzoek bevestigt LightMedia de wissing schriftelijk.
+4. Op verzoek bevestigt LightMedia de wissing schriftelijk.
 
-## Artikel 11 — Wijziging van deze overeenkomst
+## Artikel 12 — Wijziging van deze overeenkomst
 
-1. De subverwerkerslijst (artikel 6) en de beveiligingsmaatregelen (bijlage 2) worden
-   door LightMedia bijgehouden en gepubliceerd. Wijzigingen daarin verlopen volgens
-   artikel 6 lid 2 respectievelijk artikel 5 lid 2 en vragen geen nieuwe ondertekening.
-2. Wijzigingen in de artikelen 1 tot en met 13 of in bijlage 1 legt LightMedia ten minste
-   30 dagen voor de ingangsdatum schriftelijk voor aan de Vereniging, met vermelding van
-   wat er verandert en waarom. Maakt de Vereniging binnen die termijn geen bezwaar, dan
-   geldt de nieuwe versie vanaf de ingangsdatum.
-3. Een wijziging die het beschermingsniveau voor betrokkenen verlaagt of de
-   verplichtingen van de Vereniging verzwaart, geldt alleen met haar uitdrukkelijke
-   instemming.
-4. Maakt de Vereniging binnen de termijn van lid 2 schriftelijk en gemotiveerd bezwaar,
-   dan treden partijen in overleg; leidt dat niet tot een oplossing, dan mag de
-   Vereniging de dienstverlening beëindigen tegen de ingangsdatum, zonder kosten voor de
-   resterende looptijd.
-5. Elke versie draagt een versienummer en een datum. LightMedia bewaart de eerdere
-   versies en verstrekt die op verzoek.
+1. De subverwerkerslijst (artikel 7) en de beveiligingsmaatregelen (bijlage 2) worden door
+   LightMedia bijgehouden en gepubliceerd. Wijzigingen daarin verlopen volgens artikel 7
+   lid 2 respectievelijk artikel 6 lid 2 en vragen geen nieuw akkoord.
+2. Wijzigingen in de artikelen 1 tot en met 14 of in bijlage 1 kondigt LightMedia ten
+   minste 30 dagen voor de ingangsdatum aan bij het contactadres bedoeld in artikel 9 lid
+   4, met vermelding van wat er verandert en waarom. Maakt de Vereniging binnen die termijn
+   geen bezwaar, dan geldt de nieuwe versie vanaf de ingangsdatum.
+3. Een wijziging die het beschermingsniveau voor betrokkenen verlaagt of de verplichtingen
+   van de Vereniging verzwaart, geldt alleen met haar uitdrukkelijke instemming.
+4. Maakt de Vereniging binnen de termijn van lid 2 schriftelijk en gemotiveerd bezwaar, dan
+   treden partijen in overleg; leidt dat niet tot een oplossing, dan mag de Vereniging de
+   dienstverlening beëindigen tegen de ingangsdatum, met terugbetaling naar rato zoals in
+   artikel 7 lid 3.
+5. Elke versie draagt een versienummer en een datum. Onder aan deze overeenkomst staat wat
+   er per versie is veranderd; LightMedia bewaart de eerdere versies en verstrekt die op
+   verzoek.
 
-## Artikel 12 — Aansprakelijkheid
+## Artikel 13 — Aansprakelijkheid
 
 De aansprakelijkheidsverdeling van artikel 82 AVG blijft onverlet. Voor het overige geldt
 wat partijen daarover in de gebruiksvoorwaarden of in een afzonderlijke overeenkomst zijn
 overeengekomen.
 
-## Artikel 13 — Slotbepalingen
+## Artikel 14 — Slotbepalingen
 
 1. Op deze overeenkomst is Nederlands recht van toepassing. Geschillen worden voorgelegd
    aan de bevoegde Nederlandse rechter.
 2. Is een bepaling nietig of vernietigbaar, dan blijven de overige bepalingen gelden en
    vervangen partijen die bepaling door een geldige met een zo gelijk mogelijke strekking.
-3. Deze overeenkomst kan elektronisch worden aangegaan; partijen aanvaarden een
-   elektronische handtekening of een schriftelijke akkoordverklaring per e-mail als
-   rechtsgeldig.
-
-## Ondertekening
-
-| | De Vereniging | LightMedia |
-|---|---|---|
-| Naam | [NAAM ONDERTEKENAAR] | Mark van der Feijst |
-| Functie | [FUNCTIE, bijv. voorzitter] | Eigenaar |
-| E-mail (voor meldingen) | [E-MAILADRES BESTUUR] | info@sporten.app |
-| Datum | [DATUM] | [DATUM] |
-| Handtekening | | |
 
 ---
 
@@ -231,14 +242,13 @@ worden daarom apart genoemd: een **Verklaring Omtrent het Gedrag** die de Vereni
 een lid vastlegt is een gegeven van strafrechtelijke aard (artikel 10 AVG), en in vrije
 tekstvelden — een notitie bij een document, de relatie bij een noodcontact, een
 chatbericht — kan een lid of bestuurder gegevens over gezondheid invullen. De Vereniging
-bepaalt of en waarvoor zij die gegevens vastlegt en is verantwoordelijk voor de
-grondslag; LightMedia beperkt de toegang ertoe met rollen en rechten, en legt bij
-noodcontacten elke opvraging vast.
+bepaalt of en waarvoor zij die gegevens vastlegt en is verantwoordelijk voor de grondslag;
+LightMedia beperkt de toegang ertoe met rollen en rechten, en legt bij noodcontacten elke
+opvraging vast.
 
-**Bewaartermijnen:** gegevens worden bewaard zolang het lidmaatschap of de rol dat
-vereist. Financiële gegevens bewaart de Vereniging 7 jaar op grond van de fiscale
-bewaarplicht. Documenten bij een lid verdwijnen met het lid. Zie verder de
-privacyverklaring.
+**Bewaartermijnen:** gegevens worden bewaard zolang het lidmaatschap of de rol dat vereist.
+Financiële gegevens bewaart de Vereniging 7 jaar op grond van de fiscale bewaarplicht.
+Documenten bij een lid verdwijnen met het lid. Zie verder de privacyverklaring.
 
 ## Bijlage 2 — Beveiligingsmaatregelen
 
@@ -246,13 +256,13 @@ privacyverklaring.
 - Wachtwoorden worden uitsluitend gehasht opgeslagen (bcrypt).
 - De database is versleuteld in rust (encryptie-at-rest).
 - Back-ups zijn versleuteld en staan op opslag in eigen beheer in Nederland. Bewaartermijn:
-  de laatste 48 uur per uur, 14 dagen per dag, 6 weken per week en 6 maanden per maand;
-  de langst bewaarde back-up is dus ongeveer **zes maanden** oud.
+  de laatste 48 uur per uur, 14 dagen per dag, 6 weken per week en 6 maanden per maand; de
+  langst bewaarde back-up is dus ongeveer **zes maanden** oud.
 - Toegang tot het beheerportaal vereist tweestapsverificatie (TOTP).
 - Toegang tot productiesystemen is beperkt tot de beheerder en verloopt via versleutelde
   verbindingen.
-- Autorisatie in de Dienst is per vereniging gescheiden: gegevens van de ene club zijn
-  niet zichtbaar voor een andere.
+- Autorisatie in de Dienst is per vereniging gescheiden: gegevens van de ene club zijn niet
+  zichtbaar voor een andere.
 - Binnen een vereniging bepalen rollen en rechten wie welke gegevens ziet; gevoelige
   onderdelen, zoals noodcontacten en documenten bij een lid, staan achter een apart recht.
 - Het opvragen van noodcontacten wordt vastgelegd en gemeld aan wie daarop toeziet.
@@ -261,13 +271,14 @@ privacyverklaring.
 - Sessies en toegangstokens kunnen per lid worden ingetrokken; een wachtwoordwijziging
   beëindigt alle andere sessies en apparaten.
 - Systemen en afhankelijkheden worden actueel gehouden.
-- Wijzigingen aan de Dienst worden getest met een geautomatiseerde testsuite voordat zij
-  in productie komen.
+- Wijzigingen aan de Dienst worden getest met een geautomatiseerde testsuite voordat zij in
+  productie komen.
 
-## Bijlage 3 — Subverwerkers
+---
 
-De actuele lijst met subverwerkers staat op
-**[sporten.app/subverwerkers](https://sporten.app/subverwerkers)** en maakt op grond van
-artikel 6 integraal deel uit van deze overeenkomst. Op het moment van ondertekening geldt
-versie **[VERSIE SUBVERWERKERSLIJST]** van **[DATUM]**; die versie is als los document bij
-deze overeenkomst gevoegd.
+## Overzicht van wijzigingen
+
+| Versie | Datum | Wijziging |
+|---|---|---|
+| 2 | 27 augustus 2026 | Akkoord per e-mail in plaats van ondertekenen, en geen in te vullen velden meer. Bijlage 1 aangevuld met noodcontacten, toestemmingen, documenten bij een lid, financiële gegevens en binnengekomen post, plus een alinea over strafrechtelijke en gezondheidsgegevens. Aansprakelijkheid voor subverwerkers vastgelegd (artikel 7 lid 4), een wijzigingsprocedure toegevoegd (artikel 12), en de back-upbewaartermijn ingevuld |
+| 1 | 13 augustus 2026 | Eerste versie |

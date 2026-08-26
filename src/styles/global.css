@@ -127,6 +127,25 @@ h2{font-size:clamp(24px,3vw,32px);letter-spacing:-.02em;margin-bottom:10px}
    kolom afgekapt en moet de lezer scrollen zonder dat te zien. */
 .proza table{display:block;overflow-x:auto;width:calc(100% + 200px);margin:16px -100px;max-width:none;border-collapse:collapse;font-size:15px}
 @media(max-width:1060px){.proza table{width:100%;margin:16px 0}}
+
+/* De juridische pagina's zijn ook het document dat een vereniging krijgt: de pdf in
+   public/documenten/ wordt met chromium van deze pagina's gedrukt (zie README). */
+.download{margin:0 0 28px}
+.download a{display:inline-block;border:1px solid var(--rand);border-radius:8px;padding:8px 16px;font-size:15px;font-weight:600;color:var(--rood)}
+.download a:hover{border-color:var(--rood)}
+@media print{
+ header.site,footer,.download,.versie{display:none}
+ body{background:#fff;color:#000;font-size:10.5pt;line-height:1.45}
+ .proza{max-width:none;padding:0}
+ .proza p,.proza li,.proza th,.proza td{color:#000;font-size:10.5pt}
+ .proza h1{font-size:21pt;margin-bottom:14pt}
+ .proza h2{font-size:13pt;margin:16pt 0 4pt;break-after:avoid}
+ .proza table{display:table;width:100%;margin:8pt 0;font-size:9pt}
+ .proza tr{break-inside:avoid}
+ .proza th,.proza td{padding:5pt 7pt}
+ .proza a{color:#000;text-decoration:none}
+ .proza hr{break-before:page;border:0;margin:0}
+}
 .proza th,.proza td{border:1px solid var(--rand);padding:8px 10px;text-align:left;vertical-align:top;color:var(--dim)}
 .proza th{color:var(--tekst);font-weight:600;white-space:nowrap}
 .proza td p{margin:0;font-size:inherit}
