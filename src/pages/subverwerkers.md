@@ -1,68 +1,59 @@
 ---
 layout: ../layouts/Juridisch.astro
 titel: Subverwerkers | Sporten.app
-beschrijving: De actuele lijst met subverwerkers van Sporten.app — welke partijen wij inschakelen, waarvoor, waar zij gegevens verwerken en met welke waarborg.
-versie: '2.0'
-datum: 26 augustus 2026
+beschrijving: De actuele lijst met subverwerkers van Sporten.app — welke partijen wij inschakelen, welke gegevens zij zien, waar zij verwerken en met welke waarborg.
+versie: '3'
+datum: 27 augustus 2026
 ---
 
 # <span>Sub</span>verwerkers
 
-Deze lijst hoort bij de [verwerkersovereenkomst](https://sporten.app/verwerkersovereenkomst) die wij met
-elke aangesloten vereniging sluiten, en maakt daar op grond van artikel 6 integraal deel
-van uit. Hier staat welke partijen wij inschakelen bij het leveren van Sporten.app,
-waarvoor, waar zij persoonsgegevens verwerken en op welke grondslag gegevens buiten de
-Europese Economische Ruimte (EER) mogen worden verwerkt.
+De partijen die wij inschakelen bij het leveren van Sporten.app. Deze lijst hoort bij de
+[verwerkersovereenkomst](https://sporten.app/verwerkersovereenkomst) en maakt daar op
+grond van artikel 7 deel van uit.
 
-Wij houden deze lijst apart van de overeenkomst zelf, zodat een wijziging hier niet
-betekent dat elke vereniging opnieuw moet tekenen. Hoe een wijziging verloopt, staat
-onderaan deze pagina.
+<p class="download"><a href="/documenten/subverwerkers.pdf" download>Download als pdf</a></p>
 
-## Ingeschakelde subverwerkers
+## In gebruik
 
-| Subverwerker | Waarvoor | Welke gegevens | Locatie | Waarborg bij doorgifte |
+| Subverwerker | Waarvoor | Welke gegevens | Verwerkt in | Waarborg bij doorgifte |
 |---|---|---|---|---|
-| Cloudflare, Inc. | Netwerk- en beveiligingsproxy voor de app, de API en het beheerportaal | IP-adres, browser- en apparaatgegevens, het verkeer tussen gebruiker en dienst | EU/VS | EU-VS Data Privacy Framework en standaardcontractbepalingen |
-| Cloudflare, Inc. | Ontvangst van e-mail op het factuuradres van de vereniging (post.sporten.app) | De volledige inhoud van binnenkomende berichten, inclusief afzender, onderwerp en bijlagen | EU/VS | EU-VS Data Privacy Framework en standaardcontractbepalingen |
+| Cloudflare, Inc. | Al het verkeer naar de app, de API en het beheerportaal loopt hierlangs | IP-adres, browser- en apparaatgegevens, en het verkeer zelf | EU/VS | EU-VS Data Privacy Framework en standaardcontractbepalingen |
+| Cloudflare, Inc. | Ontvangst van e-mail op het factuuradres van de vereniging | De volledige inhoud van binnenkomende berichten: afzender, onderwerp en bijlagen | EU/VS | EU-VS Data Privacy Framework en standaardcontractbepalingen |
 | Google Ireland Ltd. (Firebase Cloud Messaging) | Pushmeldingen in de webbrowser | Pushtoken en de inhoud van de melding | EU/VS | EU-VS Data Privacy Framework en standaardcontractbepalingen |
-| Expo (650 Industries, Inc.) | Pushmeldingen in de apps op Android en iPhone | Pushtoken en de inhoud van de melding | VS | Standaardcontractbepalingen |
+| Expo (650 Industries, Inc.) | Pushmeldingen in de app, en het ophalen van app-updates bij het opstarten | Pushtoken, de inhoud van de melding, en bij een update-controle het IP-adres en apparaatgegevens | VS | Standaardcontractbepalingen |
+| Automattic Inc. (Gravatar) | De profielfoto van een lid in de app | Een versleutelde weergave (hash) van het e-mailadres, en het IP-adres van het lid dat de foto opvraagt | VS | Standaardcontractbepalingen |
+| HostYourAI B.V. | Automatisch uitlezen van een bon of inkoopfactuur; **alleen als de vereniging dit zelf aanzet** | De inhoud van het aangeboden document, dus bedragen, IBAN, factuurnummer en de namen die erop staan | Nederland en overige EU | Geen doorgifte buiten de EER |
 
-Expo levert een melding af via de meldingsdiensten van Apple (APNs) en Google (FCM); die
-diensten zien daarbij het pushtoken en de inhoud van de melding.
+## Aangekondigd, nog niet in gebruik
 
-## Wat wij in eigen beheer doen
+Deze partij is nog niet in gebruik. Wij kondigen hem hier alvast aan, zodat de termijn van
+artikel 7 al loopt en er geen nieuwe aankondiging nodig is op het moment dat wij hem in
+gebruik nemen. Een vereniging die bezwaar wil maken, kan dat dus nu al doen.
 
-Voor de volgende onderdelen schakelen wij geen derde partij in. Hier is dus ook geen
-subverwerker voor nodig.
+| Subverwerker | Waarvoor | Welke gegevens | Verwerkt in | Waarborg bij doorgifte |
+|---|---|---|---|---|
+| Pingen AG | Facturen en herinneringen per post versturen, voor leden die u niet per e-mail bereikt | Naam en adres van de ontvanger en de inhoud van de brief | Zwitserland, drukwerk in Nederland | Adequaatheidsbesluit van de Europese Commissie voor Zwitserland |
 
-- **Hosting, applicatie en database** — servers in eigen beheer in Nederland.
-- **Bestandsopslag** — bonnen, bijlagen, documenten bij een lid en binnengekomen post
-  staan op diezelfde servers.
-- **E-mailverzending** — via onze eigen mailserver, niet via een externe maildienst.
-- **Back-ups** — versleuteld, naar opslag in eigen beheer in Nederland.
+## Wat wij zelf doen
 
-## Derden die geen subverwerker zijn
-
-Deze partijen komen wel in beeld bij het gebruik van de dienst, maar verwerken geen
-persoonsgegevens in onze opdracht.
-
-| Partij | Waarvoor | Waarom geen subverwerker |
-|---|---|---|
-| PDOK Locatieserver (Kadaster) | Straat en plaats aanvullen bij een ingevoerde postcode en huisnummer | Wij sturen alleen een postcode en huisnummer, zonder naam of ander gegeven dat naar een persoon herleidt. De opvraging loopt via onze server, niet vanuit de browser van de gebruiker |
-| Apple en Google (App Store, Google Play) | Downloaden en bijwerken van de app | Zij verwerken de gegevens van het app-store-account voor eigen doeleinden en zijn daarvoor zelf verwerkingsverantwoordelijke |
+De applicatie, de database, de bestandsopslag, het versturen van e-mail en de back-ups
+draaien op servers in eigen beheer in Nederland. Daar schakelen wij geen derde partij voor
+in.
 
 ## Wijzigingen in deze lijst
 
 Voegen wij een subverwerker toe of vervangen wij er een, dan melden wij dat ten minste
-**30 dagen vooraf** per e-mail aan het contactadres dat de vereniging in het beheerportaal
-heeft vastgelegd, en werken wij deze pagina bij. Maakt een vereniging binnen die termijn
-schriftelijk en gemotiveerd bezwaar, dan treden wij in overleg; komen wij er niet uit, dan
-kan de vereniging de dienstverlening beëindigen. De volledige regeling staat in artikel 6
-van de verwerkersovereenkomst.
+**30 dagen voor de ingangsdatum** per e-mail aan het contactadres dat u in het
+beheerportaal heeft vastgelegd, en werken wij deze pagina bij. Maakt u binnen die termijn
+schriftelijk en gemotiveerd bezwaar, dan gaan wij met u in overleg; komen wij er niet uit,
+dan kunt u de dienstverlening beëindigen. De volledige regeling staat in artikel 7 van de
+verwerkersovereenkomst.
 
 ## Overzicht van wijzigingen
 
 | Versie | Datum | Wijziging |
 |---|---|---|
-| 2.0 | 26 augustus 2026 | Lijst losgemaakt van de verwerkersovereenkomst en als eigen pagina gepubliceerd. Ontvangst van e-mail via Cloudflare toegevoegd; PDOK en de app stores benoemd als derden die geen subverwerker zijn |
-| 1.0 | 13 augustus 2026 | Eerste versie, als bijlage 2 bij de model-verwerkersovereenkomst |
+| 3 | 27 augustus 2026 | Gravatar en HostYourAI toegevoegd, Pingen aangekondigd, en bij Expo staat nu ook het ophalen van app-updates. De ontvangst van e-mail via Cloudflare is een eigen regel geworden |
+| 2 | 26 augustus 2026 | Lijst losgemaakt van de verwerkersovereenkomst en als eigen pagina gepubliceerd |
+| 1 | 13 augustus 2026 | Eerste versie, als bijlage bij de verwerkersovereenkomst |
