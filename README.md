@@ -48,6 +48,8 @@ tabel "Overzicht van wijzigingen". Hele getallen, geen minor-versies: dit is een
 document en geen bibliotheek. De namen van subverwerkers staan alleen op die pagina —
 de privacyverklaring verwijst ernaar en herhaalt ze niet.
 
-Een subverwerker die eraan komt maar nog niet in gebruik is, hoort onder het kopje
-**Aangekondigd**: de meldingstermijn van 30 dagen uit artikel 7 gaat dan meteen lopen,
-zodat er bij ingebruikname geen tweede ronde langs alle verenigingen nodig is.
+Alles staat in één tabel, met een kolom **Status**. Een subverwerker die eraan komt maar
+nog niet in gebruik is, krijgt daar `Aangekondigd`: de meldingstermijn van 30 dagen uit
+artikel 7 gaat dan meteen lopen, zodat er bij ingebruikname geen tweede ronde langs alle
+verenigingen nodig is. Datzelfde maakt een uitwijkpartij bruikbaar op het moment dat het
+misgaat — zet die dus vóóraf op de lijst, niet tijdens de storing.
