@@ -2,7 +2,7 @@
 layout: ../layouts/Juridisch.astro
 titel: Subverwerkers | Sporten.app
 beschrijving: De actuele lijst met subverwerkers van Sporten.app — welke partijen wij inschakelen, welke gegevens zij zien, waar zij verwerken en met welke waarborg.
-versie: '5'
+versie: '1'
 datum: 28 augustus 2026
 ---
 
@@ -37,8 +37,4 @@ lijst staat.
 
 | Versie | Datum | Wijziging |
 |---|---|---|
-| 5 | 28 augustus 2026 | Gravatar vervalt: de app haalt geen profielfoto meer bij die dienst op. AhaSend en Contabo toegevoegd, Scaleway vervallen. Het onderscheid tussen "in gebruik" en "aangekondigd" is losgelaten — de lijst kent alleen nog gewone regels — en de plaats van verwerking staat nu samen met de waarborg in één kolom |
-| 4 | 27 augustus 2026 | Eén lijst met een statuskolom in plaats van twee tabellen, de twee regels van Cloudflare samengevoegd, en Your Hosting (Versio), Scaleway en Contabo toegevoegd |
-| 3 | 27 augustus 2026 | Gravatar en HostYourAI toegevoegd, Pingen aangekondigd, en bij Expo staat nu ook het ophalen van app-updates. De ontvangst van e-mail via Cloudflare is een eigen regel geworden |
-| 2 | 26 augustus 2026 | Lijst losgemaakt van de verwerkersovereenkomst en als eigen pagina gepubliceerd |
-| 1 | 13 augustus 2026 | Eerste versie, als bijlage bij de verwerkersovereenkomst |
+| 1 | 28 augustus 2026 | Eerste versie |

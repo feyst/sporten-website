@@ -2,7 +2,7 @@
 layout: ../layouts/Juridisch.astro
 titel: 'Privacyverklaring | Sporten.app'
 beschrijving: 'Privacyverklaring van Sporten.app: welke gegevens wij van leden van sportverenigingen verwerken, waarvoor wij ze gebruiken en welke rechten u heeft.'
-versie: '2'
+versie: '1'
 datum: 28 augustus 2026
 ---
 
@@ -144,5 +144,4 @@ versienummer en een datum.
 
 | Versie | Datum | Wijziging |
 |---|---|---|
-| 2 | 28 augustus 2026 | Rechtgezet wie waarvoor verantwoordelijk is: voor de gegevens in de app is de vereniging verwerkingsverantwoordelijke en zijn wij verwerker. De opsomming van gegevens en de bewaartermijnen verwijzen nu naar de verwerkersovereenkomst in plaats van die te herhalen, de bewaartermijn van zeven jaar gold ten onrechte voor alles, Gravatar is vervallen en vervangen door de profielfoto die een lid zelf plaatst, en "wij garanderen de veiligheid" is vervangen door wat er feitelijk is afgesproken |
-| 1 | 13 augustus 2026 | Eerste versie |
+| 1 | 28 augustus 2026 | Eerste versie |

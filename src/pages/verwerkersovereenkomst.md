@@ -2,7 +2,7 @@
 layout: ../layouts/Juridisch.astro
 titel: Verwerkersovereenkomst | Sporten.app
 beschrijving: De verwerkersovereenkomst van Sporten.app, opgesteld langs artikel 28 AVG — wat wij namens uw vereniging verwerken, hoe wij dat beveiligen en welke afspraken daarbij horen.
-versie: '4'
+versie: '1'
 datum: 28 augustus 2026
 ---
 
@@ -303,7 +303,4 @@ retentietermijn uit bijlage 2 (zie artikel 11 lid 3). Zie verder de privacyverkl
 
 | Versie | Datum | Wijziging |
 |---|---|---|
-| 4 | 28 augustus 2026 | Het begrip "aangekondigde subverwerker" vervallen: de lijst kent alleen nog gewone regels, en een uitwijkpartij staat er gewoon op (artikel 7). Inleiding en toelichtende zinnen eruit, de rangorderegel stond dubbel en staat nu alleen in artikel 2 lid 5. Fiscale bewaartermijn gepreciseerd (bijlage 1), en de omschrijving van locatie, fysieke toegang en versleuteling aangescherpt (bijlage 2). Profielfoto toegevoegd aan bijlage 1 |
-| 3 | 27 augustus 2026 | Rollen en rechten benoemd als verantwoordelijkheid van de vereniging (artikel 4), aankondiging van een subverwerker kan ook via het beheerportaal en een aangekondigde uitwijkpartij mag bij een calamiteit meteen worden ingezet (artikel 7), opschorten en beëindigen bij niet-naleving toegevoegd (artikel 11), rangorde vastgelegd (artikel 14) en de back-upbewaartermijn verlengd naar twee jaar (bijlage 2) |
-| 2 | 27 augustus 2026 | Akkoord per e-mail in plaats van ondertekenen, en geen in te vullen velden meer. Bijlage 1 aangevuld met noodcontacten, toestemmingen, documenten bij een lid, financiële gegevens en binnengekomen post, plus een alinea over strafrechtelijke en gezondheidsgegevens. Aansprakelijkheid voor subverwerkers vastgelegd (artikel 7 lid 4), een wijzigingsprocedure toegevoegd (artikel 12), en de back-upbewaartermijn ingevuld |
-| 1 | 13 augustus 2026 | Eerste versie |
+| 1 | 28 augustus 2026 | Eerste versie |

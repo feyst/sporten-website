@@ -2,7 +2,7 @@
 layout: ../layouts/Juridisch.astro
 titel: 'Gebruiksvoorwaarden | Sporten.app'
 beschrijving: 'De gebruiksvoorwaarden van Sporten.app: wat u van ons mag verwachten en wat wij van u vragen bij het gebruik van de app en het beheerportaal.'
-versie: '2'
+versie: '1'
 datum: 28 augustus 2026
 ---
 
@@ -184,5 +184,4 @@ komen.
 
 | Versie | Datum | Wijziging |
 |---|---|---|
-| 2 | 28 augustus 2026 | Ingedeeld in artikelen met een versietabel, net als de verwerkersovereenkomst. Nieuw: het onderscheid tussen de Vereniging als contractspartij en de Gebruiker (artikel 2), wat de Vereniging zelf inbrengt en waarvoor zij vrijwaart (artikel 6), afspraken over onderhoud en diensten van derden (artikel 7), vergoeding en opschorting bij achterstand (artikel 8), intellectuele eigendom (artikel 9), een grens aan de aansprakelijkheid (artikel 10), overmacht (artikel 11) en een wijzigingsprocedure (artikel 13) |
-| 1 | 13 augustus 2026 | Eerste versie |
+| 1 | 28 augustus 2026 | Eerste versie |
