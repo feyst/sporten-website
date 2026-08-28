@@ -78,6 +78,10 @@ deze voorwaarden kunt u stellen via
    bezwaar maakt tegen wat de Vereniging heeft vastgelegd of gedeeld — dan vrijwaart de
    Vereniging ons daarvoor, en vergoedt zij de redelijke kosten van verweer. Dat geldt niet
    voor zover de aanspraak voortkomt uit een tekortkoming van onszelf.
+4. De Vereniging informeert haar eigen leden over de verwerking van hun gegevens, zoals de
+   AVG dat van een verwerkingsverantwoordelijke verlangt. Zij mag daarbij verwijzen naar
+   onze [privacyverklaring](https://sporten.app/privacy), maar die komt niet in de plaats
+   van haar eigen informatieplicht.
 
 ## Artikel 7 — Beschikbaarheid, onderhoud en wijzigingen
 
