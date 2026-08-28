@@ -2,15 +2,11 @@
 layout: ../layouts/Juridisch.astro
 titel: Verwerkersovereenkomst | Sporten.app
 beschrijving: De verwerkersovereenkomst van Sporten.app, opgesteld langs artikel 28 AVG — wat wij namens uw vereniging verwerken, hoe wij dat beveiligen en welke afspraken daarbij horen.
-versie: '3'
-datum: 27 augustus 2026
+versie: '4'
+datum: 28 augustus 2026
 ---
 
 # <span>Verwerkers</span>overeenkomst
-
-*Deze overeenkomst geldt tussen uw vereniging en LightMedia zodra uw vereniging
-Sporten.app afneemt. U hoeft hem niet in te vullen en niet te ondertekenen: een akkoord
-per e-mail is genoeg — zie artikel 2.*
 
 <p class="download"><a href="/documenten/verwerkersovereenkomst.pdf" download>Download als pdf</a></p>
 
@@ -48,17 +44,18 @@ beschreven in de overwegingen.
 1. Deze overeenkomst komt tot stand doordat een bestuurder die de Vereniging mag
    vertegenwoordigen namens haar akkoord geeft. Dat kan per e-mail vanaf het bestuursadres
    van de Vereniging, of bij de aanmelding in het beheerportaal. Een handtekening is niet
-   nodig: artikel 28 lid 9 AVG staat de elektronische vorm uitdrukkelijk toe.
-2. Wilt u liever een ondertekend exemplaar voor uw eigen administratie, dan sturen wij dat
-   op verzoek toe.
+   nodig.
+2. Wil de Vereniging een ondertekend exemplaar voor haar eigen administratie, dan stuurt
+   LightMedia dat op verzoek toe.
 3. LightMedia legt vast wie namens de Vereniging akkoord gaf, wanneer dat gebeurde en op
    welke versie van deze overeenkomst. Die vastlegging is voor beide partijen opvraagbaar.
 4. De overeenkomst geldt zolang de Vereniging de Dienst afneemt en eindigt van rechtswege
    zodra de dienstverlening eindigt, met uitzondering van bepalingen die naar hun aard
    doorlopen (zoals geheimhouding en artikel 11).
 5. Op het gebruik van de Dienst zijn daarnaast de gebruiksvoorwaarden van toepassing. Voor
-   zover het de verwerking van persoonsgegevens betreft, gaat deze overeenkomst vóór op
-   die voorwaarden.
+   zover het gaat over het verwerken van persoonsgegevens, gaat deze overeenkomst vóór op
+   die voorwaarden en op eerdere afspraken tussen partijen. Wat partijen over
+   aansprakelijkheid zijn overeengekomen (artikel 13) blijft daarbij gelden.
 
 ## Artikel 3 — Onderwerp van de verwerking
 
@@ -104,27 +101,24 @@ geheimhouding daarvan.
 1. De Vereniging geeft algemene toestemming voor het inschakelen van subverwerkers. De
    actuele lijst staat op **[sporten.app/subverwerkers](https://sporten.app/subverwerkers)**
    en maakt deel uit van deze overeenkomst. De lijst draagt een versienummer en een datum,
-   en vermeldt per subverwerker het doel, de gegevens, de plaats van verwerking, de
-   waarborg bij doorgifte buiten de Europese Economische Ruimte en of de subverwerker al
-   in gebruik is.
-2. Wil LightMedia een subverwerker toevoegen of vervangen, dan werkt zij de lijst bij en
-   meldt zij dat ten minste 30 dagen voor de ingangsdatum, per e-mail aan het contactadres
-   bedoeld in artikel 9 lid 4 of met een duidelijke melding in het beheerportaal. Een
-   subverwerker die op de lijst staat als *aangekondigd* is daarmee al gemeld; het in
-   gebruik nemen daarvan vraagt geen nieuwe melding.
-3. Bij een storing of calamiteit mag LightMedia een aangekondigde subverwerker onmiddellijk
-   in gebruik nemen om de dienstverlening voort te zetten of te herstellen. Zij meldt dat
-   achteraf, zonder onnodige vertraging.
-4. Maakt de Vereniging binnen de termijn van lid 2 schriftelijk bezwaar op redelijke, met
+   en vermeldt per subverwerker het doel, de gegevens en de plaats van verwerking met de
+   waarborg bij doorgifte buiten de Europese Economische Ruimte. Een subverwerker die op de
+   lijst staat, mag worden ingeschakeld; dat geldt ook voor een partij die daar staat als
+   uitwijk en pas bij een storing daadwerkelijk wordt ingezet.
+2. Wil LightMedia een subverwerker toevoegen of vervangen, dan brengt zij een nieuwe versie
+   van de lijst uit, waarin de wijzigingstabel vermeldt wat er is veranderd, en meldt zij
+   dat ten minste 30 dagen voor de ingangsdatum: per e-mail aan het contactadres bedoeld in
+   artikel 9 lid 4, of met een duidelijke melding in het beheerportaal.
+3. Maakt de Vereniging binnen de termijn van lid 2 schriftelijk bezwaar op redelijke, met
    gegevensbescherming samenhangende gronden, dan treden partijen in overleg; leidt dat
    niet tot een oplossing, dan mag de Vereniging de dienstverlening beëindigen tegen de
    ingangsdatum. Vooruitbetaalde bedragen voor de periode daarna worden naar rato
    terugbetaald. Een bezwaar schort de ingangsdatum zelf niet op.
-5. LightMedia legt aan iedere subverwerker verplichtingen op die gelijkwaardig zijn aan
+4. LightMedia legt aan iedere subverwerker verplichtingen op die gelijkwaardig zijn aan
    deze overeenkomst, en blijft jegens de Vereniging volledig aansprakelijk voor het
    nakomen daarvan door de subverwerker. Op verzoek laat LightMedia zien welke afspraken
    dat zijn; zij mag daarbij vertrouwelijke onderdelen onleesbaar maken.
-6. Op verzoek van de Vereniging verstrekt LightMedia een overzicht van de eerdere versies
+5. Op verzoek van de Vereniging verstrekt LightMedia een overzicht van de eerdere versies
    van de lijst.
 
 ## Artikel 8 — Bijstand
@@ -205,7 +199,7 @@ geheimhouding daarvan.
 4. Maakt de Vereniging binnen de termijn van lid 2 schriftelijk en gemotiveerd bezwaar, dan
    treden partijen in overleg; leidt dat niet tot een oplossing, dan mag de Vereniging de
    dienstverlening beëindigen tegen de ingangsdatum, met terugbetaling naar rato zoals in
-   artikel 7 lid 4.
+   artikel 7 lid 3.
 5. Elke versie draagt een versienummer en een datum. Onder aan deze overeenkomst staat wat
    er per versie is veranderd; LightMedia bewaart de eerdere versies en verstrekt die op
    verzoek.
@@ -220,10 +214,7 @@ overeengekomen.
 
 1. Op deze overeenkomst is Nederlands recht van toepassing. Geschillen worden voorgelegd
    aan de bevoegde Nederlandse rechter.
-2. Deze overeenkomst gaat vóór op de gebruiksvoorwaarden en op eerdere afspraken tussen
-   partijen, voor zover die gaan over het verwerken van persoonsgegevens. Wat partijen over
-   aansprakelijkheid zijn overeengekomen (artikel 13) blijft daarbij gelden.
-3. Is een bepaling nietig of vernietigbaar, dan blijven de overige bepalingen gelden en
+2. Is een bepaling nietig of vernietigbaar, dan blijven de overige bepalingen gelden en
    vervangen partijen die bepaling door een geldige met een zo gelijk mogelijke strekking.
 
 ---
@@ -267,7 +258,8 @@ LightMedia beperkt de toegang ertoe met rollen en rechten, en legt bij noodconta
 opvraging vast.
 
 **Bewaartermijnen:** gegevens worden bewaard zolang het lidmaatschap of de rol dat vereist.
-Financiële gegevens bewaart de Vereniging 7 jaar op grond van de fiscale bewaarplicht.
+Financiële gegevens bewaart de Vereniging tot zeven jaar na afloop van het boekjaar
+waarop zij betrekking hebben, op grond van de fiscale bewaarplicht.
 Documenten bij een lid verdwijnen met het lid. Gegevens in back-ups verdwijnen mee met de
 retentietermijn uit bijlage 2 (zie artikel 11 lid 3). Zie verder de privacyverklaring.
 
@@ -275,8 +267,11 @@ retentietermijn uit bijlage 2 (zie artikel 11 lid 3). Zie verder de privacyverkl
 
 - Al het verkeer is versleuteld met TLS (HTTPS).
 - Wachtwoorden worden uitsluitend gehasht opgeslagen (bcrypt).
-- De database is versleuteld in rust (encryptie-at-rest).
-- Back-ups zijn versleuteld en staan op opslag in eigen beheer in Nederland. Bewaartermijn:
+- De database is versleuteld in rust, met een sleutel die LightMedia zelf beheert. Die
+  versleuteling hangt dus niet aan de opslag van een hostingpartij en gaat mee als de
+  Dienst op andere apparatuur draait.
+- Back-ups zijn versleuteld en staan op opslag in eigen beheer binnen de Europese
+  Economische Ruimte. Bewaartermijn:
   de laatste 48 uur per uur, 14 dagen per dag, 6 weken per week en 24 maanden per maand; de
   langst bewaarde back-up is dus ongeveer **twee jaar** oud. Die lange termijn is een
   bewuste keuze: gijzelsoftware wordt vaak pas ontdekt wanneer de recente back-ups al
@@ -284,8 +279,10 @@ retentietermijn uit bijlage 2 (zie artikel 11 lid 3). Zie verder de privacyverkl
 - Toegang tot het beheerportaal vereist tweestapsverificatie (TOTP).
 - Toegang tot productiesystemen is beperkt tot de beheerder en verloopt via versleutelde
   verbindingen.
-- De apparatuur staat in Nederland in een ruimte die niet vrij toegankelijk is; alleen de
-  beheerder kan er fysiek bij.
+- De apparatuur staat binnen de Europese Economische Ruimte op een locatie die niet voor
+  publiek toegankelijk is, waar alleen de beheerder komt. Tegen fysieke toegang beschermt
+  daarnaast de versleuteling in rust: zonder de sleutel leveren de schijven geen gegevens
+  op.
 - Autorisatie in de Dienst is per vereniging gescheiden: gegevens van de ene club zijn niet
   zichtbaar voor een andere.
 - Binnen een vereniging bepalen rollen en rechten wie welke gegevens ziet; gevoelige
@@ -306,6 +303,7 @@ retentietermijn uit bijlage 2 (zie artikel 11 lid 3). Zie verder de privacyverkl
 
 | Versie | Datum | Wijziging |
 |---|---|---|
+| 4 | 28 augustus 2026 | Het begrip "aangekondigde subverwerker" vervallen: de lijst kent alleen nog gewone regels, en een uitwijkpartij staat er gewoon op (artikel 7). Inleiding en toelichtende zinnen eruit, de rangorderegel stond dubbel en staat nu alleen in artikel 2 lid 5. Fiscale bewaartermijn gepreciseerd (bijlage 1), en de omschrijving van locatie, fysieke toegang en versleuteling aangescherpt (bijlage 2) |
 | 3 | 27 augustus 2026 | Rollen en rechten benoemd als verantwoordelijkheid van de vereniging (artikel 4), aankondiging van een subverwerker kan ook via het beheerportaal en een aangekondigde uitwijkpartij mag bij een calamiteit meteen worden ingezet (artikel 7), opschorten en beëindigen bij niet-naleving toegevoegd (artikel 11), rangorde vastgelegd (artikel 14) en de back-upbewaartermijn verlengd naar twee jaar (bijlage 2) |
 | 2 | 27 augustus 2026 | Akkoord per e-mail in plaats van ondertekenen, en geen in te vullen velden meer. Bijlage 1 aangevuld met noodcontacten, toestemmingen, documenten bij een lid, financiële gegevens en binnengekomen post, plus een alinea over strafrechtelijke en gezondheidsgegevens. Aansprakelijkheid voor subverwerkers vastgelegd (artikel 7 lid 4), een wijzigingsprocedure toegevoegd (artikel 12), en de back-upbewaartermijn ingevuld |
 | 1 | 13 augustus 2026 | Eerste versie |

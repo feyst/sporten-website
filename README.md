@@ -21,21 +21,32 @@ npm run preview # de gebouwde site lokaal bekijken
 
 #### Juridische pagina's
 
-`verwerkersovereenkomst.md` en `subverwerkers.md` in `src/pages/` zijn Markdown in
-plaats van Astro, omdat diezelfde tekst twee kanten op moet: naar de website (via
+De vier juridische pagina's — `verwerkersovereenkomst.md`, `subverwerkers.md`,
+`voorwaarden.md` en `privacy.md` in `src/pages/` — zijn Markdown in plaats van Astro,
+omdat diezelfde tekst twee kanten op moet: naar de website (via
 `src/layouts/Juridisch.astro`) én naar de pdf die een vereniging krijgt toegestuurd.
 Eén bron, dus de gepubliceerde en de verstuurde versie kunnen niet uit elkaar lopen —
-pas de tekst dus in de Markdown aan en nergens anders.
+pas de tekst dus in de Markdown aan en nergens anders. Elk van de vier draagt een
+`versie` en een `datum` in de frontmatter en een tabel "Overzicht van wijzigingen"
+onderaan.
+
+Let op één ding in die frontmatter: **quote `titel` en `beschrijving`**. Een dubbele punt
+gevolgd door een spatie breekt YAML, en een waarde die met `|` begint wordt een
+block scalar — de build faalt dan op `bad indentation of a mapping entry`.
 
 De pdf's in `public/documenten/` worden met chromium van de gebouwde pagina's gedrukt.
-Wat er wel en niet op papier komt, staat in het `@media print`-blok in `global.css`;
-de navigatie, de voettekst en de downloadknop vallen daar weg.
+Wat er wel en niet op papier komt, staat in het `@media print`-blok in `global.css`:
+de navigatie, de voettekst en de downloadknop vallen weg, en er komt een merkregel
+(`.merk`) bovenaan die op het scherm juist verborgen is — daar doet de nav dat al. De
+versieregel blijft op papier wél staan; dat is het enige wat zegt welke versie iemand in
+handen heeft.
 
 ```bash
 npm run build
 npx astro preview --port 4399                        # in een tweede terminal
-npx -y playwright@latest pdf http://localhost:4399/verwerkersovereenkomst/ public/documenten/verwerkersovereenkomst.pdf
-npx -y playwright@latest pdf http://localhost:4399/subverwerkers/ public/documenten/subverwerkers.pdf
+for p in verwerkersovereenkomst subverwerkers voorwaarden privacy; do
+  npx -y playwright@latest pdf "http://localhost:4399/$p/" "public/documenten/$p.pdf"
+done
 ```
 
 **Wijzig je de tekst, druk de pdf dan opnieuw** — hij staat in git en volgt niet
@@ -48,8 +59,9 @@ tabel "Overzicht van wijzigingen". Hele getallen, geen minor-versies: dit is een
 document en geen bibliotheek. De namen van subverwerkers staan alleen op die pagina —
 de privacyverklaring verwijst ernaar en herhaalt ze niet.
 
-Alles staat in één tabel, met een kolom **Status**. Een subverwerker die eraan komt maar
-nog niet in gebruik is, krijgt daar `Aangekondigd`: de meldingstermijn van 30 dagen uit
-artikel 7 gaat dan meteen lopen, zodat er bij ingebruikname geen tweede ronde langs alle
-verenigingen nodig is. Datzelfde maakt een uitwijkpartij bruikbaar op het moment dat het
-misgaat — zet die dus vóóraf op de lijst, niet tijdens de storing.
+Alles staat in één tabel zonder statuskolom: er is geen onderscheid tussen "in gebruik" en
+"aangekondigd". Staat een partij op de lijst, dan mag zij worden ingeschakeld — ook als dat
+pas bij een storing gebeurt. Wat zo'n partij doet, hoort dus in de kolom **Waarvoor**
+("uitwijk wanneer onze eigen apparatuur uitvalt"), niet in een extra kolom. Zet een
+uitwijkpartij vóóraf op de lijst: tijdens de storing is de meldingstermijn van 30 dagen niet
+meer te halen.
