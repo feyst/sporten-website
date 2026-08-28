@@ -209,6 +209,10 @@ footer a:hover{color:var(--tekst)}
 
  .proza a{color:#000;text-decoration:none}
  .proza hr{break-before:page;border:0;margin:0}
+ /* De laatste scheiding staat overal vlak vóór "Overzicht van wijzigingen". Die
+    tabel is één regel lang; een eigen pagina ervoor levert een vrijwel lege
+    bladzijde op. De breuk vóór bijlage 1 blijft wél staan. */
+ .proza hr:last-of-type{break-before:auto;border-top:1pt solid #ddd;margin:16pt 0}
  /* De versieregel blijft juist wél staan: samen met de voettekst is dat het
     enige wat zegt welke versie iemand in handen heeft. */
  .versie{margin-top:18pt;padding-top:6pt;border-top:1pt solid #ddd;font-size:9.5pt;color:#555}
