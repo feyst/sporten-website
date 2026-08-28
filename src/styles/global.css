@@ -133,8 +133,15 @@ h2{font-size:clamp(24px,3vw,32px);letter-spacing:-.02em;margin-bottom:10px}
 .download{margin:0 0 28px}
 .download a{display:inline-block;border:1px solid var(--rand);border-radius:8px;padding:8px 16px;font-size:15px;font-weight:600;color:var(--rood)}
 .download a:hover{border-color:var(--rood)}
+/* Het merk staat alleen op papier: op het scherm doet de nav dat al. */
+.merk{display:none}
+
 @media print{
- header.site,footer,.download,.versie{display:none}
+ header.site,footer,.download{display:none}
+ /* De versieregel blijft juist wél staan: op papier is dat het enige wat zegt
+    welke versie iemand in handen heeft. */
+ .merk{display:block;font-weight:800;font-size:15pt;letter-spacing:-.02em;color:#000;margin:0 0 18pt}
+ .merk em{color:#f4511e;font-style:normal}
  body{background:#fff;color:#000;font-size:10.5pt;line-height:1.45}
  .proza{max-width:none;padding:0}
  .proza p,.proza li,.proza th,.proza td{color:#000;font-size:10.5pt}
