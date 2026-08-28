@@ -166,7 +166,7 @@ beëindigen zonder schadevergoeding.
 ## Artikel 13 — Wijziging van deze voorwaarden
 
 1. Wij kunnen deze voorwaarden wijzigen. De actuele versie staat op deze pagina, met een
-   versienummer en een datum; onderaan staat wat er per versie is veranderd.
+   versienummer en een datum.
 2. Een wijziging van betekenis kondigen wij ten minste 30 dagen voor de ingangsdatum aan bij
    de Vereniging. Maakt zij binnen die termijn geen bezwaar, dan geldt de nieuwe versie.
    Maakt zij wel bezwaar en komen wij er samen niet uit, dan kan zij opzeggen tegen de

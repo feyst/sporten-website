@@ -136,23 +136,6 @@ h2{font-size:clamp(24px,3vw,32px);letter-spacing:-.02em;margin-bottom:10px}
 /* Het merk staat alleen op papier: op het scherm doet de nav dat al. */
 .merk{display:none}
 
-@media print{
- header.site,footer,.download{display:none}
- /* De versieregel blijft juist wél staan: op papier is dat het enige wat zegt
-    welke versie iemand in handen heeft. */
- .merk{display:block;font-weight:800;font-size:15pt;letter-spacing:-.02em;color:#000;margin:0 0 18pt}
- .merk em{color:#f4511e;font-style:normal}
- body{background:#fff;color:#000;font-size:10.5pt;line-height:1.45}
- .proza{max-width:none;padding:0}
- .proza p,.proza li,.proza th,.proza td{color:#000;font-size:10.5pt}
- .proza h1{font-size:21pt;margin-bottom:14pt}
- .proza h2{font-size:13pt;margin:16pt 0 4pt;break-after:avoid}
- .proza table{display:table;width:100%;margin:8pt 0;font-size:9pt}
- .proza tr{break-inside:avoid}
- .proza th,.proza td{padding:5pt 7pt}
- .proza a{color:#000;text-decoration:none}
- .proza hr{break-before:page;border:0;margin:0}
-}
 .proza th,.proza td{border:1px solid var(--rand);padding:8px 10px;text-align:left;vertical-align:top;color:var(--dim)}
 .proza th{color:var(--tekst);font-weight:600;white-space:nowrap}
 .proza td p{margin:0;font-size:inherit}
@@ -177,4 +160,56 @@ footer a:hover{color:var(--tekst)}
  .login{margin-top:12px}
  .login summary{display:block;text-align:center}
  .login .keuze{position:static;box-shadow:none;margin-top:8px;min-width:0}
+}
+
+/* Papier. Marges en paginanummers komen uit bin/maak-pdf.mjs, niet hieruit:
+   Chromium kent geen CSS-paginanummers. Hier staat alleen de typografie. */
+@media print{
+ header.site,footer,.download{display:none}
+ body{background:#fff;color:#000;font-size:10.5pt;line-height:1.5}
+ .proza{max-width:none;padding:0}
+
+ /* Kop van de eerste pagina: merkregel met een streep eronder. Op het scherm
+    verbergt .merk zichzelf, want daar staat de nav er al. */
+ .merk{display:block;font-weight:800;font-size:14pt;letter-spacing:-.02em;color:#000;
+       margin:0 0 4pt;padding-bottom:6pt;border-bottom:1pt solid #ddd}
+ .merk em{color:#f4511e;font-style:normal}
+
+ .proza p,.proza li,.proza th,.proza td{color:#000;font-size:10.5pt}
+ .proza p,.proza li{orphans:3;widows:3}
+ .proza li{break-inside:avoid;margin:3pt 0}
+ .proza ol,.proza ul{margin:7pt 0;padding-left:16pt}
+ .proza h1{font-size:19pt;margin:10pt 0 12pt;break-after:avoid}
+ .proza h2{font-size:12.5pt;margin:15pt 0 5pt;break-after:avoid}
+ .proza h3{font-size:11pt;margin:12pt 0 4pt;break-after:avoid}
+
+ .proza table{display:table;width:100%;margin:8pt 0;font-size:9pt}
+ /* Loopt een tabel over een paginagrens, dan hoort de kop mee te lopen —
+    zonder dat staat de tweede helft van de subverwerkerslijst zonder koppen. */
+ .proza thead{display:table-header-group}
+ .proza tr{break-inside:avoid}
+ .proza th,.proza td{padding:5pt 7pt}
+ /* Op het scherm houdt nowrap de koppen op één regel; op papier moeten ze juist
+    kunnen afbreken, anders bepaalt de langste kop de kolombreedte. */
+ .proza th{white-space:normal}
+ /* Alleen de subverwerkerslijst heeft vier kolommen; de wijzigingstabellen er
+    drie en bijlage 1 twee. Zonder vaste breedtes deelt Chromium de ruimte naar
+    tekstlengte, en dan wordt "Waar, en met welke waarborg" twee keer zo breed
+    als "Waarvoor". */
+ .proza table:has(th:nth-child(4)){table-layout:fixed}
+ .proza table:has(th:nth-child(4)) th:nth-child(1){width:19%}
+ .proza table:has(th:nth-child(4)) th:nth-child(2){width:21%}
+ .proza table:has(th:nth-child(4)) th:nth-child(3){width:27%}
+ .proza table:has(th:nth-child(4)) th:nth-child(4){width:33%}
+ /* Met een vaste kolombreedte loopt "standaardcontractbepalingen" de cel uit.
+    Afbreken met een koppelteken (de pagina staat op lang="nl"), niet met
+    overflow-wrap: dat knipt midden in het woord zonder streepje. */
+ .proza td{hyphens:auto}
+ .proza th{hyphens:manual}
+
+ .proza a{color:#000;text-decoration:none}
+ .proza hr{break-before:page;border:0;margin:0}
+ /* De versieregel blijft juist wél staan: samen met de voettekst is dat het
+    enige wat zegt welke versie iemand in handen heeft. */
+ .versie{margin-top:18pt;padding-top:6pt;border-top:1pt solid #ddd;font-size:9.5pt;color:#555}
 }

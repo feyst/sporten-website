@@ -34,20 +34,37 @@ Let op één ding in die frontmatter: **quote `titel` en `beschrijving`**. Een d
 gevolgd door een spatie breekt YAML, en een waarde die met `|` begint wordt een
 block scalar — de build faalt dan op `bad indentation of a mapping entry`.
 
-De pdf's in `public/documenten/` worden met chromium van de gebouwde pagina's gedrukt.
-Wat er wel en niet op papier komt, staat in het `@media print`-blok in `global.css`:
-de navigatie, de voettekst en de downloadknop vallen weg, en er komt een merkregel
-(`.merk`) bovenaan die op het scherm juist verborgen is — daar doet de nav dat al. De
-versieregel blijft op papier wél staan; dat is het enige wat zegt welke versie iemand in
-handen heeft.
+De pdf's in `public/documenten/` worden met chromium van de gebouwde pagina's gedrukt,
+door `bin/maak-pdf.mjs`:
 
 ```bash
 npm run build
-npx astro preview --port 4399                        # in een tweede terminal
-for p in verwerkersovereenkomst subverwerkers voorwaarden privacy; do
-  npx -y playwright@latest pdf "http://localhost:4399/$p/" "public/documenten/$p.pdf"
-done
+npx astro preview --port 4399     # in een tweede terminal
+npm run pdf
 ```
+
+Dat script bestaat omdat `npx playwright pdf` geen marges en geen paginanummers kent.
+Marges zouden nog met `@page` in de CSS kunnen, maar Chromium ondersteunt geen
+CSS-paginanummers (de margin-boxen uit Paged Media) — en zonder paginanummer kun je in
+een overeenkomst niet naar een bladzijde verwijzen. Vandaar `playwright` als
+devDependency; beide workflows zetten `PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1`, want CI
+drukt geen pdf's. Op een verse machine haal je de browser op met
+`npx playwright install chromium`.
+
+Papierformaat, marges en de voettekst (`Sporten.app — <naam>, versie <n>` links,
+`Pagina x van y` rechts) staan in dat script. De rest van de opmaak staat in het
+`@media print`-blok in `global.css`, dat **onderaan het bestand moet blijven staan**:
+het overschrijft basisregels met dezelfde specificiteit, dus hogerop verliest het — dat
+kostte twee rondes waarin de tabeltekst grijs bleef en de kolommen scheef stonden.
+
+Wat dat blok doet: de navigatie, de voettekst en de downloadknop vallen weg; er komt een
+merkregel (`.merk`) bovenaan die op het scherm juist verborgen is, want daar doet de nav
+dat al; de versieregel blijft staan; tabelkoppen lopen mee over een paginagrens
+(`thead{display:table-header-group}`); en de subverwerkerslijst krijgt vaste
+kolombreedtes, want anders geeft Chromium de laatste kolom twee keer zoveel ruimte als
+de eerste. Die tabel is met `:has(th:nth-child(4))` gekozen: hij is de enige met vier
+kolommen. Lange woorden breken daar met een koppelteken af (`hyphens: auto`, de pagina
+staat op `lang="nl"`) en niet met `overflow-wrap`, dat midden in een woord knipt.
 
 **Wijzig je de tekst, druk de pdf dan opnieuw** — hij staat in git en volgt niet
 vanzelf. De versie staat in beide, dus een verschil is zichtbaar.
