@@ -26,7 +26,12 @@ jobs:
           cache: npm
 
       - name: 📦 Install dependencies
+        # Playwright is alleen nodig om de pdf's te drukken (npm run pdf); dat
+        # gebeurt lokaal, niet hier. Zonder deze vlag haalt de postinstall een
+        # browser van ~130 MB op bij elke run.
         run: npm ci
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
 
       - name: 🔨 Build
         run: npm run build

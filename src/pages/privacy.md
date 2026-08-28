@@ -38,13 +38,12 @@ Welke soorten gegevens er in de dienst staan en waarvoor ze dienen, staat op é�
 **bijlage 1 van de [verwerkersovereenkomst](https://sporten.app/verwerkersovereenkomst)**.
 Daar staat de volledige opsomming, inclusief de onderdelen die niet elke vereniging
 gebruikt, zoals noodcontacten, toestemmingen, documenten bij een lid en de financiële
-administratie. Wij houden die lijst op één plaats bij, zodat deze verklaring en de
-overeenkomst niet uit elkaar kunnen lopen.
+administratie.
 
 In het kort gaat het om: naam, geslacht en geboortedatum, contactgegevens, adres,
-lidmaatschap en groepsindeling, deelname aan activiteiten, berichten in de clubchat,
-financiële gegevens, en — als uw vereniging die onderdelen gebruikt — noodcontacten,
-toestemmingen en documenten.
+lidmaatschap en groepsindeling, een profielfoto als u die zelf plaatst, deelname aan
+activiteiten, berichten in de clubchat, financiële gegevens, en — als uw vereniging die
+onderdelen gebruikt — noodcontacten, toestemmingen en documenten.
 
 Daarnaast leggen wij bij het gebruik van de app en de website automatisch vast:
 
@@ -90,8 +89,8 @@ Wij nemen technische en organisatorische maatregelen om uw gegevens te bescherme
 verlies en tegen toegang door onbevoegden. Welke dat zijn, staat concreet in **bijlage 2 van
 de verwerkersovereenkomst** — versleuteld verkeer, versleutelde opslag, tweestapsverificatie
 voor het beheerportaal, gescheiden toegang per vereniging, en vastlegging van gevoelige
-opvragingen. Een garantie dat er nooit iets misgaat kan niemand geven; wel is vastgelegd wat
-wij doen als het toch gebeurt.
+opvragingen. Een garantie dat er nooit iets misgaat bestaat niet; wat er gebeurt als het
+tóch misgaat, staat in artikel 9 van die overeenkomst.
 
 ## Wie wij inschakelen
 
@@ -137,7 +136,7 @@ daar de privacyverklaring van die site.
 ## Wijziging van deze verklaring
 
 Wij kunnen deze verklaring wijzigen. De actuele versie staat op deze pagina, met een
-versienummer en een datum; hieronder staat wat er per versie is veranderd.
+versienummer en een datum.
 
 ---
 
@@ -145,5 +144,5 @@ versienummer en een datum; hieronder staat wat er per versie is veranderd.
 
 | Versie | Datum | Wijziging |
 |---|---|---|
-| 2 | 28 augustus 2026 | Rechtgezet wie waarvoor verantwoordelijk is: voor de gegevens in de app is de vereniging verwerkingsverantwoordelijke en zijn wij verwerker. De opsomming van gegevens en de bewaartermijnen verwijzen nu naar de verwerkersovereenkomst in plaats van die te herhalen, de bewaartermijn van zeven jaar gold ten onrechte voor alles, Gravatar is vervallen, en "wij garanderen de veiligheid" is vervangen door wat er feitelijk is afgesproken |
+| 2 | 28 augustus 2026 | Rechtgezet wie waarvoor verantwoordelijk is: voor de gegevens in de app is de vereniging verwerkingsverantwoordelijke en zijn wij verwerker. De opsomming van gegevens en de bewaartermijnen verwijzen nu naar de verwerkersovereenkomst in plaats van die te herhalen, de bewaartermijn van zeven jaar gold ten onrechte voor alles, Gravatar is vervallen en vervangen door de profielfoto die een lid zelf plaatst, en "wij garanderen de veiligheid" is vervangen door wat er feitelijk is afgesproken |
 | 1 | 13 augustus 2026 | Eerste versie |

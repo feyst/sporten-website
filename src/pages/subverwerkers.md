@@ -11,7 +11,7 @@ datum: 28 augustus 2026
 De partijen die wij inschakelen bij het leveren van Sporten.app. Deze lijst hoort bij de
 [verwerkersovereenkomst](https://sporten.app/verwerkersovereenkomst) en maakt daar op
 grond van artikel 7 deel van uit. Wijzigt de lijst, dan brengen wij een nieuwe versie uit
-en melden wij dat vooraf; onderaan staat wat er per versie is veranderd.
+en melden wij dat vooraf.
 
 <p class="download"><a href="/documenten/subverwerkers.pdf" download>Download als pdf</a></p>
 
