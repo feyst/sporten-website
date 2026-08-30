@@ -10,7 +10,7 @@ const beschrijving =
 const vragen = [
   {
     v: 'Moeten we overstappen midden in het boekjaar?',
-    a: 'Nee. Er is een importcommando voor een lopend boekjaar: de mapping van je rekeningen, de beginbalans en de mutaties tot de overstapdatum worden geboekt langs dezelfde controles als een handmatige boeking. Je begint dus middenin het jaar, niet pas na de jaarwisseling.',
+    a: 'Nee. We zetten je lopende boekjaar over: je rekeningschema, de beginbalans en de mutaties tot de overstapdatum worden ingelezen en geboekt langs dezelfde controles als een handmatige boeking. Je begint dus middenin het jaar, niet pas na de jaarwisseling.',
   },
   {
     v: 'Kan onze kascommissie meekijken zonder dat ze iets kunnen wijzigen?',
@@ -130,7 +130,7 @@ const structuredData = JSON.stringify({
           <p>Alles wat een kascommissie nodig heeft voor de controle, gebundeld — niet losse exports die je zelf aan elkaar moet leggen.</p>
         </div>
       </div>
-      <!-- TODO: schermafbeelding rapporten (balans + W&V naast elkaar), zie opnamelijst ticket -->
+      {/* Nog toe te voegen: schermafbeelding van de rapporten (balans en W&V naast elkaar). */}
     </div>
   </section>
 
@@ -185,9 +185,9 @@ const structuredData = JSON.stringify({
       <h2>Overstappen kost je geen jaar</h2>
       <p>
         Een nieuw boekhoudpakket ophalen op 1 januari — dat is de gangbare aanname. Dat hoeft hier
-        niet. Er is een importcommando voor een lopend boekjaar: de mapping van je rekeningen, de
-        beginbalans en de mutaties tot de overstapdatum worden geboekt langs dezelfde controles als
-        een handmatige boeking, met dezelfde nummering en dezelfde balanscontrole. Overzetten zit
+        niet. We zetten je lopende boekjaar over: je rekeningschema, de beginbalans en de
+        mutaties tot de overstapdatum worden ingelezen en geboekt langs dezelfde controles als een
+        handmatige boeking, met dezelfde nummering en dezelfde balanscontrole. Overzetten zit
         bij de <a href={`${basis}prijzen`}>prijs</a> in.
       </p>
     </div></div>
@@ -196,7 +196,7 @@ const structuredData = JSON.stringify({
   <section>
     <div class="container"><div class="lees">
       <h2>Wat het niet is</h2>
-      <p>Zodat er geen misverstand ontstaat in een demo:</p>
+      <p>Dit hoort er bewust niet bij:</p>
       <ul class="opsom kruis">
         <li>Geen koppeling met een sportbond.</li>
         <li>Geen kantinekassa.</li>
