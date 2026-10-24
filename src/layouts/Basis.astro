@@ -29,7 +29,7 @@ const eigen = slug !== '' && existsSync(join(process.cwd(), 'public', 'img', 'og
 const ogAfbeelding = new URL(eigen ? `/img/og/${slug}.png` : '/img/og/algemeen.png', Astro.site).href;
 // The alt text describes what the image shows: the heading on it, from the same paginas.json.
 const kaart = paginas.find((p) => p.pad === pad.replace(/^\//, ''));
-const ogAlt = eigen && kaart ? `${kaart.kop}. ${kaart.sub}` : 'Sporten.app: de hele administratie van je sportvereniging, van aanmelding tot jaarrekening';
+const ogAlt = eigen && kaart ? `${kaart.kop}${/[.?!]$/.test(kaart.kop) ? '' : '.'} ${kaart.sub}` : 'Sporten.app: de hele administratie van je sportvereniging, van aanmelding tot jaarrekening';
 const siteData = JSON.stringify({
   '@context': 'https://schema.org',
   '@graph': [
