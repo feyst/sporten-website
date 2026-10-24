@@ -1,0 +1,30 @@
+---
+// Share links as plain anchors: no scripts and nothing loaded from the platforms,
+// so the visitor's browser only talks to them after a click. New window, like WhatsApp elsewhere.
+interface Props {
+  url: string;   // absolute production URL of the page
+  tekst: string; // short text that goes along in WhatsApp and mail
+}
+const { url, tekst } = Astro.props;
+const u = encodeURIComponent(url);
+const t = encodeURIComponent(tekst);
+const links = [
+  { naam: 'WhatsApp', href: `https://wa.me/?text=${t}%20${u}` },
+  { naam: 'LinkedIn', href: `https://www.linkedin.com/sharing/share-offsite/?url=${u}` },
+  { naam: 'Facebook', href: `https://www.facebook.com/sharer/sharer.php?u=${u}` },
+  { naam: 'Mail', href: `mailto:?subject=${t}&body=${u}` },
+];
+---
+
+<div class="deel">
+  <span>Stuur dit door aan je kascommissie of bestuur:</span>
+  {links.map((l) => (
+    <a href={l.href} target={l.naam === 'Mail' ? undefined : '_blank'} rel={l.naam === 'Mail' ? undefined : 'noopener'}>{l.naam}</a>
+  ))}
+</div>
+
+<style>
+  .deel { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-top: 28px; font-size: 15px; color: var(--dim); }
+  .deel a { border: 1px solid var(--rand); border-radius: 999px; padding: 6px 14px; color: var(--tekst); font-weight: 600; text-decoration: none; }
+  .deel a:hover { border-color: var(--rood); color: var(--rood); }
+</style>

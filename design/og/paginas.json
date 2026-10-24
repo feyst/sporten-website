@@ -1,0 +1,16 @@
+[
+  { "pad": "prijzen/", "label": "Prijzen", "kop": "Wat kost Sporten.app?", "sub": "Vanaf € 149 per jaar, inclusief btw. Alle functies in elke staffel, de eerste twee maanden gratis." },
+  { "pad": "avg/", "label": "AVG", "kop": "AVG voor je vereniging", "sub": "Wat wij regelen, en wat het bestuur zelf regelt." },
+  { "pad": "functies/", "label": "Functies", "kop": "Alles voor je sportvereniging", "sub": "Ledenadministratie, contributie, boekhouding, declaraties en een app voor je leden." },
+  { "pad": "functies/boekhouding/", "label": "Functies", "kop": "Boekhouding voor verenigingen", "sub": "Dubbel boekhouden, een boekjaar op elke datum en een controlepakket voor de kascommissie." },
+  { "pad": "functies/ledenadministratie/", "label": "Functies", "kop": "Ledenadministratie voor je sportvereniging", "sub": "Aanmelden met een formulier, lidsoorten en gezinnen, en leden die hun eigen gegevens bijhouden." },
+  { "pad": "functies/contributie/", "label": "Functies", "kop": "Contributie innen met automatische incasso", "sub": "Facturen per mail, herinneringen en leden die zelf machtigen in de app." },
+  { "pad": "functies/declaraties/", "label": "Functies", "kop": "Declaraties en inkoopfacturen", "sub": "Een foto van de bon, een voorstel voor de boeking en één betaalbestand." },
+  { "pad": "functies/vrijwilligersvergoeding/", "label": "Functies", "kop": "Vrijwilligersvergoeding voor trainers", "sub": "Uitgerekend met de trainingen in de agenda en nagekeken door de trainer zelf." },
+  { "pad": "functies/ledenapp/", "label": "Functies", "kop": "De app voor je sportvereniging", "sub": "Agenda, inschrijven met één tik en een chat per training of groep." },
+  { "pad": "voor/studentenverenigingen/", "label": "Studentensport", "kop": "Een bestuur dat elk jaar wisselt", "sub": "De ledenlijst en de boeken blijven staan. Met 40% korting voor studentensportverenigingen." },
+  { "pad": "overstappen/", "label": "Overstappen", "kop": "Overstappen naar een nieuwe ledenadministratie", "sub": "Wij zetten je ledenlijst en boekhouding over, ook midden in het boekjaar." },
+  { "pad": "kennisbank/kascommissie/", "label": "Kennisbank", "kop": "Kascommissie: zo controleer je de boeken", "sub": "Een checklist en een voorbeeldverslag voor de kascommissie van je vereniging." },
+  { "pad": "verwerkersovereenkomst/", "label": "AVG", "kop": "Verwerkersovereenkomst", "sub": "Vooraf te lezen, akkoord per mail vanaf het bestuursadres." },
+  { "pad": "subverwerkers/", "label": "AVG", "kop": "Subverwerkers", "sub": "Welke bedrijven we inschakelen, waarvoor, en in welk land." }
+]
