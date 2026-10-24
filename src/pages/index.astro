@@ -2,7 +2,6 @@
 import Basis from '../layouts/Basis.astro';
 import FinancienScherm from '../components/FinancienScherm.astro';
 import ChatTelefoon from '../components/ChatTelefoon.astro';
-import TriIllustratie from '../components/TriIllustratie.astro';
 import StoreBadges from '../components/StoreBadges.astro';
 import WhatsAppLink from '../components/WhatsAppLink.astro';
 import { software } from '../data/structured';
@@ -384,9 +383,14 @@ const structuredData = JSON.stringify({
           <li>Valt onze eigen apparatuur uit, dan draait Sporten.app door bij een tweede hostingbedrijf binnen de EU.</li>
         </ul>
       </div>
-      <div class="verhaal-beeld">
-        <TriIllustratie />
-      </div>
+      <figure class="verhaal-beeld">
+        <img
+          src={`${basis}img/oorsprong-triatlon.jpg`}
+          width="720" height="960" loading="lazy" decoding="async"
+          alt="Een van de makers van Sporten.app loopt een triatlon in het tenue van Triathlon Team Bodegraven"
+        />
+        <figcaption>Foto: Triathlon Team Bodegraven</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -444,7 +448,9 @@ const structuredData = JSON.stringify({
   .verhaal .container { display: grid; grid-template-columns: 1.3fr .7fr; gap: 48px; align-items: center; }
   .verhaal p { color: var(--dim); margin: 14px 0; max-width: 38em; }
   .verhaal h3 { margin-top: 24px; }
-  .verhaal-beeld { display: flex; justify-content: center; }
+  .verhaal-beeld { margin: 0; display: flex; flex-direction: column; align-items: center; }
+  .verhaal-beeld img { width: 100%; max-width: 360px; height: auto; border-radius: 14px; box-shadow: 0 12px 32px rgba(0, 0, 0, .14); }
+  .verhaal-beeld figcaption { margin-top: 8px; font-size: 12px; color: var(--dim); }
   .prijs-cta { margin-top: 18px; }
 
   /* De probleemkaarten dragen geen ikoon, dus de kop mag direct bovenaan staan. */
@@ -457,5 +463,6 @@ const structuredData = JSON.stringify({
     .hero-beeld { order: 0; }
     .hero { padding-top: 40px; }
     .verhaal .container { grid-template-columns: 1fr; }
+    .verhaal-beeld img { max-width: 280px; }
   }
 </style>
