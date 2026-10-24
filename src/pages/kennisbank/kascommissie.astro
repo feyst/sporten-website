@@ -1,5 +1,6 @@
 ---
 import Basis from '../../layouts/Basis.astro';
+import DeelLinks from '../../components/DeelLinks.astro';
 
 const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
@@ -37,7 +38,7 @@ const structuredData = JSON.stringify({
 });
 ---
 
-<Basis titel={titel} beschrijving={beschrijving}>
+<Basis titel={titel} beschrijving={beschrijving} ogType="article">
   <script type="application/ld+json" slot="kop" set:html={structuredData} />
 
   <div class="container kopblok"><div class="lees">
@@ -172,6 +173,7 @@ const structuredData = JSON.stringify({
         vereniging. Een vereniging met een toernooi of kamp heeft meer boekingen dan een club met alleen
         contributie.
       </p>
+      <DeelLinks url="https://sporten.app/kennisbank/kascommissie/" tekst="Kascommissie: zo controleer je de boeken van je vereniging" />
     </div></div>
   </section>
 
