@@ -13,17 +13,17 @@ const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL 
 const vragen = [
   {
     vraag: 'Wat kost Sporten.app?',
-    antwoord: `Je betaalt naar het aantal leden, niet naar het aantal functies: € 149 per jaar tot 100 leden, € 299 tot 300 leden en € 549 tot 750 leden, exclusief btw. Studentenverenigingen krijgen 40% korting. Zie <a href="${basis}prijzen">de prijzen</a>.`,
+    antwoord: `Je betaalt naar het aantal leden: € 149 per jaar tot 100 leden, € 299 tot 300 leden en € 549 tot 750 leden, exclusief btw. Studenten- en schoolsportverenigingen krijgen 40% korting. Zie <a href="${basis}prijzen">de prijzen</a>.`,
   },
   {
     vraag: 'Moeten we alles gebruiken?',
     antwoord:
-      'Nee. Veel verenigingen beginnen met de ledenlijst en de agenda, en zetten de boekhouding later aan. Je betaalt hetzelfde.',
+      'Nee. Je kunt beginnen met de ledenlijst en de agenda, en de boekhouding later aanzetten. De prijs blijft gelijk.',
   },
   {
-    vraag: 'Kunnen we contributie automatisch incasseren?',
+    vraag: 'Kunnen we de contributie incasseren?',
     antwoord:
-      'Ja. Leden geven de machtiging zelf in de app, of je legt een papieren machtiging vast. Sporten.app maakt het incassobestand, dat je bij je bank aanlevert. Incasseer je al via een ander pakket, dan neem je je bestaande machtigingen mee.',
+      'Ja. Leden geven de machtiging zelf in de app, of je legt een papieren machtiging vast. Sporten.app maakt het incassobestand en jij levert het aan bij je bank; daarvoor heb je een incassocontract met je bank nodig. Incasseer je al via een ander pakket, dan neem je je bestaande machtigingen mee.',
   },
   {
     vraag: 'Kunnen we midden in het boekjaar overstappen?',
@@ -47,7 +47,7 @@ const vragen = [
   },
   {
     vraag: 'Hoe zit het met de AVG?',
-    antwoord: `Je vereniging is verantwoordelijk voor de gegevens van haar leden; wij verwerken ze in jullie opdracht. Daarvoor sluiten we een verwerkersovereenkomst, die je vooraf kunt lezen. De gegevens staan op apparatuur die we zelf beheren, binnen de EU. Lees <a href="${basis}avg">wat wij regelen en wat jij regelt</a>.`,
+    antwoord: `Je vereniging is verantwoordelijk voor de gegevens van haar leden; wij verwerken ze in haar opdracht. Daarvoor sluiten we een verwerkersovereenkomst, die je vooraf kunt lezen. De gegevens staan binnen de Europese Economische Ruimte. Lees <a href="${basis}avg">wat wij regelen en wat jij regelt</a>.`,
   },
   {
     vraag: 'Wie zit er achter Sporten.app?',
@@ -115,7 +115,7 @@ const structuredData = JSON.stringify({
       <div>
         <h1>De hele administratie van je vereniging.<br /><span>Van aanmelding tot jaarrekening.</span></h1>
         <p>
-          Leden, contributie, boekhouding, declaraties en trainersvergoedingen in één systeem. Met een app
+          Leden, contributie, boekhouding, declaraties en trainersvergoedingen in één systeem, met een app
           waarin je leden zich met één tik inschrijven. Je krijgt alle functies en betaalt alleen naar het
           aantal leden.
         </p>
@@ -156,15 +156,15 @@ const structuredData = JSON.stringify({
         <div class="kaart">
           <h3>&ldquo;Kun je laten zien waar dit vandaan komt?&rdquo;</h3>
           <p>
-            In Excel kun je een cel achteraf aanpassen zonder dat iemand het ziet. Hoe zorgvuldig je ook
-            werkt: de kascommissie kan alleen optellen wat je haar laat zien.
+            In Excel ziet de kascommissie het eindresultaat, maar niet wat er eerder stond. Controleren wordt
+            dan een kwestie van vertrouwen.
           </p>
         </div>
         <div class="kaart">
           <h3>Het ledenbestand gaat rond per mail</h3>
           <p>
             Namen, adressen en geboortedata van jeugdleden in een spreadsheet die van mailbox naar mailbox
-            gaat. Als bestuur ben je verantwoordelijk voor die gegevens.
+            gaat. Wie er allemaal een kopie van heeft, weet niemand meer.
           </p>
         </div>
       </div>
@@ -176,13 +176,13 @@ const structuredData = JSON.stringify({
       <span class="lint">Functies</span>
       <h2>Eén systeem voor de hele vereniging</h2>
       <p class="sectie-intro">
-        Leden, geld en de app werken met hetzelfde ledenbestand. Je houdt niets twee keer bij.
+        De ledenlijst, de boekhouding en de app werken met hetzelfde ledenbestand. Je houdt niets twee keer bij.
       </p>
       <div class="kaarten">
         <div class="kaart">
           <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
           <h3>Ledenadministratie</h3>
-          <p>Nieuwe leden melden zich aan via een formulier en jij keurt goed. Met lidsoorten, gezinnen en oud-leden die je in één keer terughaalt.</p>
+          <p>Nieuwe leden melden zich aan via een formulier en jij keurt goed. Je werkt met lidsoorten en gezinnen, en zet een oud-lid zo weer terug in de ledenlijst.</p>
         </div>
         <div class="kaart">
           <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></div>
@@ -232,17 +232,17 @@ const structuredData = JSON.stringify({
   <section class="vlak" id="voor-wie">
     <div class="container">
       <span class="lint">Voor wie</span>
-      <h2>Wat het verandert voor drie mensen</h2>
+      <h2>Wat het verandert voor je bestuur en trainers</h2>
       <p class="sectie-intro">
-        Voor verenigingen van 50 tot 750 leden: hardlopen, triatlon, zwemmen, roeien, studentensport en meer.
+        Gemaakt voor sportverenigingen met vrijwilligers in het bestuur: hardlopen, triatlon, zwemmen, roeien, studentensport en meer.
       </p>
       <div class="kaarten">
         <div class="kaart">
           <h3>De penningmeester</h3>
           <p>
             Bonnen komen binnen als declaratie in plaats van als appje. Je leest het bankafschrift in en de
-            betalingen worden aan de facturen gekoppeld. Balans en baten en lasten zijn altijd bij, dus aan het
-            eind van het jaar hoef je niets meer bij elkaar te zoeken.
+            betalingen worden aan de facturen gekoppeld. Doe je dat geregeld, dan zijn balans en baten en lasten
+            steeds bij en hoef je aan het eind van het jaar niets meer bij elkaar te zoeken.
           </p>
         </div>
         <div class="kaart">
@@ -268,7 +268,7 @@ const structuredData = JSON.stringify({
       <span class="lint">AVG</span>
       <h2>Privacy die je kunt nalezen</h2>
       <p class="sectie-intro">
-        Wat we met de gegevens van je leden doen, staat op papier: in de verwerkersovereenkomst, de
+        Wat we met de gegevens van je leden doen, lees je na in de verwerkersovereenkomst, de
         privacyverklaring en de lijst van bedrijven die we inschakelen.
       </p>
       <div class="zegels">
@@ -276,7 +276,7 @@ const structuredData = JSON.stringify({
           <span class="zegelicoon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
           <span>
             <b>Verwerkersovereenkomst klaar</b>
-            <small>Opslag binnen de EU, op apparatuur die we zelf beheren</small>
+            <small>Opslag in Europa (EER), op apparatuur die we zelf beheren</small>
             <span class="verder">Wat wij regelen en wat jij regelt →</span>
           </span>
         </a>
@@ -284,7 +284,7 @@ const structuredData = JSON.stringify({
           <span class="zegelicoon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M4.5 4.5l15 15"/></svg></span>
           <span>
             <b>Geen trackers</b>
-            <small>Geen advertenties, geen analytics, geen doorverkoop van gegevens</small>
+            <small>Ook geen advertenties en geen doorverkoop van gegevens</small>
             <span class="verder">Lees meer →</span>
           </span>
         </a>
@@ -295,10 +295,10 @@ const structuredData = JSON.stringify({
   <section class="vlak" id="prijs">
     <div class="container">
       <span class="lint">Prijs</span>
-      <h2>Eén prijs, alle functies</h2>
+      <h2>Alle functies, voor elke vereniging</h2>
       <p class="sectie-intro">
-        Je betaalt naar het aantal leden dat in je ledenadministratie meetelt. Er zijn geen modules, en
-        facturen en incasso’s kosten niets per stuk.
+        Je betaalt naar het aantal leden dat in je ledenadministratie meetelt. Facturen en incasso’s kosten
+        niets per stuk.
       </p>
       <div class="staffels">
         <div class="staffel">
@@ -308,8 +308,7 @@ const structuredData = JSON.stringify({
           <span class="per">per jaar · excl. btw</span>
           <span class="incl">€ 180,29 incl. btw</span>
         </div>
-        <div class="staffel uitgelicht">
-          <span class="vlag">Aanbevolen</span>
+        <div class="staffel">
           <span class="naam">Vereniging</span>
           <span class="omvang">101 – 300 leden</span>
           <span class="bedrag">€ 299</span>
@@ -346,7 +345,7 @@ const structuredData = JSON.stringify({
         <div class="stap">
           <b>1</b>
           <h3>Wij richten je vereniging in</h3>
-          <p>We zetten je omgeving en het beheerportaal klaar voor het bestuur.</p>
+          <p>We zetten het beheerportaal voor je vereniging klaar, zodat het bestuur kan inloggen.</p>
         </div>
         <div class="stap">
           <b>2</b>
@@ -374,7 +373,7 @@ const structuredData = JSON.stringify({
       <div>
         <h2>Voor je leden</h2>
         <p>
-          Je leden zien in één app wat er te doen is en melden zich met één tik aan. Elke activiteit heeft een
+          Je leden zien in één app wat er te doen is en melden zich direct aan. Elke activiteit heeft een
           eigen chat, en gaat de training niet door, dan krijgt iedereen een pushmelding. Ouders melden hun
           kinderen aan vanaf hun eigen account.
         </p>
