@@ -17,6 +17,8 @@ a{color:inherit;text-decoration:none}
 .container{max-width:1080px;margin:0 auto;padding:0 24px}
 
 /* ===== navigatie ===== */
+/* Ankers (#rollen, #vragen, …) landen anders onder de vaste navigatiebalk van 65 px. */
+html{scroll-padding-top:80px}
 header.site{position:sticky;top:0;background:var(--nav-bg);backdrop-filter:blur(6px);border-bottom:1px solid var(--rand);z-index:10}
 .nav{display:flex;align-items:center;gap:24px;min-height:64px;flex-wrap:wrap}
 .logo{font-weight:800;font-size:20px;letter-spacing:-.02em}
