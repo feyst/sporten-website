@@ -5,6 +5,7 @@ import ChatTelefoon from '../components/ChatTelefoon.astro';
 import TriIllustratie from '../components/TriIllustratie.astro';
 import StoreBadges from '../components/StoreBadges.astro';
 import WhatsAppLink from '../components/WhatsAppLink.astro';
+import { organisatie, software } from '../data/structured';
 
 const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
@@ -14,7 +15,7 @@ const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL 
 const vragen = [
   {
     vraag: 'Wat kost Sporten.app?',
-    antwoord: `Je betaalt naar het aantal leden: € 149 per jaar tot 100 leden, € 299 tot 300 leden en € 549 tot 750 leden, inclusief btw. Studenten- en schoolsportverenigingen krijgen 40% korting. Zie <a href="${basis}prijzen">de prijzen</a>.`,
+    antwoord: `Je betaalt naar het aantal leden: € 149 per jaar tot 100 leden, € 299 tot 300 leden en € 549 tot 750 leden, inclusief btw. Studenten- en schoolsportverenigingen krijgen 40% korting. Zie <a href="${basis}prijzen/">de prijzen</a>.`,
   },
   {
     vraag: 'Moeten we alles gebruiken?',
@@ -48,7 +49,7 @@ const vragen = [
   },
   {
     vraag: 'Hoe zit het met de AVG?',
-    antwoord: `Je vereniging is verantwoordelijk voor de gegevens van haar leden; wij verwerken ze in haar opdracht. Daarvoor sluiten we een verwerkersovereenkomst, die je vooraf kunt lezen. De gegevens staan binnen de Europese Economische Ruimte. Lees <a href="${basis}avg">wat wij regelen en wat jij regelt</a>.`,
+    antwoord: `Je vereniging is verantwoordelijk voor de gegevens van haar leden; wij verwerken ze in haar opdracht. Daarvoor sluiten we een verwerkersovereenkomst, die je vooraf kunt lezen. De gegevens staan binnen de Europese Economische Ruimte. Lees <a href="${basis}avg/">wat wij regelen en wat jij regelt</a>.`,
   },
   {
     vraag: 'Wie zit er achter Sporten.app?',
@@ -60,38 +61,8 @@ const vragen = [
 const structuredData = JSON.stringify({
   '@context': 'https://schema.org',
   '@graph': [
-    {
-      '@type': 'Organization',
-      '@id': 'https://sporten.app/#organisatie',
-      name: 'Sporten.app',
-      url: 'https://sporten.app/',
-      logo: 'https://sporten.app/img/icon.png',
-      email: 'info@sporten.app',
-      sameAs: [
-        'https://play.google.com/store/apps/details?id=app.sporten.app',
-        'https://apps.apple.com/nl/app/sporten/id6472296878',
-      ],
-    },
-    {
-      '@type': 'SoftwareApplication',
-      name: 'Sporten.app',
-      description:
-        'Software voor de administratie van sportverenigingen: leden, contributie en incasso, boekhouding, declaraties en vrijwilligersvergoedingen voor trainers, met een app waarin leden zich inschrijven voor activiteiten.',
-      applicationCategory: 'BusinessApplication',
-      operatingSystem: 'Web, Android, iOS',
-      url: 'https://app.sporten.app/',
-      inLanguage: 'nl',
-      installUrl: 'https://play.google.com/store/apps/details?id=app.sporten.app',
-      author: { '@id': 'https://sporten.app/#organisatie' },
-      offers: {
-        '@type': 'AggregateOffer',
-        priceCurrency: 'EUR',
-        lowPrice: '149',
-        highPrice: '799',
-        offerCount: 4,
-        url: 'https://sporten.app/prijzen/',
-      },
-    },
+    organisatie,
+    software,
     {
       '@type': 'FAQPage',
       mainEntity: vragen.map((v) => ({
@@ -105,22 +76,22 @@ const structuredData = JSON.stringify({
 ---
 
 <Basis
-  titel="Verenigingssoftware: de hele administratie van je club | Sporten.app"
-  beschrijving="Leden, contributie en incasso, boekhouding, declaraties en vrijwilligersvergoedingen in één systeem, met een app waarin je leden zich inschrijven. Vanaf € 149 per jaar."
+  titel="Ledenadministratie en boekhouding voor sportverenigingen | Sporten.app"
+  beschrijving="Ledenadministratie, contributie en incasso, boekhouding en declaraties voor je sportvereniging, met een app voor je leden. Vanaf € 149 per jaar."
 >
   <script type="application/ld+json" slot="kop" set:html={structuredData} />
 
   <div class="hero">
     <div class="container">
       <div>
-        <h1>De hele administratie van je vereniging.<br /><span>Van aanmelding tot jaarrekening.</span></h1>
+        <h1>De hele administratie van je sportvereniging.<br /><span>Van aanmelding tot jaarrekening.</span></h1>
         <p>
-          Leden, contributie, boekhouding, declaraties en vrijwilligersvergoedingen in één systeem, met een app
+          Ledenadministratie, contributie, boekhouding, declaraties en vrijwilligersvergoedingen in één systeem, met een app
           waarin je leden zich met één tik inschrijven. Je krijgt alle functies en betaalt alleen naar het
           aantal leden.
         </p>
         <div class="cta-rij">
-          <a class="knop" href={`${basis}prijzen`}>Bekijk de prijzen</a>
+          <a class="knop" href={`${basis}prijzen/`}>Bekijk de prijzen</a>
           <a class="knop rand" href="#functies">Wat zit erin?</a>
         </div>
       </div>
@@ -193,7 +164,7 @@ const structuredData = JSON.stringify({
           <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></div>
           <h3>Boekhouding</h3>
           <p>Dubbel boekhouden met grootboek, doorlopende nummering, balans en baten en lasten. Je boekjaar begint op de datum die bij je vereniging past.</p>
-          <p class="verder"><a href={`${basis}functies/boekhouding`}>Lees hoe dat werkt →</a></p>
+          <p class="verder"><a href={`${basis}functies/boekhouding/`}>Boekhouding voor je vereniging →</a></p>
         </div>
         <div class="kaart">
           <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 2v20l3-2 3 2 3-2 3 2 3-2V2l-3 2-3-2-3 2-3-2z"/><path d="M9 9h6M9 13h4"/></svg></div>
@@ -272,20 +243,20 @@ const structuredData = JSON.stringify({
         privacyverklaring en de lijst van bedrijven die we inschakelen.
       </p>
       <div class="zegels">
-        <a class="zegel" href={`${basis}avg`}>
-          <span class="merk" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <a class="zegel" href={`${basis}avg/`}>
+          <span class="zegelicoon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
           <span>
             <b>Verwerkersovereenkomst klaar</b>
             <small>Opslag in Europa (EER), op apparatuur die we zelf beheren</small>
             <span class="verder">Wat wij regelen en wat jij regelt →</span>
           </span>
         </a>
-        <a class="zegel" href={`${basis}avg#geen-trackers`}>
+        <a class="zegel" href={`${basis}avg/#geen-trackers`}>
           <span class="zegelicoon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M4.5 4.5l15 15"/></svg></span>
           <span>
             <b>Geen trackers</b>
             <small>Ook geen advertenties en geen doorverkoop van gegevens</small>
-            <span class="verder">Lees meer →</span>
+            <span class="verder">Wat we niet doen →</span>
           </span>
         </a>
       </div>
@@ -332,7 +303,7 @@ const structuredData = JSON.stringify({
       </div>
       <p class="studenten">Studenten- of schoolsportvereniging? Dan krijg je 40% korting.</p>
       <div class="cta-rij prijs-cta">
-        <a class="knop" href={`${basis}prijzen`}>Alle prijzen en voorwaarden</a>
+        <a class="knop" href={`${basis}prijzen/`}>Alle prijzen en voorwaarden</a>
       </div>
     </div>
   </section>

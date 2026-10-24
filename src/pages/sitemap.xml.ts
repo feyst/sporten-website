@@ -33,6 +33,7 @@ function padVanBestand(bestand: string): string {
 
 export const GET: APIRoute = ({ site }) => {
   const urls = Object.keys(bestanden)
+    .filter((bestand) => !/\/404\.astro$/.test(bestand))
     .map((bestand) => ({ pad: padVanBestand(bestand), gewijzigd: gewijzigdOp(bestand) }))
     .sort((a, b) => a.pad.localeCompare(b.pad))
     .map(
