@@ -3,9 +3,9 @@ import Basis from '../../layouts/Basis.astro';
 
 const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
-const titel = 'Boekhouding voor verenigingen | Sporten.app';
+const titel = 'Boekhoudprogramma voor je vereniging | Sporten.app';
 const beschrijving =
-  'Boekhoudprogramma voor je sportvereniging: dubbel boekhouden, doorlopende nummering, jaarafsluiting, een boekjaar op elke datum en een controlepakket voor de kascommissie.';
+  'Boekhoudprogramma voor je sportvereniging: dubbel boekhouden, een boekjaar op elke datum en een controlepakket voor de kascommissie.';
 
 const vragen = [
   {
@@ -33,14 +33,13 @@ const structuredData = JSON.stringify({
       '@type': 'WebPage',
       name: titel,
       description: beschrijving,
-      url: 'https://sporten.app/functies/boekhouding',
+      url: 'https://sporten.app/functies/boekhouding/',
     },
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sporten.app/' },
-        { '@type': 'ListItem', position: 2, name: 'Functies', item: 'https://sporten.app/#functies' },
-        { '@type': 'ListItem', position: 3, name: 'Boekhouding', item: 'https://sporten.app/functies/boekhouding' },
+        { '@type': 'ListItem', position: 2, name: 'Boekhouding', item: 'https://sporten.app/functies/boekhouding/' },
       ],
     },
     {
@@ -69,8 +68,8 @@ const structuredData = JSON.stringify({
       controleren.
     </p>
     <p>
-      Sporten.app boekt volgens dezelfde regels als een boekhoudpakket, en de boekhouding is gekoppeld aan
-      de leden, facturen en activiteiten die je er al in hebt staan.
+      Sporten.app is een boekhoudprogramma voor verenigingen, met dezelfde regels als een boekhoudpakket.
+      Bovendien is hij gekoppeld aan de leden, facturen en activiteiten die je er al in hebt staan.
     </p>
   </div></div>
 
@@ -160,7 +159,7 @@ const structuredData = JSON.stringify({
       <p>
         Je hoeft niet tot 1 januari te wachten. Je levert drie spreadsheets aan: je rekeningschema, de
         beginbalans en de bankmutaties tot nu toe. Wij lezen ze in en controleren of alles aansluit voordat we
-        het definitief boeken. Overzetten zit in de <a href={`${basis}prijzen`}>prijs</a>.
+        het definitief boeken. Overzetten zit in de <a href={`${basis}prijzen/`}>prijs</a>.
       </p>
       <p>
         Incasseer je al via een ander pakket? Dan neem je je bestaande machtigingen mee.
@@ -201,7 +200,7 @@ const structuredData = JSON.stringify({
       <p class="sectie-intro">Plan een half uur videobellen, dan laten we het je zien.</p>
       <div class="cta-rij">
         <a class="knop" href="mailto:info@sporten.app?subject=Videobellen%20over%20de%20boekhouding">Plan een gesprek</a>
-        <a class="knop rand" href={`${basis}prijzen`}>Bekijk de prijzen</a>
+        <a class="knop rand" href={`${basis}prijzen/`}>Bekijk de prijzen</a>
       </div>
     </div>
   </section>

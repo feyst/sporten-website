@@ -1,6 +1,7 @@
 ---
 import Basis from '../layouts/Basis.astro';
 import WhatsAppLink from '../components/WhatsAppLink.astro';
+import { software } from '../data/structured';
 
 const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
@@ -36,17 +37,13 @@ const vragen = [
 const structuredData = JSON.stringify({
   '@context': 'https://schema.org',
   '@graph': [
+    software,
     {
-      '@type': 'Product',
-      name: 'Sporten.app',
-      description: 'Ledenadministratie, contributie en incasso, boekhouding en een ledenapp voor sportverenigingen, in één prijs naar het aantal leden.',
-      offers: {
-        '@type': 'AggregateOffer',
-        priceCurrency: 'EUR',
-        lowPrice: '149',
-        highPrice: '799',
-        offerCount: 4,
-      },
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sporten.app/' },
+        { '@type': 'ListItem', position: 2, name: 'Prijzen', item: 'https://sporten.app/prijzen/' },
+      ],
     },
     {
       '@type': 'FAQPage',
@@ -61,8 +58,8 @@ const structuredData = JSON.stringify({
 ---
 
 <Basis
-  titel="Wat kost Sporten.app? Prijzen voor je vereniging | Sporten.app"
-  beschrijving="Ledenadministratie kosten voor je sportvereniging: één staffel vanaf € 149 per jaar, alle functies inbegrepen. Bekijk de prijzen van Sporten.app."
+  titel="Prijzen: vanaf € 149 per jaar voor je vereniging | Sporten.app"
+  beschrijving="Wat kost ledenadministratie en boekhouding voor je sportvereniging? Vanaf € 149 per jaar inclusief btw, met alle functies in elke staffel."
 >
   <script type="application/ld+json" slot="kop" set:html={structuredData} />
 

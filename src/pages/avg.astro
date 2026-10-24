@@ -5,7 +5,7 @@ const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL 
 
 const titel = 'AVG voor je sportvereniging: wat wij regelen | Sporten.app';
 const beschrijving =
-  'AVG voor de ledenadministratie van je sportvereniging: wat het bestuur zelf regelt, de verwerkersovereenkomst, waar de gegevens staan en welke bedrijven we inschakelen.';
+  'De AVG en de ledenadministratie van je sportvereniging: wat het bestuur zelf regelt, de verwerkersovereenkomst en waar de gegevens staan.';
 
 const structuredData = JSON.stringify({
   '@context': 'https://schema.org',
@@ -14,13 +14,13 @@ const structuredData = JSON.stringify({
       '@type': 'WebPage',
       name: titel,
       description: beschrijving,
-      url: 'https://sporten.app/avg',
+      url: 'https://sporten.app/avg/',
     },
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sporten.app/' },
-        { '@type': 'ListItem', position: 2, name: 'AVG', item: 'https://sporten.app/avg' },
+        { '@type': 'ListItem', position: 2, name: 'AVG', item: 'https://sporten.app/avg/' },
       ],
     },
   ],
@@ -34,13 +34,13 @@ const structuredData = JSON.stringify({
 
     <h1>AVG voor je vereniging: wat wij regelen en wat jij regelt</h1>
     <p>
-      Als bestuur ben je verantwoordelijk voor de gegevens van je leden. Met Sporten.app staan die op één
-      plek, in plaats van verspreid over appgroepen, spreadsheets en mailboxen. Je bepaalt wie wat mag zien,
+      Als bestuur van een sportvereniging ben je verantwoordelijk voor de gegevens van je leden. Met de
+      ledenadministratie van Sporten.app staan die op één plek, in plaats van verspreid over appgroepen, spreadsheets en mailboxen. Je bepaalt wie wat mag zien,
       en een verzoek van een lid handel je af in het beheerportaal.
     </p>
 
     <div class="zegels">
-      <a class="zegel" href={`${basis}verwerkersovereenkomst`}>
+      <a class="zegel" href={`${basis}verwerkersovereenkomst/`}>
         <span class="zegelicoon" aria-hidden="true">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
         </span>
@@ -81,7 +81,7 @@ const structuredData = JSON.stringify({
       De wet verplicht een schriftelijke afspraak tussen je vereniging en ons. Die staat op deze site, zodat
       je hem kunt lezen voordat je klant wordt. Het bestuur geeft per mail akkoord; wil je een getekend
       exemplaar voor je eigen administratie, dan kan dat ook.
-      <a href={`${basis}verwerkersovereenkomst`}>Lees de verwerkersovereenkomst</a>.
+      <a href={`${basis}verwerkersovereenkomst/`}>Lees de verwerkersovereenkomst</a>.
     </p>
 
     <h2>Waar de gegevens staan</h2>
@@ -95,7 +95,7 @@ const structuredData = JSON.stringify({
     <p>
       Voor een paar taken werken we met andere bedrijven: het netwerkverkeer naar de app, het versturen van
       e-mail en pushmeldingen, en het automatisch uitlezen van bonnen als je vereniging dat aanzet. Op de
-      <a href={`${basis}subverwerkers`}>lijst van subverwerkers</a> zie je per bedrijf waarvoor we het
+      <a href={`${basis}subverwerkers/`}>lijst van subverwerkers</a> zie je per bedrijf waarvoor we het
       inschakelen, welke gegevens het ziet en in welk land. Komt er een bedrijf bij, dan hoor je dat vooraf.
     </p>
 
@@ -111,7 +111,7 @@ const structuredData = JSON.stringify({
     </ul>
     <p>
       Alle maatregelen staan in bijlage 2 van de
-      <a href={`${basis}verwerkersovereenkomst`}>verwerkersovereenkomst</a>.
+      <a href={`${basis}verwerkersovereenkomst/`}>verwerkersovereenkomst</a>.
     </p>
 
     <h2>Rechten van leden</h2>
@@ -136,10 +136,10 @@ const structuredData = JSON.stringify({
     </ul>
 
     <p>
-      Meer lezen: <a href={`${basis}privacy`}>privacyverklaring</a>,
-      <a href={`${basis}voorwaarden`}>gebruiksvoorwaarden</a>,
-      <a href={`${basis}verwerkersovereenkomst`}>verwerkersovereenkomst</a> en de
-      <a href={`${basis}subverwerkers`}>lijst van subverwerkers</a>.
+      Meer lezen: <a href={`${basis}privacy/`}>privacyverklaring</a>,
+      <a href={`${basis}voorwaarden/`}>gebruiksvoorwaarden</a>,
+      <a href={`${basis}verwerkersovereenkomst/`}>verwerkersovereenkomst</a> en de
+      <a href={`${basis}subverwerkers/`}>lijst van subverwerkers</a>.
     </p>
 
     <p><i>Laatst herzien: 24 oktober 2026.</i></p>
