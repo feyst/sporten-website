@@ -18,3 +18,67 @@ npm run preview # de gebouwde site lokaal bekijken
   `design/mockups/`).
 - Deploy: elke push op `main` bouwt de site en synct `dist/` via FTPS naar
   productie (`.github/workflows/main.yml`). Feature-branches deployen niet.
+
+#### Juridische pagina's
+
+De vier juridische pagina's — `verwerkersovereenkomst.md`, `subverwerkers.md`,
+`voorwaarden.md` en `privacy.md` in `src/pages/` — zijn Markdown in plaats van Astro,
+omdat diezelfde tekst twee kanten op moet: naar de website (via
+`src/layouts/Juridisch.astro`) én naar de pdf die een vereniging krijgt toegestuurd.
+Eén bron, dus de gepubliceerde en de verstuurde versie kunnen niet uit elkaar lopen —
+pas de tekst dus in de Markdown aan en nergens anders. Elk van de vier draagt een
+`versie` en een `datum` in de frontmatter en een tabel "Overzicht van wijzigingen"
+onderaan.
+
+Let op één ding in die frontmatter: **quote `titel` en `beschrijving`**. Een dubbele punt
+gevolgd door een spatie breekt YAML, en een waarde die met `|` begint wordt een
+block scalar — de build faalt dan op `bad indentation of a mapping entry`.
+
+De pdf's in `public/documenten/` worden met chromium van de gebouwde pagina's gedrukt,
+door `bin/maak-pdf.mjs`:
+
+```bash
+npm run build
+npx astro preview --port 4399     # in een tweede terminal
+npm run pdf
+```
+
+Dat script bestaat omdat `npx playwright pdf` geen marges en geen paginanummers kent.
+Marges zouden nog met `@page` in de CSS kunnen, maar Chromium ondersteunt geen
+CSS-paginanummers (de margin-boxen uit Paged Media) — en zonder paginanummer kun je in
+een overeenkomst niet naar een bladzijde verwijzen. Vandaar `playwright` als
+devDependency; beide workflows zetten `PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1`, want CI
+drukt geen pdf's. Op een verse machine haal je de browser op met
+`npx playwright install chromium`.
+
+Papierformaat, marges en de voettekst (`Sporten.app — <naam>, versie <n>` links,
+`Pagina x van y` rechts) staan in dat script. De rest van de opmaak staat in het
+`@media print`-blok in `global.css`, dat **onderaan het bestand moet blijven staan**:
+het overschrijft basisregels met dezelfde specificiteit, dus hogerop verliest het — dat
+kostte twee rondes waarin de tabeltekst grijs bleef en de kolommen scheef stonden.
+
+Wat dat blok doet: de navigatie, de voettekst en de downloadknop vallen weg; er komt een
+merkregel (`.merk`) bovenaan die op het scherm juist verborgen is, want daar doet de nav
+dat al; de versieregel blijft staan; tabelkoppen lopen mee over een paginagrens
+(`thead{display:table-header-group}`); en de subverwerkerslijst krijgt vaste
+kolombreedtes, want anders geeft Chromium de laatste kolom twee keer zoveel ruimte als
+de eerste. Die tabel is met `:has(th:nth-child(4))` gekozen: hij is de enige met vier
+kolommen. Lange woorden breken daar met een koppelteken af (`hyphens: auto`, de pagina
+staat op `lang="nl"`) en niet met `overflow-wrap`, dat midden in een woord knipt.
+
+**Wijzig je de tekst, druk de pdf dan opnieuw** — hij staat in git en volgt niet
+vanzelf. De versie staat in beide, dus een verschil is zichtbaar.
+
+De subverwerkerslijst staat bewust apart van de overeenkomst: die verandert vaker, en
+artikel 7 verwijst ernaar zodat een nieuwe subverwerker geen nieuw akkoord vraagt.
+Wijzig je de lijst, hoog dan de versie in de frontmatter op en zet een regel in de
+tabel "Overzicht van wijzigingen". Hele getallen, geen minor-versies: dit is een
+document en geen bibliotheek. De namen van subverwerkers staan alleen op die pagina —
+de privacyverklaring verwijst ernaar en herhaalt ze niet.
+
+Alles staat in één tabel zonder statuskolom: er is geen onderscheid tussen "in gebruik" en
+"aangekondigd". Staat een partij op de lijst, dan mag zij worden ingeschakeld — ook als dat
+pas bij een storing gebeurt. Wat zo'n partij doet, hoort dus in de kolom **Waarvoor**
+("uitwijk wanneer onze eigen apparatuur uitvalt"), niet in een extra kolom. Zet een
+uitwijkpartij vóóraf op de lijst: tijdens de storing is de meldingstermijn van 30 dagen niet
+meer te halen.

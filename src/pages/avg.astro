@@ -10,7 +10,7 @@ const structuredData = JSON.stringify({
       '@type': 'WebPage',
       name: 'AVG geregeld voor je vereniging | Sporten.app',
       description:
-        'Hoe Sporten.app omgaat met de AVG voor de ledenadministratie van je sportvereniging: verwerkersovereenkomst, servers in Nederland, subverwerkers en beveiliging.',
+        'Hoe Sporten.app omgaat met de AVG voor de ledenadministratie van je sportvereniging: verwerkersovereenkomst, opslag binnen de EU, subverwerkers en beveiliging.',
       url: 'https://sporten.app/avg',
     },
     {
@@ -26,7 +26,7 @@ const structuredData = JSON.stringify({
 
 <Basis
   titel="AVG geregeld voor je vereniging | Sporten.app"
-  beschrijving="AVG voor de ledenadministratie van je sportvereniging: verwerkersovereenkomst, servers in Nederland, subverwerkers met naam en land, en beveiliging."
+  beschrijving="AVG voor de ledenadministratie van je sportvereniging: verwerkersovereenkomst, opslag binnen de EU, subverwerkers met naam en land, en beveiliging."
 >
   <script type="application/ld+json" slot="kop" set:html={structuredData} />
   <div class="container proza">
@@ -45,17 +45,17 @@ const structuredData = JSON.stringify({
 
     <div class="zegels">
       <a class="zegel" href={`${basis}verwerkersovereenkomst`}>
-        <span class="merk" aria-hidden="true">
+        <span class="zegelicoon" aria-hidden="true">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
         </span>
         <span>
           <b>AVG geregeld</b>
-          <small>verwerkersovereenkomst · servers in NL</small>
+          <small>verwerkersovereenkomst · opslag binnen de EU</small>
           <span class="verder">wat dat betekent →</span>
         </span>
       </a>
       <a class="zegel" href="#geen-trackers">
-        <span class="merk" aria-hidden="true">
+        <span class="zegelicoon" aria-hidden="true">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
         </span>
         <span>
@@ -105,67 +105,36 @@ const structuredData = JSON.stringify({
 
     <h2>Waar de gegevens staan</h2>
     <p>
-      De applicatie en de database draaien op <b>eigen servers in Nederland</b> — geen
-      hostingpartij ertussen. Dat is ongebruikelijk in deze markt: de meeste software voor
-      verenigingen draait bij een clouddienst buiten de Europese Unie, of bij een hostingpartij die
-      op zijn beurt weer bij zo'n clouddienst zit. Bij ons is er één partij die de servers beheert,
-      en dat zijn wij.
+      De applicatie, de database, de bestandsopslag en de back-ups draaien op <b>apparatuur in
+      eigen beheer binnen de Europese Economische Ruimte</b>, niet bij een grote clouddienst. Valt
+      die apparatuur uit, dan wijken we tijdelijk uit naar een hostingpartij in Duitsland.
     </p>
 
-    <h2>Subverwerkers, met naam en land</h2>
+    <h2>Wie we inschakelen</h2>
     <p>
-      Voor drie onderdelen schakelen wij een subverwerker in. De onderstaande tabel toont wie dat
-      is, waarvoor, in welk land de verwerking plaatsvindt en welke waarborg daarbij hoort.
-    </p>
-    <div class="tabelwikkel">
-      <table class="data">
-        <caption class="sr-only">Subverwerkers van Sporten.app, met doel, locatie en waarborg</caption>
-        <thead>
-          <tr>
-            <th scope="col">Subverwerker</th>
-            <th scope="col">Doel</th>
-            <th scope="col">Locatie</th>
-            <th scope="col">Waarborg</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Cloudflare, Inc.</td>
-            <td>Netwerkverkeer en beveiligingsproxy voor app, API en portaal (ziet IP-adressen)</td>
-            <td>EU/VS</td>
-            <td>EU-VS Data Privacy Framework / standaardcontractbepalingen</td>
-          </tr>
-          <tr>
-            <td>Google Ireland Ltd. (Firebase Cloud Messaging)</td>
-            <td>Pushmeldingen in de webbrowser (pushtoken, meldingsinhoud)</td>
-            <td>EU/VS</td>
-            <td>EU-VS Data Privacy Framework / standaardcontractbepalingen</td>
-          </tr>
-          <tr>
-            <td>Expo (650 Industries, Inc.)</td>
-            <td>Pushmeldingen in de apps op Android en iPhone (pushtoken, meldingsinhoud)</td>
-            <td>VS</td>
-            <td>Standaardcontractbepalingen</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p>
-      E-mail versturen wij via een eigen mailserver, niet via een externe maildienst — dat is dus
-      geen subverwerker. Deze lijst is voor het laatst gecontroleerd op <b>25 augustus 2026</b>.
+      Voor een paar onderdelen werken we met andere partijen: het netwerkverkeer naar de app, het
+      versturen van e-mail, pushmeldingen, facturen per post en — alleen als je vereniging het zelf
+      aanzet — het automatisch uitlezen van bonnen. Op de
+      <a href={`${basis}subverwerkers`}>lijst van subverwerkers</a> staat per partij waarvoor we
+      haar inschakelen, welke gegevens ze ziet, in welk land dat gebeurt en met welke waarborg.
+      Komt er een partij bij, dan melden we dat vooraf.
     </p>
 
     <h2>Beveiliging</h2>
     <ul class="opsom">
       <li>Al het verkeer is versleuteld met TLS (HTTPS).</li>
-      <li>Wachtwoorden worden uitsluitend gehasht opgeslagen (bcrypt).</li>
-      <li>De database is versleuteld in rust (encryptie-at-rest).</li>
-      <li>Periodieke versleutelde back-ups, met een bewaartermijn van 90 dagen.</li>
-      <li>Toegang tot het beheerportaal vereist tweestapsverificatie (TOTP).</li>
-      <li>Toegang tot productiesystemen is beperkt tot de beheerder en verloopt via versleutelde verbindingen.</li>
-      <li>Autorisatie in de Dienst is per vereniging gescheiden: gegevens van de ene club zijn niet zichtbaar voor een andere.</li>
-      <li>Systemen en afhankelijkheden worden actueel gehouden.</li>
+      <li>Wachtwoorden worden uitsluitend gehasht opgeslagen.</li>
+      <li>De database is versleuteld, met een sleutel die we zelf beheren.</li>
+      <li>Versleutelde back-ups, tot ongeveer twee jaar terug. Dat is bewust lang: gijzelsoftware wordt vaak pas ontdekt als de recente back-ups al besmet zijn.</li>
+      <li>Het beheerportaal vraagt om tweestapsverificatie.</li>
+      <li>Gegevens van de ene vereniging zijn niet zichtbaar voor een andere.</li>
+      <li>Binnen je vereniging bepalen rollen wie wat ziet; gevoelige gegevens zoals noodcontacten staan achter een apart recht.</li>
+      <li>Persoonsgegevens komen niet in logbestanden terecht.</li>
     </ul>
+    <p>
+      De volledige lijst maatregelen staat in bijlage 2 van de
+      <a href={`${basis}verwerkersovereenkomst`}>verwerkersovereenkomst</a>.
+    </p>
 
     <h2>Rechten van leden</h2>
     <p>

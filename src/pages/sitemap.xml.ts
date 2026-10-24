@@ -3,7 +3,7 @@ import { execFileSync } from 'node:child_process';
 
 // De sitemap wordt afgeleid uit src/pages en niet met de hand bijgehouden: met
 // vijftien pagina's loopt een handmatige lijst gegarandeerd uit de pas.
-const bestanden = import.meta.glob('./**/*.astro', { eager: true });
+const bestanden = import.meta.glob('./**/*.{astro,md}', { eager: true });
 
 // lastmod is de laatste git-wijziging van het bestand zelf, niet de builddatum.
 // Een site die elke dag beweert dat álles is veranderd, wordt op dat signaal
@@ -27,7 +27,7 @@ function gewijzigdOp(globsleutel: string): string {
 
 // './index.astro' -> '/', './functies/boekhouding.astro' -> '/functies/boekhouding/'
 function padVanBestand(bestand: string): string {
-  const zonder = bestand.replace(/^\.\//, '').replace(/\.astro$/, '');
+  const zonder = bestand.replace(/^\.\//, '').replace(/\.(astro|md)$/, '');
   return zonder === 'index' ? '/' : `/${zonder.replace(/\/index$/, '')}/`;
 }
 

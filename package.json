@@ -6,9 +6,13 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "pdf": "node bin/maak-pdf.mjs"
   },
   "dependencies": {
     "astro": "^5.12.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.55.0"
   }
 }

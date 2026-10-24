@@ -42,7 +42,7 @@ const vragen = [
   },
   {
     vraag: 'Hoe zit het met privacy en de AVG?',
-    antwoord: `Je vereniging is verwerkingsverantwoordelijke, wij zijn verwerker; daar hoort een verwerkersovereenkomst bij en die ligt klaar. De gegevens staan op eigen servers in Nederland en de site zelf plaatst geen trackers. Zie <a href="${basis}avg">wat we voor de AVG geregeld hebben</a>.`,
+    antwoord: `Je vereniging is verwerkingsverantwoordelijke, wij zijn verwerker; daar hoort een verwerkersovereenkomst bij en die ligt klaar. De gegevens staan op apparatuur in eigen beheer binnen de EU, en deze website plaatst geen trackers. Zie <a href="${basis}avg">wat we voor de AVG geregeld hebben</a>.`,
   },
 ];
 
@@ -264,15 +264,15 @@ const structuredData = JSON.stringify({
       </p>
       <div class="zegels">
         <a class="zegel" href={`${basis}avg`}>
-          <span class="merk" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <span class="zegelicoon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
           <span>
             <b>AVG geregeld</b>
-            <small>Verwerkersovereenkomst klaar, servers in eigen beheer in Nederland</small>
+            <small>Verwerkersovereenkomst klaar, opslag in eigen beheer binnen de EU</small>
             <span class="verder">Wat dat betekent →</span>
           </span>
         </a>
         <a class="zegel" href={`${basis}avg`}>
-          <span class="merk" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M4.5 4.5l15 15"/></svg></span>
+          <span class="zegelicoon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M4.5 4.5l15 15"/></svg></span>
           <span>
             <b>Geen trackers</b>
             <small>Geen analytics, geen cookies van derden, geen externe scripts of lettertypen</small>
