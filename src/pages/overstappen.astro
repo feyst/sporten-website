@@ -1,9 +1,10 @@
 ---
 import Basis from '../layouts/Basis.astro';
+import WhatsAppLink from '../components/WhatsAppLink.astro';
 
 const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
-const titel = 'Overstappen naar een nieuwe ledenadministratie | Sporten.app';
+const titel = 'Overstappen van Excel of een ander pakket | Sporten.app';
 const beschrijving =
   'Overstappen van je ledenadministratie en boekhouding, ook midden in het boekjaar. Wij zetten je ledenlijst en boekhouding over.';
 
@@ -58,7 +59,7 @@ const structuredData = JSON.stringify({
       <a href={basis}>Home</a><span>/</span>Overstappen
     </p>
 
-    <h1>Overstappen naar een nieuwe ledenadministratie</h1>
+    <h1>Overstappen van Excel of een ander pakket</h1>
     <p>
       Je stuurt ons spreadsheets, wij zetten je ledenadministratie en boekhouding over. Dat kan ook midden in
       het boekjaar: je hoeft niet te wachten tot het nieuwe seizoen of tot 1 januari.
@@ -151,6 +152,7 @@ const structuredData = JSON.stringify({
       <div class="cta-rij">
         <a class="knop" href="mailto:info@sporten.app?subject=Videobellen%20over%20overstappen">Plan een gesprek</a>
         <a class="knop rand" href={`${basis}prijzen/`}>Bekijk de prijzen</a>
+        <WhatsAppLink klasse="knop rand" tekst="WhatsApp ons" />
       </div>
     </div>
   </section>

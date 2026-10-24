@@ -1,5 +1,6 @@
 ---
 import Basis from '../../layouts/Basis.astro';
+import WhatsAppLink from '../../components/WhatsAppLink.astro';
 
 const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
@@ -22,7 +23,7 @@ const vragen = [
   },
   {
     v: 'Moet ik verstand hebben van boekhouden?',
-    a: 'Een beetje helpt, maar het hoeft niet je vak te zijn. Een declaratie of inkoopfactuur komt binnen met een voorstel voor de boeking, dat je alleen hoeft te controleren.',
+    a: 'Een beetje helpt, maar het hoeft niet je vak te zijn. Bij een declaratie staat een voorstel voor de boeking klaar, dat je alleen hoeft te controleren.',
   },
 ];
 
@@ -70,7 +71,7 @@ const structuredData = JSON.stringify({
     </p>
     <p>
       Sporten.app is een boekhoudprogramma voor verenigingen, met dezelfde regels als een boekhoudpakket.
-      Bovendien is hij gekoppeld aan de leden, facturen en activiteiten die je er al in hebt staan.
+      Bovendien is het gekoppeld aan de leden, facturen en activiteiten die je er al in hebt staan.
     </p>
   </div></div>
 
@@ -108,7 +109,7 @@ const structuredData = JSON.stringify({
           <h3>Jaarafsluiting</h3>
           <p>Kloppen de cijfers, dan sluit de penningmeester het boekjaar af. Moet er toch nog een correctie in, dan kan hij het heropenen; wat al geboekt was, blijft staan.</p>
         </div>
-        <div class="kaart">
+        <div class="kaart" id="kostenplaatsen">
           <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41 12 22l-9-9V4a1 1 0 0 1 1-1h9z"/><path d="M7 8h.01"/></svg></div>
           <h3>Kostenplaatsen</h3>
           <p>Per toernooi, kamp of activiteit zie je wat het heeft gekost en opgeleverd, met een rapport in Excel of pdf.</p>
@@ -146,10 +147,10 @@ const structuredData = JSON.stringify({
       <h2>Hoe het geld binnenkomt en weggaat</h2>
       <ul class="opsom">
         <li>Je stuurt contributiefacturen per mail, of je incasseert ze. Leden geven de machtiging zelf in de app. Meer over <a href={`${basis}functies/contributie/`}>contributie en incasso</a>.</li>
-        <li>Je leest het bankafschrift in als CAMT.053-bestand; de meeste Nederlandse banken bieden dat formaat aan. Betalingen worden aan de facturen gekoppeld, en een teruggeboekte incasso komt vanzelf terug in je administratie.</li>
+        <li>Je leest het bankafschrift in als CAMT.053-bestand; de meeste Nederlandse banken bieden dat formaat aan. Sporten.app stelt bij elke betaling de bijbehorende factuur voor, en een teruggeboekte incasso komt vanzelf terug in je administratie.</li>
         <li>Een lid dient een declaratie in met een foto van de bon. Met automatisch uitlezen hoef je weinig over te typen. Meer over <a href={`${basis}functies/declaraties/`}>declaraties</a>.</li>
         <li>Leveranciers mailen hun factuur naar het factuuradres van je vereniging.</li>
-        <li>De vrijwilligersvergoeding van trainers stel je per periode vast. Je betaalt hem uit of verrekent hem met de contributie.</li>
+        <li>De vrijwilligersvergoeding van trainers stel je per periode vast. Je betaalt hem uit, of zet hem in mindering op een contributiefactuur die nog niet verstuurd is.</li>
         <li>Uitbetalingen en incasso’s zet je in een bestand dat je bij je bank aanlevert.</li>
       </ul>
     </div></div>
@@ -199,6 +200,7 @@ const structuredData = JSON.stringify({
       <div class="cta-rij">
         <a class="knop" href="mailto:info@sporten.app?subject=Videobellen%20over%20de%20boekhouding">Plan een gesprek</a>
         <a class="knop rand" href={`${basis}prijzen/`}>Bekijk de prijzen</a>
+        <WhatsAppLink klasse="knop rand" tekst="WhatsApp ons" />
       </div>
     </div>
   </section>
