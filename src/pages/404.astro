@@ -1,0 +1,23 @@
+---
+import Basis from '../layouts/Basis.astro';
+
+const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+---
+
+<Basis
+  titel="Pagina niet gevonden | Sporten.app"
+  beschrijving="Deze pagina bestaat niet (meer). Bekijk wat Sporten.app voor je vereniging doet, of wat het kost."
+  geenIndex
+>
+  <div class="container kopblok"><div class="lees">
+    <h1>Deze pagina bestaat niet</h1>
+    <p>Misschien is hij verhuisd, of zat er een typfout in de link. Hier kun je verder:</p>
+    <ul class="opsom">
+      <li><a href={basis}>Wat Sporten.app voor je vereniging doet</a></li>
+      <li><a href={`${basis}prijzen/`}>Prijzen</a></li>
+      <li><a href={`${basis}functies/boekhouding/`}>Boekhouding voor verenigingen</a></li>
+      <li><a href={`${basis}avg/`}>AVG voor je vereniging</a></li>
+    </ul>
+    <p>Zoek je iets anders? Mail naar <a href="mailto:info@sporten.app">info@sporten.app</a>.</p>
+  </div></div>
+</Basis>
