@@ -2,8 +2,8 @@
 layout: ../layouts/Juridisch.astro
 titel: 'Privacyverklaring | Sporten.app'
 beschrijving: 'Privacyverklaring van Sporten.app: welke gegevens wij van leden van sportverenigingen verwerken, waarvoor wij ze gebruiken en welke rechten u heeft.'
-versie: '1'
-datum: 28 augustus 2026
+versie: '2'
+datum: '[ingangsdatum, nog vast te stellen]'
 ---
 
 # <span>Privacy</span>verklaring
@@ -65,6 +65,28 @@ en de toestemmingen. Denkt u dat wij zonder die toestemming gegevens over een ki
 verwerken, laat het ons weten via [info@sporten.app](mailto:info@sporten.app); wij nemen dan
 contact op met de vereniging en zorgen dat het wordt rechtgezet.
 
+## Melden, blokkeren en verwijderen in de clubchat
+
+De regels voor de clubchat staan in artikel 5 van de
+[gebruiksvoorwaarden](https://sporten.app/voorwaarden). Daarvoor leggen wij het volgende
+vast:
+
+- **Een melding.** Wie meldde, welk bericht, de reden en een eventuele toelichting, met een
+  kopie van het bericht zoals het er op dat moment stond. Die kopie wordt niet meer
+  gewijzigd. De afzender ziet niet wie hem meldde. De melding is te zien voor de
+  beheerders van uw vereniging met het recht "Chat beheren" en voor ons. Zij zien daarbij
+  ook de 15 berichten ervoor en de 5 erna uit hetzelfde kanaal, ook als dat een besloten
+  kanaal is, zodat zij kunnen beoordelen waar het over ging.
+- **Een blokkade.** Wie wie blokkeerde, en wanneer die blokkade weer is opgeheven. De
+  geblokkeerde krijgt daar geen bericht over.
+- **Een verwijderd bericht.** Het verdwijnt uit de chat, maar wij bewaren de tekst en een
+  eventuele foto, met wie het verwijderde en wanneer. Dat doen wij om meldingen te kunnen
+  beoordelen en voor een eventuele juridische procedure. Alleen de beheerders van uw
+  vereniging (via een melding) en wij kunnen het inzien; andere leden niet.
+- **Ingrijpen.** Haalt een beheerder of halen wij een lid uit een kanaal, of zetten wij het
+  sturen van berichten voor een lid uit, dan leggen wij vast wie dat deed, wanneer en
+  tot wanneer.
+
 ## Pushmeldingen
 
 De app kan u vragen pushmeldingen te mogen sturen. Die meldingen komen van uw vereniging —
@@ -123,7 +145,9 @@ dat laatste geval informeren wij de vereniging vooraf, tenzij dat wettelijk niet
 
 Gegevens blijven bewaard zolang het lidmaatschap of de rol dat vereist; de vereniging
 bepaalt dat. Financiële gegevens worden bewaard tot zeven jaar na afloop van het boekjaar
-waarop zij betrekking hebben, vanwege de fiscale bewaarplicht. Gegevens in back-ups
+waarop zij betrekking hebben, vanwege de fiscale bewaarplicht. Berichten in de clubchat,
+ook verwijderde, en meldingen blijven bewaard zolang de vereniging de dienst afneemt.
+Gegevens in back-ups
 verdwijnen mee met de bewaartermijn van die back-ups. De volledige regeling staat in bijlage
 1 en artikel 11 van de verwerkersovereenkomst.
 
@@ -145,3 +169,4 @@ versienummer en een datum.
 | Versie | Datum | Wijziging |
 |---|---|---|
 | 1 | 28 augustus 2026 | Eerste versie |
+| 2 | [ingangsdatum] | Nieuw: melden, blokkeren en verwijderen in de clubchat; bewaren van chatberichten en meldingen bij "Hoe lang wij bewaren" |
