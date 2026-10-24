@@ -1,0 +1,202 @@
+---
+import Basis from '../../layouts/Basis.astro';
+
+const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const titel = 'Kascommissie vereniging: wat controleer je? | Sporten.app';
+const beschrijving =
+  'Wat doet een kascommissie en wat controleer je? Een checklist voor de kascontrole, de opbouw van het verslag en de planning vóór de ledenvergadering.';
+
+const structuredData = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Article',
+      headline: 'Kascommissie: zo controleer je de boeken van je vereniging',
+      description: beschrijving,
+      inLanguage: 'nl',
+      datePublished: '2026-10-24',
+      dateModified: '2026-10-24',
+      mainEntityOfPage: 'https://sporten.app/kennisbank/kascommissie/',
+      url: 'https://sporten.app/kennisbank/kascommissie/',
+      publisher: { '@id': 'https://sporten.app/#organisatie' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sporten.app/' },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Kascommissie',
+          item: 'https://sporten.app/kennisbank/kascommissie/',
+        },
+      ],
+    },
+  ],
+});
+---
+
+<Basis titel={titel} beschrijving={beschrijving}>
+  <script type="application/ld+json" slot="kop" set:html={structuredData} />
+
+  <div class="container kopblok"><div class="lees">
+    <p class="kruimels">
+      <a href={basis}>Home</a><span>/</span>Kennisbank<span>/</span>Kascommissie
+    </p>
+
+    <h1>Kascommissie: zo controleer je de boeken van je vereniging</h1>
+    <p>
+      Je bent gevraagd voor de kascommissie van je vereniging en het is de eerste keer.
+    </p>
+  </div></div>
+
+  <section>
+    <div class="container"><div class="lees">
+      <h2>Wat is een kascommissie?</h2>
+      <p>
+        Een kascommissie bestaat meestal uit twee leden die geen bestuurslid zijn. De algemene ledenvergadering
+        (ALV) benoemt ze, vaak voor een jaar. Zij kijken of de penningmeester de financiën van het afgelopen
+        jaar juist heeft vastgelegd en brengen daarover verslag uit aan de ALV.
+      </p>
+      <p>
+        Op basis van dat verslag besluit de ALV vaak over decharge: de ALV ontslaat het bestuur van aansprakelijkheid
+        voor het gevoerde financiële beleid van dat jaar. De kascommissie adviseert de ALV daarover, en de ALV beslist. Hoe dit
+        werkt, staat in de statuten en het huishoudelijk reglement van je vereniging. Lees die eerst, want ze
+        verschillen per vereniging.
+      </p>
+    </div></div>
+  </section>
+
+  <section class="vlak">
+    <div class="container"><div class="lees">
+      <h2>Voordat je begint</h2>
+      <p>
+        Vraag de vorige kascommissie of het bestuur om het verslag van vorig jaar. Daarin staan de opmerkingen
+        van toen, en je ziet of die zijn opgevolgd. Zoek ook uit wat de statuten zeggen over de samenstelling
+        van de commissie en over wat jullie mogen inzien.
+      </p>
+      <p>
+        Spreek verder af wat de controle omvat. Meestal kijkt een kascommissie naar de volledigheid en de
+        juistheid van de administratie. Of het beleid verstandig was, is een vraag voor de ALV.
+      </p>
+    </div></div>
+  </section>
+
+  <section>
+    <div class="container"><div class="lees">
+      <h2>Wat controleert een kascommissie?</h2>
+      <p>
+        Je hoeft geen boekhouder te zijn. Het gaat erom dat je de cijfers kunt terugvinden in de stukken. Deze
+        punten horen bij een kascontrole:
+      </p>
+      <ol class="opsom">
+        <li><strong>Een steekproef van boekingen.</strong> Kies een aantal boekingen, bijvoorbeeld de grootste en een paar willekeurige, en zoek bij elk de bon, factuur of het afschrift. Klopt het bedrag, de datum en de omschrijving?</li>
+        <li><strong>Banksaldi.</strong> Het saldo in de administratie moet op de einddatum gelijk zijn aan het saldo op het bankafschrift. Doe dit voor elke rekening, ook de spaarrekening.</li>
+        <li><strong>Beginbalans.</strong> De beginbalans van dit jaar moet gelijk zijn aan de eindbalans van vorig jaar. Verschilt er iets, vraag dan waarom.</li>
+        <li><strong>Kas.</strong> Heeft de vereniging contant geld, bijvoorbeeld van een toernooi of de kantine? Tel het na en vergelijk het met het saldo in de administratie.</li>
+        <li><strong>Openstaande facturen.</strong> Welke contributie en andere facturen zijn nog niet betaald? Is er een verklaring, en is er opvolging geweest?</li>
+        <li><strong>Begroting en werkelijke cijfers.</strong> Waar wijken de cijfers sterk af van de begroting? Vraag de penningmeester om uitleg en neem die op in je verslag.</li>
+        <li><strong>Contributieopbrengst.</strong> Klopt de opbrengst met het aantal leden en de tarieven? Een groot verschil wijst op leden die niet zijn gefactureerd of dubbel zijn geteld.</li>
+        <li><strong>Vergoedingen aan vrijwilligers.</strong> Zijn die onderbouwd? Kijk of er een afspraak of afrekening bij ligt. Lees meer over de <a href={`${basis}functies/vrijwilligersvergoeding/`}>vrijwilligersvergoeding</a> voor trainers.</li>
+        <li><strong>Nummering zonder gaten.</strong> Lopen de nummers van boekingen en facturen door? Een ontbrekend nummer is een reden om door te vragen.</li>
+      </ol>
+      <p>
+        Vind je iets dat niet klopt, bespreek het dan eerst met de penningmeester. Vaak is er een logische verklaring.
+        Een correctie voor je het verslag schrijft, is beter dan een opmerking erin.
+      </p>
+    </div></div>
+  </section>
+
+  <section class="vlak">
+    <div class="container"><div class="lees">
+      <h2>Het verslag van de kascommissie</h2>
+      <p>
+        Het verslag is meestal kort. Een pagina is vaak genoeg, zolang de ALV eruit kan opmaken wat jullie hebben
+        gedaan en wat jullie vinden. Denk aan deze onderdelen:
+      </p>
+      <ul class="opsom">
+        <li>Wie de commissie vormt, welk boekjaar jullie controleerden en wanneer.</li>
+        <li>Welke stukken jullie kregen en wat jullie ermee deden, bijvoorbeeld hoeveel boekingen jullie als steekproef namen.</li>
+        <li>Wat jullie hebben vastgesteld, ook de punten die goed waren.</li>
+        <li>Opmerkingen en aanbevelingen, bijvoorbeeld over de bonnen of de begroting.</li>
+        <li>Jullie advies aan de ALV, bijvoorbeeld om het bestuur decharge te verlenen.</li>
+        <li>De datum en de handtekeningen van beide leden.</li>
+      </ul>
+      <div class="aandacht">
+        <h3>Voorbeeld van een verslag</h3>
+        <p>Pas deze tekst aan aan je eigen statuten en aan wat jullie echt hebben gedaan.</p>
+        <p>
+          Verslag van de kascommissie over het boekjaar [jaar] van [naam vereniging]. De commissie bestond uit
+          [naam] en [naam]. Wij controleerden de administratie op [datum], samen met de penningmeester, [naam].
+        </p>
+        <p>
+          Wij kregen het grootboek, de balans, de staat van baten en lasten, de begroting, de bankafschriften en
+          de bonnen. Wij namen [aantal] boekingen als steekproef en vonden bij elke boeking een bewijsstuk. De
+          banksaldi per [datum] sluiten aan op de afschriften, en de beginbalans sluit aan op de eindbalans van
+          vorig jaar.
+        </p>
+        <p>
+          Wij hebben de volgende opmerkingen: [opmerking]. Wij adviseren het bestuur om [aanbeveling].
+        </p>
+        <p>
+          Op grond van onze bevindingen adviseren wij de algemene ledenvergadering om het bestuur decharge te
+          verlenen voor het gevoerde financiële beleid over [jaar].
+        </p>
+        <p>[Plaats], [datum]. [Handtekening] [naam], [handtekening] [naam].</p>
+      </div>
+      <p>
+        Schrijf concreet wat jullie zagen. "De bankstanden per 31 augustus sluiten aan op de afschriften" zegt
+        de ALV meer dan "alles is in orde". Heeft de commissie een onderdeel niet kunnen controleren, bijvoorbeeld
+        omdat bonnen ontbraken, vermeld dat dan ook. Zo weet de ALV waar de controle ophield.
+      </p>
+    </div></div>
+  </section>
+
+  <section>
+    <div class="container"><div class="lees">
+      <h2>De planning vóór de ALV</h2>
+      <p>
+        Plan de controle ruim voor de ALV. Anders heeft de penningmeester geen tijd om vragen te beantwoorden en
+        geen ruimte om iets te corrigeren.
+      </p>
+      <ul class="opsom">
+        <li>Spreek met de penningmeester af wanneer de jaarcijfers klaar zijn, bijvoorbeeld vier tot zes weken vóór de ALV.</li>
+        <li>Vraag de stukken op: het grootboek, de balans, de staat van baten en lasten, de begroting, de bankafschriften en de bonnen.</li>
+        <li>Plan een of twee zittingen om de steekproef en de saldi door te nemen.</li>
+        <li>Leg open vragen schriftelijk voor, zodat je de antwoorden later kunt terugvinden.</li>
+        <li>Lever het verslag op tijd in, zodat het bij de stukken voor de ALV past.</li>
+      </ul>
+      <p>
+        Weet je nog niet hoeveel tijd het kost? Reken op een paar avonden, afhankelijk van de omvang van de
+        vereniging. Een vereniging met een toernooi of kamp heeft meer boekingen dan een club met alleen
+        contributie.
+      </p>
+    </div></div>
+  </section>
+
+  <section class="vlak">
+    <div class="container"><div class="lees">
+      <h2>Zo gaat het in Sporten.app</h2>
+      <p>
+        Gebruikt de vereniging Sporten.app voor de <a href={`${basis}functies/boekhouding/`}>boekhouding</a>, dan
+        krijgt de kascommissie een eigen rol voor het boekjaar dat ze controleert. Daarmee downloadt ze het
+        controlepakket als zip: spreadsheets van de boekingen, de grootboekkaarten, de facturen en de
+        bankmutaties, plus de bonnen en afschriften. Boekingen en facturen zijn doorlopend genummerd, dus een
+        ontbrekend nummer valt meteen op. Een kascommissie kan niets wijzigen, en geboekte stukken veranderen niet
+        meer.
+      </p>
+    </div></div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Zelf zien hoe het werkt?</h2>
+      <p class="sectie-intro">Plan een half uur videobellen, dan laten we het controlepakket zien.</p>
+      <div class="cta-rij">
+        <a class="knop" href="mailto:info@sporten.app?subject=Videobellen%20over%20het%20controlepakket%20voor%20de%20kascommissie">Plan een gesprek</a>
+        <a class="knop rand" href={`${basis}functies/boekhouding/`}>Bekijk de boekhouding</a>
+      </div>
+    </div>
+  </section>
+</Basis>

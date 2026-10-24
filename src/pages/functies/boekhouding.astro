@@ -39,7 +39,8 @@ const structuredData = JSON.stringify({
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sporten.app/' },
-        { '@type': 'ListItem', position: 2, name: 'Boekhouding', item: 'https://sporten.app/functies/boekhouding/' },
+        { '@type': 'ListItem', position: 2, name: 'Functies', item: 'https://sporten.app/functies/' },
+        { '@type': 'ListItem', position: 3, name: 'Boekhouding', item: 'https://sporten.app/functies/boekhouding/' },
       ],
     },
     {
@@ -59,7 +60,7 @@ const structuredData = JSON.stringify({
 
   <div class="container kopblok"><div class="lees">
     <p class="kruimels">
-      <a href={basis}>Home</a><span>/</span><a href={`${basis}#functies`}>Functies</a><span>/</span>Boekhouding
+      <a href={basis}>Home</a><span>/</span><a href={`${basis}functies/`}>Functies</a><span>/</span>Boekhouding
     </p>
 
     <h1>Boekhouding voor verenigingen</h1>
@@ -136,6 +137,7 @@ const structuredData = JSON.stringify({
         <li>Ze downloadt het controlepakket: een zip met spreadsheets van alle boekingen, grootboekkaarten, facturen en bankmutaties, en de bonnen en afschriften die erbij horen.</li>
         <li>Omdat alles doorgenummerd is, ziet ze meteen of er iets ontbreekt.</li>
       </ul>
+      <p>Zit je zelf in de kascommissie? Lees <a href={`${basis}kennisbank/kascommissie/`}>wat een kascommissie controleert</a>.</p>
     </div></div>
   </section>
 
@@ -143,9 +145,9 @@ const structuredData = JSON.stringify({
     <div class="container"><div class="lees">
       <h2>Hoe het geld binnenkomt en weggaat</h2>
       <ul class="opsom">
-        <li>Je stuurt contributiefacturen per mail, of je incasseert ze. Leden geven de machtiging zelf in de app.</li>
+        <li>Je stuurt contributiefacturen per mail, of je incasseert ze. Leden geven de machtiging zelf in de app. Meer over <a href={`${basis}functies/contributie/`}>contributie en incasso</a>.</li>
         <li>Je leest het bankafschrift in als CAMT.053-bestand; de meeste Nederlandse banken bieden dat formaat aan. Betalingen worden aan de facturen gekoppeld, en een teruggeboekte incasso komt vanzelf terug in je administratie.</li>
-        <li>Een lid dient een declaratie in met een foto van de bon. Met automatisch uitlezen hoef je weinig over te typen.</li>
+        <li>Een lid dient een declaratie in met een foto van de bon. Met automatisch uitlezen hoef je weinig over te typen. Meer over <a href={`${basis}functies/declaraties/`}>declaraties</a>.</li>
         <li>Leveranciers mailen hun factuur naar het factuuradres van je vereniging.</li>
         <li>De vrijwilligersvergoeding van trainers stel je per periode vast. Je betaalt hem uit of verrekent hem met de contributie.</li>
         <li>Uitbetalingen en incasso’s zet je in een bestand dat je bij je bank aanlevert.</li>
@@ -155,14 +157,10 @@ const structuredData = JSON.stringify({
 
   <section class="vlak">
     <div class="container"><div class="lees">
-      <h2>Overstappen midden in het jaar</h2>
+      <h2>Je boekhouding overzetten</h2>
       <p>
-        Je hoeft niet tot 1 januari te wachten. Je levert drie spreadsheets aan: je rekeningschema, de
-        beginbalans en de bankmutaties tot nu toe. Wij lezen ze in en controleren of alles aansluit voordat we
-        het definitief boeken. Overzetten zit in de <a href={`${basis}prijzen/`}>prijs</a>.
-      </p>
-      <p>
-        Incasseer je al via een ander pakket? Dan neem je je bestaande machtigingen mee.
+        Je hoeft niet tot 1 januari te wachten: wij zetten je lopende boekjaar over vanuit een paar
+        spreadsheets, zonder meerprijs. Lees <a href={`${basis}overstappen/`}>hoe overstappen werkt</a>.
       </p>
     </div></div>
   </section>

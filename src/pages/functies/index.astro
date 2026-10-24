@@ -1,0 +1,133 @@
+---
+import Basis from '../../layouts/Basis.astro';
+
+const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const titel = 'Software voor sportverenigingen: alle functies | Sporten.app';
+const beschrijving =
+  'Alle functies van Sporten.app voor je sportvereniging: ledenadministratie, contributie en incasso, boekhouding, declaraties en een ledenapp.';
+
+const functies = [
+  {
+    pad: 'functies/ledenadministratie/',
+    kop: 'Ledenadministratie',
+    tekst: 'Nieuwe leden melden zich aan met een formulier dat het bestuur goedkeurt. Gezinnen, lidsoorten en oud-leden staan in één lijst.',
+  },
+  {
+    pad: 'functies/contributie/',
+    kop: 'Contributie en incasso',
+    tekst: 'Van factuur tot incassobestand voor de bank, met een herinnering voor wie nog niet betaald heeft.',
+  },
+  {
+    pad: 'functies/boekhouding/',
+    kop: 'Boekhouding',
+    tekst: 'Een grootboek met je eigen rekeningschema, rapporten voor de ledenvergadering en alles wat de kascommissie nodig heeft.',
+  },
+  {
+    pad: 'functies/declaraties/',
+    kop: 'Declaraties en inkoopfacturen',
+    tekst: 'Geen bonnen meer in de appgroep. Leden dienen ze in met een foto, leveranciers mailen hun factuur naar de vereniging.',
+  },
+  {
+    pad: 'functies/vrijwilligersvergoeding/',
+    kop: 'Vrijwilligersvergoeding voor trainers',
+    tekst: 'Een afrekening per periode, uitgerekend met de trainingen uit de agenda en nagekeken door de trainer zelf.',
+  },
+  {
+    pad: 'functies/ledenapp/',
+    kop: 'De app voor je leden',
+    tekst: 'Zien wat er te doen is, je aanmelden, en in de chat van je groep horen wie er komt.',
+  },
+  {
+    pad: 'functies/ledenadministratie/',
+    kop: 'Rollen en rechten',
+    tekst: 'De penningmeester ziet de boekhouding, de trainer zijn deelnemers. Bij een bestuurswissel geef je rollen door, met een logboek.',
+  },
+  {
+    pad: 'functies/boekhouding/',
+    kop: 'Kostenplaatsen en begroting',
+    tekst: 'Wat het jeugdkamp of het toernooi heeft gekost en opgeleverd, en of je in de loop van het jaar binnen de begroting blijft.',
+  },
+];
+
+const structuredData = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      name: titel,
+      description: beschrijving,
+      url: 'https://sporten.app/functies/',
+      // Two cards point at the same page (roles → membership, cost centres → bookkeeping); list each page once.
+      hasPart: functies
+        .filter((f, i) => functies.findIndex((g) => g.pad === f.pad) === i)
+        .map((f) => ({ '@type': 'WebPage', name: f.kop, url: `https://sporten.app/${f.pad}` })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sporten.app/' },
+        { '@type': 'ListItem', position: 2, name: 'Functies', item: 'https://sporten.app/functies/' },
+      ],
+    },
+  ],
+});
+---
+
+<Basis titel={titel} beschrijving={beschrijving}>
+  <script type="application/ld+json" slot="kop" set:html={structuredData} />
+
+  <div class="container kopblok"><div class="lees">
+    <p class="kruimels"><a href={basis}>Home</a><span>/</span>Functies</p>
+    <h1>Functies voor je sportvereniging</h1>
+    <p>
+      Van het aanmeldformulier tot de jaarafsluiting: dit kan je vereniging met Sporten.app. Je krijgt alles,
+      in elk abonnement.
+    </p>
+  </div></div>
+
+  <section>
+    <div class="container">
+      <div class="kaarten">
+        {functies.map((f) => (
+          <a class="kaart functie" href={`${basis}${f.pad}`}>
+            <h2>{f.kop}</h2>
+            <p>{f.tekst}</p>
+            <span class="verder">Lees meer over {f.kop.toLowerCase()} →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="vlak">
+    <div class="container"><div class="lees">
+      <h2>Verder lezen</h2>
+      <ul class="opsom">
+        <li><a href={`${basis}overstappen/`}>Overstappen, ook midden in het boekjaar</a></li>
+        <li><a href={`${basis}voor/studentenverenigingen/`}>Sporten.app voor studentensportverenigingen</a></li>
+        <li><a href={`${basis}kennisbank/kascommissie/`}>Kascommissie: zo controleer je de boeken van je vereniging</a></li>
+        <li><a href={`${basis}avg/`}>AVG voor je vereniging</a></li>
+        <li><a href={`${basis}prijzen/`}>Prijzen</a></li>
+      </ul>
+    </div></div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Zelf zien hoe het werkt?</h2>
+      <p class="sectie-intro">Plan een half uur videobellen, dan laten we het je zien.</p>
+      <div class="cta-rij">
+        <a class="knop" href="mailto:info@sporten.app?subject=Videobellen%20over%20Sporten.app">Plan een gesprek</a>
+        <a class="knop rand" href={`${basis}prijzen/`}>Bekijk de prijzen</a>
+      </div>
+    </div>
+  </section>
+</Basis>
+
+<style>
+  .functie { display: block; color: inherit; text-decoration: none; }
+  .functie h2 { font-size: 18px; margin-bottom: 8px; }
+  .functie:hover { border-color: var(--rood); }
+  .functie .verder { display: inline-block; margin-top: 10px; font-size: 14px; color: var(--rood); font-weight: 600; }
+</style>

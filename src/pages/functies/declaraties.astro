@@ -1,0 +1,158 @@
+---
+import Basis from '../../layouts/Basis.astro';
+
+const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const titel = 'Declaraties en inkoopfacturen voor je vereniging | Sporten.app';
+const beschrijving =
+  'Declaraties en inkoopfacturen voor je vereniging: een lid stuurt een foto van de bon, leveranciers mailen naar het factuuradres.';
+
+const vragen = [
+  {
+    v: 'Wat staat er voorgesteld bij een inkoopfactuur?',
+    a: 'De leverancier, het factuurnummer, de datums en de bedragen.',
+  },
+  {
+    v: 'Wat als automatisch uitlezen uit staat?',
+    a: 'Dan vult het lid de gegevens van de bon zelf in. De penningmeester keurt de declaratie op dezelfde manier goed.',
+  },
+  {
+    v: 'Waarheen wordt een declaratie uitbetaald?',
+    a: 'Het lid vult bij de declaratie een IBAN in. Dat rekeningnummer komt in het betaalbestand.',
+  },
+];
+
+const structuredData = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      name: titel,
+      description: beschrijving,
+      url: 'https://sporten.app/functies/declaraties/',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sporten.app/' },
+        { '@type': 'ListItem', position: 2, name: 'Functies', item: 'https://sporten.app/functies/' },
+        { '@type': 'ListItem', position: 3, name: 'Declaraties', item: 'https://sporten.app/functies/declaraties/' },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: vragen.map(({ v, a }) => ({
+        '@type': 'Question',
+        name: v,
+        acceptedAnswer: { '@type': 'Answer', text: a },
+      })),
+    },
+  ],
+});
+---
+
+<Basis titel={titel} beschrijving={beschrijving}>
+  <script type="application/ld+json" slot="kop" set:html={structuredData} />
+
+  <div class="container kopblok"><div class="lees">
+    <p class="kruimels">
+      <a href={basis}>Home</a><span>/</span><a href={`${basis}functies/`}>Functies</a><span>/</span>Declaraties
+    </p>
+
+    <h1>Declaraties en inkoopfacturen voor je vereniging</h1>
+    <p>
+      Na het toernooi komen de bonnen binnen: een foto in de appgroep, een kassabon in een envelop, een
+      factuur van de drukker in een mailbox. Met een declaratie per bon en een eigen adres voor facturen
+      komt alles op één plek binnen.
+    </p>
+    <p>
+      De penningmeester keurt goed en betaalt uit. Wat hij goedkeurt, loopt door naar je
+      <a href={`${basis}functies/boekhouding/`}>boekhouding</a>.
+    </p>
+  </div></div>
+
+  <section>
+    <div class="container"><div class="lees">
+      <h2>Een declaratie indienen</h2>
+      <p>
+        Een lid dient de declaratie in via portal.sporten.app, in de browser, met een foto van de bon erbij.
+        Dat kan voor zoveel bonnen als je wilt. In de app kan dat niet. De penningmeester ziet de declaratie en keurt hem goed. Daarbij staat een
+        voorstel voor de boeking klaar, dat hij kan controleren.
+      </p>
+    </div></div>
+  </section>
+
+  <section class="vlak">
+    <div class="container"><div class="lees">
+      <h2>Wat op een declaratieformulier hoort</h2>
+      <p>Zoek je een declaratieformulier voor je vereniging? Dit moet erop staan:</p>
+      <ul class="opsom">
+        <li>wie de kosten heeft gemaakt, en het rekeningnummer waarop het bedrag terug moet;</li>
+        <li>de datum van de aankoop en de winkel of leverancier;</li>
+        <li>het bedrag, en waarvoor het was: bijvoorbeeld materiaal voor het kamp of de lunch na het toernooi;</li>
+        <li>de bon of factuur zelf.</li>
+      </ul>
+      <p>In Sporten.app vult het lid deze gegevens in. Staat automatisch uitlezen aan, dan zijn winkel, datum en bedrag al voorgesteld.</p>
+    </div></div>
+  </section>
+
+  <section>
+    <div class="container"><div class="lees">
+      <h2>Bonnen automatisch uitlezen</h2>
+      <p>
+        Je zet automatisch uitlezen zelf aan; standaard staat het uit. Staat het aan, dan stelt
+        Sporten.app de winkel, de datum en het bedrag voor.
+      </p>
+      <p>
+        Het blijft altijd een voorstel dat iemand bevestigt. Het uitlezen gebeurt door een AI-dienst. Die staat
+        op de <a href={`${basis}subverwerkers/`}>lijst van subverwerkers</a>. Wat dat voor de gegevens van je
+        leden betekent, lees je bij <a href={`${basis}avg/`}>de AVG</a>.
+      </p>
+    </div></div>
+  </section>
+
+  <section class="vlak">
+    <div class="container"><div class="lees">
+      <h2>Inkoopfacturen van leveranciers</h2>
+      <p>
+        Je vereniging heeft een eigen factuuradres. Laat leveranciers hun factuur daarheen mailen, dan komt
+        hij binnen als concept-inkoopfactuur. Jij controleert hem en boekt hem.
+      </p>
+    </div></div>
+  </section>
+
+  <section>
+    <div class="container"><div class="lees">
+      <h2>Uitbetalen in één bestand</h2>
+      <p>
+        Heb je meerdere declaraties goedgekeurd, dan betaal je ze samen uit met één betaalbestand. Dat lever
+        je aan bij je bank.
+      </p>
+    </div></div>
+  </section>
+
+  <section class="vlak">
+    <div class="container">
+      <h2>Vragen over declaraties</h2>
+      <div class="faq">
+        {vragen.map(({ v, a }) => (
+          <details>
+            <summary><h3>{v}</h3></summary>
+            <p>{a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Zelf zien hoe het werkt?</h2>
+      <p class="sectie-intro">Plan een half uur videobellen, dan laten we zien hoe een declaratie binnenkomt.</p>
+      <div class="cta-rij">
+        <a class="knop" href="mailto:info@sporten.app?subject=Videobellen%20over%20declaraties">Plan een gesprek</a>
+        <a class="knop rand" href={`${basis}functies/boekhouding/`}>Boekhouding voor je vereniging</a>
+      </div>
+    </div>
+  </section>
+</Basis>
