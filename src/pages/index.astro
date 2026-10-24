@@ -5,7 +5,7 @@ import ChatTelefoon from '../components/ChatTelefoon.astro';
 import TriIllustratie from '../components/TriIllustratie.astro';
 import StoreBadges from '../components/StoreBadges.astro';
 import WhatsAppLink from '../components/WhatsAppLink.astro';
-import { organisatie, software } from '../data/structured';
+import { software } from '../data/structured';
 
 const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
@@ -61,7 +61,6 @@ const vragen = [
 const structuredData = JSON.stringify({
   '@context': 'https://schema.org',
   '@graph': [
-    organisatie,
     software,
     {
       '@type': 'FAQPage',
@@ -217,8 +216,8 @@ const structuredData = JSON.stringify({
         <div class="kaart">
           <h3>De penningmeester</h3>
           <p>
-            Bonnen komen binnen als declaratie in plaats van als appje. Je leest het bankafschrift in en de
-            betalingen worden aan de facturen gekoppeld. Doe je dat geregeld, dan zijn balans en baten en lasten
+            Bonnen komen binnen als declaratie in plaats van als appje. Je leest het bankafschrift in en Sporten.app
+            stelt bij elke betaling de factuur voor. Doe je dat geregeld, dan zijn balans en baten en lasten
             steeds bij en hoef je aan het eind van het jaar niets meer bij elkaar te zoeken.
           </p>
         </div>

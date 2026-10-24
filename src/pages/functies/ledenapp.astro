@@ -1,5 +1,6 @@
 ---
 import Basis from '../../layouts/Basis.astro';
+import WhatsAppLink from '../../components/WhatsAppLink.astro';
 import ChatTelefoon from '../../components/ChatTelefoon.astro';
 import StoreBadges from '../../components/StoreBadges.astro';
 
@@ -147,7 +148,7 @@ const structuredData = JSON.stringify({
     <div class="container"><div class="lees">
       <h2>Wat de app niet doet</h2>
       <ul class="opsom kruis">
-        <li>Geen declaraties indienen. Een lid dient een declaratie in via de webomgeving.</li>
+        <li>Geen declaraties indienen. Een lid dient een declaratie in via portal.sporten.app.</li>
         <li>Geen roosters voor bardienst.</li>
         <li>Geen wedstrijd- of competitie-indeling.</li>
       </ul>
@@ -175,6 +176,7 @@ const structuredData = JSON.stringify({
       <div class="cta-rij">
         <a class="knop" href="mailto:info@sporten.app?subject=Videobellen%20over%20de%20ledenapp">Plan een gesprek</a>
         <a class="knop rand" href={`${basis}prijzen/`}>Bekijk de prijzen</a>
+        <WhatsAppLink klasse="knop rand" tekst="WhatsApp ons" />
       </div>
     </div>
   </section>

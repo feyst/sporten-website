@@ -1,5 +1,5 @@
 // Maakt de deelafbeeldingen:
-//   public/img/og.png             uit design/og/og.html (homepage en terugval)
+//   public/img/og/algemeen.png    uit design/og/og.html (homepage en terugval)
 //   public/img/og/<slug>.png      per pagina uit design/og/og-pagina.html + paginas.json
 //
 //     node design/og/maak-og.cjs && python3 design/og/verklein.py
@@ -7,7 +7,7 @@
 // Playwright staat globaal geïnstalleerd en is bewust geen dependency van deze repo:
 // de site zelf heeft hem niet nodig en de deelafbeeldingen maak je een paar keer per jaar.
 // Een nieuwe pagina krijgt een eigen afbeelding door hem aan paginas.json toe te voegen;
-// zonder vermelding valt de pagina terug op og.png (Basis.astro kiest dat bij het bouwen).
+// zonder vermelding valt de pagina terug op algemeen.png (Basis.astro kiest dat bij het bouwen).
 const fs = require('fs');
 const path = require('path');
 const { chromium } = require(process.env.PLAYWRIGHT_PAD ||
@@ -26,8 +26,8 @@ const slug = (pad) => pad.replace(/^\/|\/$/g, '').replace(/\//g, '-');
   const page = await browser.newPage({ viewport: { width: 1200, height: 630 }, deviceScaleFactor: 1 });
 
   await page.goto('file://' + path.join(__dirname, 'og.html'), { waitUntil: 'networkidle' });
-  await page.screenshot({ path: path.join(wortel, 'public', 'img', 'og.png') });
-  console.log('geschreven: public/img/og.png');
+  await page.screenshot({ path: path.join(map, 'algemeen.png') });
+  console.log('geschreven: public/img/og/algemeen.png');
 
   for (const p of paginas) {
     const q = new URLSearchParams({ label: p.label, kop: p.kop, sub: p.sub, adres: 'sporten.app/' + p.pad });

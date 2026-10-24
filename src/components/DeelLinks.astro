@@ -12,7 +12,7 @@ const links = [
   { naam: 'WhatsApp', href: `https://wa.me/?text=${t}%20${u}` },
   { naam: 'LinkedIn', href: `https://www.linkedin.com/sharing/share-offsite/?url=${u}` },
   { naam: 'Facebook', href: `https://www.facebook.com/sharer/sharer.php?u=${u}` },
-  { naam: 'Mail', href: `mailto:?subject=${t}&body=${u}` },
+  { naam: 'Mail', href: `mailto:?subject=${t}&body=${encodeURIComponent('Misschien handig voor de kascontrole:')}%0A%0A${u}` },
 ];
 ---
 
