@@ -4,6 +4,7 @@ import FinancienScherm from '../components/FinancienScherm.astro';
 import ChatTelefoon from '../components/ChatTelefoon.astro';
 import TriIllustratie from '../components/TriIllustratie.astro';
 import StoreBadges from '../components/StoreBadges.astro';
+import WhatsAppLink from '../components/WhatsAppLink.astro';
 
 const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
@@ -13,7 +14,7 @@ const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL 
 const vragen = [
   {
     vraag: 'Wat kost Sporten.app?',
-    antwoord: `Je betaalt naar het aantal leden: € 149 per jaar tot 100 leden, € 299 tot 300 leden en € 549 tot 750 leden, exclusief btw. Studenten- en schoolsportverenigingen krijgen 40% korting. Zie <a href="${basis}prijzen">de prijzen</a>.`,
+    antwoord: `Je betaalt naar het aantal leden: € 149 per jaar tot 100 leden, € 299 tot 300 leden en € 549 tot 750 leden, inclusief btw. Studenten- en schoolsportverenigingen krijgen 40% korting. Zie <a href="${basis}prijzen">de prijzen</a>.`,
   },
   {
     vraag: 'Moeten we alles gebruiken?',
@@ -67,7 +68,6 @@ const structuredData = JSON.stringify({
       logo: 'https://sporten.app/img/icon.png',
       email: 'info@sporten.app',
       sameAs: [
-        'https://github.com/feyst/sporten-website',
         'https://play.google.com/store/apps/details?id=app.sporten.app',
         'https://apps.apple.com/nl/app/sporten/id6472296878',
       ],
@@ -76,7 +76,7 @@ const structuredData = JSON.stringify({
       '@type': 'SoftwareApplication',
       name: 'Sporten.app',
       description:
-        'Software voor de administratie van sportverenigingen: leden, contributie en incasso, boekhouding, declaraties en trainersvergoedingen, met een app waarin leden zich inschrijven voor activiteiten.',
+        'Software voor de administratie van sportverenigingen: leden, contributie en incasso, boekhouding, declaraties en vrijwilligersvergoedingen voor trainers, met een app waarin leden zich inschrijven voor activiteiten.',
       applicationCategory: 'BusinessApplication',
       operatingSystem: 'Web, Android, iOS',
       url: 'https://app.sporten.app/',
@@ -106,7 +106,7 @@ const structuredData = JSON.stringify({
 
 <Basis
   titel="Verenigingssoftware: de hele administratie van je club | Sporten.app"
-  beschrijving="Leden, contributie en incasso, boekhouding, declaraties en trainersvergoedingen in één systeem, met een app waarin je leden zich inschrijven. Vanaf € 149 per jaar."
+  beschrijving="Leden, contributie en incasso, boekhouding, declaraties en vrijwilligersvergoedingen in één systeem, met een app waarin je leden zich inschrijven. Vanaf € 149 per jaar."
 >
   <script type="application/ld+json" slot="kop" set:html={structuredData} />
 
@@ -115,7 +115,7 @@ const structuredData = JSON.stringify({
       <div>
         <h1>De hele administratie van je vereniging.<br /><span>Van aanmelding tot jaarrekening.</span></h1>
         <p>
-          Leden, contributie, boekhouding, declaraties en trainersvergoedingen in één systeem, met een app
+          Leden, contributie, boekhouding, declaraties en vrijwilligersvergoedingen in één systeem, met een app
           waarin je leden zich met één tik inschrijven. Je krijgt alle functies en betaalt alleen naar het
           aantal leden.
         </p>
@@ -207,7 +207,7 @@ const structuredData = JSON.stringify({
         </div>
         <div class="kaart">
           <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-          <h3>Trainersvergoedingen</h3>
+          <h3>Vrijwilligersvergoeding voor trainers</h3>
           <p>De uren komen uit de agenda, het tarief stel je per trainer in. De trainer kijkt zijn afrekening zelf na, en je krijgt een seintje als een vergoeding boven de vrijwilligersgrens komt.</p>
         </div>
         <div class="kaart">
@@ -305,29 +305,29 @@ const structuredData = JSON.stringify({
           <span class="naam">Klein</span>
           <span class="omvang">t/m 100 leden</span>
           <span class="bedrag">€ 149</span>
-          <span class="per">per jaar · excl. btw</span>
-          <span class="incl">€ 180,29 incl. btw</span>
+          <span class="per">per jaar · incl. btw</span>
+          <span class="incl">€ 1,49 per lid bij 100 leden</span>
         </div>
         <div class="staffel">
           <span class="naam">Vereniging</span>
           <span class="omvang">101 – 300 leden</span>
           <span class="bedrag">€ 299</span>
-          <span class="per">per jaar · excl. btw</span>
-          <span class="incl">€ 361,79 incl. btw</span>
+          <span class="per">per jaar · incl. btw</span>
+          <span class="incl">€ 1,00 per lid bij 300 leden</span>
         </div>
         <div class="staffel">
           <span class="naam">Groot</span>
           <span class="omvang">301 – 750 leden</span>
           <span class="bedrag">€ 549</span>
-          <span class="per">per jaar · excl. btw</span>
-          <span class="incl">€ 664,29 incl. btw</span>
+          <span class="per">per jaar · incl. btw</span>
+          <span class="incl">€ 0,73 per lid bij 750 leden</span>
         </div>
         <div class="staffel">
           <span class="naam">XL</span>
           <span class="omvang">vanaf 751 leden</span>
           <span class="bedrag">€ 0,70</span>
-          <span class="per">per lid per jaar · min. € 799</span>
-          <span class="incl">€ 966,79 incl. btw bij het minimum</span>
+          <span class="per">per lid per jaar · incl. btw</span>
+          <span class="incl">minimaal € 799 per jaar</span>
         </div>
       </div>
       <p class="studenten">Studenten- of schoolsportvereniging? Dan krijg je 40% korting.</p>
@@ -416,7 +416,7 @@ const structuredData = JSON.stringify({
         </div>
         <div class="kaart">
           <h3>WhatsApp / telefoon</h3>
-          <p><a href="https://wa.me/31625002228">+31 6 25 00 22 28</a></p>
+          <p><WhatsAppLink /></p>
         </div>
         <div class="kaart">
           <h3>Een half uur videobellen</h3>
