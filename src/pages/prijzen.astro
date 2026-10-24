@@ -1,5 +1,6 @@
 ---
 import Basis from '../layouts/Basis.astro';
+import WhatsAppLink from '../components/WhatsAppLink.astro';
 
 const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
@@ -23,12 +24,12 @@ const vragen = [
   },
   {
     vraag: 'Hoe lang zitten we eraan vast?',
-    antwoord: 'Eén contractjaar. Daarna zeg je per jaar op, zonder boete.',
+    antwoord: 'Het abonnement loopt per kalenderjaar. Wil je stoppen, dan zeg je op tegen het einde van het jaar, zonder boete.',
   },
   {
     vraag: 'We zijn een kleine vereniging met 40 leden. Is dit niet te zwaar?',
     antwoord:
-      'Nee. Je begint met de ledenlijst en de agenda, en zet de boekhouding aan als je hem nodig hebt. Je betaalt € 149 per jaar, € 180,29 inclusief btw.',
+      'Nee. Je begint met de ledenlijst en de agenda, en zet de boekhouding aan als je hem nodig hebt. Je betaalt € 149 per jaar, inclusief btw.',
   },
 ];
 
@@ -67,7 +68,7 @@ const structuredData = JSON.stringify({
 
   <div class="container kopblok"><div class="lees">
     <h1>Wat kost Sporten.app?</h1>
-    <p>Je krijgt alle functies, in elke staffel. Wat je betaalt, hangt alleen af van het aantal leden.</p>
+    <p>Je krijgt alle functies, in elke staffel. Wat je betaalt, hangt alleen af van het aantal leden. Alle bedragen zijn inclusief btw.</p>
   </div></div>
 
   <section id="staffels">
@@ -77,9 +78,8 @@ const structuredData = JSON.stringify({
           <p class="naam">Klein</p>
           <p class="omvang">t/m 100 leden</p>
           <p class="bedrag">€ 149</p>
-          <p class="per">per jaar · excl. btw</p>
+          <p class="per">per jaar · incl. btw</p>
           <div class="incl">
-            <span>€ 180,29 incl. btw</span><br />
             <span>€ 1,49 per lid bij 100 leden</span>
           </div>
         </div>
@@ -87,9 +87,8 @@ const structuredData = JSON.stringify({
           <p class="naam">Vereniging</p>
           <p class="omvang">101 – 300 leden</p>
           <p class="bedrag">€ 299</p>
-          <p class="per">per jaar · excl. btw</p>
+          <p class="per">per jaar · incl. btw</p>
           <div class="incl">
-            <span>€ 361,79 incl. btw</span><br />
             <span>€ 1,00 per lid bij 300 leden</span>
           </div>
         </div>
@@ -97,9 +96,8 @@ const structuredData = JSON.stringify({
           <p class="naam">Groot</p>
           <p class="omvang">301 – 750 leden</p>
           <p class="bedrag">€ 549</p>
-          <p class="per">per jaar · excl. btw</p>
+          <p class="per">per jaar · incl. btw</p>
           <div class="incl">
-            <span>€ 664,29 incl. btw</span><br />
             <span>€ 0,73 per lid bij 750 leden</span>
           </div>
         </div>
@@ -107,18 +105,15 @@ const structuredData = JSON.stringify({
           <p class="naam">XL</p>
           <p class="omvang">vanaf 751 leden</p>
           <p class="bedrag">€ 0,70</p>
-          <p class="per">per lid per jaar · min. € 799</p>
+          <p class="per">per lid per jaar · incl. btw</p>
           <div class="incl">
-            <span>€ 966,79 incl. btw bij het minimum</span>
+            <span>minimaal € 799 per jaar</span>
           </div>
         </div>
       </div>
 
       <div class="aandacht">
-        <p><b>Kan je vereniging de btw niet terugvragen?</b> Dat geldt voor de meeste sportverenigingen. Reken dan met het bedrag inclusief btw dat onder elke prijs staat.</p>
-      </div>
-      <div class="aandacht">
-        <p><b>Studenten- of schoolsportvereniging?</b> Dan krijg je 40% korting: € 89, € 179 of € 329 per jaar voor Klein, Vereniging en Groot. Inclusief btw is dat € 107,69, € 216,59 of € 398,09.</p>
+        <p><b>Studenten- of schoolsportvereniging?</b> Dan krijg je 40% korting: € 89, € 179 of € 329 per jaar voor Klein, Vereniging en Groot.</p>
       </div>
     </div>
   </section>
@@ -131,7 +126,7 @@ const structuredData = JSON.stringify({
       <p>Alleen de leden die in je ledenadministratie meetellen. Donateurs, ereleden zonder lidmaatschap, ouders met alleen een account voor hun kind en oud-leden tellen niet mee. Per lidsoort stel je zelf in of die meetelt.</p>
 
       <h3>Wanneer we tellen</h3>
-      <p>Eén keer per jaar, op de verlengdatum. Groeit je vereniging in de loop van het jaar door een grens heen, dan verandert je prijs pas bij de volgende verlenging.</p>
+      <p>Het abonnement loopt per kalenderjaar. We tellen je leden aan het begin van het jaar; groeit je vereniging in de loop van het jaar door een grens heen, dan verandert je prijs pas het jaar erop.</p>
 
       <h3>Betalen</h3>
       <p>De bedragen gelden als je per jaar betaalt. Per maand betalen kan ook, met 10% toeslag.</p>
@@ -178,7 +173,7 @@ const structuredData = JSON.stringify({
       <p class="sectie-intro">Stuur een mail of een appje, dan krijg je persoonlijk antwoord.</p>
       <div class="cta-rij">
         <a class="knop" href="mailto:info@sporten.app">E-mail ons</a>
-        <a class="knop rand" href="https://wa.me/31625002228">WhatsApp ons</a>
+        <WhatsAppLink klasse="knop rand" tekst="WhatsApp ons" />
       </div>
     </div>
   </section>
