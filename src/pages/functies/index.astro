@@ -1,9 +1,10 @@
 ---
 import Basis from '../../layouts/Basis.astro';
+import WhatsAppLink from '../../components/WhatsAppLink.astro';
 
 const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
-const titel = 'Software voor sportverenigingen: alle functies | Sporten.app';
+const titel = 'Alle functies voor je sportvereniging | Sporten.app';
 const beschrijving =
   'Alle functies van Sporten.app voor je sportvereniging: ledenadministratie, contributie en incasso, boekhouding, declaraties en een ledenapp.';
 
@@ -39,12 +40,12 @@ const functies = [
     tekst: 'Zien wat er te doen is, je aanmelden, en in de chat van je groep horen wie er komt.',
   },
   {
-    pad: 'functies/ledenadministratie/',
+    pad: 'functies/ledenadministratie/#rollen',
     kop: 'Rollen en rechten',
     tekst: 'De penningmeester ziet de boekhouding, de trainer zijn deelnemers. Bij een bestuurswissel geef je rollen door, met een logboek.',
   },
   {
-    pad: 'functies/boekhouding/',
+    pad: 'functies/boekhouding/#kostenplaatsen',
     kop: 'Kostenplaatsen en begroting',
     tekst: 'Wat het jeugdkamp of het toernooi heeft gekost en opgeleverd, en of je in de loop van het jaar binnen de begroting blijft.',
   },
@@ -58,9 +59,9 @@ const structuredData = JSON.stringify({
       name: titel,
       description: beschrijving,
       url: 'https://sporten.app/functies/',
-      // Two cards point at the same page (roles → membership, cost centres → bookkeeping); list each page once.
+      // Two cards point at a section of another card's page; list each page once.
       hasPart: functies
-        .filter((f, i) => functies.findIndex((g) => g.pad === f.pad) === i)
+        .filter((f) => !f.pad.includes('#'))
         .map((f) => ({ '@type': 'WebPage', name: f.kop, url: `https://sporten.app/${f.pad}` })),
     },
     {
@@ -120,6 +121,7 @@ const structuredData = JSON.stringify({
       <div class="cta-rij">
         <a class="knop" href="mailto:info@sporten.app?subject=Videobellen%20over%20Sporten.app">Plan een gesprek</a>
         <a class="knop rand" href={`${basis}prijzen/`}>Bekijk de prijzen</a>
+        <WhatsAppLink klasse="knop rand" tekst="WhatsApp ons" />
       </div>
     </div>
   </section>

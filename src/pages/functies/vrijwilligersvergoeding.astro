@@ -1,5 +1,6 @@
 ---
 import Basis from '../../layouts/Basis.astro';
+import WhatsAppLink from '../../components/WhatsAppLink.astro';
 
 const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
@@ -18,7 +19,7 @@ const vragen = [
   },
   {
     v: 'Betaalt Sporten.app de trainers zelf uit?',
-    a: 'Nee. Sporten.app maakt het betaalbestand; jij levert het aan bij je bank. Verrekenen met de contributie kan ook.',
+    a: 'Nee. Sporten.app maakt het betaalbestand; jij levert het aan bij je bank. Je kunt de vergoeding ook in mindering brengen op een contributiefactuur die nog niet verstuurd is.',
   },
 ];
 
@@ -103,7 +104,7 @@ const structuredData = JSON.stringify({
         <div class="kaart">
           <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/></svg></div>
           <h3>Vaststellen en uitbetalen</h3>
-          <p>Het bestuur stelt de afrekening vast. Daarna betaal je uit in het betaalbestand voor je bank, of je verrekent met de <a href={`${basis}functies/contributie/`}>contributiefactuur</a>.</p>
+          <p>Het bestuur stelt de afrekening vast. Daarna betaal je uit in het betaalbestand voor je bank, of je brengt hem in mindering op een <a href={`${basis}functies/contributie/`}>contributiefactuur</a> die nog niet verstuurd is.</p>
         </div>
       </div>
     </div>
@@ -165,6 +166,7 @@ const structuredData = JSON.stringify({
       <div class="cta-rij">
         <a class="knop" href="mailto:info@sporten.app?subject=Videobellen%20over%20de%20vrijwilligersvergoeding">Plan een gesprek</a>
         <a class="knop rand" href={`${basis}prijzen/`}>Bekijk de prijzen</a>
+        <WhatsAppLink klasse="knop rand" tekst="WhatsApp ons" />
       </div>
     </div>
   </section>

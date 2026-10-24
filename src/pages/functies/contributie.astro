@@ -1,5 +1,6 @@
 ---
 import Basis from '../../layouts/Basis.astro';
+import WhatsAppLink from '../../components/WhatsAppLink.astro';
 
 const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
@@ -78,23 +79,18 @@ const structuredData = JSON.stringify({
       <div class="kaarten">
         <div class="kaart">
           <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
-          <h3>Contributiefactuur per mail</h3>
-          <p>De factuur gaat per mail.</p>
+          <h3>Contributie instellen</h3>
+          <p>Je maakt je tarieven aan, met een prijs die ingaat op een datum die je kiest. Een nieuw tarief verandert niets aan facturen die al verstuurd zijn. De factuur gaat per mail naar het lid.</p>
         </div>
         <div class="kaart">
           <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div>
           <h3>Herinneringen</h3>
-          <p>Wie nog niet betaald heeft, krijgt een herinnering.</p>
-        </div>
-        <div class="kaart">
-          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13"/><path d="M3 6h.01M3 12h.01M3 18h.01"/></svg></div>
-          <h3>Debiteurenoverzicht</h3>
-          <p>Op het scherm zie je welke facturen openstaan.</p>
+          <p>Wie na de vervaldatum nog niet betaald heeft, krijgt een herinnering. In het debiteurenoverzicht zie je welke facturen openstaan.</p>
         </div>
         <div class="kaart">
           <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg></div>
-          <h3>Betalingen gekoppeld aan facturen</h3>
-          <p>Je leest het bankafschrift in als CAMT.053-bestand. De meeste Nederlandse banken bieden dat aan. Betalingen worden aan de facturen gekoppeld.</p>
+          <h3>Betalingen bij de juiste factuur</h3>
+          <p>Je leest het bankafschrift in als CAMT.053-bestand; de meeste Nederlandse banken bieden dat aan. Sporten.app herkent de betalingen en stelt de bijbehorende factuur voor; je bevestigt met één klik.</p>
         </div>
       </div>
     </div>
@@ -176,6 +172,7 @@ const structuredData = JSON.stringify({
       <div class="cta-rij">
         <a class="knop" href="mailto:info@sporten.app?subject=Videobellen%20over%20contributie%20en%20incasso">Plan een gesprek</a>
         <a class="knop rand" href={`${basis}prijzen/`}>Bekijk de prijzen</a>
+        <WhatsAppLink klasse="knop rand" tekst="WhatsApp ons" />
       </div>
     </div>
   </section>

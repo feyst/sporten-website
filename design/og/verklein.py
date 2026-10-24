@@ -6,14 +6,14 @@ Een deelafbeelding wordt alleen door Facebook, LinkedIn en WhatsApp opgehaald en
 nooit door een bezoeker van de site, dus hij blokkeert niets. Maar 340 KB voor een
 vlak met een verloop en wat tekst is onnodig. Met een palet zakt hij naar zo'n
 60 KB zonder zichtbaar verschil; de dithering houdt het verloop glad.
-Neemt public/img/og.png en alles in public/img/og/ mee.
+Neemt alles in public/img/og/ mee.
 """
 import glob
 import os
 from PIL import Image
 
 img = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', '..', 'public', 'img'))
-paden = [os.path.join(img, 'og.png')] + sorted(glob.glob(os.path.join(img, 'og', '*.png')))
+paden = sorted(glob.glob(os.path.join(img, 'og', '*.png')))
 
 for pad in paden:
     voor = os.path.getsize(pad)
