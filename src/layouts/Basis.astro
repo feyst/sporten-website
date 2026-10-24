@@ -1,4 +1,6 @@
 ---
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 import '../styles/global.css';
 
 interface Props {
@@ -6,14 +8,22 @@ interface Props {
   beschrijving: string;
   // Voor de 404-pagina: niet indexeren en geen canonical.
   geenIndex?: boolean;
+  // 'article' voor kennisbankartikelen; de rest is 'website'.
+  ogType?: 'website' | 'article';
 }
-const { titel, beschrijving, geenIndex = false } = Astro.props;
+const { titel, beschrijving, geenIndex = false, ogType = 'website' } = Astro.props;
 const jaar = new Date().getFullYear();
 // Op productie '/'; bij PR-previews het subpad op GitHub Pages (zie astro.config.mjs).
 const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
-// Absoluut en altijd op het productiedomein, zodat een gedeelde link overal werkt.
-const ogAfbeelding = new URL('/img/og.png', Astro.site).href;
+// Deelafbeelding: een eigen afbeelding per pagina als die bestaat (public/img/og/<slug>.png,
+// gemaakt met design/og/maak-og.cjs), anders de algemene. Absoluut en altijd op het
+// productiedomein, zodat een gedeelde link overal werkt.
+const pad = Astro.url.pathname.slice(import.meta.env.BASE_URL.replace(/\/?$/, '/').length - 1);
+const slug = pad.replace(/^\/|\/$/g, '').replace(/\//g, '-');
+const eigen = slug !== '' && existsSync(join(process.cwd(), 'public', 'img', 'og', `${slug}.png`));
+const ogAfbeelding = new URL(eigen ? `/img/og/${slug}.png` : '/img/og.png', Astro.site).href;
+const ogAlt = eigen ? titel.replace(/ \| Sporten\.app$/, '') : 'Sporten.app: de hele administratie van je sportvereniging, van aanmelding tot jaarrekening';
 ---
 
 <!doctype html>
@@ -27,7 +37,7 @@ const ogAfbeelding = new URL('/img/og.png', Astro.site).href;
   <link rel="icon" type="image/png" href={`${basis}img/icon.png`} />
   {geenIndex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
   <link rel="sitemap" href={`${basis}sitemap.xml`} />
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content={ogType} />
   <meta property="og:site_name" content="Sporten.app" />
   <meta property="og:locale" content="nl_NL" />
   <meta property="og:title" content={titel} />
@@ -36,11 +46,13 @@ const ogAfbeelding = new URL('/img/og.png', Astro.site).href;
   <meta property="og:image" content={ogAfbeelding} />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Sporten.app — de hele administratie van je vereniging, van aanmelding tot jaarrekening" />
+  <meta property="og:image:alt" content={ogAlt} />
+  <meta property="og:image:type" content="image/png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={titel} />
   <meta name="twitter:description" content={beschrijving} />
   <meta name="twitter:image" content={ogAfbeelding} />
+  <meta name="twitter:image:alt" content={ogAlt} />
   <slot name="kop" />
 </head>
 <body>
