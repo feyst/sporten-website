@@ -9,24 +9,20 @@ const beschrijving =
 
 const vragen = [
   {
-    v: 'Kunnen we midden in het boekjaar overstappen?',
-    a: 'Ja. Wij zetten je lopende boekjaar over op basis van je rekeningschema, beginbalans en bankmutaties. Je hoeft niet tot de jaarwisseling te wachten.',
-  },
-  {
     v: 'Ons boekjaar loopt van september tot augustus. Kan dat?',
     a: 'Ja. Een boekjaar begint en eindigt op de datum die je zelf kiest.',
   },
   {
-    v: 'Kan onze kascommissie controleren zonder iets te kunnen wijzigen?',
-    a: 'Ja. De kascommissie krijgt een eigen rol, die je per boekjaar toekent. Ze downloadt het controlepakket van dat jaar en kan niets aanpassen.',
+    v: 'Komen eerdere boekjaren mee?',
+    a: 'We zetten je lopende boekjaar over. Eerdere jaren bewaar je in je huidige administratie; die hoeven niet mee om verder te kunnen.',
   },
   {
     v: 'Krijgen we onze gegevens mee als we stoppen?',
-    a: 'Ja. Per boekjaar download je het controlepakket met alle boekingen, grootboekkaarten, facturen, bankmutaties en de bonnen en afschriften die erbij horen. Dat kan op elk moment. Na opzegging leveren we de gegevens op verzoek terug voordat we ze verwijderen.',
+    a: 'Je neemt alles mee. Per boekjaar download je het controlepakket met alle boekingen, grootboekkaarten, facturen, bankmutaties en de bonnen en afschriften die erbij horen. Je ledenlijst exporteer je als spreadsheet. Na opzegging krijg je de gegevens op verzoek van ons, en daarna verwijderen we ze.',
   },
   {
     v: 'Moet ik verstand hebben van boekhouden?',
-    a: 'Een beetje helpt, maar het hoeft niet je vak te zijn. Een declaratie of inkoopfactuur komt binnen met een voorstel voor de boeking, dat je alleen hoeft te controleren. En een boeking die niet in balans is, slaat Sporten.app niet op.',
+    a: 'Een beetje helpt, maar het hoeft niet je vak te zijn. Een declaratie of inkoopfactuur komt binnen met een voorstel voor de boeking, dat je alleen hoeft te controleren.',
   },
 ];
 
@@ -69,13 +65,12 @@ const structuredData = JSON.stringify({
 
     <h1>Boekhouding voor verenigingen</h1>
     <p>
-      Veel penningmeesters werken in Excel, en vaak gaat dat jaren goed. Maar een spreadsheet kun je
-      achteraf aanpassen zonder dat iemand het ziet, en wie het na jou overneemt, moet eerst uitzoeken hoe
-      jij werkte.
+      Veel penningmeesters werken in Excel. Dat werkt, tot iemand anders het moet overnemen of
+      controleren.
     </p>
     <p>
-      Sporten.app geeft je een boekhouding met dezelfde regels als een boekhoudpakket. Het verschil: hij is
-      aangesloten op de leden, facturen en activiteiten die je er al in hebt staan.
+      Sporten.app boekt volgens dezelfde regels als een boekhoudpakket, en de boekhouding is gekoppeld aan
+      de leden, facturen en activiteiten die je er al in hebt staan.
     </p>
   </div></div>
 
@@ -86,12 +81,12 @@ const structuredData = JSON.stringify({
         <div class="kaart">
           <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6c-2-2-5-2-9-1v14c4-1 7-1 9 1 2-2 5-2 9-1V5c-4-1-7-1-9 1z"/><path d="M12 6v14"/></svg></div>
           <h3>Dubbel boekhouden</h3>
-          <p>Een grootboek met je eigen rekeningschema. Elke boeking raakt twee rekeningen en moet in balans zijn.</p>
+          <p>Een grootboek met je eigen rekeningschema. Elke boeking raakt minstens twee rekeningen en moet in balans zijn.</p>
         </div>
         <div class="kaart">
           <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
           <h3>Boekjaren</h3>
-          <p>Je boekjaar begint op de datum die bij je vereniging past, ook op 1 september. Je opent en sluit het zelf.</p>
+          <p>Je boekjaar begint op de datum die bij je vereniging past, ook op 1 september.</p>
         </div>
         <div class="kaart">
           <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6h12M9 12h12M9 18h12"/><circle cx="4" cy="6" r="1.5"/><circle cx="4" cy="12" r="1.5"/><circle cx="4" cy="18" r="1.5"/></svg></div>
@@ -100,8 +95,8 @@ const structuredData = JSON.stringify({
         </div>
         <div class="kaart">
           <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
-          <h3>Vaste boekingen</h3>
-          <p>Een geboekt stuk verandert niet meer. Een fout herstel je met een tegenboeking, zoals in elk boekhoudpakket.</p>
+          <h3>Boekingen liggen vast</h3>
+          <p>Een geboekt stuk verandert niet meer. Een fout herstel je met een tegenboeking.</p>
         </div>
         <div class="kaart">
           <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M10 20V4M16 20V14"/><path d="M2 20h20"/></svg></div>
@@ -111,22 +106,22 @@ const structuredData = JSON.stringify({
         <div class="kaart">
           <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg></div>
           <h3>Jaarafsluiting</h3>
-          <p>Kloppen de cijfers, dan sluit je het boekjaar af en verandert er niets meer aan. Is het toch nodig, dan open je het weer.</p>
+          <p>Kloppen de cijfers, dan sluit de penningmeester het boekjaar af. Moet er toch nog een correctie in, dan kan hij het heropenen; wat al geboekt was, blijft staan.</p>
         </div>
         <div class="kaart">
           <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41 12 22l-9-9V4a1 1 0 0 1 1-1h9z"/><path d="M7 8h.01"/></svg></div>
           <h3>Kostenplaatsen</h3>
-          <p>Zie per toernooi, kamp of activiteit wat het heeft gekost en opgeleverd, met een rapport in Excel of pdf.</p>
+          <p>Per toernooi, kamp of activiteit zie je wat het heeft gekost en opgeleverd, met een rapport in Excel of pdf.</p>
         </div>
         <div class="kaart">
           <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".6" fill="currentColor"/></svg></div>
           <h3>Begroting</h3>
-          <p>Zet een begroting neer en zie in de loop van het jaar of je op koers ligt.</p>
+          <p>Maak een begroting en volg in de loop van het jaar of je op koers ligt.</p>
         </div>
         <div class="kaart">
           <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/><path d="m9.5 13 1.5 1.5 3.5-3.5"/></svg></div>
           <h3>Controlepakket voor de kascommissie</h3>
-          <p>Eén download met alle boekingen, grootboekkaarten, facturen en bankmutaties van het jaar, plus de bonnen en afschriften die erbij horen.</p>
+          <p>Alles wat de kascommissie nodig heeft, in één download per boekjaar.</p>
         </div>
       </div>
       {/* Nog toe te voegen: schermafbeelding van de rapporten (balans en baten en lasten naast elkaar). */}
@@ -135,16 +130,12 @@ const structuredData = JSON.stringify({
 
   <section class="vlak">
     <div class="container"><div class="lees">
-      <h2>Een administratie die de kascommissie kan controleren</h2>
-      <p>
-        In een spreadsheet kun je een cel van vorige maand aanpassen zonder dat iemand het ziet. Hoe
-        zorgvuldig je ook werkt, de kascommissie kan dat niet nagaan. In Sporten.app ligt het vast:
-      </p>
+      <h2>Wat de kascommissie kan nagaan</h2>
+      <p>Wat je in Sporten.app boekt, ligt vast. De kascommissie kan dat zelf controleren:</p>
       <ul class="opsom">
-        <li>Een geboekt stuk kan niemand meer wijzigen.</li>
-        <li>Facturen, declaraties en boekstukken zijn doorgenummerd, zonder gaten.</li>
-        <li>Een boeking die niet in balans is, wordt niet opgeslagen.</li>
-        <li>De kascommissie krijgt een eigen rol voor het jaar dat ze controleert. Ze downloadt het controlepakket en kan niets wijzigen.</li>
+        <li>Ze krijgt een eigen rol voor het boekjaar dat ze controleert, en kan niets wijzigen.</li>
+        <li>Ze downloadt het controlepakket: een zip met spreadsheets van alle boekingen, grootboekkaarten, facturen en bankmutaties, en de bonnen en afschriften die erbij horen.</li>
+        <li>Omdat alles doorgenummerd is, ziet ze meteen of er iets ontbreekt.</li>
       </ul>
     </div></div>
   </section>
@@ -154,9 +145,9 @@ const structuredData = JSON.stringify({
       <h2>Hoe het geld binnenkomt en weggaat</h2>
       <ul class="opsom">
         <li>Je stuurt contributiefacturen per mail, of je incasseert ze. Leden geven de machtiging zelf in de app.</li>
-        <li>Je leest het bankafschrift in als CAMT.053-bestand, dat je bij je bank downloadt. Betalingen worden aan de facturen gekoppeld, en een teruggeboekte incasso komt vanzelf terug in je administratie.</li>
-        <li>Een lid dient een declaratie in met een foto van de bon. Zet je automatisch uitlezen aan, dan staan winkel, datum en bedrag al ingevuld.</li>
-        <li>Leveranciers mailen hun factuur naar een eigen adres van je vereniging, en je vindt hem terug als concept.</li>
+        <li>Je leest het bankafschrift in als CAMT.053-bestand; de meeste Nederlandse banken bieden dat formaat aan. Betalingen worden aan de facturen gekoppeld, en een teruggeboekte incasso komt vanzelf terug in je administratie.</li>
+        <li>Een lid dient een declaratie in met een foto van de bon. Met automatisch uitlezen hoef je weinig over te typen.</li>
+        <li>Leveranciers mailen hun factuur naar het factuuradres van je vereniging.</li>
         <li>Trainersvergoedingen stel je per periode vast. Je betaalt ze uit of verrekent ze met de contributie.</li>
         <li>Uitbetalingen en incasso’s zet je in een bestand dat je bij je bank aanlevert.</li>
       </ul>
