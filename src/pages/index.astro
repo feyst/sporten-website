@@ -298,10 +298,10 @@ const structuredData = JSON.stringify({
           <span class="omvang">vanaf 751 leden</span>
           <span class="bedrag">€ 0,70</span>
           <span class="per">per lid per jaar · incl. btw</span>
-          <span class="incl">minimaal € 799 per jaar</span>
+          <span class="incl">minimaal € 549 per jaar</span>
         </div>
       </div>
-      <p class="studenten"><b>Start je in 2026, dan betaal je pas vanaf 1 januari 2027.</b> Studenten- of schoolsportvereniging? Dan krijg je 40% korting.</p>
+      <p class="studenten"><b>De eerste twee maanden zijn gratis.</b> Studenten- of schoolsportvereniging? Dan krijg je 40% korting.</p>
       <div class="cta-rij prijs-cta">
         <a class="knop" href={`${basis}prijzen/`}>Alle prijzen en voorwaarden</a>
       </div>
@@ -332,7 +332,6 @@ const structuredData = JSON.stringify({
           </p>
         </div>
       </div>
-      <TriIllustratie />
     </div>
   </section>
 
@@ -357,7 +356,36 @@ const structuredData = JSON.stringify({
     </div>
   </section>
 
-  <section id="vragen">
+  <section class="verhaal" id="verhaal">
+    <div class="container">
+      <div>
+        <span class="lint">Hoe het begon</span>
+        <h2>Gemaakt door sporters</h2>
+        <p>
+          Sporten.app komt uit de triatlon. Wie zwemt, fietst en loopt, traint met verschillende groepen op
+          verschillende plekken, en weet hoe snel een vereniging verdwaalt in appgroepen en inschrijflijstjes.
+          Daar begon het mee: één plek waar leden zien wat er te doen is en zich met één tik aanmelden.
+        </p>
+        <p>
+          Daarna kwam de rest. Een vereniging draait niet alleen op trainingen, maar ook op een ledenlijst,
+          contributie en een penningmeester die aan het eind van het jaar moet kunnen laten zien waar elk
+          bedrag vandaan komt. Dat zit er nu allemaal in, zodat de vrijwilligers die de club draaiende houden
+          er minder tijd aan kwijt zijn.
+        </p>
+        <h3>Je zit nergens aan vast</h3>
+        <ul class="opsom">
+          <li>Je gegevens neem je altijd mee: het controlepakket per boekjaar en je ledenlijst als spreadsheet.</li>
+          <li>Je zegt per jaar op, zonder boete.</li>
+          <li>Valt onze eigen apparatuur uit, dan draait Sporten.app door bij een hostingbedrijf in Duitsland.</li>
+        </ul>
+      </div>
+      <div class="verhaal-beeld">
+        <TriIllustratie />
+      </div>
+    </div>
+  </section>
+
+  <section class="vlak" id="vragen">
     <div class="container">
       <h2>Vragen</h2>
       <div class="faq">
@@ -373,7 +401,7 @@ const structuredData = JSON.stringify({
     </div>
   </section>
 
-  <section class="vlak" id="contact">
+  <section id="contact">
     <div class="container">
       <h2>Neem contact op</h2>
       <p class="sectie-intro">
@@ -407,6 +435,11 @@ const structuredData = JSON.stringify({
   .kaart .verder a { color: var(--rood); font-weight: 600; }
 
   .studenten { margin-top: 18px; color: var(--dim); font-size: 15px; }
+
+  .verhaal .container { display: grid; grid-template-columns: 1.3fr .7fr; gap: 48px; align-items: center; }
+  .verhaal p { color: var(--dim); margin: 14px 0; max-width: 38em; }
+  .verhaal h3 { margin-top: 24px; }
+  .verhaal-beeld { display: flex; justify-content: center; }
   .prijs-cta { margin-top: 18px; }
 
   /* De probleemkaarten dragen geen ikoon, dus de kop mag direct bovenaan staan. */
@@ -418,5 +451,6 @@ const structuredData = JSON.stringify({
        komt eronder, want zonder context zegt het nog niets. */
     .hero-beeld { order: 0; }
     .hero { padding-top: 40px; }
+    .verhaal .container { grid-template-columns: 1fr; }
   }
 </style>

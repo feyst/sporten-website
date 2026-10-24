@@ -45,12 +45,12 @@ export const aanbiedingen = [
   {
     '@type': 'Offer',
     name: 'XL',
-    description: 'Vanaf 751 leden, € 0,70 per lid per jaar met een minimum van € 799',
+    description: 'Vanaf 751 leden, € 0,70 per lid per jaar met een minimum van € 549',
     url: 'https://sporten.app/prijzen/',
     priceSpecification: {
       '@type': 'UnitPriceSpecification',
       price: '0.70',
-      minPrice: '799',
+      minPrice: '549',
       priceCurrency: 'EUR',
       valueAddedTaxIncluded: true,
       unitText: 'lid per jaar',
