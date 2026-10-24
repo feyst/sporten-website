@@ -1,0 +1,157 @@
+---
+import Basis from '../layouts/Basis.astro';
+
+const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const titel = 'Overstappen naar een nieuwe ledenadministratie | Sporten.app';
+const beschrijving =
+  'Overstappen van je ledenadministratie en boekhouding, ook midden in het boekjaar. Wij zetten je ledenlijst en boekhouding over.';
+
+const vragen = [
+  {
+    v: 'Wat als we nu in Excel werken?',
+    a: 'Dat kan prima. Je ledenlijst, rekeningschema, beginbalans en bankmutaties hoeven alleen in een spreadsheet te staan. Lever je alles aan als spreadsheet, dan kost overzetten niets extra. Moeten wij losse bonnen of mappen uitzoeken, dan spreken we vooraf een prijs af.',
+  },
+  {
+    v: 'Kunnen we eerst alleen de ledenlijst overzetten?',
+    a: 'Ja. Je kunt beginnen met de ledenlijst en de agenda, en de boekhouding later aanzetten. De prijs blijft gelijk.',
+  },
+  {
+    v: 'Wat moeten we regelen om te incasseren?',
+    a: 'Voor SEPA-incasso heb je een incassocontract en een incassant-ID van je bank nodig. Incasseer je al, dan heb je die al en neem je je bestaande machtigingen mee.',
+  },
+];
+
+const structuredData = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      name: titel,
+      description: beschrijving,
+      url: 'https://sporten.app/overstappen/',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sporten.app/' },
+        { '@type': 'ListItem', position: 2, name: 'Overstappen', item: 'https://sporten.app/overstappen/' },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: vragen.map(({ v, a }) => ({
+        '@type': 'Question',
+        name: v,
+        acceptedAnswer: { '@type': 'Answer', text: a },
+      })),
+    },
+  ],
+});
+---
+
+<Basis titel={titel} beschrijving={beschrijving}>
+  <script type="application/ld+json" slot="kop" set:html={structuredData} />
+
+  <div class="container kopblok"><div class="lees">
+    <p class="kruimels">
+      <a href={basis}>Home</a><span>/</span>Overstappen
+    </p>
+
+    <h1>Overstappen naar een nieuwe ledenadministratie</h1>
+    <p>
+      Je stuurt ons spreadsheets, wij zetten je ledenadministratie en boekhouding over. Dat kan ook midden in
+      het boekjaar: je hoeft niet te wachten tot het nieuwe seizoen of tot 1 januari.
+    </p>
+  </div></div>
+
+  <section>
+    <div class="container">
+      <h2>Zo stap je over</h2>
+      <div class="stappen">
+        <div class="stap">
+          <b>1</b>
+          <h3>Wij richten je vereniging in</h3>
+          <p>We zetten het beheerportaal klaar, zodat het bestuur kan inloggen.</p>
+        </div>
+        <div class="stap">
+          <b>2</b>
+          <h3>Je ledenlijst</h3>
+          <p>
+            Wij voeren de leden in, in de
+            <a href={`${basis}functies/ledenadministratie/`}>ledenadministratie</a>. Daarna krijgt elk lid
+            een mail om in te loggen.
+          </p>
+        </div>
+        <div class="stap">
+          <b>3</b>
+          <h3>Je boekhouding</h3>
+          <p>
+            Wij lezen je gegevens in de <a href={`${basis}functies/boekhouding/`}>boekhouding</a> in en
+            controleren of alles aansluit voordat het definitief wordt.
+          </p>
+        </div>
+        <div class="stap">
+          <b>4</b>
+          <h3>Je incassomachtigingen</h3>
+          <p>
+            Incasseer je al, dan nemen we je bestaande machtigingen mee in de
+            <a href={`${basis}functies/contributie/`}>contributie</a>.
+          </p>
+        </div>
+      </div>
+      <p>Nieuwe leden melden zich daarna aan via het aanmeldformulier van je vereniging, en het bestuur keurt ze goed.</p>
+    </div>
+  </section>
+
+  <section class="vlak">
+    <div class="container"><div class="lees">
+      <h2>Wat je zelf aanlevert</h2>
+      <ul class="opsom">
+        <li>Je ledenlijst als spreadsheet.</li>
+        <li>Je rekeningschema als spreadsheet.</li>
+        <li>De beginbalans van het lopende boekjaar als spreadsheet.</li>
+        <li>De bankmutaties van het lopende boekjaar tot nu toe als spreadsheet.</li>
+        <li>Je bestaande incassomachtigingen, als je al incasseert.</li>
+      </ul>
+      <p>
+        Alleen het lopende boekjaar gaat mee. Eerdere jaren bewaar je in je huidige administratie.
+      </p>
+    </div></div>
+  </section>
+
+  <section>
+    <div class="container"><div class="lees">
+      <h2>Wat het kost</h2>
+      <p>
+        De eerste twee maanden zijn gratis en overzetten kost niets extra. Daarna betaal je het bedrag van je staffel, zie de
+        <a href={`${basis}prijzen/`}>prijzen</a>.
+      </p>
+    </div></div>
+  </section>
+
+  <section class="vlak">
+    <div class="container">
+      <h2>Vragen over overstappen</h2>
+      <div class="faq">
+        {vragen.map(({ v, a }) => (
+          <details>
+            <summary><h3>{v}</h3></summary>
+            <p>{a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Overstappen bespreken?</h2>
+      <p class="sectie-intro">Plan een half uur videobellen. Dan kijken we samen naar wat je nu hebt.</p>
+      <div class="cta-rij">
+        <a class="knop" href="mailto:info@sporten.app?subject=Videobellen%20over%20overstappen">Plan een gesprek</a>
+        <a class="knop rand" href={`${basis}prijzen/`}>Bekijk de prijzen</a>
+      </div>
+    </div>
+  </section>
+</Basis>

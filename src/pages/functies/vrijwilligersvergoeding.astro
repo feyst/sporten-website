@@ -1,0 +1,171 @@
+---
+import Basis from '../../layouts/Basis.astro';
+
+const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const titel = 'Vrijwilligersvergoeding voor trainers bijhouden | Sporten.app';
+const beschrijving =
+  'Vrijwilligersvergoeding voor trainers bijhouden: tarief, uren uit de agenda, controle door de trainer en een waarschuwing bij de vrijwilligersgrens.';
+
+const vragen = [
+  {
+    v: 'Kan ik voor elke trainer een ander tarief instellen?',
+    a: 'Ja. Een hoofdtrainer en een assistent kunnen een ander tarief hebben.',
+  },
+  {
+    v: 'Wat als een trainer zegt dat er iets mist?',
+    a: 'Hij geeft dat aan met een opmerking bij zijn afrekening, zodat het bestuur kan zien wat er ontbreekt.',
+  },
+  {
+    v: 'Betaalt Sporten.app de trainers zelf uit?',
+    a: 'Nee. Sporten.app maakt het betaalbestand; jij levert het aan bij je bank. Verrekenen met de contributie kan ook.',
+  },
+];
+
+const structuredData = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      name: titel,
+      description: beschrijving,
+      url: 'https://sporten.app/functies/vrijwilligersvergoeding/',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sporten.app/' },
+        { '@type': 'ListItem', position: 2, name: 'Functies', item: 'https://sporten.app/functies/' },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'Vrijwilligersvergoeding',
+          item: 'https://sporten.app/functies/vrijwilligersvergoeding/',
+        },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: vragen.map(({ v, a }) => ({
+        '@type': 'Question',
+        name: v,
+        acceptedAnswer: { '@type': 'Answer', text: a },
+      })),
+    },
+  ],
+});
+---
+
+<Basis titel={titel} beschrijving={beschrijving}>
+  <script type="application/ld+json" slot="kop" set:html={structuredData} />
+
+  <div class="container kopblok"><div class="lees">
+    <p class="kruimels">
+      <a href={basis}>Home</a><span>/</span><a href={`${basis}functies/`}>Functies</a><span>/</span>Vrijwilligersvergoeding
+    </p>
+
+    <h1>Vrijwilligersvergoeding voor trainers</h1>
+    <p>
+      Aan het eind van het seizoen willen trainers weten wat ze krijgen, en de penningmeester wil weten wat hij
+      moet uitbetalen. Sporten.app rekent de vrijwilligersvergoeding van je trainers uit met de trainingen in de agenda.
+    </p>
+  </div></div>
+
+  <section>
+    <div class="container">
+      <h2>Van training tot afrekening</h2>
+      <div class="kaarten">
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3>Tarief per trainer</h3>
+          <p>Je stelt voor elke trainer een tarief in, per uur of per training.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
+          <h3>Uren uit de agenda</h3>
+          <p>Het programma telt de trainingen waar iemand als trainer bij staat. De uren komen uit de agenda; mist er iets, dan meldt de trainer dat.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h7"/></svg></div>
+          <h3>Een afrekening per periode</h3>
+          <p>Per periode maakt Sporten.app voor elke trainer een afrekening van de gegeven trainingen.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg></div>
+          <h3>De trainer controleert</h3>
+          <p>In de <a href={`${basis}functies/ledenapp/`}>app</a> ziet de trainer zijn afrekening. Hij geeft akkoord of meldt dat er iets mist, met een opmerking erbij.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10 21a2 2 0 0 0 4 0"/></svg></div>
+          <h3>Herinnering</h3>
+          <p>Reageert een trainer niet, dan krijgt hij een herinnering. Jij hoeft niet achter iemand aan.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/></svg></div>
+          <h3>Vaststellen en uitbetalen</h3>
+          <p>Het bestuur stelt de afrekening vast. Daarna betaal je uit in het betaalbestand voor je bank, of je verrekent met de <a href={`${basis}functies/contributie/`}>contributiefactuur</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vlak">
+    <div class="container"><div class="lees">
+      <h2>De vrijwilligersgrens in de gaten houden</h2>
+      <p>
+        Voor de vrijwilligersvergoeding geldt een grens, per maand en per jaar. Komt een vergoeding erboven,
+        dan krijg je een waarschuwing. Je kunt de vergoeding toch vaststellen; het bestuur beslist.
+      </p>
+      <div class="aandacht">
+        <p>
+          <b>Let op:</b> Sporten.app ziet alleen wat jouw vereniging uitkeert. Wat een trainer bij een andere
+          vereniging ontvangt, weten wij niet. Trainers die op meer plekken werken, houden dat zelf in de gaten.
+        </p>
+      </div>
+    </div></div>
+  </section>
+
+  <section>
+    <div class="container"><div class="lees">
+      <h2>Terug te vinden in de boekhouding</h2>
+      <p>
+        Een vastgestelde vergoeding komt in de <a href={`${basis}functies/boekhouding/`}>boekhouding</a> terecht,
+        zodat de penningmeester en de <a href={`${basis}kennisbank/kascommissie/`}>kascommissie</a> terugvinden wat er aan trainers is uitbetaald.
+      </p>
+    </div></div>
+  </section>
+
+  <section class="vlak">
+    <div class="container"><div class="lees">
+      <h2>Alleen voor trainingen</h2>
+      <ul class="opsom kruis">
+        <li>Vergoedingen voor andere vrijwilligerstaken, zoals bardienst of materiaalbeheer, kun je er niet in kwijt.</li>
+      </ul>
+    </div></div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Vragen van penningmeesters</h2>
+      <div class="faq">
+        {vragen.map(({ v, a }) => (
+          <details>
+            <summary><h3>{v}</h3></summary>
+            <p>{a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="vlak">
+    <div class="container">
+      <h2>Zelf zien hoe het werkt?</h2>
+      <p class="sectie-intro">Plan een half uur videobellen, dan laten we het je zien.</p>
+      <div class="cta-rij">
+        <a class="knop" href="mailto:info@sporten.app?subject=Videobellen%20over%20de%20vrijwilligersvergoeding">Plan een gesprek</a>
+        <a class="knop rand" href={`${basis}prijzen/`}>Bekijk de prijzen</a>
+      </div>
+    </div>
+  </section>
+</Basis>

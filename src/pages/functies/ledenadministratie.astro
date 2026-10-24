@@ -1,0 +1,208 @@
+---
+import Basis from '../../layouts/Basis.astro';
+
+const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const titel = 'Ledenadministratie voor je sportvereniging | Sporten.app';
+const beschrijving =
+  'Ledenadministratie voor je sportvereniging: aanmeldformulier, lidsoorten, gezinnen en een ledenlijst met filters. Wij zetten je ledenlijst over.';
+
+const vragen = [
+  {
+    v: 'Kunnen we de ledenlijst meenemen als we stoppen?',
+    a: 'Ja. Je exporteert de ledenlijst als CSV-spreadsheet, wanneer je wilt.',
+  },
+  {
+    v: 'Welke leden tellen mee voor de prijs?',
+    a: 'Je betaalt naar het aantal leden dat in je ledenadministratie meetelt. Per lidsoort stel je in of die meetelt. Zie de prijzen voor de staffels.',
+  },
+  {
+    v: 'Waar staan de gegevens van onze leden?',
+    a: 'Binnen de Europese Economische Ruimte. Je vereniging blijft verantwoordelijk voor de gegevens en wij verwerken ze in haar opdracht, met een verwerkersovereenkomst.',
+  },
+];
+
+const structuredData = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      name: titel,
+      description: beschrijving,
+      url: 'https://sporten.app/functies/ledenadministratie/',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sporten.app/' },
+        { '@type': 'ListItem', position: 2, name: 'Functies', item: 'https://sporten.app/functies/' },
+        { '@type': 'ListItem', position: 3, name: 'Ledenadministratie', item: 'https://sporten.app/functies/ledenadministratie/' },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: vragen.map(({ v, a }) => ({
+        '@type': 'Question',
+        name: v,
+        acceptedAnswer: { '@type': 'Answer', text: a },
+      })),
+    },
+  ],
+});
+---
+
+<Basis titel={titel} beschrijving={beschrijving}>
+  <script type="application/ld+json" slot="kop" set:html={structuredData} />
+
+  <div class="container kopblok"><div class="lees">
+    <p class="kruimels">
+      <a href={basis}>Home</a><span>/</span><a href={`${basis}functies/`}>Functies</a><span>/</span>Ledenadministratie
+    </p>
+
+    <h1>Ledenadministratie voor je sportvereniging</h1>
+    <p>
+      Met de ledenadministratie van Sporten.app houd je de ledenlijst van je vereniging bij.
+    </p>
+    <p>
+      Het is een programma voor je ledenlijst, gekoppeld aan de contributie, de boekhouding en de
+      <a href={`${basis}functies/ledenapp/`}>app</a> waarin je leden zich aanmelden voor trainingen.
+    </p>
+  </div></div>
+
+  <section>
+    <div class="container">
+      <h2>Nieuwe leden in je ledenadministratie</h2>
+      <div class="kaarten">
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></div>
+          <h3>Aanmeldformulier</h3>
+          <p>Elke vereniging heeft een eigen formulier, dat je aan of uit zet. Het bestuur keurt een aanmelding goed of wijst haar af, en kiest bij goedkeuren de lidsoort.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+          <h3>Uitnodigen</h3>
+          <p>Ken je iemand al, dan nodig je hem uit. Hij krijgt een uitnodiging per mail.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+          <h3>Handmatig toevoegen</h3>
+          <p>Meldt iemand zich aan op de ledenvergadering of bij de eerste training, dan voeg je hem zelf toe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vlak">
+    <div class="container"><div class="lees">
+      <h2>Lidsoorten en gezinnen</h2>
+      <p>
+        Een vereniging heeft meestal meer dan één soort lid: senioren, junioren, donateurs, proefleden. Je
+        maakt de lidsoorten aan die bij jouw club passen. Per lidsoort stel je in of die meetelt voor de
+        prijs van Sporten.app.
+      </p>
+      <p>
+        Meldt een ouder zijn kinderen mee aan bij het aanmeldformulier, dan staat het gezin samen in de
+        lijst. Zo zie je bij de seizoensstart meteen welke jeugdleden bij welke ouder horen.
+      </p>
+      <p>
+        Een lid dat vorig seizoen stopte en nu terugkomt, zet je terug in de ledenlijst. Dat scheelt
+        typewerk.
+      </p>
+    </div></div>
+  </section>
+
+  <section>
+    <div class="container"><div class="lees">
+      <h2>Een ledenlijst waar je mee kunt werken</h2>
+      <p>
+        Filter de ledenlijst op wat je nodig hebt, bijvoorbeeld voor de uitnodiging van de ledenvergadering of
+        de jeugdcommissie. Wil je het in een spreadsheet, dan exporteer je hem als CSV-bestand.
+      </p>
+      <p>
+        Leden houden hun eigen gegevens bij. Verhuist iemand, dan past hij zijn naam, adres en noodcontacten
+        zelf aan in de <a href={`${basis}functies/ledenapp/`}>app</a>. Zo hoeft de secretaris minder mutaties zelf bij te houden.
+      </p>
+    </div></div>
+  </section>
+
+  <section class="vlak">
+    <div class="container">
+      <h2>Wie wat mag zien</h2>
+      <div class="kaarten">
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Rollen</h3>
+          <p>Er zijn kant-en-klare rollen voor penningmeester, secretaris, bestuur en kascommissie. Het bestuur wijst ze zelf toe en trekt ze in.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6h12M9 12h12M9 18h12"/><circle cx="4" cy="6" r="1.5"/><circle cx="4" cy="12" r="1.5"/><circle cx="4" cy="18" r="1.5"/></svg></div>
+          <h3>Logboek</h3>
+          <p>Elke wijziging van een rol komt in een logboek. Na een bestuurswissel zie je wie wanneer welke rechten kreeg.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+          <h3>Noodcontacten en documenten</h3>
+          <p>Noodcontacten en documenten van een lid zie je alleen met een apart recht. Dat recht geef je aan wie het nodig heeft.</p>
+        </div>
+      </div>
+      <p class="sectie-intro">
+        Hoe we met de gegevens van je leden omgaan, lees je op de pagina over de <a href={`${basis}avg/`}>AVG</a>.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container"><div class="lees">
+      <h2>De koppeling met contributie</h2>
+      <p>
+        Ledenlijst en <a href={`${basis}functies/contributie/`}>contributie</a> werken met dezelfde gegevens.
+        Je factureert de contributie aan de leden die in je ledenlijst staan, zonder dat je een tweede bestand bijhoudt.
+      </p>
+    </div></div>
+  </section>
+
+  <section class="vlak">
+    <div class="container"><div class="lees">
+      <h2>Wij zetten je ledenlijst over</h2>
+      <p>
+        Je stuurt ons je ledenlijst als spreadsheet, dan voeren wij de leden in. Zij krijgen een mail
+        waarmee ze inloggen. Dit kost niets extra. Hoe het overzetten verloopt, lees je bij
+        <a href={`${basis}overstappen/`}>overstappen</a>.
+      </p>
+    </div></div>
+  </section>
+
+  <section>
+    <div class="container"><div class="lees">
+      <h2>Geen koppeling met een sportbond</h2>
+      <ul class="opsom kruis">
+        <li>Sporten.app is niet gekoppeld aan een sportbond. Meldingen aan je bond doe je zoals je nu gewend bent.</li>
+      </ul>
+    </div></div>
+  </section>
+
+  <section class="vlak">
+    <div class="container">
+      <h2>Vragen van secretarissen</h2>
+      <div class="faq">
+        {vragen.map(({ v, a }) => (
+          <details>
+            <summary><h3>{v}</h3></summary>
+            <p>{a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Zelf zien hoe het werkt?</h2>
+      <p class="sectie-intro">Plan een half uur videobellen, dan laten we de ledenadministratie zien.</p>
+      <div class="cta-rij">
+        <a class="knop" href="mailto:info@sporten.app?subject=Videobellen%20over%20de%20ledenadministratie">Plan een gesprek</a>
+        <a class="knop rand" href={`${basis}prijzen/`}>Bekijk de prijzen</a>
+      </div>
+    </div>
+  </section>
+</Basis>

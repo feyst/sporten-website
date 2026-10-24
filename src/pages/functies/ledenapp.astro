@@ -1,0 +1,181 @@
+---
+import Basis from '../../layouts/Basis.astro';
+import ChatTelefoon from '../../components/ChatTelefoon.astro';
+import StoreBadges from '../../components/StoreBadges.astro';
+
+const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const titel = 'App voor je sportvereniging: inschrijven en chat | Sporten.app';
+const beschrijving =
+  'De app voor je sportvereniging: leden bekijken de agenda, schrijven zich met één tik in voor een training en chatten per activiteit of groep.';
+
+const vragen = [
+  {
+    v: 'Kan een lid meldingen uitzetten?',
+    a: 'Ja. Ieder stelt zelf in over welke soorten meldingen hij een bericht krijgt. Een chat die te druk wordt, kan hij dempen.',
+  },
+  {
+    v: 'Kunnen ouders hun kinderen zelf inschrijven voor trainingen?',
+    a: 'Ja. Vanuit hun eigen account schrijven ouders hun kind in en uit voor een training. Kinderen melden ze mee aan bij het aanmeldformulier van de vereniging.',
+  },
+  {
+    v: 'Kan een trainer zien wie er komt?',
+    a: 'Ja. Bij een activiteit staat wie zich heeft ingeschreven, zodat de trainer weet op hoeveel mensen hij kan rekenen.',
+  },
+];
+
+const structuredData = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      name: titel,
+      description: beschrijving,
+      url: 'https://sporten.app/functies/ledenapp/',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sporten.app/' },
+        { '@type': 'ListItem', position: 2, name: 'Functies', item: 'https://sporten.app/functies/' },
+        { '@type': 'ListItem', position: 3, name: 'Ledenapp', item: 'https://sporten.app/functies/ledenapp/' },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: vragen.map(({ v, a }) => ({
+        '@type': 'Question',
+        name: v,
+        acceptedAnswer: { '@type': 'Answer', text: a },
+      })),
+    },
+  ],
+});
+---
+
+<Basis titel={titel} beschrijving={beschrijving}>
+  <script type="application/ld+json" slot="kop" set:html={structuredData} />
+
+  <div class="container kopblok"><div class="lees">
+    <p class="kruimels">
+      <a href={basis}>Home</a><span>/</span><a href={`${basis}functies/`}>Functies</a><span>/</span>Ledenapp
+    </p>
+
+    <h1>De app voor je sportvereniging</h1>
+    <p>
+      Wanneer is de training, gaat hij door, en wie komt er? Met de app voor je sportvereniging zoeken leden
+      dat zelf op en hoeft het bestuur minder rond te sturen.
+    </p>
+    <p>
+      Leden gebruiken de app op iPhone en Android, of in de browser. Wie in je
+      <a href={`${basis}functies/ledenadministratie/`}>ledenadministratie</a> staat, kan inloggen.
+    </p>
+    <StoreBadges />
+  </div></div>
+
+  <section>
+    <div class="container">
+      <h2>Wat de ledenapp kan</h2>
+      <div class="kaarten">
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
+          <h3>Agenda</h3>
+          <p>Alle trainingen en activiteiten van de vereniging op één plek.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg></div>
+          <h3>Inschrijven met één tik</h3>
+          <p>Een lid schrijft zich voor een training in en weer uit met één tik.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-5.4A8 8 0 1 1 21 12z"/></svg></div>
+          <h3>Chat per activiteit en groep</h3>
+          <p>Berichten, bijlagen en reacties bij de training of in de groep. Wie het te druk vindt, dempt de chat.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10 21a2 2 0 0 0 4 0"/></svg></div>
+          <h3>Pushmeldingen</h3>
+          <p>Iedereen stelt zelf in waarover hij een melding wil, bijvoorbeeld als een training niet doorgaat.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
+          <h3>Eigen gegevens</h3>
+          <p>Naam, adres en noodcontacten past een lid zelf aan.</p>
+        </div>
+        <div class="kaart">
+          <div class="ikoon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div>
+          <h3>Machtiging geven</h3>
+          <p>Voor de <a href={`${basis}functies/contributie/`}>contributie-incasso</a> geeft een lid de machtiging zelf in de app.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vlak leden">
+    <div class="container">
+      <div class="lees">
+        <h2>Clubchat zonder appgroepen</h2>
+        <p>
+          Elke activiteit en elke groep heeft een eigen chat. In de chat van de baantraining op dinsdag
+          zie je wie de pionnen meeneemt.
+        </p>
+      </div>
+      <div class="hero-beeld"><ChatTelefoon /></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container"><div class="lees">
+      <h2>Ouders en kinderen</h2>
+      <p>
+        Bij het aanmeldformulier van de vereniging melden ouders hun kinderen mee aan. Het bestuur keurt de
+        aanmelding goed en kiest de lidsoort.
+      </p>
+      <h2>Trainers</h2>
+      <p>
+        Trainers zien in de app ook hun <a href={`${basis}functies/vrijwilligersvergoeding/`}>vrijwilligersvergoeding</a>.
+        Ze controleren de afrekening en geven akkoord, of melden dat er iets mist.
+      </p>
+      <h2>Inloggen</h2>
+      <p>
+        Leden loggen in met hun e-mailadres, met een code of een inloglink. Wie wil, kiest een passkey.
+      </p>
+    </div></div>
+  </section>
+
+  <section class="vlak">
+    <div class="container"><div class="lees">
+      <h2>Wat de app niet doet</h2>
+      <ul class="opsom kruis">
+        <li>Geen declaraties indienen. Een lid dient een declaratie in via de webomgeving.</li>
+        <li>Geen roosters voor bardienst.</li>
+        <li>Geen wedstrijd- of competitie-indeling.</li>
+      </ul>
+    </div></div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Vragen van besturen</h2>
+      <div class="faq">
+        {vragen.map(({ v, a }) => (
+          <details>
+            <summary><h3>{v}</h3></summary>
+            <p>{a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="vlak">
+    <div class="container">
+      <h2>Zelf zien hoe het werkt?</h2>
+      <p class="sectie-intro">Plan een half uur videobellen, dan laten we het je zien.</p>
+      <div class="cta-rij">
+        <a class="knop" href="mailto:info@sporten.app?subject=Videobellen%20over%20de%20ledenapp">Plan een gesprek</a>
+        <a class="knop rand" href={`${basis}prijzen/`}>Bekijk de prijzen</a>
+      </div>
+    </div>
+  </section>
+</Basis>

@@ -1,0 +1,169 @@
+---
+import Basis from '../../layouts/Basis.astro';
+
+const basis = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const titel = 'Software voor studentensportverenigingen | Sporten.app';
+const beschrijving =
+  'Software voor studentensportverenigingen: ledenadministratie die de bestuurswissel overleeft, een boekjaar van september tot augustus en 40% korting.';
+
+const vragen = [
+  {
+    v: 'Wie krijgt de studentenkorting?',
+    a: 'Studenten- en schoolsportverenigingen krijgen 40% korting op de prijs. Twijfel je of jullie daaronder vallen, mail ons dan even.',
+  },
+  {
+    v: 'Wat als een oud-bestuurslid nog toegang heeft?',
+    a: 'Het bestuur trekt een rol in zodra iemand het bestuur verlaat. In het logboek blijft staan wie welke rol had en wanneer die is gewijzigd.',
+  },
+  {
+    v: 'Kan ons boekjaar in september beginnen?',
+    a: 'Ja. Je kiest zelf de begin- en einddatum.',
+  },
+];
+
+const structuredData = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      name: titel,
+      description: beschrijving,
+      url: 'https://sporten.app/voor/studentenverenigingen/',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sporten.app/' },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Studentenverenigingen',
+          item: 'https://sporten.app/voor/studentenverenigingen/',
+        },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: vragen.map(({ v, a }) => ({
+        '@type': 'Question',
+        name: v,
+        acceptedAnswer: { '@type': 'Answer', text: a },
+      })),
+    },
+  ],
+});
+---
+
+<Basis titel={titel} beschrijving={beschrijving}>
+  <script type="application/ld+json" slot="kop" set:html={structuredData} />
+
+  <div class="container kopblok"><div class="lees">
+    <p class="kruimels">
+      <a href={basis}>Home</a><span>/</span>Studentenverenigingen
+    </p>
+
+    <h1>Software voor je studentensportvereniging</h1>
+    <p>
+      Bij een studentensportvereniging neemt elk collegejaar een nieuw bestuur het stokje over. Sporten.app
+      houdt de leden, de boekhouding en de rechten van het bestuur op één plek, zodat je opvolger op de eerste
+      dag verder kan waar jij bent gebleven.
+    </p>
+  </div></div>
+
+  <section>
+    <div class="container"><div class="lees">
+      <h2>Een bestuur dat elk jaar wisselt</h2>
+      <p>
+        Een nieuw bestuur heeft de ledenlijst en de boeken nodig. Wat in een mailbox of op een laptop staat, is
+        dan weg.
+      </p>
+      <p>
+        Na de bestuurswissel wijs je de rollen toe aan het nieuwe bestuur en trek je de oude in. Rollen geef je door
+        met een logboek erbij; zie de <a href={`${basis}functies/ledenadministratie/`}>ledenadministratie</a>.
+        Het beheerportaal is beveiligd met tweestapsverificatie.
+      </p>
+      <p>
+        Je bestaande ledenlijst hoef je niet over te typen: <a href={`${basis}overstappen/`}>stuur hem als
+        spreadsheet</a> en wij voeren hem in.
+      </p>
+    </div></div>
+  </section>
+
+  <section class="vlak">
+    <div class="container"><div class="lees">
+      <h2>Een boekjaar dat met het collegejaar meeloopt</h2>
+      <p>
+        Veel studentensportverenigingen rekenen van september tot augustus. Het boekjaar begint op de datum die jij
+        kiest. Het nieuwe bestuur start dus met een schoon boekjaar, en het oude bestuur sluit het vorige netjes
+        af.
+      </p>
+      <p>
+        De kascommissie controleert het boekjaar zelf; zie de <a href={`${basis}functies/boekhouding/`}>boekhouding</a>.
+      </p>
+    </div></div>
+  </section>
+
+  <section>
+    <div class="container"><div class="lees">
+      <h2>Het begin van het collegejaar</h2>
+      <p>
+        In september melden zich nieuwe leden aan, en een deel van de oude leden is verhuisd.
+      </p>
+      <ul class="opsom">
+        <li>Nieuwe leden vullen het aanmeldformulier van je vereniging in. Het bestuur keurt de aanmelding goed of af en kiest bij goedkeuren de lidsoort.</li>
+        <li>Leden passen hun naam, adres en noodcontacten zelf aan in de app. Jij hoeft niet achter een nieuw adres aan.</li>
+        <li>Oud-leden die terugkomen zet je terug in de ledenlijst.</li>
+      </ul>
+      <p>
+        In de <a href={`${basis}functies/ledenapp/`}>ledenapp</a> zien leden de trainingen in de agenda en
+        schrijven ze zich met één tik in of uit. Voor elke activiteit en elke groep is er een chat, zodat de
+        mededelingen niet in een losse appgroep verdwijnen. De app werkt op iPhone, Android en in de browser.
+      </p>
+    </div></div>
+  </section>
+
+  <section class="vlak">
+    <div class="container"><div class="lees">
+      <h2>De studentenprijs</h2>
+      <p>
+        Studenten- en schoolsportverenigingen krijgen 40% korting. Je betaalt per jaar, inclusief btw, naar het
+        aantal leden:
+      </p>
+      <ul class="opsom">
+        <li>€ 89 tot en met 100 leden</li>
+        <li>€ 179 tot en met 300 leden</li>
+        <li>€ 329 tot en met 750 leden</li>
+      </ul>
+      <p>
+        De eerste twee maanden zijn gratis, en alle functies zitten in elke staffel. Opzeggen kan per jaar zonder
+        boete. Bekijk alle <a href={`${basis}prijzen/`}>prijzen</a>.
+      </p>
+    </div></div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Vragen van besturen</h2>
+      <div class="faq">
+        {vragen.map(({ v, a }) => (
+          <details>
+            <summary><h3>{v}</h3></summary>
+            <p>{a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="vlak">
+    <div class="container">
+      <h2>Het nieuwe collegejaar voorbereiden?</h2>
+      <p class="sectie-intro">Plan een half uur videobellen, dan laten we zien hoe de overdracht eruitziet.</p>
+      <div class="cta-rij">
+        <a class="knop" href="mailto:info@sporten.app?subject=Videobellen%20over%20onze%20studentenvereniging">Plan een gesprek</a>
+        <a class="knop rand" href={`${basis}prijzen/`}>Bekijk de prijzen</a>
+      </div>
+    </div>
+  </section>
+</Basis>
