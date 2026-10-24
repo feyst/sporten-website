@@ -2,30 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sporten.app/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-10-24</lastmod>
   </url>
   <url>
     <loc>https://sporten.app/avg/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-10-24</lastmod>
   </url>
   <url>
     <loc>https://sporten.app/functies/boekhouding/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-08-30</lastmod>
   </url>
   <url>
     <loc>https://sporten.app/prijzen/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-08-30</lastmod>
   </url>
   <url>
     <loc>https://sporten.app/privacy/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
+    <loc>https://sporten.app/subverwerkers/</loc>
+    <lastmod>2026-08-28</lastmod>
   </url>
   <url>
     <loc>https://sporten.app/verwerkersovereenkomst/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-08-28</lastmod>
   </url>
   <url>
     <loc>https://sporten.app/voorwaarden/</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-08-28</lastmod>
   </url>
 </urlset>
