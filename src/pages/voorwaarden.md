@@ -2,8 +2,8 @@
 layout: ../layouts/Juridisch.astro
 titel: 'Gebruiksvoorwaarden | Sporten.app'
 beschrijving: 'De gebruiksvoorwaarden van Sporten.app: wat u van ons mag verwachten en wat wij van u vragen bij het gebruik van de app en het beheerportaal.'
-versie: '1'
-datum: 28 augustus 2026
+versie: '2'
+datum: 24 oktober 2026
 ---
 
 # <span>Gebruiks</span>voorwaarden
@@ -66,6 +66,25 @@ deze voorwaarden kunt u stellen via
 2. Bij misbruik kunnen wij een account tijdelijk schorsen of blokkeren. Waar dat kan,
    overleggen wij eerst met het bestuur van de Vereniging; bij een acuut risico voor
    anderen of voor de Dienst doen wij dat achteraf.
+3. **In de clubchat geldt nultolerantie.** Berichten die aanstootgevend, kwetsend,
+   bedreigend of intimiderend zijn, en misbruik van andere Gebruikers, zijn niet toegestaan.
+4. Ziet u zo'n bericht, dan kunt u het in de app melden: houd het bericht ingedrukt en kies
+   Melden. Een melding gaat naar de beheerders van de Vereniging en naar ons. De afzender
+   ziet niet wie het bericht meldde. De Vereniging behandelt een melding binnen 24 uur: zij
+   verwijdert het bericht of legt vast dat ingrijpen niet nodig is. Doet zij dat niet, dan
+   doen wij het. Wij kunnen ook eerder zelf ingrijpen.
+5. U kunt een andere Gebruiker in de app blokkeren. Berichten van die Gebruiker worden dan
+   voor u ingeklapt; met Tonen kunt u een bericht toch lezen. Die Gebruiker kan u niet meer
+   vermelden en u krijgt van die Gebruiker geen meldingen meer. De ander krijgt daar geen
+   bericht over.
+6. Na een melding, of bij misbruik, kunnen de beheerders van de Vereniging en wij een
+   bericht verwijderen. Wij kunnen daarnaast een Gebruiker uit een kanaal halen, of het
+   sturen van berichten voor een Gebruiker tijdelijk of tot nader order uitzetten; de
+   Vereniging kan dat laatste niet. Lid 2 blijft daarnaast gelden.
+7. Een verwijderd bericht verdwijnt uit de chat, ook als u het zelf verwijdert. Wij bewaren
+   de inhoud, met een eventuele foto, om meldingen te kunnen beoordelen en ter onderbouwing
+   van een melding, aangifte of geschil. Wie dat kan inzien, staat onder "Melden, blokkeren
+   en verwijderen in de clubchat" in de [privacyverklaring](https://sporten.app/privacy).
 
 ## Artikel 6 — Wat de Vereniging inbrengt
 
@@ -185,3 +204,4 @@ komen.
 | Versie | Datum | Wijziging |
 |---|---|---|
 | 1 | 28 augustus 2026 | Eerste versie |
+| 2 | 24 oktober 2026 | Artikel 5, leden 3 tot en met 7: regels voor de clubchat — nultolerantie, melden, blokkeren, opvolging binnen 24 uur, ingrijpen door de Vereniging en door ons, en het bewaren van verwijderde berichten |
