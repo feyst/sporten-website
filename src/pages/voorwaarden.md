@@ -66,22 +66,25 @@ deze voorwaarden kunt u stellen via
 2. Bij misbruik kunnen wij een account tijdelijk schorsen of blokkeren. Waar dat kan,
    overleggen wij eerst met het bestuur van de Vereniging; bij een acuut risico voor
    anderen of voor de Dienst doen wij dat achteraf.
-3. **In de clubchat geldt nultolerantie.** Aanstootgevende, kwetsende, bedreigende of
-   intimiderende berichten, en misbruik van andere Gebruikers, worden niet geaccepteerd.
+3. **In de clubchat geldt nultolerantie.** Berichten die aanstootgevend, kwetsend,
+   bedreigend of intimiderend zijn, en misbruik van andere Gebruikers, zijn niet toegestaan.
 4. Ziet u zo'n bericht, dan kunt u het in de app melden: houd het bericht ingedrukt en kies
    Melden. Een melding gaat naar de beheerders van de Vereniging en naar ons. De afzender
-   ziet niet wie hem meldde. De Vereniging volgt een melding binnen 24 uur op; gebeurt dat
-   niet, dan kunnen wij zelf ingrijpen.
-5. U kunt een andere Gebruiker in de app blokkeren. Diens berichten worden dan voor u
-   ingeklapt, hij of zij kan u niet meer vermelden en u krijgt van hem of haar geen
-   meldingen meer. De ander krijgt daar geen bericht over.
+   ziet niet wie het bericht meldde. De Vereniging behandelt een melding binnen 24 uur: zij
+   verwijdert het bericht of legt vast dat ingrijpen niet nodig is. Doet zij dat niet, dan
+   doen wij het. Wij kunnen ook eerder zelf ingrijpen.
+5. U kunt een andere Gebruiker in de app blokkeren. Berichten van die Gebruiker worden dan
+   voor u ingeklapt; met Tonen kunt u een bericht toch lezen. Die Gebruiker kan u niet meer
+   vermelden en u krijgt van die Gebruiker geen meldingen meer. De ander krijgt daar geen
+   bericht over.
 6. Na een melding, of bij misbruik, kunnen de beheerders van de Vereniging en wij een
-   bericht verwijderen, een Gebruiker uit een kanaal halen, of het sturen van berichten
-   voor een Gebruiker tijdelijk of blijvend uitzetten. Dat geldt naast wat lid 2 al
-   toestaat.
-7. Een verwijderd bericht verdwijnt uit de chat. Wij bewaren de inhoud, met een eventuele
-   foto, om meldingen te kunnen beoordelen en voor een eventuele juridische procedure. Wie
-   dat kan inzien, staat in de [privacyverklaring](https://sporten.app/privacy).
+   bericht verwijderen. Wij kunnen daarnaast een Gebruiker uit een kanaal halen, of het
+   sturen van berichten voor een Gebruiker tijdelijk of tot nader order uitzetten; de
+   Vereniging kan dat laatste niet. Lid 2 blijft daarnaast gelden.
+7. Een verwijderd bericht verdwijnt uit de chat, ook als u het zelf verwijdert. Wij bewaren
+   de inhoud, met een eventuele foto, om meldingen te kunnen beoordelen en ter onderbouwing
+   van een melding, aangifte of geschil. Wie dat kan inzien, staat onder "Melden, blokkeren
+   en verwijderen in de clubchat" in de [privacyverklaring](https://sporten.app/privacy).
 
 ## Artikel 6 — Wat de Vereniging inbrengt
 
