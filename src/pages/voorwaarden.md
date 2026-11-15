@@ -3,7 +3,7 @@ layout: ../layouts/Juridisch.astro
 titel: 'Gebruiksvoorwaarden | Sporten.app'
 beschrijving: 'De gebruiksvoorwaarden van Sporten.app: wat u van ons mag verwachten en wat wij van u vragen bij het gebruik van de app en het beheerportaal.'
 versie: '2'
-datum: 24 oktober 2026
+datum: UITROLDAG 26.2
 ---
 
 # <span>Gebruiks</span>voorwaarden
@@ -82,8 +82,8 @@ deze voorwaarden kunt u stellen via
    sturen van berichten voor een Gebruiker tijdelijk of tot nader order uitzetten; de
    Vereniging kan dat laatste niet. Lid 2 blijft daarnaast gelden.
 7. Een verwijderd bericht verdwijnt uit de chat, ook als u het zelf verwijdert. Wij bewaren
-   de inhoud, met een eventuele foto, om meldingen te kunnen beoordelen en ter onderbouwing
-   van een melding, aangifte of geschil. Wie dat kan inzien, staat onder "Melden, blokkeren
+   de inhoud, met een eventuele foto, zes maanden om meldingen te kunnen beoordelen en ter
+   onderbouwing van een melding, aangifte of geschil; daarna wissen wij die. Wie dat kan inzien, staat onder "Melden, blokkeren
    en verwijderen in de clubchat" in de [privacyverklaring](https://sporten.app/privacy).
 
 ## Artikel 6 — Wat de Vereniging inbrengt
@@ -204,4 +204,4 @@ komen.
 | Versie | Datum | Wijziging |
 |---|---|---|
 | 1 | 28 augustus 2026 | Eerste versie |
-| 2 | 24 oktober 2026 | Artikel 5, leden 3 tot en met 7: regels voor de clubchat — nultolerantie, melden, blokkeren, opvolging binnen 24 uur, ingrijpen door de Vereniging en door ons, en het bewaren van verwijderde berichten |
+| 2 | UITROLDAG 26.2 | Artikel 5, leden 3 tot en met 7: regels voor de clubchat — nultolerantie, melden, blokkeren, opvolging binnen 24 uur, ingrijpen door de Vereniging en door ons, en zes maanden bewaren van verwijderde berichten |

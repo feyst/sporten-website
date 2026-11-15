@@ -3,7 +3,7 @@ layout: ../layouts/Juridisch.astro
 titel: 'Privacyverklaring | Sporten.app'
 beschrijving: 'Privacyverklaring van Sporten.app: welke gegevens wij van leden van sportverenigingen verwerken, waarvoor wij ze gebruiken en welke rechten u heeft.'
 versie: '2'
-datum: 24 oktober 2026
+datum: UITROLDAG 26.2
 ---
 
 # <span>Privacy</span>verklaring
@@ -73,7 +73,8 @@ vast:
 
 - **Een melding.** Wie meldde, welk bericht, de reden en een eventuele toelichting, met een
   kopie van het bericht zoals het er op dat moment stond. Die kopie wordt niet meer
-  gewijzigd. De afzender ziet niet wie het bericht meldde. De melding is te zien voor de
+  gewijzigd; is het bericht verwijderd, dan wissen wij de tekst ervan na dezelfde termijn
+  als hieronder. De afzender ziet niet wie het bericht meldde. De melding is te zien voor de
   beheerders van uw vereniging met het recht "Chat beheren" en voor ons. Zij zien daarbij
   ook de 15 berichten ervoor en de 5 erna uit hetzelfde kanaal, ook als dat een besloten
   kanaal is, zodat zij kunnen beoordelen waar het over ging. Dat zijn ook berichten van
@@ -82,10 +83,12 @@ vast:
 - **Een blokkade.** Wie wie blokkeerde, en wanneer die blokkade weer is opgeheven. Alleen
   u ziet uw eigen blokkades; de geblokkeerde krijgt daar geen bericht over.
 - **Een verwijderd bericht.** Het verdwijnt uit de chat, ook als u het zelf verwijdert,
-  maar wij bewaren de tekst en een eventuele foto, met wie het verwijderde en wanneer. Dat
-  doen wij om meldingen te kunnen beoordelen en ter onderbouwing van een melding,
-  aangifte of geschil. Alleen de beheerders van uw
-  vereniging (via een melding) en wij kunnen het inzien; andere leden niet.
+  maar wij bewaren de tekst en een eventuele foto zes maanden, met wie het verwijderde en
+  wanneer. Dat doen wij om meldingen te kunnen beoordelen en ter onderbouwing van een
+  melding, aangifte of geschil. Daarna wissen wij tekst en foto; staat er dan nog een
+  melding over dat bericht open, dan wachten wij tot die behandeld is. Dat er een bericht
+  was en wie het verwijderde, blijft vastgelegd. Alleen de beheerders van uw vereniging
+  (via een melding) en wij kunnen het inzien; andere leden niet.
 - **Ingrijpen.** Halen wij een lid uit een kanaal of zetten wij het sturen van berichten
   voor een lid uit, dan leggen wij vast wie dat deed, wanneer, tot wanneer en om welke
   reden. Die reden is alleen voor ons zichtbaar. Het lid ziet in de app dat het
@@ -150,8 +153,10 @@ dat laatste geval informeren wij de vereniging vooraf, tenzij dat wettelijk niet
 Gegevens blijven bewaard zolang het lidmaatschap of de rol dat vereist; de vereniging
 bepaalt dat. Financiële gegevens worden bewaard tot zeven jaar na afloop van het boekjaar
 waarop zij betrekking hebben, vanwege de fiscale bewaarplicht. In afwijking daarvan blijven
-berichten in de clubchat, ook verwijderde, en meldingen bewaard zolang de vereniging de
-dienst afneemt, ook als een lid vertrekt. Gegevens in back-ups verdwijnen mee met de bewaartermijn van die back-ups. De volledige regeling staat in bijlage
+berichten in de clubchat en meldingen bewaard zolang de vereniging de dienst afneemt, ook
+als een lid vertrekt. De tekst en foto van een verwijderd bericht wissen wij zes maanden na
+het verwijderen, ook uit de kopie bij een melding. Gegevens in back-ups verdwijnen mee met
+de bewaartermijn van die back-ups. De volledige regeling staat in bijlage
 1 en artikel 11 van de verwerkersovereenkomst.
 
 ## Links naar andere websites
@@ -172,4 +177,4 @@ versienummer en een datum.
 | Versie | Datum | Wijziging |
 |---|---|---|
 | 1 | 28 augustus 2026 | Eerste versie |
-| 2 | 24 oktober 2026 | Nieuw: melden, blokkeren en verwijderen in de clubchat; bewaren van chatberichten en meldingen bij "Hoe lang wij bewaren" |
+| 2 | UITROLDAG 26.2 | Nieuw: melden, blokkeren en verwijderen in de clubchat; bewaren van chatberichten en meldingen, en zes maanden voor verwijderde berichten, bij "Hoe lang wij bewaren" |

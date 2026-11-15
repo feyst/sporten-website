@@ -2,8 +2,8 @@
 layout: ../layouts/Juridisch.astro
 titel: Verwerkersovereenkomst | Sporten.app
 beschrijving: De verwerkersovereenkomst van Sporten.app, opgesteld langs artikel 28 AVG — wat wij namens uw vereniging verwerken, hoe wij dat beveiligen en welke afspraken daarbij horen.
-versie: '1'
-datum: 28 augustus 2026
+versie: '2'
+datum: UITROLDAG 26.2
 ---
 
 # <span>Verwerkers</span>overeenkomst
@@ -83,6 +83,13 @@ categorieën betrokkenen staan in **bijlage 1**.
    daarmee wie binnen haar vereniging welke gegevens ziet. Zij houdt die toekenning juist
    en actueel, ook wanneer een bestuurder, trainer of vrijwilliger vertrekt. LightMedia
    stelt die mogelijkheid beschikbaar en kent binnen een vereniging zelf geen rollen toe.
+7. Voor de clubchat geeft de Vereniging LightMedia de instructie om meldingen over
+   berichten te ontvangen en te beoordelen, en om een bericht te verwijderen, een lid uit
+   een kanaal te halen of het sturen van berichten voor een lid uit te zetten wanneer de
+   Vereniging een melding niet binnen 24 uur behandelt of bij misbruik, zoals beschreven in
+   artikel 5 van de gebruiksvoorwaarden. Daarvoor ziet LightMedia het gemelde bericht en de
+   berichten eromheen in, ook in een besloten kanaal. Dat is geen rol binnen de Vereniging
+   als bedoeld in lid 6.
 
 ## Artikel 5 — Geheimhouding
 
@@ -239,6 +246,7 @@ gegevens vastlegt.
 | Lidmaatschapsgegevens: lidsoort, rollen, groepen, begin- en einddatum | Ledenadministratie en toegang tot de Dienst |
 | Inschrijvingen, aanwezigheid en trainersinzet | Activiteitenbeheer |
 | Chatberichten, bijlagen en meldingen | Communicatie binnen de club |
+| Tekst en foto van verwijderde chatberichten, blokkades en ingrijpen in de chat | Beoordelen van meldingen, en onderbouwing van een melding, aangifte of geschil |
 | Noodcontacten: naam, telefoonnummer en relatie, en het logboek van opvragingen | Bereikbaarheid bij een ongeval, en toezicht op wie die gegevens opvroeg |
 | Toestemmingen: welke, wanneer, door wie gegeven en wanneer ingetrokken | Onderbouwing van toestemming, bijvoorbeeld voor beeldmateriaal |
 | Documenten bij een lid, zoals een VOG, gedragscode, diploma, EHBO-certificaat, startlicentie of inschrijfformulier | Vastleggen van wat de Vereniging van een lid of vrijwilliger verlangt |
@@ -260,7 +268,10 @@ opvraging vast.
 **Bewaartermijnen:** gegevens worden bewaard zolang het lidmaatschap of de rol dat vereist.
 Financiële gegevens bewaart de Vereniging tot zeven jaar na afloop van het boekjaar
 waarop zij betrekking hebben, op grond van de fiscale bewaarplicht.
-Documenten bij een lid verdwijnen met het lid. Gegevens in back-ups verdwijnen mee met de
+Documenten bij een lid verdwijnen met het lid. De tekst en foto van een verwijderd
+chatbericht worden zes maanden na het verwijderen gewist, ook uit de kopie bij een melding;
+staat er dan nog een melding over dat bericht open, dan volgt het wissen zodra die
+behandeld is. Gegevens in back-ups verdwijnen mee met de
 retentietermijn uit bijlage 2 (zie artikel 11 lid 3). Zie verder de privacyverklaring.
 
 ## Bijlage 2 — Beveiligingsmaatregelen
@@ -304,3 +315,4 @@ retentietermijn uit bijlage 2 (zie artikel 11 lid 3). Zie verder de privacyverkl
 | Versie | Datum | Wijziging |
 |---|---|---|
 | 1 | 28 augustus 2026 | Eerste versie |
+| 2 | UITROLDAG 26.2 | Artikel 4 lid 7: instructie voor melden en ingrijpen in de clubchat. Bijlage 1: verwijderde chatberichten, blokkades en ingrijpen, met een bewaartermijn van zes maanden voor de inhoud van verwijderde berichten |
