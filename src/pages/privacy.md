@@ -85,8 +85,7 @@ vast:
 - **Een verwijderd bericht.** Het verdwijnt uit de chat, ook als u het zelf verwijdert,
   maar wij bewaren de tekst en een eventuele foto zes maanden, met wie het verwijderde en
   wanneer. Dat doen wij om meldingen te kunnen beoordelen en ter onderbouwing van een
-  melding, aangifte of geschil. Daarna wissen wij tekst en foto; staat er dan nog een
-  melding over dat bericht open, dan wachten wij tot die behandeld is. Dat er een bericht
+  melding, aangifte of geschil. Daarna wissen wij tekst en foto. Dat er een bericht
   was en wie het verwijderde, blijft vastgelegd. Alleen de beheerders van uw vereniging
   (via een melding) en wij kunnen het inzien; andere leden niet.
 - **Ingrijpen.** Halen wij een lid uit een kanaal of zetten wij het sturen van berichten

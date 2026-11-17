@@ -269,9 +269,7 @@ opvraging vast.
 Financiële gegevens bewaart de Vereniging tot zeven jaar na afloop van het boekjaar
 waarop zij betrekking hebben, op grond van de fiscale bewaarplicht.
 Documenten bij een lid verdwijnen met het lid. De tekst en foto van een verwijderd
-chatbericht worden zes maanden na het verwijderen gewist, ook uit de kopie bij een melding;
-staat er dan nog een melding over dat bericht open, dan volgt het wissen zodra die
-behandeld is. Gegevens in back-ups verdwijnen mee met de
+chatbericht worden zes maanden na het verwijderen gewist, ook uit de kopie bij een melding. Gegevens in back-ups verdwijnen mee met de
 retentietermijn uit bijlage 2 (zie artikel 11 lid 3). Zie verder de privacyverklaring.
 
 ## Bijlage 2 — Beveiligingsmaatregelen
