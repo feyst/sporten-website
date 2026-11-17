@@ -83,8 +83,8 @@ deze voorwaarden kunt u stellen via
    Vereniging kan dat laatste niet. Lid 2 blijft daarnaast gelden.
 7. Een verwijderd bericht verdwijnt uit de chat, ook als u het zelf verwijdert. Wij bewaren
    de inhoud, met een eventuele foto, zes maanden om meldingen te kunnen beoordelen en ter
-   onderbouwing van een melding, aangifte of geschil; daarna wissen wij die. Wie dat kan inzien, staat onder "Melden, blokkeren
-   en verwijderen in de clubchat" in de [privacyverklaring](https://sporten.app/privacy).
+   onderbouwing van een melding, aangifte of geschil; daarna wissen wij die, ook uit de kopie bij een
+   melding. Wie dat kan inzien, staat onder "Melden, blokkeren en verwijderen in de clubchat" in de [privacyverklaring](https://sporten.app/privacy).
 
 ## Artikel 6 — Wat de Vereniging inbrengt
 

@@ -86,7 +86,7 @@ vast:
   maar wij bewaren de tekst en een eventuele foto zes maanden, met wie het verwijderde en
   wanneer. Dat doen wij om meldingen te kunnen beoordelen en ter onderbouwing van een
   melding, aangifte of geschil. Daarna wissen wij tekst en foto. Dat er een bericht
-  was en wie het verwijderde, blijft vastgelegd. Alleen de beheerders van uw vereniging
+  was, wie het verwijderde en wanneer, blijft vastgelegd. Alleen de beheerders van uw vereniging
   (via een melding) en wij kunnen het inzien; andere leden niet.
 - **Ingrijpen.** Halen wij een lid uit een kanaal of zetten wij het sturen van berichten
   voor een lid uit, dan leggen wij vast wie dat deed, wanneer, tot wanneer en om welke
