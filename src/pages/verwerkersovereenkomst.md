@@ -3,7 +3,7 @@ layout: ../layouts/Juridisch.astro
 titel: Verwerkersovereenkomst | Sporten.app
 beschrijving: De verwerkersovereenkomst van Sporten.app, opgesteld langs artikel 28 AVG — wat wij namens uw vereniging verwerken, hoe wij dat beveiligen en welke afspraken daarbij horen.
 versie: '2'
-datum: UITROLDAG 26.2
+datum: 26 november 2026
 ---
 
 # <span>Verwerkers</span>overeenkomst
@@ -313,4 +313,4 @@ retentietermijn uit bijlage 2 (zie artikel 11 lid 3). Zie verder de privacyverkl
 | Versie | Datum | Wijziging |
 |---|---|---|
 | 1 | 28 augustus 2026 | Eerste versie |
-| 2 | UITROLDAG 26.2 | Artikel 4 lid 7: instructie voor melden en ingrijpen in de clubchat. Bijlage 1: verwijderde chatberichten, blokkades en ingrijpen, met een bewaartermijn van zes maanden voor de inhoud van verwijderde berichten |
+| 2 | 26 november 2026 | Artikel 4 lid 7: instructie voor melden en ingrijpen in de clubchat. Bijlage 1: verwijderde chatberichten, blokkades en ingrijpen, met een bewaartermijn van zes maanden voor de inhoud van verwijderde berichten |

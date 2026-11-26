@@ -3,7 +3,7 @@ layout: ../layouts/Juridisch.astro
 titel: 'Gebruiksvoorwaarden | Sporten.app'
 beschrijving: 'De gebruiksvoorwaarden van Sporten.app: wat u van ons mag verwachten en wat wij van u vragen bij het gebruik van de app en het beheerportaal.'
 versie: '2'
-datum: UITROLDAG 26.2
+datum: 26 november 2026
 ---
 
 # <span>Gebruiks</span>voorwaarden
@@ -204,4 +204,4 @@ komen.
 | Versie | Datum | Wijziging |
 |---|---|---|
 | 1 | 28 augustus 2026 | Eerste versie |
-| 2 | UITROLDAG 26.2 | Artikel 5, leden 3 tot en met 7: regels voor de clubchat — nultolerantie, melden, blokkeren, opvolging binnen 24 uur, ingrijpen door de Vereniging en door ons, en zes maanden bewaren van verwijderde berichten |
+| 2 | 26 november 2026 | Artikel 5, leden 3 tot en met 7: regels voor de clubchat — nultolerantie, melden, blokkeren, opvolging binnen 24 uur, ingrijpen door de Vereniging en door ons, en zes maanden bewaren van verwijderde berichten |

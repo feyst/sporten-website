@@ -3,7 +3,7 @@ layout: ../layouts/Juridisch.astro
 titel: 'Privacyverklaring | Sporten.app'
 beschrijving: 'Privacyverklaring van Sporten.app: welke gegevens wij van leden van sportverenigingen verwerken, waarvoor wij ze gebruiken en welke rechten u heeft.'
 versie: '2'
-datum: UITROLDAG 26.2
+datum: 26 november 2026
 ---
 
 # <span>Privacy</span>verklaring
@@ -176,4 +176,4 @@ versienummer en een datum.
 | Versie | Datum | Wijziging |
 |---|---|---|
 | 1 | 28 augustus 2026 | Eerste versie |
-| 2 | UITROLDAG 26.2 | Nieuw: melden, blokkeren en verwijderen in de clubchat; bewaren van chatberichten en meldingen, en zes maanden voor verwijderde berichten, bij "Hoe lang wij bewaren" |
+| 2 | 26 november 2026 | Nieuw: melden, blokkeren en verwijderen in de clubchat; bewaren van chatberichten en meldingen, en zes maanden voor verwijderde berichten, bij "Hoe lang wij bewaren" |
