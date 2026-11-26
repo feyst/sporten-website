@@ -70,9 +70,9 @@ deze voorwaarden kunt u stellen via
    bedreigend of intimiderend zijn, en misbruik van andere Gebruikers, zijn niet toegestaan.
 4. Ziet u zo'n bericht, dan kunt u het in de app melden: houd het bericht ingedrukt en kies
    Melden. Een melding gaat naar de beheerders van de Vereniging en naar ons. De afzender
-   ziet niet wie het bericht meldde. De Vereniging behandelt een melding binnen 24 uur: zij
-   verwijdert het bericht of legt vast dat ingrijpen niet nodig is. Doet zij dat niet, dan
-   doen wij het. Wij kunnen ook eerder zelf ingrijpen.
+   ziet niet wie het bericht meldde. De Vereniging beoordeelt een melding binnen 24 uur en
+   verwijdert het bericht als dat nodig is. Staat het bericht er na 24 uur nog, dan
+   beoordelen wij de melding. Wij kunnen ook eerder zelf ingrijpen.
 5. U kunt een andere Gebruiker in de app blokkeren. Berichten van die Gebruiker worden dan
    voor u ingeklapt; met Tonen kunt u een bericht toch lezen. Die Gebruiker kan u niet meer
    vermelden en u krijgt van die Gebruiker geen meldingen meer. De ander krijgt daar geen
