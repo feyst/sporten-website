@@ -269,7 +269,9 @@ opvraging vast.
 Financiële gegevens bewaart de Vereniging tot zeven jaar na afloop van het boekjaar
 waarop zij betrekking hebben, op grond van de fiscale bewaarplicht.
 Documenten bij een lid verdwijnen met het lid. De tekst en foto van een verwijderd
-chatbericht worden zes maanden na het verwijderen gewist, ook uit de kopie bij een melding. Gegevens in back-ups verdwijnen mee met de
+chatbericht worden zes maanden na het verwijderen gewist, ook uit de kopie bij een melding.
+Chatberichten, meldingen, blokkades en de vastlegging van ingrijpen in de chat blijven
+verder bewaard zolang de Vereniging de Dienst afneemt, ook als een lid vertrekt. Gegevens in back-ups verdwijnen mee met de
 retentietermijn uit bijlage 2 (zie artikel 11 lid 3). Zie verder de privacyverklaring.
 
 ## Bijlage 2 — Beveiligingsmaatregelen
@@ -313,4 +315,4 @@ retentietermijn uit bijlage 2 (zie artikel 11 lid 3). Zie verder de privacyverkl
 | Versie | Datum | Wijziging |
 |---|---|---|
 | 1 | 28 augustus 2026 | Eerste versie |
-| 2 | 26 november 2026 | Artikel 4 lid 7: instructie voor melden en ingrijpen in de clubchat. Bijlage 1: verwijderde chatberichten, blokkades en ingrijpen, met een bewaartermijn van zes maanden voor de inhoud van verwijderde berichten |
+| 2 | 26 november 2026 | Artikel 4 lid 7: instructie voor melden en ingrijpen in de clubchat. Bijlage 1: verwijderde chatberichten, blokkades en ingrijpen, met een bewaartermijn van zes maanden voor de inhoud van verwijderde berichten; chatgegevens blijven verder bewaard zolang de Vereniging de Dienst afneemt |

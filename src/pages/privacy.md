@@ -88,10 +88,11 @@ vast:
   melding, aangifte of geschil. Daarna wissen wij tekst en foto. Dat er een bericht
   was, wie het verwijderde en wanneer, blijft vastgelegd. Alleen de beheerders van uw vereniging
   (via een melding) en wij kunnen het inzien; andere leden niet.
-- **Ingrijpen.** Halen wij een lid uit een kanaal of zetten wij het sturen van berichten
-  voor een lid uit, dan leggen wij vast wie dat deed, wanneer, tot wanneer en om welke
-  reden. Die reden is alleen voor ons zichtbaar. Het lid ziet in de app dat het
-  geen berichten kan sturen, en tot wanneer. Alleen wij kunnen dat; de vereniging niet.
+- **Ingrijpen.** Halen wij een lid uit een kanaal, dan leggen wij vast wie dat deed en
+  wanneer. Zetten wij het sturen van berichten voor een lid uit, dan leggen wij ook vast
+  tot wanneer en om welke reden. Die reden is alleen voor ons zichtbaar. Het lid ziet in de
+  app dat het geen berichten kan sturen, en tot wanneer. Het sturen van berichten voor een
+  lid uitzetten kunnen alleen wij; de vereniging niet.
 
 ## Pushmeldingen
 
@@ -152,8 +153,8 @@ dat laatste geval informeren wij de vereniging vooraf, tenzij dat wettelijk niet
 Gegevens blijven bewaard zolang het lidmaatschap of de rol dat vereist; de vereniging
 bepaalt dat. Financiële gegevens worden bewaard tot zeven jaar na afloop van het boekjaar
 waarop zij betrekking hebben, vanwege de fiscale bewaarplicht. In afwijking daarvan blijven
-berichten in de clubchat en meldingen bewaard zolang de vereniging de dienst afneemt, ook
-als een lid vertrekt. De tekst en foto van een verwijderd bericht wissen wij zes maanden na
+berichten in de clubchat, meldingen, blokkades en de vastlegging van ingrijpen bewaard
+zolang de vereniging de dienst afneemt, ook als een lid vertrekt. De tekst en foto van een verwijderd bericht wissen wij zes maanden na
 het verwijderen, ook uit de kopie bij een melding. Gegevens in back-ups verdwijnen mee met
 de bewaartermijn van die back-ups. De volledige regeling staat in bijlage
 1 en artikel 11 van de verwerkersovereenkomst.
